@@ -66,3 +66,36 @@ No I dont mind, and by the way, nice text editor Chad.
 Chad:
 
 Thanks George.
+
+-------------------------------------------------
+
+How to you ChadTech:
+
+For the most part, if you press a key on your keyboard, the letter will show up in ChadTech, like any text editor. The features of ChadTech are controlled by hotkeys, which are listed below. All hotkeys should be pressed by holding down the first key, and then pressing the second, in that order and no other order.
+
+ChadTech Commands:
+LCRTL then s                Save document
+LCTRL then o                Open document
+LSHIFT then Backspace       Backspace Ten Times
+LSHIFT then arrow key       move L/R ten times, or U/D five times
+LSHIFT then plus/equal key  Add superscript, or return to text if in subscript
+LSHIFT then minus key       Add subscript, or return to text if in superscript
+
+FIRST ORDER LOGIC SYMBOLS:
+1 then e          Existential Quantifier
+1 then a          'For all'
+1 then i          Material Conditional, 'implies'
+1 then f          If, and only if. Symbol also means 'equivalent' and 'congruent' in other context
+1 then n          Negation
+
+MODAL LOGIC SYMBOLS
+2 then p          Possible
+2 then n          Necessary
+
+ChadTech is currently in v0.1, features to add:
+
+1. Scrolling, if you go beyond the screen height the text shifts down, and if you save a document it saves one long image file.
+2. 'exponential backspace/arrow keys', if you hold shift and backspace, each additional backspace is expontentially larger. For example you hold shift, press backspace, one character is removed, backspace again, 2, again, 4, again 8 etc.
+3. Better response to 'Dummy Spaces' 
+4. Better saving/opening of superscripts/subscripts. Right now its very buggy
+5. More characters. Many characters are drawn and ready to implement into code.
