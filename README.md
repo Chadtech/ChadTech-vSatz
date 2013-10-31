@@ -113,3 +113,4 @@ ChadTech is currently in v0.1, features to add:
 4. Better saving/opening of superscripts/subscripts. Right now its very buggy
 5. More characters. Many characters are drawn and ready to implement into code.
 6. Window that grows with your text, so small ChadTech documents are not mostly blackspace.
+7. word wrap
