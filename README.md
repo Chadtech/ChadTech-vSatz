@@ -109,6 +109,7 @@ ChadTech is currently in v0.1, features to add:
 
 1. Scrolling, if you go beyond the screen height the text shifts down, and if you save a document it saves one long image file.
 2. 'exponential backspace/arrow keys', if you hold shift and backspace, each additional backspace is expontentially larger. For example you hold shift, press backspace, one character is removed, backspace again, 2, again, 4, again 8 etc.
-3. Better response to 'Dummy Spaces' 
+3. Better response to 'Dummy Spaces' (spaces that you made not by pressing the space bar, but instead by say, pressing enter)
 4. Better saving/opening of superscripts/subscripts. Right now its very buggy
 5. More characters. Many characters are drawn and ready to implement into code.
+6. Window that grows with your text, so small ChadTech documents are not mostly blackspace.
