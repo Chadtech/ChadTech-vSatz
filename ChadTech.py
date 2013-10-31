@@ -5,7 +5,7 @@ from PIL import Image
 import Tkinter, tkFileDialog
 brunk = Tkinter.Tk()
 brunk.withdraw()
-
+#Git Test Comment
 class cursor(pygame.sprite.Sprite):
 
 	def __init__(self):
@@ -92,9 +92,6 @@ xChek = False
 yChek = False
 zChek = False
 rSChek = False
-
-
-os.chdir('C:\\Users\\NPPSF\\code\\ChadTech\\chars12x16')
 
 #Lower case number codes
 a = 0
@@ -485,12 +482,11 @@ def getLetl(inp):
 	if inp == Z:
 		return l_lZ
 
-
-
+os.chdir(os.path.abspath('chars12x16'))
 
 #Load Images
 
-os.chdir('C:\\Users\\NPPSF\\code\\ChadTech\\chars12x16\\Uppercase')
+os.chdir(os.path.abspath('Uppercase'))
 
 #Capital Letters
 L_lA = pygame.image.load('char0.PNG').convert()
@@ -520,7 +516,8 @@ L_lX = pygame.image.load('char23.PNG').convert()
 L_lY = pygame.image.load('char24.PNG').convert()
 L_lZ = pygame.image.load('char25.PNG').convert()
 
-os.chdir('C:\\Users\\NPPSF\\code\\ChadTech\\chars12x16\\Lowercase')
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Lowercase'))
 
 #lower case letters
 L_la = pygame.image.load('char0.PNG').convert()
@@ -550,7 +547,8 @@ L_lx = pygame.image.load('char23.PNG').convert()
 L_ly = pygame.image.load('char24.PNG').convert()
 L_lz = pygame.image.load('char25.PNG').convert()
 
-os.chdir('C:\\Users\\NPPSF\\code\\ChadTech\\chars12x16\\Punctuation')
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Punctuation'))
 
 #Punctuation
 L_pQ = pygame.image.load('char0.PNG').convert()
@@ -561,23 +559,27 @@ L_pO = pygame.image.load('char4.PNG').convert()
 L_pS = pygame.image.load('char5.PNG').convert()
 L_pU = pygame.image.load('char6.PNG').convert()
 
-os.chdir('C:\\Users\\NPPSF\\code\\ChadTech\\chars12x16\\Space')
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Space'))
 
 #space
 L_S = pygame.image.load('char0.PNG').convert()
 
-os.chdir('C:\\Users\\NPPSF\\code\\ChadTech\\chars12x16\\ModalLogic')
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('ModalLogic'))
 
 #Modal Logic
 L_mP = pygame.image.load('char0.PNG').convert()
 L_mN = pygame.image.load('char1.PNG').convert()
 
-os.chdir('C:\\Users\\NPPSF\\code\\ChadTech\\chars12x16\\Math')
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Math'))
 
 #Math
 L_mEq = pygame.image.load('char0.PNG').convert()
 
-os.chdir('C:\\Users\\NPPSF\\code\\ChadTech\\chars12x16\\FirstOrderLogic')
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('FirstOrderLogic'))
 
 #First Order Logic
 L_fE = pygame.image.load('char0.PNG').convert()
@@ -587,7 +589,8 @@ L_fI = pygame.image.load('char3.PNG').convert()
 L_fF = pygame.image.load('char4.PNG').convert()
 L_fD = pygame.image.load('char5.PNG').convert()
 
-os.chdir('C:\\Users\\NPPSF\\code\\ChadTech\\chars12x16\\Numerals')
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Numerals'))
 
 #Numerals
 L_Nze = pygame.image.load('char0.PNG').convert()
@@ -609,7 +612,10 @@ L_Nni = pygame.image.load('char9.PNG').convert()
 
 
 
-os.chdir('C:\\Users\\NPPSF\\code\\ChadTech\\chars6x8\\Uppercase')
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('chars6x8'))
+os.chdir(os.path.abspath('Uppercase'))
 
 #Capital Letters
 l_lA = pygame.image.load('char0.PNG').convert()
@@ -639,7 +645,8 @@ l_lX = pygame.image.load('char23.PNG').convert()
 l_lY = pygame.image.load('char24.PNG').convert()
 l_lZ = pygame.image.load('char25.PNG').convert()
 
-os.chdir('C:\\Users\\NPPSF\\code\\ChadTech\\chars6x8\\Lowercase')
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Lowercase'))
 
 #Capital Letters
 l_la = pygame.image.load('char0.PNG').convert()
@@ -669,7 +676,8 @@ l_lx = pygame.image.load('char23.PNG').convert()
 l_ly = pygame.image.load('char24.PNG').convert()
 l_lz = pygame.image.load('char25.PNG').convert()
 
-os.chdir('C:\\Users\\NPPSF\\code\\ChadTech\\chars6x8\\Space')
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Space'))
 
 #space
 l_S = pygame.image.load('char0.PNG').convert()
@@ -2004,14 +2012,12 @@ while quit == False:
 					saveIm = Image.open('curdoc.PNG')
 					saveImSize =  saveIm.size
 					docLen = len(doc)
-					print 'docLen:', docLen
 					docLenDummy = docLen
 					Xboun, Yboun = 0,0;
 					Xboun, Yboun = saveIm.size
 					supaSaveCou = 0
 					subSaveCou = 0
 					yuss, tack, dukh = 0,0,0
-					print 'doclenDummy:', docLenDummy
 					while docLenDummy > 65536:
 						yuss += 1
 						docLenDummy -= 65536
@@ -2021,7 +2027,6 @@ while quit == False:
 					while docLenDummy > 0:
 						dukh += 1
 						docLenDummy -= 1
-					print 'lenpixel data', yuss, tack, dukh
 					saveIm.putpixel((Xboun-1,0), (yuss, tack, dukh))
 					yuss, tack, dukh = 0,0,0
 					for yit in range(len(doc)):
@@ -2131,7 +2136,9 @@ while quit == False:
 					screen.fill((0,0,0))
 					whichLet = 0
 					lilWhichLet = 0
+					print 'doc:', doc, 
 					while whichLet < len(doc):
+						print 'doc[whichLet]:', doc[whichLet], 'doc[whichLet][0]:', doc[whichLet][0], 'getLet:', getLet(doc[whichLet][0]), '|||'
 						screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 						if len(doc[whichLet][1]) > 0:
 							basePlaceX = charWidth*(whichLet%lineLen)+xMarg
