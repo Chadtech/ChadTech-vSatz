@@ -5,7 +5,7 @@ from PIL import Image
 import Tkinter, tkFileDialog
 brunk = Tkinter.Tk()
 brunk.withdraw()
-#Git Test Comment
+#ChadTechv0.1
 class cursor(pygame.sprite.Sprite):
 
 	def __init__(self):
