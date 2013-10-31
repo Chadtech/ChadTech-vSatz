@@ -2223,23 +2223,16 @@ while quit == False:
 
 				if pressed[pygame.K_BACKSPACE]:
 					if whichLet != 0:
-						#dumChek = True
-						#while dumChek == True:
-						#	if doc[whichLet-1][0] != dSp:
-						#		dumChek = False
 							dummyCount = 0
 							tempSpot = whichLet
 							while doc[whichLet-1][0] == dSp:
 									dummyCount += 1
 									whichLet -= 1
-							print 'aftawhile:', dummyCount
 							whichLet = tempSpot
 							if dummyCount == 0:
 								dummyCount = 1
-							print 'aftaZChek:', dummyCount
 							if dummyCount > lineLen:
 								dummyCount = lineLen 
-							print 'aftaLinCou:', dummyCount
 							for ipp in range(dummyCount):
 								if whichLet == len(doc):
 									if whichLet%lineLen == 0:
