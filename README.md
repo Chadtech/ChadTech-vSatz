@@ -75,21 +75,33 @@ For the most part, if you press a key on your keyboard, the letter will show up 
 
 ChadTech Commands:
 LCRTL then s                Save document
+
 LCTRL then o                Open document
+
 LSHIFT then Backspace       Backspace Ten Times
+
 LSHIFT then arrow key       move L/R ten times, or U/D five times
+
 LSHIFT then plus/equal key  Add superscript, or return to text if in subscript
+
 LSHIFT then minus key       Add subscript, or return to text if in superscript
 
 FIRST ORDER LOGIC SYMBOLS:
+
 1 then e          Existential Quantifier
+
 1 then a          'For all'
+
 1 then i          Material Conditional, 'implies'
+
 1 then f          If, and only if. Symbol also means 'equivalent' and 'congruent' in other context
+
 1 then n          Negation
 
 MODAL LOGIC SYMBOLS
+
 2 then p          Possible
+
 2 then n          Necessary
 
 ChadTech is currently in v0.1, features to add:
