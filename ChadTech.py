@@ -244,7 +244,7 @@ def getLet(inp):
 	if inp == o:
 		return L_lo
 	if inp == p:
-		return L_lP
+		return L_lp
 	if inp == q:
 		return L_lq
 	if inp == r:
@@ -258,7 +258,7 @@ def getLet(inp):
 	if inp == v:
 		return L_lv
 	if inp == w:
-		return L_lW
+		return L_lw
 	if inp == x:
 		return L_lx
 	if inp == y:
@@ -1879,7 +1879,7 @@ while quit == False:
 
 				#Implies
 				if pressed[pygame.K_1] and pressed[pygame.K_i]:
-					for i in range(2):
+					for i in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
