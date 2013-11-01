@@ -683,6 +683,9 @@ os.chdir(os.path.abspath('Space'))
 l_S = pygame.image.load('char0.PNG').convert()
 l_fS = pygame.image.load('char1.PNG').convert()
 
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.dirname(os.getcwd()))
+
 screen.fill((0,0,0))
 
 blinker = cursor()
@@ -721,7 +724,7 @@ while quit == False:
 							doc.insert(whichLet,[dSp,[],[]])
 							screen.blit(L_S,[charWidth*((whichLet+dar)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
 						whichLet = tempSpot + dumCou
-						for pso in range (dumCou):
+						for pso in range(dumCou):
 							screen.blit(getLet(doc[whichLet-pso-1][0]),[charWidth*((whichLet-1-pso)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
 
 	#-----------LETTERS, UPPER CASE AND LOWER CASE--------------
@@ -2019,7 +2022,6 @@ while quit == False:
 						screen.blit(L_S,[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 					else:
 						screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
-					os.chdir('C:\\Users\\NPPSF\\code\\ChadTech')
 					saveName = tkFileDialog.asksaveasfilename()
 					saveName = str(saveName)
 					pygame.image.save(screen,"curdoc.PNG")
@@ -2088,7 +2090,6 @@ while quit == False:
 
 				if pressed[pygame.K_LCTRL] and pressed[pygame.K_o]:
 					doc = []
-					os.chdir('C:\\Users\\NPPSF\\code\\ChadTech')
 					openName = tkFileDialog.askopenfilename()
 					openName = str(openName)
 					print openName
@@ -2236,49 +2237,49 @@ while quit == False:
 								whichLet = len(doc)
 
 				if pressed[pygame.K_BACKSPACE]:
-					if whichLet != 0:
+					if whichLet != 0: #Make sure you arent at the beginning of the doc.
 						dummyCount = 0
 						tempSpot = whichLet
-						while doc[whichLet-1][0] == dSp:
+						while doc[whichLet-1][0] == dSp: #Count how much empty space is behind the cursor
 								dummyCount += 1
 								whichLet -= 1
 						whichLet = tempSpot
-						if dummyCount == 0:
+						if dummyCount == 0:	#If there is no empty space, set it to one, so just one back space happens
 							dummyCount = 1
-						if dummyCount > lineLen:
+						if dummyCount > lineLen: #If there is more empty spaces than the length of a line, then set it equal to the length of the line.
 							dummyCount = lineLen 
-						for ipp in range(dummyCount):
-							if whichLet == len(doc):
-								if whichLet%lineLen == 0:
+						for ipp in range(dummyCount): #Do a backspace for the number of times we counted.
+							if whichLet == len(doc): #If the cursor is at the end of the document
+								if whichLet%lineLen == 0: #If you are at the beginning of a line, you need to paste an empty space there before you hop up a line
 									screen.blit((L_S),[xMarg,charHeight*(len(doc)/lineLen)+(yMarg)])
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
-								if len(doc[whichLet-1][1]) > 0:
+								if len(doc[whichLet-1][1]) > 0: #If the character had a superscript, paste black where the characters were
 									basePlaceX = charWidth*((whichLet-1)%lineLen)+xMarg
 									basePlaceY = charHeight*((whichLet-1)/lineLen)+yMarg
 									for ipp in range(len(doc[whichLet-1][1])):
 										screen.blit(l_S,[(basePlaceX+lilCharXOffset)+(ipp*lilCharWidth),(basePlaceY+lilCharYOffset)])
-								if len(doc[whichLet-1][2]) > 0:
+								if len(doc[whichLet-1][2]) > 0: #If the character had a subscript, paste black where the characters were
 									basePlaceX = charWidth*((whichLet-1)%lineLen)+xMarg
 									basePlaceY = charHeight*((whichLet-1)/lineLen)+yMarg
 									for yit in range(len(doc[whichLet-1][2])):
 										screen.blit(l_S,[(basePlaceX+lilCharXOffset)+(yit*lilCharWidth),(basePlaceY+lilCharYOffset+lilCharSubBuf)])
-								doc.pop(whichLet-1)
-								whichLet -= 1
-								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg])
-							else:
-								doc.pop(whichLet-1)
+								doc.pop(whichLet-1) #Remove that character from the doc[]
+								whichLet -= 1 #Take a step back
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg]) # Paste an empty spot where you are now
+							else: #If you arent at the end of the document, you need to shift every letter after the cursor back one.
+								doc.pop(whichLet-1) #get the letter we are backspacing out of the doc[]
 								whichLet -= 1
 								tempSpot = whichLet
-								while whichLet < len(doc):
+								while whichLet < len(doc): #for every character after the cursor, paste it.
 									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
-									if len(doc[whichLet][1]) > 0:
+									if len(doc[whichLet][1]) > 0: #If its got a superscript, paste that too.
 										basePlaceX = charWidth*(whichLet%lineLen)+xMarg
 										basePlaceY = charHeight*(whichLet/lineLen)+yMarg
 										for ipp in range(len(doc[whichLet][1])):
 											screen.blit(getLetl(doc[whichLet][1][ipp]),[(basePlaceX+lilCharXOffset)+(ipp*lilCharWidth),(basePlaceY+lilCharYOffset)])
-										for vap in range(3):
+										for vap in range(3): #and paste some empty space beyond the super script to cover up any left of super script that didnt get erased
 											screen.blit(l_S,[(basePlaceX+lilCharXOffset)+((len(doc[whichLet][1])+vap)*lilCharWidth),(basePlaceY+lilCharYOffset)])
-									if len(doc[whichLet][2]) > 0:
+									if len(doc[whichLet][2]) > 0: #If its got a subscript, paste it
 										basePlaceX = charWidth*(whichLet%lineLen)+xMarg
 										basePlaceY = charHeight*(whichLet/lineLen)+yMarg
 										for yit in range(len(doc[whichLet][2])):
@@ -2287,7 +2288,7 @@ while quit == False:
 											screen.blit(l_S,[(basePlaceX+lilCharXOffset)+((len(doc[whichLet][2])+nen)*lilCharWidth),(basePlaceY+lilCharYOffset+lilCharSubBuf)])
 									whichLet += 1
 								whichLet = tempSpot
-								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg]) #Put an empty space at the end of the doc, since the last character got shifted left
 
 				if pressed[pygame.K_BACKSPACE] and pressed[pygame.K_LSHIFT]:
 					for hob in range(10):
