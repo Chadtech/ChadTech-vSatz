@@ -71,7 +71,7 @@ Thanks George.
 
 How to use ChadTech:
 
-For the most part, if you press a key on your keyboard, the letter will show up in ChadTech, like any text editor. The features of ChadTech are controlled by hotkeys, which are listed below. All hotkeys should be pressed by holding down the first key, and then pressing the second, in that order and no other order.
+For the most part, and unless otherwise stated, if you press a key on your keyboard, the letter will show up in ChadTech, like any text editor. The features of ChadTech are controlled by hotkeys, which are listed below. All hotkeys should be pressed by holding down the first key, and then pressing the second, in that order and no other order.
 
 ChadTech Commands:
 
@@ -86,8 +86,24 @@ ChadTech Commands:
 	LSHIFT then plus/equal key  Add superscript, or return to text if in subscript
 
 	LSHIFT then minus key       Add subscript, or return to text if in superscript
+	
+MATH SYMBOLS
 
-FIRST ORDER LOGIC SYMBOLS:
+	Equals then period	    Greater than or equal to
+	
+	Equals then comma	    Less than or equal to
+	
+	Equals then d		    Division sign (horizontal bar with a dot above and below)
+	
+	Equals then a		    Approximately equal to
+	
+	Equals then p		    Plus sign
+	
+	Equals then m		    Multiplication sign (dot)
+	
+	Equals then q		    QED (filled in square)
+
+FIRST ORDER LOGIC SYMBOLS
 
 	1 then e          Existential Quantifier
 
