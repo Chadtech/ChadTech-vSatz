@@ -199,7 +199,7 @@ mSb = 87
 mMu = 88
 mFs = 89
 mBs = 90
-mDk = 91 #accidentally put two equals signs, this ones a temporary spot
+mQe = 91 
 mSr = 92
 mAs = 93
 mAd = 94
@@ -392,6 +392,8 @@ def getLet(inp):
 		return L_mGr
 	if inp == mIn:
 		return L_mIn
+	if inp == mQe:
+		return L_mQe
 
 #Numbers
 	if inp == On:
@@ -520,6 +522,28 @@ def getLetl(inp):
 	if inp == Z:
 		return l_lZ
 
+	if inp == On:
+		return l_Non
+	if inp == Tw:
+		return l_Ntw
+	if inp == Th:
+		return l_Nth
+	if inp == Fo:
+		return l_Nfo
+	if inp == Fi:
+		return l_Nfi
+	if inp == Si:
+		return l_Nsi
+	if inp == Se:
+		return l_Nse
+	if inp == Ei:
+		return l_Nei
+	if inp == Ni:
+		return l_Nni
+	if inp == Ze:
+		return l_Nze
+
+
 os.chdir(os.path.abspath('chars12x16'))
 
 #Load Images
@@ -626,6 +650,7 @@ L_mSb = pygame.image.load('char8.PNG').convert()
 L_mMu = pygame.image.load('char9.PNG').convert()
 L_mFs = pygame.image.load('char10.PNG').convert()
 L_mBs = pygame.image.load('char11.PNG').convert()
+L_mQe = pygame.image.load('char12.PNG').convert()
 L_mSr = pygame.image.load('char13.PNG').convert()
 L_mAs = pygame.image.load('char14.PNG').convert()
 L_mAd = pygame.image.load('char15.PNG').convert()
@@ -661,13 +686,18 @@ L_Nse = pygame.image.load('char7.PNG').convert()
 L_Nei = pygame.image.load('char8.PNG').convert()
 L_Nni = pygame.image.load('char9.PNG').convert()
 
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Brackets'))
 
-
-
-#4x6 Chars
-
-
-
+#Brackets
+L_blp = pygame.image.load('char0.PNG').convert()
+L_brp = pygame.image.load('char1.PNG').convert()
+L_blc = pygame.image.load('char2.PNG').convert()
+L_brc = pygame.image.load('char3.PNG').convert()
+L_blb = pygame.image.load('char4.PNG').convert()
+L_brb = pygame.image.load('char5.PNG').convert()
+L_blh = pygame.image.load('char6.PNG').convert()
+L_brh = pygame.image.load('char7.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.dirname(os.getcwd()))
@@ -710,7 +740,7 @@ l_la = pygame.image.load('char0.PNG').convert()
 l_lb = pygame.image.load('char1.PNG').convert()
 l_lc = pygame.image.load('char2.PNG').convert()
 l_ld = pygame.image.load('char3.PNG').convert()
-l_ld = pygame.image.load('char4.PNG').convert()
+l_le = pygame.image.load('char4.PNG').convert()
 l_lf = pygame.image.load('char5.PNG').convert()
 l_lg = pygame.image.load('char6.PNG').convert()
 l_lh = pygame.image.load('char7.PNG').convert()
@@ -741,6 +771,21 @@ l_S = pygame.image.load('char0.PNG').convert()
 l_fS = pygame.image.load('char1.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Numerals'))
+
+#Numerals
+l_Nze = pygame.image.load('char0.PNG').convert()
+l_Non = pygame.image.load('char1.PNG').convert()
+l_Ntw = pygame.image.load('char2.PNG').convert()
+l_Nth = pygame.image.load('char3.PNG').convert()
+l_Nfo = pygame.image.load('char4.PNG').convert()
+l_Nfi = pygame.image.load('char5.PNG').convert()
+l_Nsi = pygame.image.load('char6.PNG').convert()
+l_Nse = pygame.image.load('char7.PNG').convert()
+l_Nei = pygame.image.load('char8.PNG').convert()
+l_Nni = pygame.image.load('char9.PNG').convert()
+
+os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.dirname(os.getcwd()))
 
 screen.fill((0,0,0))
@@ -769,22 +814,20 @@ while quit == False:
 
 			if not supaChek and not subDummy:
 
-				#if len(doc) != 0:
-				#	if whichLet%lineLen == 0:
-				#		tempSpot = whichLet
-				#		dumCou = 0
-				#		print 'doc:', doc, 'doc[whichLet-1][0]:', doc[whichLet-1][0], 'whichLet:', whichLet
-				#		if doc[whichLet-1][0] != dSp:
-				#			while doc[whichLet-1][0] != rSp:
-				#				print dumCou, 'whichLet:', whichLet
-				#				dumCou += 1
-				#				whichLet -= 1
-				#			for dar in range(dumCou):
-				#				doc.insert(whichLet,[dSp,[],[]])
-				#				screen.blit(L_S,[charWidth*((whichLet+dar)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
-				#			whichLet = tempSpot + dumCou
-				#			for pso in range(dumCou):
-				#				screen.blit(getLet(doc[whichLet-pso-1][0]),[charWidth*((whichLet-1-pso)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+				if whichLet != 0:
+					if whichLet%lineLen == 0:
+						tempSpot = whichLet
+						dumCou = 0
+						if doc[whichLet-1][0] != dSp:
+							while doc[whichLet-1][0] != rSp:
+								dumCou += 1
+								whichLet -= 1
+							for dar in range(dumCou):
+								doc.insert(whichLet,[dSp,[],[]])
+								screen.blit(L_S,[charWidth*((whichLet+dar)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+							whichLet = tempSpot + dumCou
+							for pso in range(dumCou):
+								screen.blit(getLet(doc[whichLet-pso-1][0]),[charWidth*((whichLet-1-pso)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
 
 	#-----------LETTERS, UPPER CASE AND LOWER CASE--------------
 
@@ -1894,6 +1937,36 @@ while quit == False:
 						whichLet = tempSpot
 					whichLet += 1
 
+				#QED
+				if pressed[pygame.K_EQUALS] and pressed[pygame.K_q]:
+					for i in range(3):
+						if whichLet != 0: 
+							if whichLet == len(doc):
+								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg])
+							else:
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								tempSpot = whichLet
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet += 1
+								whichLet = tempSpot
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
+					screen.blit(L_mQe,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					if whichLet == len(doc):
+						doc.append([mQe,[],[]])
+					else:
+						doc.insert(whichLet,[mQe,[],[]])
+						tempSpot = whichLet
+						while whichLet < len(doc):
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							whichLet += 1
+						whichLet = tempSpot
+					whichLet += 1
+
 	#-----------------------Space -----------------------------
 
 				if pressed[pygame.K_SPACE] and not rSChek:
@@ -1945,7 +2018,7 @@ while quit == False:
 
 				#Numeral 3
 				if pressed[pygame.K_3] and not pressed[pygame.K_LSHIFT]:
-					screen.blit(L_Nth,[charWidth*(whichLet%lineLen)+xMarg,charWidth*(whichLet/lineLen)+yMarg])
+					screen.blit(L_Nth,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
 					if whichLet == len(doc):
 						doc.append([Th,[],[]])
 					else:
@@ -1956,6 +2029,7 @@ while quit == False:
 							whichLet += 1
 						whichLet = tempSpot
 					whichLet += 1
+
 
 				#Numeral 4
 				if pressed[pygame.K_4] and not pressed[pygame.K_LSHIFT]:
@@ -2322,7 +2396,7 @@ while quit == False:
 					subDummy = 1
 					whichLet -= 1
 					lilWhichLet = 0
-					for tug in range(len(doc[whichLet][0])):
+					for tug in range(len(doc[whichLet][2])):
 						screen.blit(l_S,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
 						lilWhichLet += 1
 					doc[whichLet][1] = []
@@ -2819,6 +2893,440 @@ while quit == False:
 						doc[whichLet][1].append(G)
 					if subDummy and not supaChek:
 						doc[whichLet][2].append(G)
+					lilWhichLet += 1
+
+				#Lower h
+				if pressed[pygame.K_h] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lh,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(h)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(h)
+					lilWhichLet += 1
+				
+				#Upper H
+				if pressed[pygame.K_h] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lH,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(H)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(H)
+					lilWhichLet += 1
+
+				#Lower i
+				if pressed[pygame.K_i] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_li,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(i)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(i)
+					lilWhichLet += 1
+				
+				#Upper I
+				if pressed[pygame.K_i] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lI,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(I)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(I)
+					lilWhichLet += 1
+
+				#Lower j
+				if pressed[pygame.K_j] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lj,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(j)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(j)
+					lilWhichLet += 1
+				
+				#Upper J
+				if pressed[pygame.K_j] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lJ,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(J)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(J)
+					lilWhichLet += 1
+
+				#Lower k
+				if pressed[pygame.K_k] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lk,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(k)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(k)
+					lilWhichLet += 1
+				
+				#Upper K
+				if pressed[pygame.K_k] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lK,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(K)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(K)
+					lilWhichLet += 1
+
+				#Lower l
+				if pressed[pygame.K_l] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_ll,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(l)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(l)
+					lilWhichLet += 1
+				
+				#Upper L
+				if pressed[pygame.K_l] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lL,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(L)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(L)
+					lilWhichLet += 1
+
+				#Lower m
+				if pressed[pygame.K_m] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lm,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(m)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(m)
+					lilWhichLet += 1
+				
+				#Upper M
+				if pressed[pygame.K_m] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lM,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(M)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(M)
+					lilWhichLet += 1
+
+				#Lower n
+				if pressed[pygame.K_n] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_ln,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(n)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(n)
+					lilWhichLet += 1
+				
+				#Upper N
+				if pressed[pygame.K_n] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lN,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(N)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(N)
+					lilWhichLet += 1
+
+				#Lower o
+				if pressed[pygame.K_o] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lo,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(o)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(o)
+					lilWhichLet += 1
+				
+				#Upper O
+				if pressed[pygame.K_o] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lO,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(O)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(O)
+					lilWhichLet += 1
+
+				#Lower p
+				if pressed[pygame.K_p] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lp,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(p)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(p)
+					lilWhichLet += 1
+				
+				#Upper P
+				if pressed[pygame.K_p] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lP,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(P)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(P)
+					lilWhichLet += 1
+
+				#Lower q
+				if pressed[pygame.K_q] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lq,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(q)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(q)
+					lilWhichLet += 1
+				
+				#Upper Q
+				if pressed[pygame.K_q] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lQ,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(Q)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(Q)
+					lilWhichLet += 1
+
+				#Lower r
+				if pressed[pygame.K_r] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lr,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(r)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(r)
+					lilWhichLet += 1
+				
+				#Upper R
+				if pressed[pygame.K_r] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lR,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(R)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(R)
+					lilWhichLet += 1
+
+				#Lower s
+				if pressed[pygame.K_s] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_ls,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(s)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(s)
+					lilWhichLet += 1
+				
+				#Upper S
+				if pressed[pygame.K_s] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lS,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(S)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(S)
+					lilWhichLet += 1
+
+				#Lower t
+				if pressed[pygame.K_t] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lt,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(t)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(t)
+					lilWhichLet += 1
+				
+				#Upper T
+				if pressed[pygame.K_t] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lT,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(T)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(T)
+					lilWhichLet += 1
+
+				#Lower u
+				if pressed[pygame.K_u] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lu,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(u)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(u)
+					lilWhichLet += 1
+				
+				#Upper U
+				if pressed[pygame.K_u] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lU,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(U)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(U)
+					lilWhichLet += 1
+
+				#Lower v
+				if pressed[pygame.K_v] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lv,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(v)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(v)
+					lilWhichLet += 1
+				
+				#Upper V
+				if pressed[pygame.K_v] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lV,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(V)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(V)
+					lilWhichLet += 1
+
+				#Lower w
+				if pressed[pygame.K_w] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lw,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(w)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(w)
+					lilWhichLet += 1
+				
+				#Upper W
+				if pressed[pygame.K_w] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lW,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(W)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(W)
+					lilWhichLet += 1
+
+				#Lower x
+				if pressed[pygame.K_x] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lx,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(x)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(x)
+					lilWhichLet += 1
+				
+				#Upper X
+				if pressed[pygame.K_x] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lX,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(X)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(X)
+					lilWhichLet += 1
+
+				#Lower y
+				if pressed[pygame.K_y] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_ly,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(y)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(y)
+					lilWhichLet += 1
+				
+				#Upper Y
+				if pressed[pygame.K_y] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lY,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(Y)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(Y)
+					lilWhichLet += 1
+
+				#Lower z
+				if pressed[pygame.K_z] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lz,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(z)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(z)
+					lilWhichLet += 1
+				
+				#Upper Z
+				if pressed[pygame.K_z] and pressed[pygame.K_LSHIFT]:
+					screen.blit(l_lZ,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(Z)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(Z)
+					lilWhichLet += 1
+
+#---------------------------------Numerals
+
+				#One
+				if pressed[pygame.K_1] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_Non,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(On)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(On)
+					lilWhichLet += 1
+				
+				#Two
+				if pressed[pygame.K_2] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_Ntw,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(Tw)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(Tw)
+					lilWhichLet += 1
+
+				#Three
+				if pressed[pygame.K_3] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_Nth,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(Th)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(Th)
+					lilWhichLet += 1
+				
+				#Four
+				if pressed[pygame.K_4] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_Nfo,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(Fo)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(Fo)
+					lilWhichLet += 1
+
+				#Five
+				if pressed[pygame.K_5] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_Nfi,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(Fi)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(Fi)
+					lilWhichLet += 1
+				
+				#Six
+				if pressed[pygame.K_6] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_Nsi,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(Si)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(Si)
+					lilWhichLet += 1
+
+				#Seven
+				if pressed[pygame.K_7] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_Nse,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(Se)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(Se)
+					lilWhichLet += 1
+				
+				#Eight
+				if pressed[pygame.K_8] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_Nei,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(Ei)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(Ei)
+					lilWhichLet += 1
+
+				#Nine
+				if pressed[pygame.K_9] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_Nni,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(Ni)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(Ni)
+					lilWhichLet += 1
+
+				#Zero
+				if pressed[pygame.K_0] and not pressed[pygame.K_LSHIFT]:
+					screen.blit(l_Nze,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
+					if supaChek and not subDummy:
+						doc[whichLet][1].append(Ze)
+					if subDummy and not supaChek:
+						doc[whichLet][2].append(Ze)
 					lilWhichLet += 1
 
 #-----------------------------------------------------------Space-----------------------------------------------------
