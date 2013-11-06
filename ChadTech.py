@@ -222,6 +222,18 @@ brh = 107
 #Math Cont
 mDv = 108
 
+#Set Theory
+
+sEo = 109
+sDc = 110
+sNs = 111
+sIn = 112
+sUn = 113
+sBs = 114
+sSs = 115
+sNp = 116
+sNb = 117
+
 def getLet(inp):
 	if inp == a:
 		return L_la
@@ -447,6 +459,27 @@ def getLet(inp):
 		return L_brb
 	if inp == blh:
 		return L_blh
+
+# Set Theory
+
+	if inp == sEo:
+		return L_sEo
+	if inp == sDc:
+		return L_sDc
+	if inp == sNs:
+		return L_sNs
+	if inp == sIn:
+		return L_sIn
+	if inp == sUn:
+		return L_sUn
+	if inp == sBs:
+		return L_sBs
+	if inp == sSs:
+		return L_sSs
+	if inp == sNp:
+		return L_sNp
+	if inp == sNb:
+		return L_sNb
 
 def getLetl(inp):
 	if inp == a:
@@ -730,6 +763,21 @@ L_blb = pygame.image.load('char4.PNG').convert()
 L_brb = pygame.image.load('char5.PNG').convert()
 L_blh = pygame.image.load('char6.PNG').convert()
 L_brh = pygame.image.load('char7.PNG').convert()
+
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('SetTheory'))
+
+#Set Theory
+L_sEo = pygame.image.load('char0.PNG').convert()
+L_sDc = pygame.image.load('char1.PNG').convert()
+L_sNs = pygame.image.load('char2.PNG').convert()
+L_sIn = pygame.image.load('char3.PNG').convert()
+L_sUn = pygame.image.load('char4.PNG').convert()
+L_sBs = pygame.image.load('char5.PNG').convert()
+L_sSs = pygame.image.load('char6.PNG').convert()
+L_sNp = pygame.image.load('char7.PNG').convert()
+L_sNb = pygame.image.load('char8.PNG').convert()
+
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.dirname(os.getcwd()))
@@ -1829,7 +1877,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -1859,7 +1907,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -1919,7 +1967,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -1963,7 +2011,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -1993,7 +2041,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2023,7 +2071,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2053,7 +2101,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2097,7 +2145,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2127,7 +2175,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2185,7 +2233,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2215,7 +2263,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2245,7 +2293,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2289,7 +2337,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2319,7 +2367,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2349,7 +2397,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2379,7 +2427,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2409,7 +2457,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2606,7 +2654,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2636,7 +2684,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2671,7 +2719,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2701,7 +2749,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2712,7 +2760,7 @@ while quit == False:
 						doc.insert(whichLet,[Fa,[],[]])
 						tempSpot = whichLet
 						while whichLet < len(doc):
-							screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 							whichLet += 1
 						whichLet = tempSpot
 					whichLet += 1
@@ -2731,7 +2779,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2742,7 +2790,7 @@ while quit == False:
 						doc.insert(whichLet,[Ne,[],[]])
 						tempSpot = whichLet
 						while whichLet < len(doc):
-							screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 							whichLet += 1
 						whichLet = tempSpot
 					whichLet += 1
@@ -2761,7 +2809,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2772,7 +2820,7 @@ while quit == False:
 						doc.insert(whichLet,[Im,[],[]])
 						tempSpot = whichLet
 						while whichLet < len(doc):
-							screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 							whichLet += 1
 						whichLet = tempSpot
 					whichLet += 1
@@ -2791,7 +2839,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2802,7 +2850,7 @@ while quit == False:
 						doc.insert(whichLet,[Ff,[],[]])
 						tempSpot = whichLet
 						while whichLet < len(doc):
-							screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 							whichLet += 1
 						whichLet = tempSpot
 					whichLet += 1
@@ -2821,7 +2869,7 @@ while quit == False:
 								whichLet -= 1
 								tempSpot = whichLet
 								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet += 1
 								whichLet = tempSpot
 								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
@@ -2832,7 +2880,281 @@ while quit == False:
 						doc.insert(whichLet,[Nd,[],[]])
 						tempSpot = whichLet
 						while whichLet < len(doc):
-							screen.blit(getLet(doc[whichLet]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							whichLet += 1
+						whichLet = tempSpot
+					whichLet += 1
+
+	#----------------------------------------Set Theory---------------------------------------
+
+					#Element of
+				if pressed[pygame.K_0] and pressed[pygame.K_e]:
+					for i in range(3):
+						if whichLet != 0: 
+							if whichLet == len(doc):
+								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg])
+							else:
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								tempSpot = whichLet
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet += 1
+								whichLet = tempSpot
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
+					screen.blit(L_sEo,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					if whichLet == len(doc):
+						doc.append([sEo,[],[]])
+					else:
+						doc.insert(whichLet,[sEo,[],[]])
+						tempSpot = whichLet
+						while whichLet < len(doc):
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							whichLet += 1
+						whichLet = tempSpot
+					whichLet += 1
+
+
+					#Not element of
+				if pressed[pygame.K_0] and pressed[pygame.K_n]:
+					for i in range(3):
+						if whichLet != 0: 
+							if whichLet == len(doc):
+								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg])
+							else:
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								tempSpot = whichLet
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet += 1
+								whichLet = tempSpot
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
+					screen.blit(L_sDc,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					if whichLet == len(doc):
+						doc.append([sDc,[],[]])
+					else:
+						doc.insert(whichLet,[sDc,[],[]])
+						tempSpot = whichLet
+						while whichLet < len(doc):
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							whichLet += 1
+						whichLet = tempSpot
+					whichLet += 1
+
+					#Null set
+				if pressed[pygame.K_0] and pressed[pygame.K_z]:
+					for i in range(3):
+						if whichLet != 0: 
+							if whichLet == len(doc):
+								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg])
+							else:
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								tempSpot = whichLet
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet += 1
+								whichLet = tempSpot
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
+					screen.blit(L_sNs,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					if whichLet == len(doc):
+						doc.append([sNs,[],[]])
+					else:
+						doc.insert(whichLet,[sNs,[],[]])
+						tempSpot = whichLet
+						while whichLet < len(doc):
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							whichLet += 1
+						whichLet = tempSpot
+					whichLet += 1
+
+
+					#Union
+				if pressed[pygame.K_0] and pressed[pygame.K_u]:
+					for i in range(3):
+						if whichLet != 0: 
+							if whichLet == len(doc):
+								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg])
+							else:
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								tempSpot = whichLet
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet += 1
+								whichLet = tempSpot
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
+					screen.blit(L_sUn,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					if whichLet == len(doc):
+						doc.append([sUn,[],[]])
+					else:
+						doc.insert(whichLet,[sUn,[],[]])
+						tempSpot = whichLet
+						while whichLet < len(doc):
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							whichLet += 1
+						whichLet = tempSpot
+					whichLet += 1
+
+					#Intersection
+				if pressed[pygame.K_0] and pressed[pygame.K_i]:
+					for i in range(3):
+						if whichLet != 0: 
+							if whichLet == len(doc):
+								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg])
+							else:
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								tempSpot = whichLet
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet += 1
+								whichLet = tempSpot
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
+					screen.blit(L_sIn,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					if whichLet == len(doc):
+						doc.append([sIn,[],[]])
+					else:
+						doc.insert(whichLet,[sIn,[],[]])
+						tempSpot = whichLet
+						while whichLet < len(doc):
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							whichLet += 1
+						whichLet = tempSpot
+					whichLet += 1
+
+					#Sub set
+				if pressed[pygame.K_0] and pressed[pygame.K_b]:
+					for i in range(3):
+						if whichLet != 0: 
+							if whichLet == len(doc):
+								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg])
+							else:
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								tempSpot = whichLet
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet += 1
+								whichLet = tempSpot
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
+					screen.blit(L_sBs,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					if whichLet == len(doc):
+						doc.append([sBs,[],[]])
+					else:
+						doc.insert(whichLet,[sBs,[],[]])
+						tempSpot = whichLet
+						while whichLet < len(doc):
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							whichLet += 1
+						whichLet = tempSpot
+					whichLet += 1
+
+					#Super Set
+				if pressed[pygame.K_0] and pressed[pygame.K_p]:
+					for i in range(3):
+						if whichLet != 0: 
+							if whichLet == len(doc):
+								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg])
+							else:
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								tempSpot = whichLet
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet += 1
+								whichLet = tempSpot
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
+					screen.blit(L_sSs,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					if whichLet == len(doc):
+						doc.append([sSs,[],[]])
+					else:
+						doc.insert(whichLet,[sSs,[],[]])
+						tempSpot = whichLet
+						while whichLet < len(doc):
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							whichLet += 1
+						whichLet = tempSpot
+					whichLet += 1
+
+					#Not super set
+				if pressed[pygame.K_0] and pressed[pygame.K_o]:
+					for i in range(3):
+						if whichLet != 0: 
+							if whichLet == len(doc):
+								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg])
+							else:
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								tempSpot = whichLet
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet += 1
+								whichLet = tempSpot
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
+					screen.blit(L_sNp,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					if whichLet == len(doc):
+						doc.append([sNp,[],[]])
+					else:
+						doc.insert(whichLet,[sNp,[],[]])
+						tempSpot = whichLet
+						while whichLet < len(doc):
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							whichLet += 1
+						whichLet = tempSpot
+					whichLet += 1
+
+					#Not Sub set
+				if pressed[pygame.K_0] and pressed[pygame.K_v]:
+					for i in range(3):
+						if whichLet != 0: 
+							if whichLet == len(doc):
+								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg])
+							else:
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								tempSpot = whichLet
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet += 1
+								whichLet = tempSpot
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
+					screen.blit(L_sNb,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					if whichLet == len(doc):
+						doc.append([sNb,[],[]])
+					else:
+						doc.insert(whichLet,[sNb,[],[]])
+						tempSpot = whichLet
+						while whichLet < len(doc):
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 							whichLet += 1
 						whichLet = tempSpot
 					whichLet += 1
