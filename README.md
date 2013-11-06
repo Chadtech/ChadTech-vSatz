@@ -102,6 +102,22 @@ MATH SYMBOLS
 	Equals then m		    Multiplication sign (dot)
 	
 	Equals then q		    QED (filled in square)
+	
+	Equals then s		    Square Root
+	
+	Equals then l		    Plus / Minus
+	
+	Equals then f		    Integral
+	
+	Equals then n		    Doesnt equal
+	
+	Equals then g		    Angle
+	
+	Equals then t		    Triangle / Delta
+	
+	Equals then r		    Gradient
+	
+	Equals then i		    Infinity
 
 FIRST ORDER LOGIC SYMBOLS
 
