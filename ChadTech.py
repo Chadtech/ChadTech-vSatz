@@ -234,6 +234,15 @@ sSs = 115
 sNp = 116
 sNb = 117
 
+#Proof Theory
+
+pSt = 118
+pNs = 119
+pDt = 120
+pNd = 121
+pLc = 122
+
+
 def getLet(inp):
 	if inp == a:
 		return L_la
@@ -482,6 +491,19 @@ def getLet(inp):
 		return L_sNp
 	if inp == sNb:
 		return L_sNb
+
+#proof theory
+
+	if inp == pSt:
+		return L_pSt
+	if inp == pNs:
+		return L_pNs
+	if inp == pDt:
+		return L_pDt
+	if inp == pNd:
+		return L_pNd
+	if inp == pLc:
+		return L_pLc
 
 def getLetl(inp):
 	if inp == a:
@@ -779,6 +801,16 @@ L_sBs = pygame.image.load('char5.PNG').convert()
 L_sSs = pygame.image.load('char6.PNG').convert()
 L_sNp = pygame.image.load('char7.PNG').convert()
 L_sNb = pygame.image.load('char8.PNG').convert()
+
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('ProofTheory'))
+
+#Set Theory
+L_pSt = pygame.image.load('char0.PNG').convert()
+L_pNs = pygame.image.load('char1.PNG').convert()
+L_pDt = pygame.image.load('char2.PNG').convert()
+L_pNd = pygame.image.load('char3.PNG').convert()
+L_pLc = pygame.image.load('char4.PNG').convert()
 
 
 os.chdir(os.path.dirname(os.getcwd()))
@@ -3385,6 +3417,168 @@ while quit == False:
 						doc.append([sNb,[],[]])
 					else:
 						doc.insert(whichLet,[sNb,[],[]])
+						if doc[whichLet+1][0]==dSp:
+							doc.pop(whichLet+1)
+						tempSpot = whichLet
+						while whichLet < len(doc):
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							whichLet += 1
+						whichLet = tempSpot
+					whichLet += 1
+
+#--------------------Proof Theory----------------------------------
+
+					#Single Turnstile
+				if pressed[pygame.K_8] and pressed[pygame.K_s]:
+					for i in range(3):
+						if whichLet != 0: 
+							if whichLet == len(doc):
+								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg])
+							else:
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								tempSpot = whichLet
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet += 1
+								whichLet = tempSpot
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
+					screen.blit(L_pSt,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					if whichLet == len(doc):
+						doc.append([pSt,[],[]])
+					else:
+						doc.insert(whichLet,[pSt,[],[]])
+						if doc[whichLet+1][0]==dSp:
+							doc.pop(whichLet+1)
+						tempSpot = whichLet
+						while whichLet < len(doc):
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							whichLet += 1
+						whichLet = tempSpot
+					whichLet += 1
+
+					#Not Single Turnstile
+				if pressed[pygame.K_8] and pressed[pygame.K_x]:
+					for i in range(3):
+						if whichLet != 0: 
+							if whichLet == len(doc):
+								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg])
+							else:
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								tempSpot = whichLet
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet += 1
+								whichLet = tempSpot
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
+					screen.blit(L_pNs,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					if whichLet == len(doc):
+						doc.append([pNs,[],[]])
+					else:
+						doc.insert(whichLet,[pNs,[],[]])
+						if doc[whichLet+1][0]==dSp:
+							doc.pop(whichLet+1)
+						tempSpot = whichLet
+						while whichLet < len(doc):
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							whichLet += 1
+						whichLet = tempSpot
+					whichLet += 1
+
+					#Double Turnstile
+				if pressed[pygame.K_8] and pressed[pygame.K_d]:
+					for i in range(3):
+						if whichLet != 0: 
+							if whichLet == len(doc):
+								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg])
+							else:
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								tempSpot = whichLet
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet += 1
+								whichLet = tempSpot
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
+					screen.blit(L_pDt,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					if whichLet == len(doc):
+						doc.append([pDt,[],[]])
+					else:
+						doc.insert(whichLet,[pDt,[],[]])
+						if doc[whichLet+1][0]==dSp:
+							doc.pop(whichLet+1)
+						tempSpot = whichLet
+						while whichLet < len(doc):
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							whichLet += 1
+						whichLet = tempSpot
+					whichLet += 1
+
+					#Not Double Turnstile
+				if pressed[pygame.K_8] and pressed[pygame.K_c]:
+					for i in range(3):
+						if whichLet != 0: 
+							if whichLet == len(doc):
+								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg])
+							else:
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								tempSpot = whichLet
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet += 1
+								whichLet = tempSpot
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
+					screen.blit(L_pNd,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					if whichLet == len(doc):
+						doc.append([pNd,[],[]])
+					else:
+						doc.insert(whichLet,[pNd,[],[]])
+						if doc[whichLet+1][0]==dSp:
+							doc.pop(whichLet+1)
+						tempSpot = whichLet
+						while whichLet < len(doc):
+							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+							whichLet += 1
+						whichLet = tempSpot
+					whichLet += 1
+
+					#Logical Constant
+				if pressed[pygame.K_8] and pressed[pygame.K_l]:
+					for i in range(3):
+						if whichLet != 0: 
+							if whichLet == len(doc):
+								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+(xMarg+charWidth),charHeight*(len(doc)/lineLen)+yMarg])
+							else:
+								doc.pop(whichLet-1)
+								whichLet -= 1
+								tempSpot = whichLet
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet += 1
+								whichLet = tempSpot
+								screen.blit((L_S),[charWidth*(len(doc)%lineLen)+xMarg,charHeight*(len(doc)/lineLen)+yMarg])
+					screen.blit(L_pLc,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					if whichLet == len(doc):
+						doc.append([pLc,[],[]])
+					else:
+						doc.insert(whichLet,[pLc,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
 						tempSpot = whichLet
