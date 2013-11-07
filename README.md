@@ -138,6 +138,18 @@ SET THEORY SYMBOLS
 	0 then v		    'not sub set of'
 	
 	0 then o		    'not super set of'
+	
+PROOF THOERY
+
+	8 then s		    Single Turnstile
+	
+	8 then d		    Double Turnstile
+	
+	8 then x		    Not single turnstile
+	
+	8 then c		    Not double turnstile
+	
+	8 then l		    Logical constant
 
 FIRST ORDER LOGIC SYMBOLS
 
