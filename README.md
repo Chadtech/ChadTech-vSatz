@@ -118,6 +118,26 @@ MATH SYMBOLS
 	Equals then r		    Gradient
 	
 	Equals then i		    Infinity
+	
+SET THEORY SYMBOLS
+
+	0 then e		    'element of'
+	
+	0 then n		    'not element of'
+	
+	0 then z		    Null set
+	
+	0 then u		    Union
+	
+	0 then i		    Intersection
+	
+	0 then b		    'Sub set of'
+	
+	0 then p		    'Super set of'
+	
+	0 then v		    'not sub set of'
+	
+	0 then o		    'not super set of'
 
 FIRST ORDER LOGIC SYMBOLS
 
