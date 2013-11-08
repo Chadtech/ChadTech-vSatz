@@ -295,7 +295,7 @@ def getLet(inp):
 	if inp == y:
 		return L_ly
 	if inp == z:
-		return L_lZ
+		return L_lz
 
 	if inp == A:
 		return L_lA
@@ -402,6 +402,8 @@ def getLet(inp):
 		return L_mDi
 	if inp == mAp:
 		return L_mAp
+	if inp == mPl:
+		return L_mPl
 	if inp == mAd:
 		return L_mAd
 	if inp == mSb:
