@@ -935,9 +935,11 @@ while quit == False:
 						tempSpot = whichLet
 						dumCou = 0
 						if doc[whichLet-1][0] != dSp:
-							while doc[whichLet-1][0] != rSp:
+							while doc[whichLet-1][0] != rSp and dumCou < lineLen:
 								dumCou += 1
 								whichLet -= 1
+							if dumCou == lineLen:
+								dumCou = 0
 							for dar in range(dumCou):
 								doc.insert(whichLet,[dSp,[],[]])
 								screen.blit(L_S,[charWidth*((whichLet+dar)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
@@ -954,8 +956,24 @@ while quit == False:
 						doc.append([a,[],[]])
 					else:
 						doc.insert(whichLet,[a,[],[]])
+						tempSpot = whichLet
+#						while whichLet < len(doc):
+#							dumCou = 0
+#							tTempSpot = whichLet
+#							while doc[whichLet][0]==dSp and whichLet%lineLen != 0: #Check for unnecessary spaces in the middle of lines
+#								print 'DUMCOU PRE DELETE WHICH LET:', whichLet
+#								dumCou += 1 #Count how long it is
+#								whichLet += 1
+#							whichLet = tTempSpot+1
+#							if whichLet%lineLen < (whichLet+dumCou)%lineLen: #If the space exists on only one line get rid of it
+#								print 'PRE DELETE DUMCOU', dumCou
+#								for vapp in range(dumCou):
+#									print 'DELETED: whichLet', whichLet, 'doc[whichLet][0]', doc[whichLet][0]
+#									doc.pop(whichLet)
+#						whichLet = tempSpot
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2842,7 +2860,7 @@ while quit == False:
 
 				#Numeral 9
 				if pressed[pygame.K_9] and not pressed[pygame.K_LSHIFT]:
-					screen.blit(L_Nni,[charHeight*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					screen.blit(L_Nni,[charWidth*(whichLet%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
 					if whichLet == len(doc):
 						doc.append([Ni,[],[]])
 					else:
@@ -3690,7 +3708,6 @@ while quit == False:
 					doc = []
 					openName = tkFileDialog.askopenfilename()
 					openName = str(openName)
-					print openName
 					openIm =  Image.open(openName)
 					openIm.show()
 					Xboun, Yboun = 0,0
@@ -3701,7 +3718,6 @@ while quit == False:
 					docLenDummy += 65536*stei
 					docLenDummy += 256*ohre
 					docLenDummy += heed
-					print docLenDummy
 					bink, yat, duss = 0,0,0
 					nyih = [bink,yat,duss]
 					vfre, klut, prun = 0,0,0
@@ -3729,7 +3745,6 @@ while quit == False:
 							for vapp in range(yat):
 								if vapp%3 == 0:
 									vfre, klut, prun = openIm.getpixel((((yit+(xBoun))%xMarg)+xMarg,(yit+xBoun)/xMarg))
-									print vfre, klut, prun, ((yit+(xBoun))%xMarg)+xMarg, (yit+vapp)/xMarg, xBoun
 									doc[bink][1].append(vfre)
 									if vapp + 1 < yat:
 										doc[bink][1].append(klut)
@@ -3749,15 +3764,12 @@ while quit == False:
 					screen.fill((0,0,0))
 					whichLet = 0
 					lilWhichLet = 0
-					print 'doc:', doc, 
 					while whichLet < len(doc):
-						print 'doc[whichLet]:', doc[whichLet], 'doc[whichLet][0]:', doc[whichLet][0], 'getLet:', getLet(doc[whichLet][0]), '|||'
 						screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 						if len(doc[whichLet][1]) > 0:
 							basePlaceX = charWidth*(whichLet%lineLen)+xMarg
 							basePlaceY = charHeight*(whichLet/lineLen)+yMarg
 							for toh in range(len(doc[whichLet][1])):
-								print 'whichLet 1 toh,', doc[whichLet][1][toh], 'toh,', toh, 'len doc whichLet 1 toh,', len(doc[whichLet][1]), 'The Doc:', doc[whichLet][1]
 								screen.blit(getLetl(doc[whichLet][1][toh]),[(basePlaceX+lilCharXOffset)+(toh*lilCharWidth),(basePlaceY+lilCharYOffset)])
 						if len(doc[whichLet][2]) > 0:
 							basePlaceX = charWidth*(whichLet%lineLen)+xMarg
@@ -4608,11 +4620,11 @@ while quit == False:
 				zChek = False
 			if event.key == pygame.K_SPACE:
 				rSChek = False
-
-		docStr = ''
-		for yut in range(len(doc)):
-			docStr += str(doc[yut][0]) + ','
-		print 'whichLet:', whichLet, 'len(doc):', len(doc), docStr
+		try:
+			doc[whichLet-1][0]
+			print 'whichLet:', whichLet, 'len(doc):', len(doc), 'doc[whichLet-1][0]:', doc[whichLet-1][0]
+		except:
+			print 'whichLet:', whichLet, 'len(doc):', len(doc), 'doc[whichLet-1][0]:', 'DNE'
 
 	pygame.display.flip()
 	clock.tick(60)
