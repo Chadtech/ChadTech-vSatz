@@ -927,32 +927,33 @@ while quit == False:
 			group.draw(screen)
 
 		if event.type == pygame.KEYDOWN:
-
 			if not supaChek and not subDummy:
-
-				if whichLet != 0: # If you come to the edge of a line, do a word wrap on your word
-					if whichLet == len(doc):
-						if whichLet%lineLen == 0:
-							tempSpot = whichLet
+#Word wrapping stuff------v
+				print 'Part A', whichLet, len(doc)
+				if whichLet != 0: # Make sure its not at the first character
+					if whichLet == len(doc): #If you are at the end of the document
+						if whichLet%lineLen == 0: #Check if you are at the end of a line
+							tempSpot = whichLet # Save where we are at, the cursor is going to wander
 							dumCou = 0
-							if doc[whichLet-1][0] != dSp:
-								while doc[whichLet-1][0] != rSp:
+							if doc[whichLet-1][0] != dSp: #Check if the character to the left is a dummy space
+								while doc[whichLet-1][0] != rSp: #Count how many non-space characters are to the left
 									dumCou += 1
 									whichLet -= 1
 								if dumCou > lineLen:
 									dumCou = 0
-								for dar in range(dumCou):
+								for dar in range(dumCou): #For the number of characters before a space, put in a dummy space so the word wraps around to the next line
 									doc.insert(whichLet,[dSp,[],[]])
 									screen.blit(L_S,[charWidth*((whichLet+dar)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
 								whichLet = tempSpot + dumCou
-								for pso in range(dumCou):
+								print 'Part A i', whichLet, len(doc)
+								for pso in range(dumCou): #Paste all the characters on the screen so it looks right
 									screen.blit(getLet(doc[whichLet-pso-1][0]),[charWidth*((whichLet-1-pso)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
-					else:
+					else: #If you arent at the end of the document, check every line edge after your char to see if a word needs to get wrapped.
 						tempSpot = whichLet
 						whichLet += lineLen - (whichLet%lineLen)
 						print whichLet%lineLen, 'PART A'
 						while whichLet < len(doc):
-							print 'Part B', 'whichLet:', whichLet, 'len(doc)', len(doc)
+#							print 'Part B', 'whichLet:', whichLet, 'len(doc)', len(doc)
 							tempTSpot = whichLet
 							dumCou = 0
 							if doc[whichLet-1][0] != dSp:
@@ -970,6 +971,35 @@ while quit == False:
 							whichLet = tempTSpot
 							whichLet += lineLen
 						whichLet = tempSpot
+					print 'Part B', whichLet, len(doc)
+
+#					for linWhich in range(len(doc)/lineLen): #go through every line
+#						dumBegChek = False
+#						endChek = False
+#						dumCou = 0
+#						yitSav = 0
+#						whichLinLet = 0
+#						while whichLinLet <= 80 and endChek == False: #Go through all the characters in that line
+#							if (whichLinLet+(lineLen*linWhich)) == len(doc):
+#								endChek = True
+##							print 'len(doc)',len(doc),'whichLinLet+(lineLen*linWhich)',whichLinLet+(lineLen*linWhich), 'endChek',endChek
+#							if endChek == False:
+#								if doc[whichLinLet+(lineLen*linWhich)][0]==dSp: #check if its a dummy space and count it
+#									if dumBegChek == False:
+#										yitSav = whichLinLet
+#									dumBegChek = True
+#									dumCou += 1
+#								if dumBegChek==True and doc[whichLinLet+(lineLen*linWhich)][0]!=dSp: #If you had counted the dummy spaces, and are now are normal character
+#									for krun in range(dumCou):
+#										doc.pop(yitSav+(lineLen*linWhich)) # Erase all the dummy characters
+#										whichLet -= 1
+#									whichLinLet -= dumCou #and start over where it left off
+#									dumBegChek = False
+#									dumCou = 0
+#							whichLinLet +=1
+					print 'Part C', whichLet, len(doc)
+
+
 
 
 #				if whichLet > 0:
