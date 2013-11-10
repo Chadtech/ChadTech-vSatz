@@ -930,22 +930,88 @@ while quit == False:
 
 			if not supaChek and not subDummy:
 
-				if whichLet != 0:
-					if whichLet%lineLen == 0:
+				if whichLet != 0: # If you come to the edge of a line, do a word wrap on your word
+					if whichLet == len(doc):
+						if whichLet%lineLen == 0:
+							tempSpot = whichLet
+							dumCou = 0
+							if doc[whichLet-1][0] != dSp:
+								while doc[whichLet-1][0] != rSp:
+									dumCou += 1
+									whichLet -= 1
+								if dumCou > lineLen:
+									dumCou = 0
+								for dar in range(dumCou):
+									doc.insert(whichLet,[dSp,[],[]])
+									screen.blit(L_S,[charWidth*((whichLet+dar)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+								whichLet = tempSpot + dumCou
+								for pso in range(dumCou):
+									screen.blit(getLet(doc[whichLet-pso-1][0]),[charWidth*((whichLet-1-pso)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+					else:
 						tempSpot = whichLet
-						dumCou = 0
-						if doc[whichLet-1][0] != dSp:
-							while doc[whichLet-1][0] != rSp and dumCou < lineLen:
-								dumCou += 1
-								whichLet -= 1
-							if dumCou == lineLen:
-								dumCou = 0
-							for dar in range(dumCou):
-								doc.insert(whichLet,[dSp,[],[]])
-								screen.blit(L_S,[charWidth*((whichLet+dar)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
-							whichLet = tempSpot + dumCou
-							for pso in range(dumCou):
-								screen.blit(getLet(doc[whichLet-pso-1][0]),[charWidth*((whichLet-1-pso)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+						whichLet += lineLen - (whichLet%lineLen)
+						print whichLet%lineLen, 'PART A'
+						while whichLet < len(doc):
+							print 'Part B', 'whichLet:', whichLet, 'len(doc)', len(doc)
+							tempTSpot = whichLet
+							dumCou = 0
+							if doc[whichLet-1][0] != dSp:
+								while doc[whichLet-1][0] != rSp:
+									dumCou += 1
+									whichLet -= 1
+								if dumCou > lineLen:
+									dumCou = 0
+								for dar in range(dumCou):
+									doc.insert(whichLet,[dSp,[],[]])
+									screen.blit(L_S,[charWidth*((whichLet+dar)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+								whichLet = tempTSpot + dumCou
+								for pso in range(dumCou):
+									screen.blit(getLet(doc[whichLet-pso-1][0]),[charWidth*((whichLet-1-pso)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+							whichLet = tempTSpot
+							whichLet += lineLen
+						whichLet = tempSpot
+
+
+#				if whichLet > 0:
+#					print 'Part A, whichLet:', whichLet
+#					tempSpot = whichLet
+#					for vapp in range(len(doc)-whichLet+1):
+#						print 'Part B, len(doc)-whichLet', len(doc)-whichLet
+#						if whichLet%lineLen == 0:
+#							tempTSpot = whichLet
+#							dumCou = 0
+#							if doc[whichLet-1][0] != dSp:
+#								while doc[whichLet-1][0] != rSp and dumCou < lineLen:
+#									dumCou += 1
+#									whichLet -= 1
+#								if dumCou == lineLen:
+#									dumCou = 0
+#								for dar in range(dumCou):
+#									doc.insert(whichLet,[dSp,[],[]])
+#									screen.blit(L_S,[charWidth*((whichLet+dar)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+#								whichLet = tempTSpot + dumCou
+#								for pso in range(dumCou):
+#									screen.blit(getLet(doc[whichLet-pso-1][0]),[charWidth*((whichLet-1-pso)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+#							whichLet = tempTSpot
+#						whichLet+=1
+#					whichLet = tempSpot
+#					tempSpot = whichLet
+#					while whichLet < len(doc):
+#						sDumCou = 0
+#						if doc[whichLet][0] ==dSp:
+#							while doc[whichLet][0]==dSp and whichLet<len(doc):
+#								sDumCou+=1
+#								whichLet+=1
+#							if whichLet/lineLen == (whichLet+sDumCou)/lineLen:
+#								for vapp in range(sDumCou):
+#									print whichLet+vapp+sDumCou,',', doc[whichLet+vapp+sDumCou][0]
+#									doc.pop(whichLet+vapp-sDumCou)
+#							whichLet-=sDumCou
+#						else:
+#							whichLet+=1
+#					whichLet=tempSpot
+
+
 
 	#-----------LETTERS, UPPER CASE AND LOWER CASE--------------
 
@@ -956,24 +1022,19 @@ while quit == False:
 						doc.append([a,[],[]])
 					else:
 						doc.insert(whichLet,[a,[],[]])
-						tempSpot = whichLet
+#						tempSpot = whichLet
+#						gotIt = False
 #						while whichLet < len(doc):
-#							dumCou = 0
-#							tTempSpot = whichLet
-#							while doc[whichLet][0]==dSp and whichLet%lineLen != 0: #Check for unnecessary spaces in the middle of lines
-#								print 'DUMCOU PRE DELETE WHICH LET:', whichLet
-#								dumCou += 1 #Count how long it is
-#								whichLet += 1
-#							whichLet = tTempSpot+1
-#							if whichLet%lineLen < (whichLet+dumCou)%lineLen: #If the space exists on only one line get rid of it
-#								print 'PRE DELETE DUMCOU', dumCou
-#								for vapp in range(dumCou):
-#									print 'DELETED: whichLet', whichLet, 'doc[whichLet][0]', doc[whichLet][0]
-#									doc.pop(whichLet)
-#						whichLet = tempSpot
-						if doc[whichLet+1][0]==dSp:
-							doc.pop(whichLet+1)
-
+#							if doc[whichLet][0] == dSp and not gotIt:
+#								doc.pop(whichLet)
+#								gotIt = True
+#							if whichLet%lineLen == 0:
+#								tTempSpot = whichLet
+#								dumCou = 0
+#							whichLet += 1	
+#						if doc[whichLet+1][0]==dSp:
+#							doc.pop(whichLet+1)
+						whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2048,7 +2109,7 @@ while quit == False:
 
 				#Left Chevron
 				if pressed[pygame.K_LEFTBRACKET] and pressed[pygame.K_EQUALS]:
-					for i in range(2):
+					for vapp in range(2):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2080,7 +2141,7 @@ while quit == False:
 
 				#Right Chevron
 				if pressed[pygame.K_RIGHTBRACKET] and pressed[pygame.K_EQUALS]:
-					for i in range(2):
+					for vapp in range(2):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2146,7 +2207,7 @@ while quit == False:
 
 				#Greater Than or Equal to
 				if pressed[pygame.K_EQUALS] and pressed[pygame.K_PERIOD]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2194,7 +2255,7 @@ while quit == False:
 
 				#Less Than or Equal to
 				if pressed[pygame.K_EQUALS] and pressed[pygame.K_COMMA]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2226,7 +2287,7 @@ while quit == False:
 
 				#Division Sign
 				if pressed[pygame.K_EQUALS] and pressed[pygame.K_d]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2258,7 +2319,7 @@ while quit == False:
 
 				#Approximation sign
 				if pressed[pygame.K_EQUALS] and pressed[pygame.K_a]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2290,7 +2351,7 @@ while quit == False:
 
 				#Plus sign
 				if pressed[pygame.K_EQUALS] and pressed[pygame.K_p]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2338,7 +2399,7 @@ while quit == False:
 
 				#Multiplication sign
 				if pressed[pygame.K_EQUALS] and pressed[pygame.K_m]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2370,7 +2431,7 @@ while quit == False:
 
 				#QED
 				if pressed[pygame.K_EQUALS] and pressed[pygame.K_q]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2434,7 +2495,7 @@ while quit == False:
 
 				#Square root
 				if pressed[pygame.K_s] and pressed[pygame.K_EQUALS]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2466,7 +2527,7 @@ while quit == False:
 
 				#Plus/Minus
 				if pressed[pygame.K_l] and pressed[pygame.K_EQUALS]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2498,7 +2559,7 @@ while quit == False:
 
 				#Integral
 				if pressed[pygame.K_f] and pressed[pygame.K_EQUALS]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2546,7 +2607,7 @@ while quit == False:
 
 				#Doesnt equal
 				if pressed[pygame.K_n] and pressed[pygame.K_EQUALS]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2578,7 +2639,7 @@ while quit == False:
 
 				#Angle
 				if pressed[pygame.K_g] and pressed[pygame.K_EQUALS]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2610,7 +2671,7 @@ while quit == False:
 
 				#Delta (Triangle??)
 				if pressed[pygame.K_t] and pressed[pygame.K_EQUALS]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2642,7 +2703,7 @@ while quit == False:
 
 				#Gradient
 				if pressed[pygame.K_r] and pressed[pygame.K_EQUALS]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2674,7 +2735,7 @@ while quit == False:
 
 				#Infinity
 				if pressed[pygame.K_i] and pressed[pygame.K_EQUALS]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2895,7 +2956,7 @@ while quit == False:
 
 					# Logically Possible
 				if pressed[pygame.K_2] and pressed[pygame.K_p]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2927,7 +2988,7 @@ while quit == False:
 
 					# Logically Possible
 				if pressed[pygame.K_2] and pressed[pygame.K_n]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2964,7 +3025,7 @@ while quit == False:
 
 				# Existential Quantifier
 				if pressed[pygame.K_1] and pressed[pygame.K_e]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -2996,7 +3057,7 @@ while quit == False:
 
 				#For all
 				if pressed[pygame.K_1] and pressed[pygame.K_a]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3028,7 +3089,7 @@ while quit == False:
 
 				#Negation
 				if pressed[pygame.K_1] and pressed[pygame.K_n]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3060,7 +3121,7 @@ while quit == False:
 
 				#Implies
 				if pressed[pygame.K_1] and pressed[pygame.K_i]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3092,7 +3153,7 @@ while quit == False:
 
 				#If and only if
 				if pressed[pygame.K_1] and pressed[pygame.K_f]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3124,7 +3185,7 @@ while quit == False:
 
 				#And
 				if pressed[pygame.K_1] and pressed[pygame.K_d]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3158,7 +3219,7 @@ while quit == False:
 
 					#Element of
 				if pressed[pygame.K_0] and pressed[pygame.K_e]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3191,7 +3252,7 @@ while quit == False:
 
 					#Not element of
 				if pressed[pygame.K_0] and pressed[pygame.K_n]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3223,7 +3284,7 @@ while quit == False:
 
 					#Null set
 				if pressed[pygame.K_0] and pressed[pygame.K_z]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3256,7 +3317,7 @@ while quit == False:
 
 					#Union
 				if pressed[pygame.K_0] and pressed[pygame.K_u]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3288,7 +3349,7 @@ while quit == False:
 
 					#Intersection
 				if pressed[pygame.K_0] and pressed[pygame.K_i]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3320,7 +3381,7 @@ while quit == False:
 
 					#Sub set
 				if pressed[pygame.K_0] and pressed[pygame.K_b]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3352,7 +3413,7 @@ while quit == False:
 
 					#Super Set
 				if pressed[pygame.K_0] and pressed[pygame.K_p]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3384,7 +3445,7 @@ while quit == False:
 
 					#Not super set
 				if pressed[pygame.K_0] and pressed[pygame.K_o]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3416,7 +3477,7 @@ while quit == False:
 
 					#Not Sub set
 				if pressed[pygame.K_0] and pressed[pygame.K_v]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3450,7 +3511,7 @@ while quit == False:
 
 					#Single Turnstile
 				if pressed[pygame.K_8] and pressed[pygame.K_s]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3482,7 +3543,7 @@ while quit == False:
 
 					#Not Single Turnstile
 				if pressed[pygame.K_8] and pressed[pygame.K_x]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3514,7 +3575,7 @@ while quit == False:
 
 					#Double Turnstile
 				if pressed[pygame.K_8] and pressed[pygame.K_d]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3546,7 +3607,7 @@ while quit == False:
 
 					#Not Double Turnstile
 				if pressed[pygame.K_8] and pressed[pygame.K_c]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
@@ -3578,7 +3639,7 @@ while quit == False:
 
 					#Logical Constant
 				if pressed[pygame.K_8] and pressed[pygame.K_l]:
-					for i in range(3):
+					for vapp in range(3):
 						if whichLet != 0: 
 							if whichLet == len(doc):
 								screen.blit(L_S,[charWidth*((whichLet-1)%lineLen)+xMarg,charHeight*((whichLet-1)/lineLen)+yMarg])
