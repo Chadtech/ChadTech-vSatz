@@ -929,7 +929,6 @@ while quit == False:
 		if event.type == pygame.KEYDOWN:
 			if not supaChek and not subDummy:
 #Word wrapping stuff------v
-				print 'Part A', whichLet, len(doc)
 				if whichLet != 0: # Make sure its not at the first character
 					if whichLet == len(doc): #If you are at the end of the document
 						if whichLet%lineLen == 0: #Check if you are at the end of a line
@@ -944,16 +943,19 @@ while quit == False:
 								for dar in range(dumCou): #For the number of characters before a space, put in a dummy space so the word wraps around to the next line
 									doc.insert(whichLet,[dSp,[],[]])
 									screen.blit(L_S,[charWidth*((whichLet+dar)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
-								whichLet = tempSpot + dumCou
-								print 'Part A i', whichLet, len(doc)
-								for pso in range(dumCou): #Paste all the characters on the screen so it looks right
-									screen.blit(getLet(doc[whichLet-pso-1][0]),[charWidth*((whichLet-1-pso)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet+=1
+								whichLet = tempSpot+dumCou
+
+								#for pso in range(dumCou): #Paste all the characters on the screen so it looks right
+								#	screen.blit(getLet(doc[whichLet-pso-1][0]),[charWidth*((whichLet-1-pso)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
 					else: #If you arent at the end of the document, check every line edge after your char to see if a word needs to get wrapped.
 						tempSpot = whichLet
-						whichLet += lineLen - (whichLet%lineLen)
-						print whichLet%lineLen, 'PART A'
+						#whichLet += lineLen-(whichLet%lineLen)
+						while whichLet%lineLen!=0:
+							whichLet+=1
 						while whichLet < len(doc):
-#							print 'Part B', 'whichLet:', whichLet, 'len(doc)', len(doc)
 							tempTSpot = whichLet
 							dumCou = 0
 							if doc[whichLet-1][0] != dSp:
@@ -965,13 +967,18 @@ while quit == False:
 								for dar in range(dumCou):
 									doc.insert(whichLet,[dSp,[],[]])
 									screen.blit(L_S,[charWidth*((whichLet+dar)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
-								whichLet = tempTSpot + dumCou
-								for pso in range(dumCou):
-									screen.blit(getLet(doc[whichLet-pso-1][0]),[charWidth*((whichLet-1-pso)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet+=1
+								whichLet = tempSpot+dumCou
+
+								#for pso in range(dumCou):
+								#	screen.blit(getLet(doc[whichLet-pso-1][0]),[charWidth*((whichLet-1-pso)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
 							whichLet = tempTSpot
 							whichLet += lineLen
 						whichLet = tempSpot
-					print 'Part B', whichLet, len(doc)
+					#for yit in range(whichLet/lineLen):
+					#	screen.blit(getLet(doc[yit*lineLen][0]),[xMarg,charHeight*(yit)+yMarg])
 
 #					for linWhich in range(len(doc)/lineLen): #go through every line
 #						dumBegChek = False
@@ -1052,19 +1059,19 @@ while quit == False:
 						doc.append([a,[],[]])
 					else:
 						doc.insert(whichLet,[a,[],[]])
-#						tempSpot = whichLet
-#						gotIt = False
-#						while whichLet < len(doc):
-#							if doc[whichLet][0] == dSp and not gotIt:
-#								doc.pop(whichLet)
-#								gotIt = True
-#							if whichLet%lineLen == 0:
-#								tTempSpot = whichLet
-#								dumCou = 0
-#							whichLet += 1	
-#						if doc[whichLet+1][0]==dSp:
-#							doc.pop(whichLet+1)
-						whichLet = tempSpot
+						if doc[whichLet+1][0]==dSp:
+							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1083,6 +1090,17 @@ while quit == False:
 						doc.insert(whichLet,[A,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1100,6 +1118,17 @@ while quit == False:
 						doc.insert(whichLet,[b,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1117,6 +1146,17 @@ while quit == False:
 						doc.insert(whichLet,[B,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1134,6 +1174,17 @@ while quit == False:
 						doc.insert(whichLet,[c,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1151,6 +1202,17 @@ while quit == False:
 						doc.insert(whichLet,[C,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1168,6 +1230,17 @@ while quit == False:
 						doc.insert(whichLet,[d,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1185,6 +1258,17 @@ while quit == False:
 						doc.insert(whichLet,[D,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1202,6 +1286,17 @@ while quit == False:
 						doc.insert(whichLet,[e,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1219,6 +1314,17 @@ while quit == False:
 						doc.insert(whichLet,[E,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1236,6 +1342,17 @@ while quit == False:
 						doc.insert(whichLet,[f,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1253,6 +1370,17 @@ while quit == False:
 						doc.insert(whichLet,[F,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1270,6 +1398,17 @@ while quit == False:
 						doc.insert(whichLet,[g,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1287,6 +1426,17 @@ while quit == False:
 						doc.insert(whichLet,[G,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1304,6 +1454,17 @@ while quit == False:
 						doc.insert(whichLet,[h,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1321,6 +1482,17 @@ while quit == False:
 						doc.insert(whichLet,[H,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1338,6 +1510,17 @@ while quit == False:
 						doc.insert(whichLet,[i,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1355,6 +1538,17 @@ while quit == False:
 						doc.insert(whichLet,[I,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1372,6 +1566,17 @@ while quit == False:
 						doc.insert(whichLet,[j,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1389,6 +1594,17 @@ while quit == False:
 						doc.insert(whichLet,[J,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1406,6 +1622,17 @@ while quit == False:
 						doc.insert(whichLet,[k,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1423,6 +1650,17 @@ while quit == False:
 						doc.insert(whichLet,[K,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1440,6 +1678,17 @@ while quit == False:
 						doc.insert(whichLet,[l,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1457,6 +1706,17 @@ while quit == False:
 						doc.insert(whichLet,[L,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1474,6 +1734,17 @@ while quit == False:
 						doc.insert(whichLet,[m,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1491,6 +1762,17 @@ while quit == False:
 						doc.insert(whichLet,[M,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1508,6 +1790,17 @@ while quit == False:
 						doc.insert(whichLet,[n,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1525,6 +1818,17 @@ while quit == False:
 						doc.insert(whichLet,[N,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1542,6 +1846,17 @@ while quit == False:
 						doc.insert(whichLet,[o,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1559,6 +1874,17 @@ while quit == False:
 						doc.insert(whichLet,[O,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1576,6 +1902,17 @@ while quit == False:
 						doc.insert(whichLet,[p,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1593,6 +1930,17 @@ while quit == False:
 						doc.insert(whichLet,[P,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1610,6 +1958,17 @@ while quit == False:
 						doc.insert(whichLet,[q,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1627,6 +1986,17 @@ while quit == False:
 						doc.insert(whichLet,[Q,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1644,6 +2014,17 @@ while quit == False:
 						doc.insert(whichLet,[r,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1661,6 +2042,17 @@ while quit == False:
 						doc.insert(whichLet,[R,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1678,6 +2070,17 @@ while quit == False:
 						doc.insert(whichLet,[s,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1695,6 +2098,17 @@ while quit == False:
 						doc.insert(whichLet,[S,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1712,6 +2126,17 @@ while quit == False:
 						doc.insert(whichLet,[t,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1729,6 +2154,17 @@ while quit == False:
 						doc.insert(whichLet,[T,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1746,6 +2182,17 @@ while quit == False:
 						doc.insert(whichLet,[u,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1763,6 +2210,17 @@ while quit == False:
 						doc.insert(whichLet,[U,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1780,6 +2238,17 @@ while quit == False:
 						doc.insert(whichLet,[v,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1797,6 +2266,17 @@ while quit == False:
 						doc.insert(whichLet,[V,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1814,6 +2294,17 @@ while quit == False:
 						doc.insert(whichLet,[w,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1831,6 +2322,17 @@ while quit == False:
 						doc.insert(whichLet,[W,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1848,6 +2350,17 @@ while quit == False:
 						doc.insert(whichLet,[x,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1865,6 +2378,17 @@ while quit == False:
 						doc.insert(whichLet,[X,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1882,6 +2406,17 @@ while quit == False:
 						doc.insert(whichLet,[y,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1899,6 +2434,17 @@ while quit == False:
 						doc.insert(whichLet,[Y,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1916,6 +2462,17 @@ while quit == False:
 						doc.insert(whichLet,[z,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1933,6 +2490,17 @@ while quit == False:
 						doc.insert(whichLet,[Z,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1952,6 +2520,17 @@ while quit == False:
 						doc.insert(whichLet,[pP,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1968,6 +2547,17 @@ while quit == False:
 						doc.insert(whichLet,[pC,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -1984,6 +2574,17 @@ while quit == False:
 						doc.insert(whichLet,[pU,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2000,6 +2601,17 @@ while quit == False:
 						doc.insert(whichLet,[pQ,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2016,6 +2628,17 @@ while quit == False:
 						doc.insert(whichLet,[pO,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2032,6 +2655,17 @@ while quit == False:
 						doc.insert(whichLet,[pS,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2050,6 +2684,17 @@ while quit == False:
 						doc.insert(whichLet,[blp,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2066,6 +2711,17 @@ while quit == False:
 						doc.insert(whichLet,[brp,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2082,6 +2738,17 @@ while quit == False:
 						doc.insert(whichLet,[blc,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2098,6 +2765,17 @@ while quit == False:
 						doc.insert(whichLet,[brc,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2114,6 +2792,17 @@ while quit == False:
 						doc.insert(whichLet,[blb,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2130,6 +2819,17 @@ while quit == False:
 						doc.insert(whichLet,[brb,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2162,6 +2862,17 @@ while quit == False:
 						doc.insert(whichLet,[blh,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2194,6 +2905,17 @@ while quit == False:
 						doc.insert(whichLet,[brh,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2212,6 +2934,17 @@ while quit == False:
 						doc.insert(whichLet,[mEq,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2228,6 +2961,17 @@ while quit == False:
 						doc.insert(whichLet,[mGt,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2260,6 +3004,17 @@ while quit == False:
 						doc.insert(whichLet,[mGe,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2276,6 +3031,17 @@ while quit == False:
 						doc.insert(whichLet,[mLt,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2308,6 +3074,17 @@ while quit == False:
 						doc.insert(whichLet,[mLe,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2340,6 +3117,17 @@ while quit == False:
 						doc.insert(whichLet,[mDi,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2372,6 +3160,17 @@ while quit == False:
 						doc.insert(whichLet,[mAp,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2404,6 +3203,17 @@ while quit == False:
 						doc.insert(whichLet,[mPl,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2420,6 +3230,17 @@ while quit == False:
 						doc.insert(whichLet,[mSb,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2452,6 +3273,17 @@ while quit == False:
 						doc.insert(whichLet,[mMu,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2484,6 +3316,17 @@ while quit == False:
 						doc.insert(whichLet,[mQe,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2500,6 +3343,17 @@ while quit == False:
 						doc.insert(whichLet,[mFs,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2516,6 +3370,17 @@ while quit == False:
 						doc.insert(whichLet,[mBs,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2548,6 +3413,17 @@ while quit == False:
 						doc.insert(whichLet,[mSr,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2580,6 +3456,17 @@ while quit == False:
 						doc.insert(whichLet,[mAs,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2612,6 +3499,17 @@ while quit == False:
 						doc.insert(whichLet,[mAd,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2628,6 +3526,17 @@ while quit == False:
 						doc.insert(whichLet,[mDv,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2660,6 +3569,17 @@ while quit == False:
 						doc.insert(whichLet,[mNe,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2692,6 +3612,17 @@ while quit == False:
 						doc.insert(whichLet,[mAn,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2724,6 +3655,17 @@ while quit == False:
 						doc.insert(whichLet,[mDe,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2756,6 +3698,17 @@ while quit == False:
 						doc.insert(whichLet,[mGr,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2788,6 +3741,17 @@ while quit == False:
 						doc.insert(whichLet,[mIn,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2807,6 +3771,17 @@ while quit == False:
 						doc.insert(whichLet,[rSp,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2829,6 +3804,17 @@ while quit == False:
 						doc.insert(whichLet,[On,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2845,6 +3831,17 @@ while quit == False:
 						doc.insert(whichLet,[Tw,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2861,6 +3858,17 @@ while quit == False:
 						doc.insert(whichLet,[Th,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2878,6 +3886,17 @@ while quit == False:
 						doc.insert(whichLet,[Fo,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2894,6 +3913,17 @@ while quit == False:
 						doc.insert(whichLet,[Fi,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2910,6 +3940,17 @@ while quit == False:
 						doc.insert(whichLet,[Si,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2926,6 +3967,17 @@ while quit == False:
 						doc.insert(whichLet,[Se,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2942,6 +3994,17 @@ while quit == False:
 						doc.insert(whichLet,[Ei,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2958,6 +4021,17 @@ while quit == False:
 						doc.insert(whichLet,[Ni,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -2974,6 +4048,17 @@ while quit == False:
 						doc.insert(whichLet,[Ze,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3009,6 +4094,17 @@ while quit == False:
 						doc.insert(whichLet,[mP,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3041,6 +4137,17 @@ while quit == False:
 						doc.insert(whichLet,[mN,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3078,6 +4185,17 @@ while quit == False:
 						doc.insert(whichLet,[Ex,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3110,6 +4228,17 @@ while quit == False:
 						doc.insert(whichLet,[Fa,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3142,6 +4271,17 @@ while quit == False:
 						doc.insert(whichLet,[Ne,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3174,6 +4314,17 @@ while quit == False:
 						doc.insert(whichLet,[Im,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3206,6 +4357,17 @@ while quit == False:
 						doc.insert(whichLet,[Ff,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3238,6 +4400,17 @@ while quit == False:
 						doc.insert(whichLet,[Nd,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3272,6 +4445,17 @@ while quit == False:
 						doc.insert(whichLet,[sEo,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3305,6 +4489,17 @@ while quit == False:
 						doc.insert(whichLet,[sDc,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3337,6 +4532,17 @@ while quit == False:
 						doc.insert(whichLet,[sNs,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3370,6 +4576,17 @@ while quit == False:
 						doc.insert(whichLet,[sUn,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3402,6 +4619,17 @@ while quit == False:
 						doc.insert(whichLet,[sIn,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3434,6 +4662,17 @@ while quit == False:
 						doc.insert(whichLet,[sBs,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3466,6 +4705,17 @@ while quit == False:
 						doc.insert(whichLet,[sSs,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3498,6 +4748,17 @@ while quit == False:
 						doc.insert(whichLet,[sNp,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3530,6 +4791,17 @@ while quit == False:
 						doc.insert(whichLet,[sNb,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3564,6 +4836,17 @@ while quit == False:
 						doc.insert(whichLet,[pSt,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3596,6 +4879,17 @@ while quit == False:
 						doc.insert(whichLet,[pNs,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3628,6 +4922,17 @@ while quit == False:
 						doc.insert(whichLet,[pDt,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3660,6 +4965,17 @@ while quit == False:
 						doc.insert(whichLet,[pNd,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
@@ -3692,6 +5008,17 @@ while quit == False:
 						doc.insert(whichLet,[pLc,[],[]])
 						if doc[whichLet+1][0]==dSp:
 							doc.pop(whichLet+1)
+						else:
+							tempSpot = whichLet
+							gotIt = False
+							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
+							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
+								print 'MAKE IT'
+								if doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									gotIt = True
+								whichLet+=1
+							whichLet = tempSpot
 						tempSpot = whichLet
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
