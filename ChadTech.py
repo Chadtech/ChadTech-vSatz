@@ -5371,9 +5371,7 @@ while quit == False:
 
 # Word Wrap ----------------------------------------vv
 				if whichLet != 0: # Make sure its not at the first character
-					print 'got here A'
 					if whichLet == len(doc): #If you are at the end of the document
-						print 'got here B'
 						if whichLet%lineLen == 0: #Check if you are at the end of a line
 							tempSpot = whichLet # Save where we are at, the cursor is going to wander
 							dumCou = 0
@@ -5391,10 +5389,10 @@ while quit == False:
 									whichLet+=1
 								whichLet = tempSpot+dumCou
 					else: #If you arent at the end of the document, check every line edge after your char to see if a word needs to get wrapped.
-						print 'Got Here', whichLet
 						tempSpot = whichLet
 						while whichLet%lineLen!=0:#Go to the end of the line
 							whichLet+=1
+						# The section below here goes to the end of each line and fills in dummy spaces to wrap words around to the next line
 						while whichLet < len(doc):
 							tempTSpot = whichLet
 							dumCou = 0
@@ -5410,9 +5408,9 @@ while quit == False:
 								while whichLet < len(doc):
 									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 									whichLet+=1
-								print 'dumCou Now', dumCou
 							whichLet=tempTSpot+lineLen
 						whichLet=tempSpot
+						#The section below here goes through each line, and removes orphaned dummy spaces
 						while whichLet%lineLen!=0:
 							whichLet+=1
 						whichLet+=lineLen
@@ -5430,7 +5428,9 @@ while quit == False:
 							if whichLet%lineLen==0:
 								whichLet+=2*lineLen
 						whichLet=tempSpot
-						print 'Got Here', whichLet
+						if whichLet%lineLen==0:
+							while doc[whichLet][0]!=rSp:
+								whichLet+=1
 
 			else:
 				
