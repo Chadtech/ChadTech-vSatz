@@ -929,54 +929,29 @@ while quit == False:
 		if event.type == pygame.KEYDOWN:
 			if not supaChek and not subDummy:
 #Word wrapping stuff------v
-				if whichLet != 0: # Make sure its not at the first character
-					if whichLet == len(doc): #If you are at the end of the document
-						if whichLet%lineLen == 0: #Check if you are at the end of a line
-							tempSpot = whichLet # Save where we are at, the cursor is going to wander
-							dumCou = 0
-							if doc[whichLet-1][0] != dSp: #Check if the character to the left is a dummy space
-								while doc[whichLet-1][0] != rSp: #Count how many non-space characters are to the left
-									dumCou += 1
-									whichLet -= 1
-								if dumCou > lineLen:
-									dumCou = 0
-								for dar in range(dumCou): #For the number of characters before a space, put in a dummy space so the word wraps around to the next line
-									doc.insert(whichLet,[dSp,[],[]])
-									screen.blit(L_S,[charWidth*((whichLet+dar)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
-								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
-									whichLet+=1
-								whichLet = tempSpot+dumCou
 
-								#for pso in range(dumCou): #Paste all the characters on the screen so it looks right
-								#	screen.blit(getLet(doc[whichLet-pso-1][0]),[charWidth*((whichLet-1-pso)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
-					else: #If you arent at the end of the document, check every line edge after your char to see if a word needs to get wrapped.
-						tempSpot = whichLet
-						#whichLet += lineLen-(whichLet%lineLen)
-						while whichLet%lineLen!=0:
-							whichLet+=1
-						while whichLet < len(doc):
-							tempTSpot = whichLet
-							dumCou = 0
-							if doc[whichLet-1][0] != dSp:
-								while doc[whichLet-1][0] != rSp:
-									dumCou += 1
-									whichLet -= 1
-								if dumCou > lineLen:
-									dumCou = 0
-								for dar in range(dumCou):
-									doc.insert(whichLet,[dSp,[],[]])
-									screen.blit(L_S,[charWidth*((whichLet+dar)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
-								while whichLet < len(doc):
-									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
-									whichLet+=1
-								whichLet = tempSpot+dumCou
 
-								#for pso in range(dumCou):
-								#	screen.blit(getLet(doc[whichLet-pso-1][0]),[charWidth*((whichLet-1-pso)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
-							whichLet = tempTSpot
-							whichLet += lineLen
-						whichLet = tempSpot
+
+
+
+
+						#	fouLet=False
+						#	for yit in range(lineLen):
+						#		whichLet-=1
+						#		if whichLet >= len(doc):
+						#			isEnd=True
+						#		else:
+						#			if doc[whichLet][0]==dSp:
+						#				if fouLet==True:
+						#					doc.pop(whichLet)
+						#					whichLet-=1
+						#			else:
+						#				fouLet=True
+
+
+
+
+
 					#for yit in range(whichLet/lineLen):
 					#	screen.blit(getLet(doc[yit*lineLen][0]),[xMarg,charHeight*(yit)+yMarg])
 
@@ -1004,7 +979,7 @@ while quit == False:
 #									dumBegChek = False
 #									dumCou = 0
 #							whichLinLet +=1
-					print 'Part C', whichLet, len(doc)
+					#print 'Part C', whichLet, len(doc)
 
 
 
@@ -1066,7 +1041,6 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1095,7 +1069,6 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1123,7 +1096,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1151,7 +1124,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1179,7 +1152,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1207,7 +1180,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1235,7 +1208,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1263,7 +1236,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1291,7 +1264,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1319,7 +1292,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1347,7 +1320,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1375,7 +1348,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1403,7 +1376,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1431,7 +1404,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1459,7 +1432,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1487,7 +1460,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1515,7 +1488,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1543,7 +1516,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1571,7 +1544,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1599,7 +1572,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1627,7 +1600,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1655,7 +1628,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1683,7 +1656,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1711,7 +1684,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1739,7 +1712,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1767,7 +1740,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1795,7 +1768,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1823,7 +1796,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1851,7 +1824,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1879,7 +1852,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1907,7 +1880,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1935,7 +1908,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1963,7 +1936,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -1991,7 +1964,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2019,7 +1992,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2047,7 +2020,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2075,7 +2048,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2103,7 +2076,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2131,7 +2104,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2159,7 +2132,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2187,7 +2160,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2215,7 +2188,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2243,7 +2216,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2271,7 +2244,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2299,7 +2272,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2327,7 +2300,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2355,7 +2328,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2383,7 +2356,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2411,7 +2384,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2439,7 +2412,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2467,7 +2440,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2495,7 +2468,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2525,7 +2498,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2552,7 +2525,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2579,7 +2552,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2606,7 +2579,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2633,7 +2606,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2660,7 +2633,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2689,7 +2662,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2716,7 +2689,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2743,7 +2716,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2770,7 +2743,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2797,7 +2770,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2824,7 +2797,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2867,7 +2840,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2910,7 +2883,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2939,7 +2912,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -2966,7 +2939,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3009,7 +2982,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3036,7 +3009,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3079,7 +3052,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3122,7 +3095,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3165,7 +3138,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3208,7 +3181,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3235,7 +3208,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3278,7 +3251,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3321,7 +3294,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3348,7 +3321,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3375,7 +3348,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3418,7 +3391,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3461,7 +3434,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3504,7 +3477,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3531,7 +3504,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3574,7 +3547,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3617,7 +3590,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3660,7 +3633,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3703,7 +3676,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3746,7 +3719,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3776,7 +3749,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3809,7 +3782,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3836,7 +3809,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3863,7 +3836,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3891,7 +3864,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3918,7 +3891,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3945,7 +3918,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3972,7 +3945,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -3999,7 +3972,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4026,7 +3999,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4053,7 +4026,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4099,7 +4072,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4142,7 +4115,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4190,7 +4163,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4233,7 +4206,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4276,7 +4249,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4319,7 +4292,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4362,7 +4335,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4405,7 +4378,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4450,7 +4423,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4494,7 +4467,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4537,7 +4510,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4581,7 +4554,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4624,7 +4597,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4667,7 +4640,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4710,7 +4683,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4753,7 +4726,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4796,7 +4769,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4841,7 +4814,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4884,7 +4857,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4927,7 +4900,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -4970,7 +4943,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -5013,7 +4986,7 @@ while quit == False:
 							gotIt = False
 							print whichLet, whichLet-tempSpot, lineLen, len(doc), gotIt
 							while whichLet <len(doc) and ((whichLet-tempSpot)<lineLen) and not gotIt:
-								print 'MAKE IT'
+								
 								if doc[whichLet][0]==dSp:
 									doc.pop(whichLet)
 									gotIt = True
@@ -5395,6 +5368,69 @@ while quit == False:
 						while whichLet < len(doc):
 							screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
 							whichLet += 1
+
+# Word Wrap ----------------------------------------vv
+				if whichLet != 0: # Make sure its not at the first character
+					print 'got here A'
+					if whichLet == len(doc): #If you are at the end of the document
+						print 'got here B'
+						if whichLet%lineLen == 0: #Check if you are at the end of a line
+							tempSpot = whichLet # Save where we are at, the cursor is going to wander
+							dumCou = 0
+							if doc[whichLet-1][0] != dSp: #Check if the character to the left is a dummy space
+								while doc[whichLet-1][0] != rSp: #Count how many non-space characters are to the left
+									dumCou += 1
+									whichLet -= 1
+								if dumCou > lineLen:
+									dumCou = 0
+								for dar in range(dumCou): #For the number of characters before a space, put in a dummy space so the word wraps around to the next line
+									doc.insert(whichLet,[dSp,[],[]])
+									screen.blit(L_S,[charWidth*((whichLet+dar)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet+=1
+								whichLet = tempSpot+dumCou
+					else: #If you arent at the end of the document, check every line edge after your char to see if a word needs to get wrapped.
+						print 'Got Here', whichLet
+						tempSpot = whichLet
+						while whichLet%lineLen!=0:#Go to the end of the line
+							whichLet+=1
+						while whichLet < len(doc):
+							tempTSpot = whichLet
+							dumCou = 0
+							if doc[whichLet-1][0] != dSp:#If the letter to the left of the end of the line isnt a dummy space
+								while doc[whichLet-1][0] != rSp: #Count 
+									dumCou += 1
+									whichLet -= 1
+								if dumCou > lineLen:
+									dumCou = 0
+								for dar in range(dumCou):
+									doc.insert(whichLet,[dSp,[],[]])
+									screen.blit(L_S,[charWidth*((whichLet+dar)%lineLen)+xMarg,charHeight*(whichLet/lineLen)+yMarg])
+								while whichLet < len(doc):
+									screen.blit(getLet(doc[whichLet][0]),[charWidth*((whichLet)%lineLen)+xMarg,charHeight*((whichLet)/lineLen)+yMarg])
+									whichLet+=1
+								print 'dumCou Now', dumCou
+							whichLet=tempTSpot+lineLen
+						whichLet=tempSpot
+						while whichLet%lineLen!=0:
+							whichLet+=1
+						whichLet+=lineLen
+						isEnd = False
+						while isEnd==False:
+							if whichLet >= len(doc):
+								isEnd=True
+							else:
+								if doc[whichLet][0]!=dSp:
+									fouLet=True
+								if fouLet==True and doc[whichLet][0]==dSp:
+									doc.pop(whichLet)
+									whichLet+=1
+							whichLet-=1
+							if whichLet%lineLen==0:
+								whichLet+=2*lineLen
+						whichLet=tempSpot
+						print 'Got Here', whichLet
 
 			else:
 				
@@ -5981,6 +6017,9 @@ while quit == False:
 				if pressed[pygame.K_SPACE]:
 					screen.blit(l_S,[(basePlaceX+lilCharXOffset)+(lilWhichLet*lilCharWidth),(basePlaceY+lilCharYOffset)+(subDummy*lilCharSubBuf)])
 					lilWhichLet += 1
+
+#Word Wrap-------------------------------
+
 
 		if event.type == pygame.KEYUP:
 
