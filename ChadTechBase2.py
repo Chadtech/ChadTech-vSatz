@@ -194,8 +194,38 @@ L_pLc = pygame.image.load('char4.PNG').convert()
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('Cursor'))
 
-#set Theory
+#Under Cursor
 L_C = pygame.image.load('char0.PNG').convert()
+
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Cursor Lowercase'))
+#lower case letters
+C_la = pygame.image.load('char0.PNG').convert()
+C_lb = pygame.image.load('char1.PNG').convert()
+C_lc = pygame.image.load('char2.PNG').convert()
+C_ld = pygame.image.load('char3.PNG').convert()
+C_le = pygame.image.load('char4.PNG').convert()
+C_lf = pygame.image.load('char5.PNG').convert()
+C_lg = pygame.image.load('char6.PNG').convert()
+C_lh = pygame.image.load('char7.PNG').convert()
+C_li = pygame.image.load('char8.PNG').convert()
+C_lj = pygame.image.load('char9.PNG').convert()
+C_lk = pygame.image.load('char10.PNG').convert()
+C_ll = pygame.image.load('char11.PNG').convert()
+C_lm = pygame.image.load('char12.PNG').convert()
+C_ln = pygame.image.load('char13.PNG').convert()
+C_lo = pygame.image.load('char14.PNG').convert()
+C_lp = pygame.image.load('char15.PNG').convert()
+C_lq = pygame.image.load('char16.PNG').convert()
+C_lr = pygame.image.load('char17.PNG').convert()
+C_ls = pygame.image.load('char18.PNG').convert()
+C_lt = pygame.image.load('char19.PNG').convert()
+C_lu = pygame.image.load('char20.PNG').convert()
+C_lv = pygame.image.load('char21.PNG').convert()
+C_lw = pygame.image.load('char22.PNG').convert()
+C_lx = pygame.image.load('char23.PNG').convert()
+C_ly = pygame.image.load('char24.PNG').convert()
+C_lz = pygame.image.load('char25.PNG').convert()
 
 
 os.chdir(os.path.dirname(os.getcwd()))
@@ -287,6 +317,8 @@ l_Nni = pygame.image.load('char9.PNG').convert()
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.dirname(os.getcwd()))
 
+
+
 #ChadTechv0.
 class cursor(pygame.sprite.Sprite):
 
@@ -320,12 +352,14 @@ lineNum=(screenHeight-(2*yMarg))/(charHeight+lineGap)
 
 curLin=0
 curVort=0
-#def defglobals():
-#	global curChar 
 curChar=0
 linCou=0
 charCou=0
 howManyLefts=0
+
+fakVort=0
+fakChar=0
+
 letCor = {
 	
 	'BACKSPACE':8,
@@ -383,7 +417,7 @@ letCor = {
 	'z':122,
 
 	'UPARROW':273,
-	'DARROW':274,
+	'DOWNARROW':274,
 	'RIGHTARROW':275,
 	'LEFTARROW':276,
 
@@ -391,6 +425,7 @@ letCor = {
 	'LEFTSHIFT':304,
 	'RIGHTCONTROL':305,
 	'LEFTCONTROL':306
+
 }
 
 class Char:
@@ -418,6 +453,11 @@ backspace=Char(0,l_fS,(set ([ letCor['BACKSPACE'] ]) ),False)
 
 rightarrow=Char(0,l_fS,(set ([ letCor['RIGHTARROW'] ]) ),False)
 leftarrow=Char(0,l_fS,(set ([ letCor['LEFTARROW'] ]) ),False)
+uparrow=Char(0,l_fS,(set ([ letCor['UPARROW'] ]) ),False)
+downarrow=Char(0,l_fS,(set ([ letCor['DOWNARROW'] ]) ),False)
+
+#NOthing
+nothing=Char(1,l_fS,set([ letCor['a'], letCor['q'], letCor['l'] ]),False)
 
 ############Visible Chars
 
@@ -427,11 +467,15 @@ space=Char(1,L_S,( set([ letCor['SPACE'] ]) ),False)
 #Lower Case Chars 
 lowercase__a=Char(1,L_la,( set([ letCor['a'] ]) ),False)
 lowercase__b=Char(1,L_lb,( set([ letCor['b'] ]) ),False)
+lowercase__c=Char(1,L_lc,( set([ letCor['c'] ]) ),False)
+lowercase__d=Char(1,L_ld,( set([ letCor['d'] ]) ),False)
+lowercase__e=Char(1,L_le,( set([ letCor['e'] ]) ),False)
+lowercase__f=Char(1,L_lf,( set([ letCor['f'] ]) ),False)
+lowercase__g=Char(1,L_lf,( set([ letCor['g'] ]) ),False)
 
 #Upper Case Chars
 uppercase__A=Char(1,L_lA,( set([ letCor['a'], letCor['LEFTSHIFT'] ]), set([ letCor['a'], letCor['RIGHTSHIFT'] ]) ),False)
 uppercase__B=Char(1,L_lB,( set([ letCor['b'], letCor['LEFTSHIFT'] ]), set([ letCor['b'], letCor['RIGHTSHIFT'] ]) ),False)
-
 
 class Doc:
 	def __init__(self):
@@ -443,6 +487,8 @@ class Doc:
 
 ourDoc= Doc()
 ourDoc.vorten.append(Vort())
+cursor= Doc()
+cursor.vorten.append(Vort())
 
 keys = set([])
 quit=False
@@ -451,38 +497,73 @@ while quit==False:
 		if event.type == pygame.KEYDOWN:
 			howManyChars=0
 			keys.add(event.key)
+			print 'KEYS', keys, 'event.key', event.key
 
-			whichChar=lowercase__a
-			for yit in range(len(whichChar.keys)):
-				if keys == whichChar.keys:
-					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
-					curChar+=1
+			######################## Lower case letters
+
+			whichChar=C_lowercase__a
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
 
 			whichChar=lowercase__b
-			for yit in range(len(whichChar.keys)):
-				if keys == whichChar.keys:
-					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
-					curChar+=1
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__c
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__d
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__e
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__f
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__g
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__f
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			######################### Upper case Letters
 
 			whichChar=uppercase__A
 			for yit in range(len(whichChar.keys)):
-				if keys == whichChar.keys:
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
 					curChar+=1
 
 			whichChar=uppercase__B
 			for yit in range(len(whichChar.keys)):
-				if keys == whichChar.keys:
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
 					curChar+=1
 
-			if keys == space.keys:
+			######################### Commandy keys
+
+			if event.key in space.keys:
 				ourDoc.vorten[curVort].charen.insert(curChar,space)
 				curVort+=1
 				ourDoc.vorten.insert(curVort,Vort())
 				curChar=0
 
- 			if keys==enter.keys:
+ 			if event.key in enter.keys:
 				ourDoc.vorten.insert(curVort+1,Vort())
 				curVort+=1
 				curChar=0
@@ -490,7 +571,7 @@ while quit==False:
 				ourDoc.vorten.insert(curVort+1,Vort())
 				curVort+=1
 
-			if keys==backspace.keys:
+			if event.key in backspace.keys:
 				if curChar!=0 or curVort!=0:
 					while len(ourDoc.vorten[curVort].charen)==0:
 						ourDoc.vorten.pop(curVort)
@@ -499,71 +580,110 @@ while quit==False:
 					ourDoc.vorten[curVort].charen.pop(curChar-1)
 					curChar-=1
 
-			if keys==leftarrow.keys:
+			if event.key in leftarrow.keys:
 				if curChar!=0:
 					curChar-=1
 				else:
 					if curVort!=0:
 						curVort-=1
-						curChar=len(ourDoc.vorten[curVort])
+						curChar=len(ourDoc.vorten[curVort].charen)
 
-			if keys==rightarrow.keys:
-				if curChar==len(ourDoc.vorten[curVort]):
-					if curVort!=len(ourDoc.vorten):
+			if event.key in rightarrow.keys:
+				if curChar==len(ourDoc.vorten[curVort].charen):
+					if curVort!=(len(ourDoc.vorten)-1):
 						curVort+=1
 						curChar=0
 				else:
 					curChar+=1
 
+			if event.key in uparrow.keys:
+				for yit in lineLen*[0]:
+					if curChar!=0:
+						curChar-=1
+					else:
+						if curVort!=0:
+							curVort-=1
+							curChar=len(ourDoc.vorten[curVort].charen)
+
+			#if event.key in downarrow.keys:
+
 		###############################This section breaks the list of words, into a list of lines containing the words
+
+
+
 		blitScreen = []
 		thisLin = 0
 		blitScreen.append( [0,[]] )
+		cursorChar = 0
+		cursorVort = 0
+		cursorLine = 0
 		for yit in range(len(ourDoc.vorten)):
+			print yit, curVort, len(ourDoc.vorten), 
+			if yit==curVort:
+				cursorVort=yit
+				cursorLine=thisLin
+				for vapp in range(len(blitScreen[len(blitScreen)-1][1])):
+					cursorChar+= len(blitScreen[len(blitScreen)-1][1][vapp].charen)
+				cursorChar+=curChar
 			if ourDoc.vorten[yit].charen==[enter]:
 				blitScreen.append( [0,[]] )
 				thisLin+=1
 			else:
-				#print 'this Lins Len', blitScreen[thisLin][0], 'this Vort Len', len(ourDoc.vorten[yit].charen), 'lineLen', lineLen
 				if blitScreen[thisLin][0]+len(ourDoc.vorten[yit].charen)<=lineLen:
 					blitScreen[thisLin][1].append(ourDoc.vorten[yit])
-					#print blitScreen[thisLin][0], ',', len(ourDoc.vorten[yit].charen)
 					blitScreen[thisLin][0]+=len(ourDoc.vorten[yit].charen)
 				else:
 					blitScreen.append( [0,[]] )
 					thisLin+=1
-					print len(ourDoc.vorten[yit].charen)
 					blitScreen[thisLin][0]=len(ourDoc.vorten[yit].charen)
 					blitScreen[thisLin][1].append(ourDoc.vorten[yit])
 
+#		cursorScreen = []
+#		thisLin = 0
+#		cursorScreen.append( [0,[]] )
+#		for yit in range(curVort):
+#			if cursor.vorten[yit].charen==[enter]:
+#				cursorScreen.append( [0,[]] )
+#				thisLin+=1
+#			else:
+#				if cursorScreen[thisLin][0]+len(cursor.vorten[yit].charen)<=lineLen:
+#					cursorScreen[thisLin][1].append(cursor.vorten[yit])
+#					cursorScreen[thisLin][0]+=len(cursor.vorten[yit].charen)
+#				else:
+#					cursorScreen.append( [0,[]] )
+#					thisLin+=1
+#					print len(cursor.vorten[yit].charen)
+#					cursorScreen[thisLin][0]=len(cursor.vorten[yit].charen)
+#					cursorScreen[thisLin][1].append(cursor.vorten[yit])
+
 	 	############################This section takes the words in each line, and breaks them down into a list of characters to paste onto the screen
+
 		blitChars=[]
 		for yit in range(len(blitScreen)):
 			blitChars.append([])
 			for vapp in range(len(blitScreen[yit][1])):
 				for gno in range(len(blitScreen[yit][1][vapp].charen)):
-					#if blitScreen[yit][1][vapp].charen[gno].width:
 					blitChars[yit].append(blitScreen[yit][1][vapp].charen[gno])
-			#for vapp in range(len(blitChars[yit])):
-				#screen.blit(blitChars[yit][vapp].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
 			for vapp in range(lineLen):
-				#print 'VAPP,',vapp,'len(blitChars[yit]),',len(blitChars[yit]), 'vapp<=len(blitChars[yit]),',vapp<=len(blitChars[yit])
 				if vapp<len(blitChars[yit]):
 					screen.blit(blitChars[yit][vapp].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-					if blitChars[yit][vapp].isThisCursor==True:
-						screen.blit(blitChars[yit][vapp].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg+charHeight-2])
+					#if blitChars[yit][vapp].isThisCursor==True:
+					#	screen.blit(blitChars[yit][vapp].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg+charHeight-2])
 				else:
-					screen.blit(L_C,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-					if blitChars[yit][vapp].isThisCursor==True:
-						screen.blit(blitChars[yit][vapp].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg+charHeight-2])
-
-		##########################This section pastes our cursor
-		
-		#howManyChars+=len(blitChars[len(blitChars)-1])+((len(blitChars)-1)*lineLen)
-		#screen.blit(L_C,[((howManyChars%lineLen)*charWidth)+xMarg,((howManyChars/lineLen)*(charHeight+lineGap))+yMarg+charHeight-2])
+					screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
+					#if blitChars[yit][vapp].isThisCursor==True:
+					#	screen.blit(blitChars[yit][vapp].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg+charHeight-2])
+		screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+charHeight-2+(cursorLine*(charHeight+lineGap))])
+#		blitCursor=[]
+#		for yit in range(len(cursorScreen)):
+#			blitCursor.append([])
+#			for vapp in range(len(cursorScreen[yit][1])):
+#				for gno in range(len(cursorScreen[yit][1][vapp].charen)):
+#					blitCursor[yit].append(cursorScreen[yit][1][vapp].charen[gno])
+#		screen.blit(L_C,[(len(blitCursor[len(blitCursor)-1])*charWidth)+xMarg,(len(blitCursor)*(charHeight+lineGap))+yMarg+charHeight-2])
 		
 		if event.type == pygame.KEYUP:
-			keys = set([])
+			keys.remove(event.key)
 		if event.type == pygame.QUIT:
 			quit = True
 		#if event.type == pygame.KEY
