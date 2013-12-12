@@ -429,10 +429,11 @@ letCor = {
 }
 
 class Char:
-	def __init__(self,width,image,keys,isThisCursor):
+	def __init__(self,width,image,keys,keyDig,isThisCursor):
 		self.width=width
 		self.image=image
 		self.keys=keys #The keys variable, refers to a tuple, who elements are sets, containing valid key combinations to produce that character. The elements of the set are elements of the dictionary
+		self.keyDig=keyDig
 		self.isThisCursor=isThisCursor
 
 class Vort:
@@ -446,144 +447,144 @@ class Vort:
 
 #Invisible Chars
 
-empty=Char(0,l_fS,(set([ letCor['l'], letCor['w'] ]) ),False)
-enter=Char(0,l_fS,( set([ letCor['ENTER'] ]) ),False)
-wordwrap=Char(0,l_fS,(set([ letCor['l'], letCor['w'] ]) ),False)
-backspace=Char(0,l_fS,(set ([ letCor['BACKSPACE'] ]) ),False)
+empty=Char(0,l_fS,(set([ letCor['l'], letCor['w'] ]) ),255,False)
+enter=Char(0,l_fS,( set([ letCor['ENTER'] ]) ),255,False)
+wordwrap=Char(0,l_fS,(set([ letCor['l'], letCor['w'] ]) ),255,False)
+backspace=Char(0,l_fS,(set ([ letCor['BACKSPACE'] ]) ),255,False)
 
-rightarrow=Char(0,l_fS,(set ([ letCor['RIGHTARROW'] ]) ),False)
-leftarrow=Char(0,l_fS,(set ([ letCor['LEFTARROW'] ]) ),False)
-uparrow=Char(0,l_fS,(set ([ letCor['UPARROW'] ]) ),False)
-downarrow=Char(0,l_fS,(set ([ letCor['DOWNARROW'] ]) ),False)
+rightarrow=Char(0,l_fS,(set ([ letCor['RIGHTARROW'] ]) ),255,False)
+leftarrow=Char(0,l_fS,(set ([ letCor['LEFTARROW'] ]) ),255,False)
+uparrow=Char(0,l_fS,(set ([ letCor['UPARROW'] ]) ),255,False)
+downarrow=Char(0,l_fS,(set ([ letCor['DOWNARROW'] ]) ),255,False)
 
-save=Char(0,l_fS,(set ([ letCor['LEFTCONTROL'],letCor['s'] ]),set ([ letCor['RIGHTCONTROL'],letCor['s'] ])), False)
-open=Char(0,l_fS,(set ([ letCor['LEFTCONTROL'],letCor['o'] ]),set ([ letCor['RIGHTCONTROL'],letCor['o'] ])), False)
+save=Char(0,l_fS,(set ([ letCor['LEFTCONTROL'],letCor['s'] ]),set ([ letCor['RIGHTCONTROL'],letCor['s'] ])),255, False)
+open=Char(0,l_fS,(set ([ letCor['LEFTCONTROL'],letCor['o'] ]),set ([ letCor['RIGHTCONTROL'],letCor['o'] ])),255, False)
 
 
 #NOthing
-nothing=Char(1,l_fS,set([ letCor['a'], letCor['q'], letCor['l'] ]),False)
+nothing=Char(1,l_fS,set([ letCor['a'], letCor['q'], letCor['l'] ]),255,False)
 
 ############Visible Chars
 
 #Space
-space=Char(1,L_S,( set([ letCor['SPACE'] ]) ),False)
+space=Char(1,L_S,( set([ letCor['SPACE'] ]) ),53,False)
 
 #Lower Case Chars 
-lowercase__a=Char(1,L_la,( set([ letCor['a'] ]) ),False)
-lowercase__b=Char(1,L_lb,( set([ letCor['b'] ]) ),False)
-lowercase__c=Char(1,L_lc,( set([ letCor['c'] ]) ),False)
-lowercase__d=Char(1,L_ld,( set([ letCor['d'] ]) ),False)
-lowercase__e=Char(1,L_le,( set([ letCor['e'] ]) ),False)
-lowercase__f=Char(1,L_lf,( set([ letCor['f'] ]) ),False)
-lowercase__g=Char(1,L_lf,( set([ letCor['g'] ]) ),False)
-lowercase__h=Char(1,L_la,( set([ letCor['h'] ]) ),False)
-lowercase__i=Char(1,L_lb,( set([ letCor['i'] ]) ),False)
-lowercase__j=Char(1,L_lc,( set([ letCor['j'] ]) ),False)
-lowercase__k=Char(1,L_ld,( set([ letCor['k'] ]) ),False)
-lowercase__l=Char(1,L_le,( set([ letCor['l'] ]) ),False)
-lowercase__m=Char(1,L_lf,( set([ letCor['m'] ]) ),False)
-lowercase__n=Char(1,L_lf,( set([ letCor['n'] ]) ),False)
-lowercase__o=Char(1,L_la,( set([ letCor['o'] ]) ),False)
-lowercase__p=Char(1,L_lb,( set([ letCor['p'] ]) ),False)
-lowercase__q=Char(1,L_lc,( set([ letCor['q'] ]) ),False)
-lowercase__r=Char(1,L_ld,( set([ letCor['r'] ]) ),False)
-lowercase__s=Char(1,L_le,( set([ letCor['s'] ]) ),False)
-lowercase__t=Char(1,L_lf,( set([ letCor['t'] ]) ),False)
-lowercase__u=Char(1,L_lf,( set([ letCor['u'] ]) ),False)
-lowercase__v=Char(1,L_la,( set([ letCor['v'] ]) ),False)
-lowercase__w=Char(1,L_lb,( set([ letCor['w'] ]) ),False)
-lowercase__x=Char(1,L_lc,( set([ letCor['x'] ]) ),False)
-lowercase__y=Char(1,L_ld,( set([ letCor['y'] ]) ),False)
-lowercase__z=Char(1,L_le,( set([ letCor['z'] ]) ),False)
+lowercase__a=Char(1,L_la,( set([ letCor['a'] ]) ),1,False)
+lowercase__b=Char(1,L_lb,( set([ letCor['b'] ]) ),2,False)
+lowercase__c=Char(1,L_lc,( set([ letCor['c'] ]) ),3,False)
+lowercase__d=Char(1,L_ld,( set([ letCor['d'] ]) ),4,False)
+lowercase__e=Char(1,L_le,( set([ letCor['e'] ]) ),5,False)
+lowercase__f=Char(1,L_lf,( set([ letCor['f'] ]) ),6,False)
+lowercase__g=Char(1,L_lf,( set([ letCor['g'] ]) ),7,False)
+lowercase__h=Char(1,L_la,( set([ letCor['h'] ]) ),8,False)
+lowercase__i=Char(1,L_lb,( set([ letCor['i'] ]) ),9,False)
+lowercase__j=Char(1,L_lc,( set([ letCor['j'] ]) ),10,False)
+lowercase__k=Char(1,L_ld,( set([ letCor['k'] ]) ),11,False)
+lowercase__l=Char(1,L_le,( set([ letCor['l'] ]) ),12,False)
+lowercase__m=Char(1,L_lf,( set([ letCor['m'] ]) ),13,False)
+lowercase__n=Char(1,L_lf,( set([ letCor['n'] ]) ),14,False)
+lowercase__o=Char(1,L_la,( set([ letCor['o'] ]) ),15,False)
+lowercase__p=Char(1,L_lb,( set([ letCor['p'] ]) ),16,False)
+lowercase__q=Char(1,L_lc,( set([ letCor['q'] ]) ),17,False)
+lowercase__r=Char(1,L_ld,( set([ letCor['r'] ]) ),18,False)
+lowercase__s=Char(1,L_le,( set([ letCor['s'] ]) ),19,False)
+lowercase__t=Char(1,L_lf,( set([ letCor['t'] ]) ),20,False)
+lowercase__u=Char(1,L_lf,( set([ letCor['u'] ]) ),21,False)
+lowercase__v=Char(1,L_la,( set([ letCor['v'] ]) ),22,False)
+lowercase__w=Char(1,L_lb,( set([ letCor['w'] ]) ),23,False)
+lowercase__x=Char(1,L_lc,( set([ letCor['x'] ]) ),24,False)
+lowercase__y=Char(1,L_ld,( set([ letCor['y'] ]) ),25,False)
+lowercase__z=Char(1,L_le,( set([ letCor['z'] ]) ),26,False)
 
 #Upper Case Chars
-uppercase__A=Char(1,L_lA,( set([ letCor['a'], letCor['LEFTSHIFT'] ]), set([ letCor['a'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__B=Char(1,L_lB,( set([ letCor['b'], letCor['LEFTSHIFT'] ]), set([ letCor['b'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__C=Char(1,L_lC,( set([ letCor['c'], letCor['LEFTSHIFT'] ]), set([ letCor['c'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__D=Char(1,L_lD,( set([ letCor['d'], letCor['LEFTSHIFT'] ]), set([ letCor['d'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__E=Char(1,L_lE,( set([ letCor['e'], letCor['LEFTSHIFT'] ]), set([ letCor['e'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__F=Char(1,L_lF,( set([ letCor['f'], letCor['LEFTSHIFT'] ]), set([ letCor['f'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__G=Char(1,L_lG,( set([ letCor['g'], letCor['LEFTSHIFT'] ]), set([ letCor['g'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__H=Char(1,L_lH,( set([ letCor['h'], letCor['LEFTSHIFT'] ]), set([ letCor['h'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__I=Char(1,L_lI,( set([ letCor['i'], letCor['LEFTSHIFT'] ]), set([ letCor['i'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__J=Char(1,L_lJ,( set([ letCor['j'], letCor['LEFTSHIFT'] ]), set([ letCor['j'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__K=Char(1,L_lK,( set([ letCor['k'], letCor['LEFTSHIFT'] ]), set([ letCor['k'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__L=Char(1,L_lL,( set([ letCor['l'], letCor['LEFTSHIFT'] ]), set([ letCor['l'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__M=Char(1,L_lM,( set([ letCor['m'], letCor['LEFTSHIFT'] ]), set([ letCor['m'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__N=Char(1,L_lN,( set([ letCor['n'], letCor['LEFTSHIFT'] ]), set([ letCor['n'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__O=Char(1,L_lO,( set([ letCor['o'], letCor['LEFTSHIFT'] ]), set([ letCor['o'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__P=Char(1,L_lP,( set([ letCor['p'], letCor['LEFTSHIFT'] ]), set([ letCor['p'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__Q=Char(1,L_lQ,( set([ letCor['q'], letCor['LEFTSHIFT'] ]), set([ letCor['q'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__R=Char(1,L_lR,( set([ letCor['r'], letCor['LEFTSHIFT'] ]), set([ letCor['r'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__S=Char(1,L_lS,( set([ letCor['s'], letCor['LEFTSHIFT'] ]), set([ letCor['s'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__T=Char(1,L_lT,( set([ letCor['t'], letCor['LEFTSHIFT'] ]), set([ letCor['t'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__U=Char(1,L_lU,( set([ letCor['u'], letCor['LEFTSHIFT'] ]), set([ letCor['u'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__V=Char(1,L_lV,( set([ letCor['v'], letCor['LEFTSHIFT'] ]), set([ letCor['v'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__W=Char(1,L_lW,( set([ letCor['w'], letCor['LEFTSHIFT'] ]), set([ letCor['w'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__X=Char(1,L_lX,( set([ letCor['x'], letCor['LEFTSHIFT'] ]), set([ letCor['x'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__Y=Char(1,L_lY,( set([ letCor['y'], letCor['LEFTSHIFT'] ]), set([ letCor['y'], letCor['RIGHTSHIFT'] ]) ),False)
-uppercase__Z=Char(1,L_lZ,( set([ letCor['z'], letCor['LEFTSHIFT'] ]), set([ letCor['z'], letCor['RIGHTSHIFT'] ]) ),False)
+uppercase__A=Char(1,L_lA,( set([ letCor['a'], letCor['LEFTSHIFT'] ]), set([ letCor['a'], letCor['RIGHTSHIFT'] ]) ),27,False)
+uppercase__B=Char(1,L_lB,( set([ letCor['b'], letCor['LEFTSHIFT'] ]), set([ letCor['b'], letCor['RIGHTSHIFT'] ]) ),28,False)
+uppercase__C=Char(1,L_lC,( set([ letCor['c'], letCor['LEFTSHIFT'] ]), set([ letCor['c'], letCor['RIGHTSHIFT'] ]) ),29,False)
+uppercase__D=Char(1,L_lD,( set([ letCor['d'], letCor['LEFTSHIFT'] ]), set([ letCor['d'], letCor['RIGHTSHIFT'] ]) ),30,False)
+uppercase__E=Char(1,L_lE,( set([ letCor['e'], letCor['LEFTSHIFT'] ]), set([ letCor['e'], letCor['RIGHTSHIFT'] ]) ),31,False)
+uppercase__F=Char(1,L_lF,( set([ letCor['f'], letCor['LEFTSHIFT'] ]), set([ letCor['f'], letCor['RIGHTSHIFT'] ]) ),32,False)
+uppercase__G=Char(1,L_lG,( set([ letCor['g'], letCor['LEFTSHIFT'] ]), set([ letCor['g'], letCor['RIGHTSHIFT'] ]) ),33,False)
+uppercase__H=Char(1,L_lH,( set([ letCor['h'], letCor['LEFTSHIFT'] ]), set([ letCor['h'], letCor['RIGHTSHIFT'] ]) ),34,False)
+uppercase__I=Char(1,L_lI,( set([ letCor['i'], letCor['LEFTSHIFT'] ]), set([ letCor['i'], letCor['RIGHTSHIFT'] ]) ),35,False)
+uppercase__J=Char(1,L_lJ,( set([ letCor['j'], letCor['LEFTSHIFT'] ]), set([ letCor['j'], letCor['RIGHTSHIFT'] ]) ),36,False)
+uppercase__K=Char(1,L_lK,( set([ letCor['k'], letCor['LEFTSHIFT'] ]), set([ letCor['k'], letCor['RIGHTSHIFT'] ]) ),37,False)
+uppercase__L=Char(1,L_lL,( set([ letCor['l'], letCor['LEFTSHIFT'] ]), set([ letCor['l'], letCor['RIGHTSHIFT'] ]) ),38,False)
+uppercase__M=Char(1,L_lM,( set([ letCor['m'], letCor['LEFTSHIFT'] ]), set([ letCor['m'], letCor['RIGHTSHIFT'] ]) ),39,False)
+uppercase__N=Char(1,L_lN,( set([ letCor['n'], letCor['LEFTSHIFT'] ]), set([ letCor['n'], letCor['RIGHTSHIFT'] ]) ),40,False)
+uppercase__O=Char(1,L_lO,( set([ letCor['o'], letCor['LEFTSHIFT'] ]), set([ letCor['o'], letCor['RIGHTSHIFT'] ]) ),41,False)
+uppercase__P=Char(1,L_lP,( set([ letCor['p'], letCor['LEFTSHIFT'] ]), set([ letCor['p'], letCor['RIGHTSHIFT'] ]) ),42,False)
+uppercase__Q=Char(1,L_lQ,( set([ letCor['q'], letCor['LEFTSHIFT'] ]), set([ letCor['q'], letCor['RIGHTSHIFT'] ]) ),43,False)
+uppercase__R=Char(1,L_lR,( set([ letCor['r'], letCor['LEFTSHIFT'] ]), set([ letCor['r'], letCor['RIGHTSHIFT'] ]) ),44,False)
+uppercase__S=Char(1,L_lS,( set([ letCor['s'], letCor['LEFTSHIFT'] ]), set([ letCor['s'], letCor['RIGHTSHIFT'] ]) ),45,False)
+uppercase__T=Char(1,L_lT,( set([ letCor['t'], letCor['LEFTSHIFT'] ]), set([ letCor['t'], letCor['RIGHTSHIFT'] ]) ),46,False)
+uppercase__U=Char(1,L_lU,( set([ letCor['u'], letCor['LEFTSHIFT'] ]), set([ letCor['u'], letCor['RIGHTSHIFT'] ]) ),47,False)
+uppercase__V=Char(1,L_lV,( set([ letCor['v'], letCor['LEFTSHIFT'] ]), set([ letCor['v'], letCor['RIGHTSHIFT'] ]) ),48,False)
+uppercase__W=Char(1,L_lW,( set([ letCor['w'], letCor['LEFTSHIFT'] ]), set([ letCor['w'], letCor['RIGHTSHIFT'] ]) ),49,False)
+uppercase__X=Char(1,L_lX,( set([ letCor['x'], letCor['LEFTSHIFT'] ]), set([ letCor['x'], letCor['RIGHTSHIFT'] ]) ),50,False)
+uppercase__Y=Char(1,L_lY,( set([ letCor['y'], letCor['LEFTSHIFT'] ]), set([ letCor['y'], letCor['RIGHTSHIFT'] ]) ),51,False)
+uppercase__Z=Char(1,L_lZ,( set([ letCor['z'], letCor['LEFTSHIFT'] ]), set([ letCor['z'], letCor['RIGHTSHIFT'] ]) ),52,False)
 
-pixelChars= {
+#pixelChars= {
 	
-	lowercase__a:1
-	lowercase__b:2
-	lowercase__c:3
-	lowercase__d:4
-	lowercase__e:5
-	lowercase__f:6
-	lowercase__g:7
-	lowercase__h:8
-	lowercase__i:9
-	lowercase__j:10
-	lowercase__k:11
-	lowercase__l:12
-	lowercase__m:13
-	lowercase__n:14
-	lowercase__o:15
-	lowercase__p:16
-	lowercase__q:17
-	lowercase__r:18
-	lowercase__s:19
-	lowercase__t:20
-	lowercase__u:21
-	lowercase__v:22
-	lowercase__w:23
-	lowercase__x:24
-	lowercase__y:25
-	lowercase__z:26
+#	lowercase__a:1,
+#	lowercase__b:2,
+#	lowercase__c:3,
+#	lowercase__d:4,
+#	lowercase__e:5,
+#	lowercase__f:6,
+#	lowercase__g:7,
+#	lowercase__h:8,
+#	lowercase__i:9,
+#	lowercase__j:10,
+#	lowercase__k:11,
+#	lowercase__l:12,
+#	lowercase__m:13,
+#	lowercase__n:14,
+#	lowercase__o:15,
+#	lowercase__p:16,
+#	lowercase__q:17,
+#	lowercase__r:18,
+#	lowercase__s:19,
+#	lowercase__t:20,
+#	lowercase__u:21,
+#	lowercase__v:22,
+#	lowercase__w:23,
+#	lowercase__x:24,
+#	lowercase__y:25,
+#	lowercase__z:26,
 
-	uppercase__A:27
-	uppercase__B:28
-	uppercase__C:29
-	uppercase__D:30
-	uppercase__E:31
-	uppercase__F:32
-	uppercase__G:33
-	uppercase__H:34
-	uppercase__I:35
-	uppercase__J:36
-	uppercase__K:37
-	uppercase__L:38
-	uppercase__M:39
-	uppercase__N:40
-	uppercase__O:41
-	uppercase__P:42
-	uppercase__Q:43
-	uppercase__R:44
-	uppercase__S:45
-	uppercase__T:46
-	uppercase__U:47
-	uppercase__V:48
-	uppercase__W:49
-	uppercase__X:50
-	uppercase__Y:51
-	uppercase__Z:52
+#	uppercase__A:27,
+#	uppercase__B:28,
+#	uppercase__C:29,
+#	uppercase__D:30,
+#	uppercase__E:31,
+#	uppercase__F:32,
+#	uppercase__G:33,
+#	uppercase__H:34,
+#	uppercase__I:35,
+#	uppercase__J:36,
+#	uppercase__K:37,
+#	uppercase__L:38,
+#	uppercase__M:39,
+#	uppercase__N:40,
+#	uppercase__O:41,
+#	uppercase__P:42,
+#	uppercase__Q:43,
+#	uppercase__R:44,
+#	uppercase__S:45,
+#	uppercase__T:46,
+#	uppercase__U:47,
+#	uppercase__V:48,
+#	uppercase__W:49,
+#	uppercase__X:50,
+#	uppercase__Y:51,
+#	uppercase__Z:52,
 
-	space:53
-	enter:54
+#	space:53,
+#	enter:54
 
-}
+#}
 
 class Doc:
 	def __init__(self):
@@ -726,9 +727,16 @@ while quit==False:
 					Xboun, Yboun = 0,0
 					Xboun, Yboun = saveIm.size
 					for yit in range(len(ourDoc.vorten)):
-						if yit%3==0:
-
-							saveIm.putpixel((),())
+						for vapp in range(len(ourDoc.vorten[yit].charen)):
+							if vapp%3==0:
+								vortON,vortTW,vortTH = 0,0,0
+								vortON = ourDoc.vorten[yit].charen[vapp].keyDig
+								if vapp+1 < len(ourDoc.vorten[yit].charen):
+									vortTW = ourDoc.vorten[yit].charen[vapp+1].keyDig
+								if vapp+2 < len(ourDoc.vorten[yit].charen):
+									vortTH = ourDoc.vorten[yit].charen[vapp+2].keyDig
+								saveIm.putpixel((vapp/3,yit),(vortON,vortTW,vortTH))
+					saveIm.save(saveName,"png")
 
 		###############################This section breaks the list of words, into a list of lines containing the words
 
