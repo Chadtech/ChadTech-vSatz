@@ -467,7 +467,7 @@ uparrow=Char(0,l_fS,(set ([ letCor['UPARROW'] ]) ),255,False)
 downarrow=Char(0,l_fS,(set ([ letCor['DOWNARROW'] ]) ),255,False)
 
 save=Char(0,l_fS,(set ([ letCor['LEFTCONTROL'],letCor['s'] ]),set ([ letCor['RIGHTCONTROL'],letCor['s'] ])),255, False)
-open=Char(0,l_fS,(set ([ letCor['LEFTCONTROL'],letCor['o'] ]),set ([ letCor['RIGHTCONTROL'],letCor['o'] ])),255, False)
+oPen=Char(0,l_fS,(set ([ letCor['LEFTCONTROL'],letCor['o'] ]),set ([ letCor['RIGHTCONTROL'],letCor['o'] ])),255, False)
 
 #Nothing
 nothing=Char(1,l_fS,set([ letCor['a'], letCor['q'], letCor['l'] ]),255,False)
@@ -542,6 +542,73 @@ punctuation__semicolon=Char(1,L_pSemicolon,( set([ letCor['SEMICOLON'] ]) ),57,F
 punctuation__colon=Char(1,L_pColon,( set([ letCor['SEMICOLON'],letCor['LEFTSHIFT'] ]),set([ letCor['SEMICOLON'],letCor['RIGHTSHIFT'] ]) ),58,False)
 punctuation__exclaimation=Char(1,L_pExclaimation,( set([ letCor['NUMERAL1'],letCor['LEFTSHIFT'] ]),set([ letCor['NUMERAL1'],letCor['RIGHTSHIFT'] ]) ),59,False)
 punctuation__singlequote=Char(1,L_pSinglequote,( set([ letCor['SINGLEQUOTE'] ]) ),60,False)
+
+modallogic_possible=Char(1,L_mP,( set([ letCor['NUMERAL2'],letCor['p'] ]) ),61,False)
+modallogic_necessary=Char(1,L_mN,( set([ letCor['NUMERAL2'],letCor['n'] ]) ),62,False)
+
+charLets={
+	
+	1:lowercase__a,
+	2:lowercase__b,
+	3:lowercase__c,
+	4:lowercase__d,
+	5:lowercase__e,
+	6:lowercase__f,
+	7:lowercase__g,
+	8:lowercase__h,
+	9:lowercase__i,
+	10:lowercase__j,
+	11:lowercase__k,
+	12:lowercase__l,
+	13:lowercase__m,
+	14:lowercase__n,
+	15:lowercase__o,
+	16:lowercase__p,
+	17:lowercase__q,
+	18:lowercase__r,
+	19:lowercase__s,
+	20:lowercase__t,
+	21:lowercase__u,
+	22:lowercase__v,
+	23:lowercase__w,
+	24:lowercase__x,
+	25:lowercase__y,
+	26:lowercase__z,
+	27:uppercase__A,
+	28:uppercase__B,
+	29:uppercase__C,
+	30:uppercase__D,
+	31:uppercase__E,
+	32:uppercase__F,
+	33:uppercase__G,
+	34:uppercase__H,
+	35:uppercase__I,
+	36:uppercase__J,
+	37:uppercase__K,
+	38:uppercase__L,
+	39:uppercase__M,
+	40:uppercase__N,
+	41:uppercase__O,
+	42:uppercase__P,
+	43:uppercase__Q,
+	44:uppercase__R,
+	45:uppercase__S,
+	46:uppercase__T,
+	47:uppercase__U,
+	48:uppercase__V,
+	49:uppercase__W,
+	50:uppercase__X,
+	51:uppercase__Y,
+	52:uppercase__Z,
+	53:space,
+	54:punctuation__period,
+	55:punctuation__comma,
+	56:punctuation__question,
+	57:punctuation__semicolon,
+	58:punctuation__colon,
+	59:punctuation__exclaimation,
+	60:punctuation__singlequote,
+}
 
 #pixelChars= {
 	
@@ -624,7 +691,7 @@ while quit==False:
 		if event.type == pygame.KEYDOWN:
 			howManyChars=0
 			keys.add(event.key)
-			print 'KEYS', keys, 'event.key', event.key
+			print 'CURVOT', curVort, 'CURCHAR', curChar
 
 			######################## Lower case letters
 
@@ -956,6 +1023,18 @@ while quit==False:
 				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
 				curChar+=1
 
+			######################### Modal Logic Characters
+
+			whichChar=modallogic_possible
+			if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=modallogic_necessary
+			if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
 			######################### Commandy keys
 
 			if event.key in space.keys:
@@ -1008,6 +1087,8 @@ while quit==False:
 
 			#if event.key in downarrow.keys:
 
+		########################################## Saving DOcuments
+
 			whichChar=save
 			for yit in range(len(whichChar.keys)):
 				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
@@ -1029,6 +1110,43 @@ while quit==False:
 									vortTH = ourDoc.vorten[yit].charen[vapp+2].keyDig
 								saveIm.putpixel((vapp/3,yit),(vortON,vortTW,vortTH))
 					saveIm.save(saveName,"png")
+
+		########################################### Opening Documents
+
+			whichChar=oPen
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					openName = tkFileDialog.askopenfilename()
+					openName = str(openName)
+					openIm =  Image.open(openName)
+					ourDoc= Doc()
+					ourDoc.vorten.append(Vort())
+					cursor= Doc()
+					cursor.vorten.append(Vort())
+					xBou,yBou=0,0
+					r,g,b = openIm.getpixel((xBou,yBou))
+					print 'PRE OPEN RGB', r,g,b
+					while r!=0:
+						print 'GOT HERE'
+						ourDoc.vorten.append(Vort())
+						while r!=0:
+							print 'AND HERE'
+							r,g,b = openIm.getpixel((xBou,yBou))
+							print r,g,b
+							if r!=0:
+								ourDoc.vorten[yBou].charen.append(charLets[r])
+							if g!=0:
+								ourDoc.vorten[yBou].charen.append(charLets[g])
+							if b!=0:
+								ourDoc.vorten[yBou].charen.append(charLets[b])
+							xBou+=1
+						yBou+=1
+						xBou=0
+						r,g,b = openIm.getpixel((xBou,yBou))
+					curVort=len(ourDoc.vorten)-1
+					print curVort, len(ourDoc.vorten[curVort].charen)
+					curChar=len(ourDoc.vorten[curVort].charen)
+
 
 		###############################This section breaks the list of words, into a list of lines containing the words
 
@@ -1056,6 +1174,7 @@ while quit==False:
 				cursorLine=thisLin
 				for vapp in range(len(blitScreen[len(blitScreen)-1][1])):
 					cursorChar+= len(blitScreen[len(blitScreen)-1][1][vapp].charen)
+				cursorChar-=len(ourDoc.vorten[curVort].charen)-curChar
 
 	 	############################This section takes the words in each line, and breaks them down into a list of characters to paste onto the screen
 
