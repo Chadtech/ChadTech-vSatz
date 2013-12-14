@@ -80,13 +80,13 @@ os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('Punctuation'))
 
 #Punctuation
-L_pQ = pygame.image.load('char0.PNG').convert()
-L_pE = pygame.image.load('char1.PNG').convert()
-L_pP = pygame.image.load('char2.PNG').convert()
-L_pC = pygame.image.load('char3.PNG').convert()
-L_pO = pygame.image.load('char4.PNG').convert()
-L_pS = pygame.image.load('char5.PNG').convert()
-L_pU = pygame.image.load('char6.PNG').convert()
+L_pQuestion = pygame.image.load('char0.PNG').convert()
+L_pExclaimation = pygame.image.load('char1.PNG').convert()
+L_pPeriod = pygame.image.load('char2.PNG').convert()
+L_pComma = pygame.image.load('char3.PNG').convert()
+L_pColon = pygame.image.load('char4.PNG').convert()
+L_pSemicolon = pygame.image.load('char5.PNG').convert()
+L_pSinglequote = pygame.image.load('char6.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('Space'))
@@ -184,7 +184,7 @@ L_sNb = pygame.image.load('char8.PNG').convert()
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('ProofTheory'))
 
-#set Theory
+#Proof Theory
 L_pSt = pygame.image.load('char0.PNG').convert()
 L_pNs = pygame.image.load('char1.PNG').convert()
 L_pDt = pygame.image.load('char2.PNG').convert()
@@ -371,6 +371,7 @@ letCor = {
 	'SINGLEQUOTE':39,
 
 	'COMMA':44,
+	'HYPHEN':45,
 	'PERIOD':46,
 
 	'FORWARDSLASH':47,
@@ -385,7 +386,15 @@ letCor = {
 	'NUMERAL8':56,
 	'NUMERA:9':57,
 
+	'SEMICOLON':59,
+
+
 	'EQUALS':61,
+
+	'LEFTBRACKET':91,
+	'RIGHTBRACKET':93,
+
+	'BACKSLASH':92,
 
 	'TILDE':96,
 
@@ -460,8 +469,7 @@ downarrow=Char(0,l_fS,(set ([ letCor['DOWNARROW'] ]) ),255,False)
 save=Char(0,l_fS,(set ([ letCor['LEFTCONTROL'],letCor['s'] ]),set ([ letCor['RIGHTCONTROL'],letCor['s'] ])),255, False)
 open=Char(0,l_fS,(set ([ letCor['LEFTCONTROL'],letCor['o'] ]),set ([ letCor['RIGHTCONTROL'],letCor['o'] ])),255, False)
 
-
-#NOthing
+#Nothing
 nothing=Char(1,l_fS,set([ letCor['a'], letCor['q'], letCor['l'] ]),255,False)
 
 ############Visible Chars
@@ -476,26 +484,26 @@ lowercase__c=Char(1,L_lc,( set([ letCor['c'] ]) ),3,False)
 lowercase__d=Char(1,L_ld,( set([ letCor['d'] ]) ),4,False)
 lowercase__e=Char(1,L_le,( set([ letCor['e'] ]) ),5,False)
 lowercase__f=Char(1,L_lf,( set([ letCor['f'] ]) ),6,False)
-lowercase__g=Char(1,L_lf,( set([ letCor['g'] ]) ),7,False)
-lowercase__h=Char(1,L_la,( set([ letCor['h'] ]) ),8,False)
-lowercase__i=Char(1,L_lb,( set([ letCor['i'] ]) ),9,False)
-lowercase__j=Char(1,L_lc,( set([ letCor['j'] ]) ),10,False)
-lowercase__k=Char(1,L_ld,( set([ letCor['k'] ]) ),11,False)
-lowercase__l=Char(1,L_le,( set([ letCor['l'] ]) ),12,False)
-lowercase__m=Char(1,L_lf,( set([ letCor['m'] ]) ),13,False)
-lowercase__n=Char(1,L_lf,( set([ letCor['n'] ]) ),14,False)
-lowercase__o=Char(1,L_la,( set([ letCor['o'] ]) ),15,False)
-lowercase__p=Char(1,L_lb,( set([ letCor['p'] ]) ),16,False)
-lowercase__q=Char(1,L_lc,( set([ letCor['q'] ]) ),17,False)
-lowercase__r=Char(1,L_ld,( set([ letCor['r'] ]) ),18,False)
-lowercase__s=Char(1,L_le,( set([ letCor['s'] ]) ),19,False)
-lowercase__t=Char(1,L_lf,( set([ letCor['t'] ]) ),20,False)
-lowercase__u=Char(1,L_lf,( set([ letCor['u'] ]) ),21,False)
-lowercase__v=Char(1,L_la,( set([ letCor['v'] ]) ),22,False)
-lowercase__w=Char(1,L_lb,( set([ letCor['w'] ]) ),23,False)
-lowercase__x=Char(1,L_lc,( set([ letCor['x'] ]) ),24,False)
-lowercase__y=Char(1,L_ld,( set([ letCor['y'] ]) ),25,False)
-lowercase__z=Char(1,L_le,( set([ letCor['z'] ]) ),26,False)
+lowercase__g=Char(1,L_lg,( set([ letCor['g'] ]) ),7,False)
+lowercase__h=Char(1,L_lh,( set([ letCor['h'] ]) ),8,False)
+lowercase__i=Char(1,L_li,( set([ letCor['i'] ]) ),9,False)
+lowercase__j=Char(1,L_lj,( set([ letCor['j'] ]) ),10,False)
+lowercase__k=Char(1,L_lk,( set([ letCor['k'] ]) ),11,False)
+lowercase__l=Char(1,L_ll,( set([ letCor['l'] ]) ),12,False)
+lowercase__m=Char(1,L_lm,( set([ letCor['m'] ]) ),13,False)
+lowercase__n=Char(1,L_ln,( set([ letCor['n'] ]) ),14,False)
+lowercase__o=Char(1,L_lo,( set([ letCor['o'] ]) ),15,False)
+lowercase__p=Char(1,L_lp,( set([ letCor['p'] ]) ),16,False)
+lowercase__q=Char(1,L_lq,( set([ letCor['q'] ]) ),17,False)
+lowercase__r=Char(1,L_lr,( set([ letCor['r'] ]) ),18,False)
+lowercase__s=Char(1,L_ls,( set([ letCor['s'] ]) ),19,False)
+lowercase__t=Char(1,L_lt,( set([ letCor['t'] ]) ),20,False)
+lowercase__u=Char(1,L_lu,( set([ letCor['u'] ]) ),21,False)
+lowercase__v=Char(1,L_lv,( set([ letCor['v'] ]) ),22,False)
+lowercase__w=Char(1,L_lw,( set([ letCor['w'] ]) ),23,False)
+lowercase__x=Char(1,L_lx,( set([ letCor['x'] ]) ),24,False)
+lowercase__y=Char(1,L_ly,( set([ letCor['y'] ]) ),25,False)
+lowercase__z=Char(1,L_lz,( set([ letCor['z'] ]) ),26,False)
 
 #Upper Case Chars
 uppercase__A=Char(1,L_lA,( set([ letCor['a'], letCor['LEFTSHIFT'] ]), set([ letCor['a'], letCor['RIGHTSHIFT'] ]) ),27,False)
@@ -524,6 +532,16 @@ uppercase__W=Char(1,L_lW,( set([ letCor['w'], letCor['LEFTSHIFT'] ]), set([ letC
 uppercase__X=Char(1,L_lX,( set([ letCor['x'], letCor['LEFTSHIFT'] ]), set([ letCor['x'], letCor['RIGHTSHIFT'] ]) ),50,False)
 uppercase__Y=Char(1,L_lY,( set([ letCor['y'], letCor['LEFTSHIFT'] ]), set([ letCor['y'], letCor['RIGHTSHIFT'] ]) ),51,False)
 uppercase__Z=Char(1,L_lZ,( set([ letCor['z'], letCor['LEFTSHIFT'] ]), set([ letCor['z'], letCor['RIGHTSHIFT'] ]) ),52,False)
+
+#Punctuation
+
+punctuation__period=Char(1,L_pPeriod,( set([ letCor['PERIOD'] ]) ),54,False)
+punctuation__comma=Char(1,L_pComma,( set([ letCor['COMMA'] ]) ),55,False)
+punctuation__question=Char(1,L_pQuestion,( set([ letCor['FORWARDSLASH'],letCor['LEFTSHIFT'] ]),set([ letCor['FORWARDSLASH'],letCor['RIGHTSHIFT'] ]) ),56,False)
+punctuation__semicolon=Char(1,L_pSemicolon,( set([ letCor['SEMICOLON'] ]) ),57,False)
+punctuation__colon=Char(1,L_pColon,( set([ letCor['SEMICOLON'],letCor['LEFTSHIFT'] ]),set([ letCor['SEMICOLON'],letCor['RIGHTSHIFT'] ]) ),58,False)
+punctuation__exclaimation=Char(1,L_pExclaimation,( set([ letCor['NUMERAL1'],letCor['LEFTSHIFT'] ]),set([ letCor['NUMERAL1'],letCor['RIGHTSHIFT'] ]) ),59,False)
+punctuation__singlequote=Char(1,L_pSinglequote,( set([ letCor['SINGLEQUOTE'] ]) ),60,False)
 
 #pixelChars= {
 	
@@ -645,7 +663,97 @@ while quit==False:
 				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
 				curChar+=1
 
-			whichChar=lowercase__f
+			whichChar=lowercase__h
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__i
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__j
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__k
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__l
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__m
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__n
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__o
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__p
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__q
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__r
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__s
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__t
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__u
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__v
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__w
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__x
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__y
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=lowercase__z
 			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
 				curChar+=1
@@ -663,6 +771,190 @@ while quit==False:
 				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
 					curChar+=1
+
+			whichChar=uppercase__C
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__D
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__E
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__F
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__G
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__H
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__I
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__J
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__K
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__L
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__M
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__N
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__O
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__P
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__Q
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__R
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__S
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__T
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__U
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__V
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__W
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__X
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__Y
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=uppercase__Z
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			#########################Punctuation
+
+			whichChar=punctuation__period
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=punctuation__comma
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=punctuation__question
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=punctuation__exclaimation
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=punctuation__semicolon
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
+
+			whichChar=punctuation__colon
+			for yit in range(len(whichChar.keys)):
+				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+			whichChar=punctuation__singlequote
+			if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+				ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				curChar+=1
 
 			######################### Commandy keys
 
@@ -747,13 +1039,6 @@ while quit==False:
 		cursorVort = 0
 		cursorLine = 0
 		for yit in range(len(ourDoc.vorten)):
-			print yit, curVort, len(ourDoc.vorten), 
-			if yit==curVort:
-				cursorVort=yit
-				cursorLine=thisLin
-				for vapp in range(len(blitScreen[len(blitScreen)-1][1])):
-					cursorChar+= len(blitScreen[len(blitScreen)-1][1][vapp].charen)
-				cursorChar+=curChar
 			if ourDoc.vorten[yit].charen==[enter]:
 				blitScreen.append( [0,[]] )
 				thisLin+=1
@@ -766,24 +1051,11 @@ while quit==False:
 					thisLin+=1
 					blitScreen[thisLin][0]=len(ourDoc.vorten[yit].charen)
 					blitScreen[thisLin][1].append(ourDoc.vorten[yit])
-
-#		cursorScreen = []
-#		thisLin = 0
-#		cursorScreen.append( [0,[]] )
-#		for yit in range(curVort):
-#			if cursor.vorten[yit].charen==[enter]:
-#				cursorScreen.append( [0,[]] )
-#				thisLin+=1
-#			else:
-#				if cursorScreen[thisLin][0]+len(cursor.vorten[yit].charen)<=lineLen:
-#					cursorScreen[thisLin][1].append(cursor.vorten[yit])
-#					cursorScreen[thisLin][0]+=len(cursor.vorten[yit].charen)
-#				else:
-#					cursorScreen.append( [0,[]] )
-#					thisLin+=1
-#					print len(cursor.vorten[yit].charen)
-#					cursorScreen[thisLin][0]=len(cursor.vorten[yit].charen)
-#					cursorScreen[thisLin][1].append(cursor.vorten[yit])
+			if yit==curVort:
+				cursorVort=yit
+				cursorLine=thisLin
+				for vapp in range(len(blitScreen[len(blitScreen)-1][1])):
+					cursorChar+= len(blitScreen[len(blitScreen)-1][1][vapp].charen)
 
 	 	############################This section takes the words in each line, and breaks them down into a list of characters to paste onto the screen
 
@@ -802,14 +1074,9 @@ while quit==False:
 					screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
 					#if blitChars[yit][vapp].isThisCursor==True:
 					#	screen.blit(blitChars[yit][vapp].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg+charHeight-2])
-		screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+charHeight-2+(cursorLine*(charHeight+lineGap))])
-#		blitCursor=[]
-#		for yit in range(len(cursorScreen)):
-#			blitCursor.append([])
-#			for vapp in range(len(cursorScreen[yit][1])):
-#				for gno in range(len(cursorScreen[yit][1][vapp].charen)):
-#					blitCursor[yit].append(cursorScreen[yit][1][vapp].charen[gno])
-#		screen.blit(L_C,[(len(blitCursor[len(blitCursor)-1])*charWidth)+xMarg,(len(blitCursor)*(charHeight+lineGap))+yMarg+charHeight-2])
+		screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine*(charHeight+lineGap))])
+
+		######################################
 		
 		if event.type == pygame.KEYUP:
 			keys.remove(event.key)
