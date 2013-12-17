@@ -194,39 +194,7 @@ L_pLc = pygame.image.load('char4.PNG').convert()
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('Cursor'))
 
-#Under Cursor
 L_C = pygame.image.load('char0.PNG').convert()
-
-os.chdir(os.path.dirname(os.getcwd()))
-os.chdir(os.path.abspath('Cursor Lowercase'))
-#lower case letters
-C_la = pygame.image.load('char0.PNG').convert()
-C_lb = pygame.image.load('char1.PNG').convert()
-C_lc = pygame.image.load('char2.PNG').convert()
-C_ld = pygame.image.load('char3.PNG').convert()
-C_le = pygame.image.load('char4.PNG').convert()
-C_lf = pygame.image.load('char5.PNG').convert()
-C_lg = pygame.image.load('char6.PNG').convert()
-C_lh = pygame.image.load('char7.PNG').convert()
-C_li = pygame.image.load('char8.PNG').convert()
-C_lj = pygame.image.load('char9.PNG').convert()
-C_lk = pygame.image.load('char10.PNG').convert()
-C_ll = pygame.image.load('char11.PNG').convert()
-C_lm = pygame.image.load('char12.PNG').convert()
-C_ln = pygame.image.load('char13.PNG').convert()
-C_lo = pygame.image.load('char14.PNG').convert()
-C_lp = pygame.image.load('char15.PNG').convert()
-C_lq = pygame.image.load('char16.PNG').convert()
-C_lr = pygame.image.load('char17.PNG').convert()
-C_ls = pygame.image.load('char18.PNG').convert()
-C_lt = pygame.image.load('char19.PNG').convert()
-C_lu = pygame.image.load('char20.PNG').convert()
-C_lv = pygame.image.load('char21.PNG').convert()
-C_lw = pygame.image.load('char22.PNG').convert()
-C_lx = pygame.image.load('char23.PNG').convert()
-C_ly = pygame.image.load('char24.PNG').convert()
-C_lz = pygame.image.load('char25.PNG').convert()
-
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.dirname(os.getcwd()))
@@ -315,18 +283,19 @@ l_Nei = pygame.image.load('char8.PNG').convert()
 l_Nni = pygame.image.load('char9.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Punctuation'))
+
+#Punctuation
+l_punctuationQuestion = pygame.image.load('char0.PNG').convert()
+l_punctuationExclaimation = pygame.image.load('char1.PNG').convert()
+l_punctuationPeriod = pygame.image.load('char2.PNG').convert()
+l_punctuationComma = pygame.image.load('char3.PNG').convert()
+l_punctuationColon = pygame.image.load('char4.PNG').convert()
+l_punctuationSemicolon = pygame.image.load('char5.PNG').convert()
+l_punctuationSinglequote = pygame.image.load('char6.PNG').convert()
+
 os.chdir(os.path.dirname(os.getcwd()))
-
-
-
-#ChadTechv0.
-class cursor(pygame.sprite.Sprite):
-
-	def __init__(self):
-		pygame.sprite.Sprite.__init__(self)
-		self.image = pygame.Surface([2,16])
-		self.image.fill((192,192,192))
-		self.rect = self.image.get_rect()
+os.chdir(os.path.dirname(os.getcwd()))
 
 pygame.init()
 
@@ -341,7 +310,11 @@ charHeight=16 #With the buffer the height ought to be 35, but it would be mislea
 lilcharHeight=6
 lineGap=4
 
-xMarg = 96 - charWidth
+lilCharOffsetX = 9
+lilCharOffsetSuperSetY = -6
+lilCharOffsetSubSetY=14
+
+xMarg = 96-charWidth
 yMarg = 48
 
 lineLen=(screenWidth-(2*xMarg))/charWidth
@@ -351,7 +324,7 @@ curLin=0
 curVort=0
 curChar=0
 
-whicScript = 'normal'
+whichScript = 'normal'
 
 letCor = {
 	
@@ -380,7 +353,6 @@ letCor = {
 	'NUMERA:9':57,
 
 	'SEMICOLON':59,
-
 
 	'EQUALS':61,
 
@@ -431,7 +403,8 @@ letCor = {
 }
 
 class Char:
-	def __init__(self,image,keys,keyDig):
+	def __init__(self,lilimage,image,keys,keyDig):
+		self.lilimage=lilimage
 		self.image=image
 		self.keys=keys #The keys variable, refers to a tuple, who elements are sets, containing valid key combinations to produce that character. The elements of the set are elements of the dictionary
 		self.keyDig=keyDig
@@ -441,106 +414,101 @@ class Char:
 class Vort:
 	def __init__(self):
 		self.charen=[]
-	def vortLen(self):
-		vortLen = 0
-		for yit in range(len(charen)):
-			vortLen+=charen[yit].width
-		return vortLen
 
 #Invisible Chars
 
-empty=Char(l_fS,(set([ letCor['l'], letCor['w'] ]) ),255)
-enter=Char(l_fS,( set([ letCor['ENTER'] ]) ),255)
-wordwrap=Char(l_fS,(set([ letCor['l'], letCor['w'] ]) ),255)
-backspace=Char(l_fS,(set ([ letCor['BACKSPACE'] ]) ),255)
+empty=Char(l_fS,l_fS,(set([ letCor['l'], letCor['w'] ]) ),255)
+enter=Char(l_fS,l_fS,( set([ letCor['ENTER'] ]) ),255)
+wordwrap=Char(l_fS,l_fS,(set([ letCor['l'], letCor['w'] ]) ),255)
+backspace=Char(l_fS,l_fS,(set ([ letCor['BACKSPACE'] ]) ),255)
 
-rightarrow=Char(l_fS,(set ([ letCor['RIGHTARROW'] ]) ),255)
-leftarrow=Char(l_fS,(set ([ letCor['LEFTARROW'] ]) ),255,)
-uparrow=Char(l_fS,(set ([ letCor['UPARROW'] ]) ),255)
-downarrow=Char(l_fS,(set ([ letCor['DOWNARROW'] ]) ),255)
+rightarrow=Char(l_fS,l_fS,(set ([ letCor['RIGHTARROW'] ]) ),255)
+leftarrow=Char(l_fS,l_fS,(set ([ letCor['LEFTARROW'] ]) ),255,)
+uparrow=Char(l_fS,l_fS,(set ([ letCor['UPARROW'] ]) ),255)
+downarrow=Char(l_fS,l_fS,(set ([ letCor['DOWNARROW'] ]) ),255)
 
-save=Char(l_fS,(set ([ letCor['LEFTCONTROL'],letCor['s'] ]),set ([ letCor['RIGHTCONTROL'],letCor['s'] ])),255)
-oPen=Char(l_fS,(set ([ letCor['LEFTCONTROL'],letCor['o'] ]),set ([ letCor['RIGHTCONTROL'],letCor['o'] ])),255)
+save=Char(l_fS,l_fS,(set ([ letCor['LEFTCONTROL'],letCor['s'] ]),set ([ letCor['RIGHTCONTROL'],letCor['s'] ])),255)
+oPen=Char(l_fS,l_fS,(set ([ letCor['LEFTCONTROL'],letCor['o'] ]),set ([ letCor['RIGHTCONTROL'],letCor['o'] ])),255)
 
-superSet=Char(l_fS,(set([ letCor['LEFTSHIFT'],letCor['EQUALS'] ]),set([ letCor['RIGHTSHIFT'],letCor['EQUALS'] ])),255)
-subSet==Char(l_fS,(set([ letCor['LEFTSHIFT'],letCor['HYPHEN'] ]),set([ letCor['RIGHTSHIFT'],letCor['HYPHEN'] ])),255)
+superSet=Char(l_fS,l_fS,(set([ letCor['LEFTSHIFT'],letCor['EQUALS'] ]),set([ letCor['RIGHTSHIFT'],letCor['EQUALS'] ])),255)
+subSet=Char(l_fS,l_fS,(set([ letCor['LEFTSHIFT'],letCor['HYPHEN'] ]),set([ letCor['RIGHTSHIFT'],letCor['HYPHEN'] ])),255)
 
 #Nothing
-nothing=Char(l_fS,set([ letCor['a'], letCor['q'], letCor['l'] ]),255)
+nothing=Char(l_fS,l_fS,set([ letCor['a'], letCor['q'], letCor['l'] ]),255)
 
 ############Visible Chars
 
 #Space
-space=Char(L_S,( set([ letCor['SPACE'] ]) ),53)
+space=Char(l_S,L_S,( set([ letCor['SPACE'] ]) ),53)
 
 #Lower Case Chars 
-lowercase__a=Char(L_la,( set([ letCor['a'] ]) ),1)
-lowercase__b=Char(L_lb,( set([ letCor['b'] ]) ),2)
-lowercase__c=Char(L_lc,( set([ letCor['c'] ]) ),3)
-lowercase__d=Char(L_ld,( set([ letCor['d'] ]) ),4)
-lowercase__e=Char(L_le,( set([ letCor['e'] ]) ),5)
-lowercase__f=Char(L_lf,( set([ letCor['f'] ]) ),6)
-lowercase__g=Char(L_lg,( set([ letCor['g'] ]) ),7)
-lowercase__h=Char(L_lh,( set([ letCor['h'] ]) ),8)
-lowercase__i=Char(L_li,( set([ letCor['i'] ]) ),9)
-lowercase__j=Char(L_lj,( set([ letCor['j'] ]) ),10)
-lowercase__k=Char(L_lk,( set([ letCor['k'] ]) ),11)
-lowercase__l=Char(L_ll,( set([ letCor['l'] ]) ),12)
-lowercase__m=Char(L_lm,( set([ letCor['m'] ]) ),13)
-lowercase__n=Char(L_ln,( set([ letCor['n'] ]) ),14)
-lowercase__o=Char(L_lo,( set([ letCor['o'] ]) ),15)
-lowercase__p=Char(L_lp,( set([ letCor['p'] ]) ),16)
-lowercase__q=Char(L_lq,( set([ letCor['q'] ]) ),17)
-lowercase__r=Char(L_lr,( set([ letCor['r'] ]) ),18)
-lowercase__s=Char(L_ls,( set([ letCor['s'] ]) ),19)
-lowercase__t=Char(L_lt,( set([ letCor['t'] ]) ),20)
-lowercase__u=Char(L_lu,( set([ letCor['u'] ]) ),21)
-lowercase__v=Char(L_lv,( set([ letCor['v'] ]) ),22)
-lowercase__w=Char(L_lw,( set([ letCor['w'] ]) ),23)
-lowercase__x=Char(L_lx,( set([ letCor['x'] ]) ),24)
-lowercase__y=Char(L_ly,( set([ letCor['y'] ]) ),25)
-lowercase__z=Char(L_lz,( set([ letCor['z'] ]) ),26)
+lowercase__a=Char(l_la,L_la,( set([ letCor['a'] ]) ),1)
+lowercase__b=Char(l_lb,L_lb,( set([ letCor['b'] ]) ),2)
+lowercase__c=Char(l_lc,L_lc,( set([ letCor['c'] ]) ),3)
+lowercase__d=Char(l_ld,L_ld,( set([ letCor['d'] ]) ),4)
+lowercase__e=Char(l_le,L_le,( set([ letCor['e'] ]) ),5)
+lowercase__f=Char(l_lf,L_lf,( set([ letCor['f'] ]) ),6)
+lowercase__g=Char(l_lg,L_lg,( set([ letCor['g'] ]) ),7)
+lowercase__h=Char(l_lh,L_lh,( set([ letCor['h'] ]) ),8)
+lowercase__i=Char(l_li,L_li,( set([ letCor['i'] ]) ),9)
+lowercase__j=Char(l_lj,L_lj,( set([ letCor['j'] ]) ),10)
+lowercase__k=Char(l_lk,L_lk,( set([ letCor['k'] ]) ),11)
+lowercase__l=Char(l_ll,L_ll,( set([ letCor['l'] ]) ),12)
+lowercase__m=Char(l_lm,L_lm,( set([ letCor['m'] ]) ),13)
+lowercase__n=Char(l_ln,L_ln,( set([ letCor['n'] ]) ),14)
+lowercase__o=Char(l_lo,L_lo,( set([ letCor['o'] ]) ),15)
+lowercase__p=Char(l_lp,L_lp,( set([ letCor['p'] ]) ),16)
+lowercase__q=Char(l_lq,L_lq,( set([ letCor['q'] ]) ),17)
+lowercase__r=Char(l_lr,L_lr,( set([ letCor['r'] ]) ),18)
+lowercase__s=Char(l_ls,L_ls,( set([ letCor['s'] ]) ),19)
+lowercase__t=Char(l_lt,L_lt,( set([ letCor['t'] ]) ),20)
+lowercase__u=Char(l_lu,L_lu,( set([ letCor['u'] ]) ),21)
+lowercase__v=Char(l_lv,L_lv,( set([ letCor['v'] ]) ),22)
+lowercase__w=Char(l_lw,L_lw,( set([ letCor['w'] ]) ),23)
+lowercase__x=Char(l_lx,L_lx,( set([ letCor['x'] ]) ),24)
+lowercase__y=Char(l_ly,L_ly,( set([ letCor['y'] ]) ),25)
+lowercase__z=Char(l_lz,L_lz,( set([ letCor['z'] ]) ),26)
 
 #Upper Case Chars
-uppercase__A=Char(L_lA,( set([ letCor['a'], letCor['LEFTSHIFT'] ]), set([ letCor['a'], letCor['RIGHTSHIFT'] ]) ),27)
-uppercase__B=Char(L_lB,( set([ letCor['b'], letCor['LEFTSHIFT'] ]), set([ letCor['b'], letCor['RIGHTSHIFT'] ]) ),28)
-uppercase__C=Char(L_lC,( set([ letCor['c'], letCor['LEFTSHIFT'] ]), set([ letCor['c'], letCor['RIGHTSHIFT'] ]) ),29)
-uppercase__D=Char(L_lD,( set([ letCor['d'], letCor['LEFTSHIFT'] ]), set([ letCor['d'], letCor['RIGHTSHIFT'] ]) ),30)
-uppercase__E=Char(L_lE,( set([ letCor['e'], letCor['LEFTSHIFT'] ]), set([ letCor['e'], letCor['RIGHTSHIFT'] ]) ),31)
-uppercase__F=Char(L_lF,( set([ letCor['f'], letCor['LEFTSHIFT'] ]), set([ letCor['f'], letCor['RIGHTSHIFT'] ]) ),32)
-uppercase__G=Char(L_lG,( set([ letCor['g'], letCor['LEFTSHIFT'] ]), set([ letCor['g'], letCor['RIGHTSHIFT'] ]) ),33)
-uppercase__H=Char(L_lH,( set([ letCor['h'], letCor['LEFTSHIFT'] ]), set([ letCor['h'], letCor['RIGHTSHIFT'] ]) ),34)
-uppercase__I=Char(L_lI,( set([ letCor['i'], letCor['LEFTSHIFT'] ]), set([ letCor['i'], letCor['RIGHTSHIFT'] ]) ),35)
-uppercase__J=Char(L_lJ,( set([ letCor['j'], letCor['LEFTSHIFT'] ]), set([ letCor['j'], letCor['RIGHTSHIFT'] ]) ),36)
-uppercase__K=Char(L_lK,( set([ letCor['k'], letCor['LEFTSHIFT'] ]), set([ letCor['k'], letCor['RIGHTSHIFT'] ]) ),37)
-uppercase__L=Char(L_lL,( set([ letCor['l'], letCor['LEFTSHIFT'] ]), set([ letCor['l'], letCor['RIGHTSHIFT'] ]) ),38)
-uppercase__M=Char(L_lM,( set([ letCor['m'], letCor['LEFTSHIFT'] ]), set([ letCor['m'], letCor['RIGHTSHIFT'] ]) ),39)
-uppercase__N=Char(L_lN,( set([ letCor['n'], letCor['LEFTSHIFT'] ]), set([ letCor['n'], letCor['RIGHTSHIFT'] ]) ),40)
-uppercase__O=Char(L_lO,( set([ letCor['o'], letCor['LEFTSHIFT'] ]), set([ letCor['o'], letCor['RIGHTSHIFT'] ]) ),41)
-uppercase__P=Char(L_lP,( set([ letCor['p'], letCor['LEFTSHIFT'] ]), set([ letCor['p'], letCor['RIGHTSHIFT'] ]) ),42)
-uppercase__Q=Char(L_lQ,( set([ letCor['q'], letCor['LEFTSHIFT'] ]), set([ letCor['q'], letCor['RIGHTSHIFT'] ]) ),43)
-uppercase__R=Char(L_lR,( set([ letCor['r'], letCor['LEFTSHIFT'] ]), set([ letCor['r'], letCor['RIGHTSHIFT'] ]) ),44)
-uppercase__S=Char(L_lS,( set([ letCor['s'], letCor['LEFTSHIFT'] ]), set([ letCor['s'], letCor['RIGHTSHIFT'] ]) ),45)
-uppercase__T=Char(L_lT,( set([ letCor['t'], letCor['LEFTSHIFT'] ]), set([ letCor['t'], letCor['RIGHTSHIFT'] ]) ),46)
-uppercase__U=Char(L_lU,( set([ letCor['u'], letCor['LEFTSHIFT'] ]), set([ letCor['u'], letCor['RIGHTSHIFT'] ]) ),47)
-uppercase__V=Char(L_lV,( set([ letCor['v'], letCor['LEFTSHIFT'] ]), set([ letCor['v'], letCor['RIGHTSHIFT'] ]) ),48)
-uppercase__W=Char(L_lW,( set([ letCor['w'], letCor['LEFTSHIFT'] ]), set([ letCor['w'], letCor['RIGHTSHIFT'] ]) ),49)
-uppercase__X=Char(L_lX,( set([ letCor['x'], letCor['LEFTSHIFT'] ]), set([ letCor['x'], letCor['RIGHTSHIFT'] ]) ),50)
-uppercase__Y=Char(L_lY,( set([ letCor['y'], letCor['LEFTSHIFT'] ]), set([ letCor['y'], letCor['RIGHTSHIFT'] ]) ),51)
-uppercase__Z=Char(L_lZ,( set([ letCor['z'], letCor['LEFTSHIFT'] ]), set([ letCor['z'], letCor['RIGHTSHIFT'] ]) ),52)
+uppercase__A=Char(l_lA,L_lA,( set([ letCor['a'], letCor['LEFTSHIFT'] ]), set([ letCor['a'], letCor['RIGHTSHIFT'] ]) ),27)
+uppercase__B=Char(l_lB,L_lB,( set([ letCor['b'], letCor['LEFTSHIFT'] ]), set([ letCor['b'], letCor['RIGHTSHIFT'] ]) ),28)
+uppercase__C=Char(l_lC,L_lC,( set([ letCor['c'], letCor['LEFTSHIFT'] ]), set([ letCor['c'], letCor['RIGHTSHIFT'] ]) ),29)
+uppercase__D=Char(l_lD,L_lD,( set([ letCor['d'], letCor['LEFTSHIFT'] ]), set([ letCor['d'], letCor['RIGHTSHIFT'] ]) ),30)
+uppercase__E=Char(l_lE,L_lE,( set([ letCor['e'], letCor['LEFTSHIFT'] ]), set([ letCor['e'], letCor['RIGHTSHIFT'] ]) ),31)
+uppercase__F=Char(l_lF,L_lF,( set([ letCor['f'], letCor['LEFTSHIFT'] ]), set([ letCor['f'], letCor['RIGHTSHIFT'] ]) ),32)
+uppercase__G=Char(l_lG,L_lG,( set([ letCor['g'], letCor['LEFTSHIFT'] ]), set([ letCor['g'], letCor['RIGHTSHIFT'] ]) ),33)
+uppercase__H=Char(l_lH,L_lH,( set([ letCor['h'], letCor['LEFTSHIFT'] ]), set([ letCor['h'], letCor['RIGHTSHIFT'] ]) ),34)
+uppercase__I=Char(l_lI,L_lI,( set([ letCor['i'], letCor['LEFTSHIFT'] ]), set([ letCor['i'], letCor['RIGHTSHIFT'] ]) ),35)
+uppercase__J=Char(l_lJ,L_lJ,( set([ letCor['j'], letCor['LEFTSHIFT'] ]), set([ letCor['j'], letCor['RIGHTSHIFT'] ]) ),36)
+uppercase__K=Char(l_lK,L_lK,( set([ letCor['k'], letCor['LEFTSHIFT'] ]), set([ letCor['k'], letCor['RIGHTSHIFT'] ]) ),37)
+uppercase__L=Char(l_lL,L_lL,( set([ letCor['l'], letCor['LEFTSHIFT'] ]), set([ letCor['l'], letCor['RIGHTSHIFT'] ]) ),38)
+uppercase__M=Char(l_lM,L_lM,( set([ letCor['m'], letCor['LEFTSHIFT'] ]), set([ letCor['m'], letCor['RIGHTSHIFT'] ]) ),39)
+uppercase__N=Char(l_lN,L_lN,( set([ letCor['n'], letCor['LEFTSHIFT'] ]), set([ letCor['n'], letCor['RIGHTSHIFT'] ]) ),40)
+uppercase__O=Char(l_lO,L_lO,( set([ letCor['o'], letCor['LEFTSHIFT'] ]), set([ letCor['o'], letCor['RIGHTSHIFT'] ]) ),41)
+uppercase__P=Char(l_lP,L_lP,( set([ letCor['p'], letCor['LEFTSHIFT'] ]), set([ letCor['p'], letCor['RIGHTSHIFT'] ]) ),42)
+uppercase__Q=Char(l_lQ,L_lQ,( set([ letCor['q'], letCor['LEFTSHIFT'] ]), set([ letCor['q'], letCor['RIGHTSHIFT'] ]) ),43)
+uppercase__R=Char(l_lR,L_lR,( set([ letCor['r'], letCor['LEFTSHIFT'] ]), set([ letCor['r'], letCor['RIGHTSHIFT'] ]) ),44)
+uppercase__S=Char(l_lS,L_lS,( set([ letCor['s'], letCor['LEFTSHIFT'] ]), set([ letCor['s'], letCor['RIGHTSHIFT'] ]) ),45)
+uppercase__T=Char(l_lT,L_lT,( set([ letCor['t'], letCor['LEFTSHIFT'] ]), set([ letCor['t'], letCor['RIGHTSHIFT'] ]) ),46)
+uppercase__U=Char(l_lU,L_lU,( set([ letCor['u'], letCor['LEFTSHIFT'] ]), set([ letCor['u'], letCor['RIGHTSHIFT'] ]) ),47)
+uppercase__V=Char(l_lV,L_lV,( set([ letCor['v'], letCor['LEFTSHIFT'] ]), set([ letCor['v'], letCor['RIGHTSHIFT'] ]) ),48)
+uppercase__W=Char(l_lW,L_lW,( set([ letCor['w'], letCor['LEFTSHIFT'] ]), set([ letCor['w'], letCor['RIGHTSHIFT'] ]) ),49)
+uppercase__X=Char(l_lX,L_lX,( set([ letCor['x'], letCor['LEFTSHIFT'] ]), set([ letCor['x'], letCor['RIGHTSHIFT'] ]) ),50)
+uppercase__Y=Char(l_lY,L_lY,( set([ letCor['y'], letCor['LEFTSHIFT'] ]), set([ letCor['y'], letCor['RIGHTSHIFT'] ]) ),51)
+uppercase__Z=Char(l_lZ,L_lZ,( set([ letCor['z'], letCor['LEFTSHIFT'] ]), set([ letCor['z'], letCor['RIGHTSHIFT'] ]) ),52)
 
 #Punctuation
 
-punctuation__period=Char(L_pPeriod,( set([ letCor['PERIOD'] ]) ),54)
-punctuation__comma=Char(L_pComma,( set([ letCor['COMMA'] ]) ),55)
-punctuation__question=Char(L_pQuestion,( set([ letCor['FORWARDSLASH'],letCor['LEFTSHIFT'] ]),set([ letCor['FORWARDSLASH'],letCor['RIGHTSHIFT'] ]) ),56)
-punctuation__semicolon=Char(L_pSemicolon,( set([ letCor['SEMICOLON'] ]) ),57)
-punctuation__colon=Char(L_pColon,( set([ letCor['SEMICOLON'],letCor['LEFTSHIFT'] ]),set([ letCor['SEMICOLON'],letCor['RIGHTSHIFT'] ]) ),58)
-punctuation__exclaimation=Char(L_pExclaimation,( set([ letCor['NUMERAL1'],letCor['LEFTSHIFT'] ]),set([ letCor['NUMERAL1'],letCor['RIGHTSHIFT'] ]) ),59)
-punctuation__singlequote=Char(L_pSinglequote,( set([ letCor['SINGLEQUOTE'] ]) ),60)
+punctuation__period=Char(l_punctuationPeriod,L_pPeriod,( set([ letCor['PERIOD'] ]) ),54)
+punctuation__comma=Char(l_punctuationComma,L_pComma,( set([ letCor['COMMA'] ]) ),55)
+punctuation__question=Char(l_punctuationQuestion,L_pQuestion,( set([ letCor['FORWARDSLASH'],letCor['LEFTSHIFT'] ]),set([ letCor['FORWARDSLASH'],letCor['RIGHTSHIFT'] ]) ),56)
+punctuation__semicolon=Char(l_punctuationSemicolon,L_pSemicolon,( set([ letCor['SEMICOLON'] ]) ),57)
+punctuation__colon=Char(l_punctuationColon,L_pColon,( set([ letCor['SEMICOLON'],letCor['LEFTSHIFT'] ]),set([ letCor['SEMICOLON'],letCor['RIGHTSHIFT'] ]) ),58)
+punctuation__exclaimation=Char(l_punctuationExclaimation,L_pExclaimation,( set([ letCor['NUMERAL1'],letCor['LEFTSHIFT'] ]),set([ letCor['NUMERAL1'],letCor['RIGHTSHIFT'] ]) ),59)
+punctuation__singlequote=Char(l_punctuationSinglequote,L_pSinglequote,( set([ letCor['SINGLEQUOTE'] ]) ),60)
 
-modallogic_possible=Char(L_mP,( set([ letCor['NUMERAL2'],letCor['p'] ]) ),61)
-modallogic_necessary=Char(L_mN,( set([ letCor['NUMERAL2'],letCor['n'] ]) ),62)
+#modallogic_possible=Char(L_mP,( set([ letCor['NUMERAL2'],letCor['p'] ]) ),61)
+#modallogic_necessary=Char(L_mN,( set([ letCor['NUMERAL2'],letCor['n'] ]) ),62)
 
 charLets={
 	
@@ -603,7 +571,7 @@ charLets={
 	57:punctuation__semicolon,
 	58:punctuation__colon,
 	59:punctuation__exclaimation,
-	60:punctuation__singlequote,
+	#60:punctuation__singlequote,
 }
 
 class Doc:
@@ -622,17 +590,36 @@ while quit==False:
 		if event.type == pygame.KEYDOWN:
 			howManyChars=0
 			keys.add(event.key)
-			print 'CURVOT', curVort, 'CURCHAR', curChar
+			print 'CURVOT', curVort, 'CURCHAR', curChar, whichScript, keys
 
-			whichChar=superSet
-			for yit in range(len(whichChar.keys)):
-				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-					superSet=True
+			if whichScript == 'normal':
 
-			whichChar=subSet
-			for yit in range(len(whichChar.keys)):
-				if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-					subSet=True
+				whichChar=superSet
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						print 'GOT HERE'
+						whichScript = 'superscript'
+
+				print 'then here', whichScript
+
+				whichChar=subSet
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						whichScript = 'subscript'
+
+			if whichScript == 'superscript':
+
+				whichChar=subSet
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						whichScript = 'normal'
+
+			if whichScript == 'subscript':
+
+				whichChar=superSet
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						whichScript = 'normal'
 
 			######################## Check if this is a super script or sub script
 
@@ -970,15 +957,15 @@ while quit==False:
 
 				######################### Modal Logic Characters
 
-				whichChar=modallogic_possible
-				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
-					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
-					curChar+=1
+				#whichChar=modallogic_possible
+				#if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+				#	ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				#	curChar+=1
 
-				whichChar=modallogic_necessary
-				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
-					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
-					curChar+=1
+				#whichChar=modallogic_necessary
+				#if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+				#	ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+				#	curChar+=1
 
 				######################### Commandy keys
 
@@ -1030,11 +1017,19 @@ while quit==False:
 								curVort-=1
 								curChar=len(ourDoc.vorten[curVort].charen)
 
-			else: #Else, as in superChek or subChek is true
+			else: #Else, as in whichscript!='normal'
 
-				if superChek and not subChek:
+				if whichScript == 'superscript':
 
-				if subChek and not 
+					whichChar=lowercase__a
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						print 'docLEN', len(ourDoc.vorten), 'curVort', curVort, 'vortLEN',len(ourDoc.vorten[curVort].charen),
+						ourDoc.vorten[curVort].charen[curChar-1].superscript.append(whichChar)
+
+
+
+
+
 
 			########################################## Saving DOcuments
 
@@ -1136,6 +1131,10 @@ while quit==False:
 			for vapp in range(lineLen):
 				if vapp<len(blitChars[yit]):
 					screen.blit(blitChars[yit][vapp].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
+					for dukh in range(len(blitChars[yit][vapp].superscript)):
+						screen.blit(blitChars[yit][vapp].superscript[dukh].lilimage,[(vapp*charWidth)+(dukh*charWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSuperSetY+yMarg])
+					for dukh in range(len(blitChars[yit][vapp].subscript)):
+						screen.blit(blitChars[yit][vapp][dukh].lilimage,[(vapp*charWidth)+(dukh*charWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
 				else:
 					screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
 		screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine*(charHeight+lineGap))])
