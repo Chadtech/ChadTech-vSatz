@@ -87,6 +87,7 @@ L_pComma = pygame.image.load('char3.PNG').convert()
 L_pColon = pygame.image.load('char4.PNG').convert()
 L_pSemicolon = pygame.image.load('char5.PNG').convert()
 L_pSinglequote = pygame.image.load('char6.PNG').convert()
+L_pDoublequote = pygame.image.load('char7.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('Space'))
@@ -132,12 +133,14 @@ os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('FirstOrderLogic'))
 
 #First Order Logic
-L_fE = pygame.image.load('char0.PNG').convert()
-L_fA = pygame.image.load('char1.PNG').convert()
-L_fN = pygame.image.load('char2.PNG').convert()
-L_fI = pygame.image.load('char3.PNG').convert()
-L_fF = pygame.image.load('char4.PNG').convert()
-L_fD = pygame.image.load('char5.PNG').convert()
+L_firstorderExistential = pygame.image.load('char0.PNG').convert()
+L_firstorderForall = pygame.image.load('char1.PNG').convert()
+L_firstorderNegation = pygame.image.load('char2.PNG').convert()
+L_firstorderImplication = pygame.image.load('char3.PNG').convert()
+L_firstorderIff = pygame.image.load('char4.PNG').convert()
+L_firstorderAnd = pygame.image.load('char5.PNG').convert()
+L_firstorderXor = pygame.image.load('char6.PNG').convert()
+L_firstorderNand = pygame.image.load('char7.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('Numerals'))
@@ -293,6 +296,26 @@ l_punctuationComma = pygame.image.load('char3.PNG').convert()
 l_punctuationColon = pygame.image.load('char4.PNG').convert()
 l_punctuationSemicolon = pygame.image.load('char5.PNG').convert()
 l_punctuationSinglequote = pygame.image.load('char6.PNG').convert()
+l_punctuationDoublequote = pygame.image.load('char7.PNG').convert()
+
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Modallogic'))
+
+l_modalPossible = pygame.image.load('char0.PNG').convert()
+l_modalNecessary = pygame.image.load('char1.PNG').convert()
+
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('FirstOrderLogic'))
+
+#First Order Logic
+l_firstorderExistential = pygame.image.load('char0.PNG').convert()
+l_firstorderForall = pygame.image.load('char1.PNG').convert()
+l_firstorderNegation = pygame.image.load('char2.PNG').convert()
+l_firstorderImplication = pygame.image.load('char3.PNG').convert()
+l_firstorderIff = pygame.image.load('char4.PNG').convert()
+l_firstorderAnd = pygame.image.load('char5.PNG').convert()
+l_firstorderXor = pygame.image.load('char6.PNG').convert()
+l_firstorderNand = pygame.image.load('char7.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.dirname(os.getcwd()))
@@ -350,7 +373,7 @@ letCor = {
 	'NUMERAL6':54,
 	'NUMERAL7':55,
 	'NUMERAL8':56,
-	'NUMERA:9':57,
+	'NUMERAL9':57,
 
 	'SEMICOLON':59,
 
@@ -470,6 +493,7 @@ lowercase__y=Char(l_ly,L_ly,( set([ letCor['y'] ]) ),25)
 lowercase__z=Char(l_lz,L_lz,( set([ letCor['z'] ]) ),26)
 
 #Upper Case Chars
+
 uppercase__A=Char(l_lA,L_lA,( set([ letCor['a'], letCor['LEFTSHIFT'] ]), set([ letCor['a'], letCor['RIGHTSHIFT'] ]) ),27)
 uppercase__B=Char(l_lB,L_lB,( set([ letCor['b'], letCor['LEFTSHIFT'] ]), set([ letCor['b'], letCor['RIGHTSHIFT'] ]) ),28)
 uppercase__C=Char(l_lC,L_lC,( set([ letCor['c'], letCor['LEFTSHIFT'] ]), set([ letCor['c'], letCor['RIGHTSHIFT'] ]) ),29)
@@ -506,9 +530,30 @@ punctuation__semicolon=Char(l_punctuationSemicolon,L_pSemicolon,( set([ letCor['
 punctuation__colon=Char(l_punctuationColon,L_pColon,( set([ letCor['SEMICOLON'],letCor['LEFTSHIFT'] ]),set([ letCor['SEMICOLON'],letCor['RIGHTSHIFT'] ]) ),58)
 punctuation__exclaimation=Char(l_punctuationExclaimation,L_pExclaimation,( set([ letCor['NUMERAL1'],letCor['LEFTSHIFT'] ]),set([ letCor['NUMERAL1'],letCor['RIGHTSHIFT'] ]) ),59)
 punctuation__singlequote=Char(l_punctuationSinglequote,L_pSinglequote,( set([ letCor['SINGLEQUOTE'] ]) ),60)
+punctuation__doublequote=Char(l_punctuationDoublequote,L_pDoublequote,( set([ letCor['LEFTSHIFT'], letCor['SINGLEQUOTE'] ]),set([ letCor['RIGHTSHIFT'], letCor['SINGLEQUOTE'] ]) ),61)
 
-#modallogic_possible=Char(L_mP,( set([ letCor['NUMERAL2'],letCor['p'] ]) ),61)
-#modallogic_necessary=Char(L_mN,( set([ letCor['NUMERAL2'],letCor['n'] ]) ),62)
+numeral__ze=Char(l_Nze,L_Nze,( set([ letCor['NUMERAL0'] ]) ),62)
+numeral__on=Char(l_Non,L_Non,( set([ letCor['NUMERAL1'] ]) ),63)
+numeral__tw=Char(l_Ntw,L_Ntw,( set([ letCor['NUMERAL2'] ]) ),64)
+numeral__th=Char(l_Nth,L_Nth,( set([ letCor['NUMERAL3'] ]) ),65)
+numeral__fo=Char(l_Nfo,L_Nfo,( set([ letCor['NUMERAL4'] ]) ),66)
+numeral__fi=Char(l_Ntw,L_Nfi,( set([ letCor['NUMERAL5'] ]) ),67)
+numeral__si=Char(l_Ntw,L_Nsi,( set([ letCor['NUMERAL6'] ]) ),68)
+numeral__se=Char(l_Nse,L_Nse,( set([ letCor['NUMERAL7'] ]) ),69)
+numeral__ei=Char(l_Nei,L_Nei,( set([ letCor['NUMERAL8'] ]) ),70)
+numeral__ni=Char(l_Nni,L_Nni,( set([ letCor['NUMERAL9'] ]) ),71)
+
+modallogic__possible=Char(l_modalPossible,L_mP,( set([ letCor['NUMERAL2'],letCor['p'] ]) ),72)
+modallogic__necessary=Char(l_modalNecessary,L_mN,( set([ letCor['NUMERAL2'],letCor['n'] ]) ),73)
+
+firstorderlogic__existential=Char(l_firstorderExistential,L_firstorderExistential,( set([ letCor['NUMERAL1'],letCor['e'] ]) ),74)
+firstorderlogic__forall=Char(l_firstorderForall,L_firstorderForall,( set([ letCor['NUMERAL1'],letCor['a'] ]) ),75)
+firstorderlogic__negation=Char(l_firstorderNegation,L_firstorderNegation,( set([ letCor['NUMERAL1'],letCor['n'] ]) ),76)
+firstorderlogic__implication=Char(l_firstorderImplication,L_firstorderImplication,( set([ letCor['NUMERAL1'],letCor['i'] ]) ),77)
+firstorderlogic__iff=Char(l_firstorderIff,L_firstorderIff,( set([ letCor['NUMERAL1'],letCor['f'] ]) ),78)
+firstorderlogic__xor=Char(l_firstorderXor,L_firstorderXor,( set([ letCor['NUMERAL1'],letCor['x'] ]) ),79)
+firstorderlogic__nand=Char(l_firstorderNand,L_firstorderNand,( set([ letCor['NUMERAL1'],letCor['d'] ]) ),80)
+firstorderlogic__and=Char(l_firstorderAnd,L_firstorderAnd, ( set([ letCor['NUMERAL1'],letCor['PERIOD'] ]) ),81)
 
 charLets={
 	
@@ -571,7 +616,28 @@ charLets={
 	57:punctuation__semicolon,
 	58:punctuation__colon,
 	59:punctuation__exclaimation,
-	#60:punctuation__singlequote,
+	60:punctuation__singlequote,
+	61:punctuation__doublequote,
+	62:numeral__ze,
+	63:numeral__on,
+	64:numeral__tw,
+	65:numeral__th,
+	66:numeral__fo,
+	67:numeral__fi,
+	68:numeral__si,
+	69:numeral__se,
+	70:numeral__ni,
+	72:modallogic__possible,
+	73:modallogic__necessary,
+	74:firstorderlogic__existential,
+	75:firstorderlogic__forall,
+	76:firstorderlogic__negation,
+	77:firstorderlogic__implication,
+	78:firstorderlogic__iff,
+	79:firstorderlogic__xor,
+	80:firstorderlogic__nand,
+	81:firstorderlogic__and
+
 }
 
 class Doc:
@@ -599,8 +665,6 @@ while quit==False:
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						print 'GOT HERE'
 						whichScript = 'superscript'
-
-				print 'then here', whichScript
 
 				whichChar=subSet
 				for yit in range(len(whichChar.keys)):
@@ -955,17 +1019,197 @@ while quit==False:
 					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
 					curChar+=1
 
+				whichChar=punctuation__doublequote
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+						curChar+=1
+
+				######################### Numbers
+
+				whichChar=numeral__ze
+				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				whichChar=numeral__on
+				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				whichChar=numeral__tw
+				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				whichChar=numeral__th
+				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				whichChar=numeral__fo
+				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				whichChar=numeral__fi
+				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				whichChar=numeral__si
+				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				whichChar=numeral__se
+				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				whichChar=numeral__ei
+				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				whichChar=numeral__ni
+				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
 				######################### Modal Logic Characters
 
-				#whichChar=modallogic_possible
-				#if event.key in whichChar.keys and whichChar.keys.issubset(keys):
-				#	ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
-				#	curChar+=1
+				whichChar=modallogic__possible
+				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+					for yit in [0]*2:
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
 
-				#whichChar=modallogic_necessary
-				#if event.key in whichChar.keys and whichChar.keys.issubset(keys):
-				#	ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
-				#	curChar+=1
+				whichChar=modallogic__necessary
+				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+					for yit in [0]*2:
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				######################## First order logic
+
+				whichChar=firstorderlogic__existential
+				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+					for yit in [0]*2:
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				whichChar=firstorderlogic__forall
+				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+					for yit in [0]*2:
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				whichChar=firstorderlogic__negation
+				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+					for yit in [0]*2:
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				whichChar=firstorderlogic__implication
+				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+					for yit in [0]*2:
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				whichChar=firstorderlogic__iff
+				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+					for yit in [0]*2:
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				whichChar=firstorderlogic__and
+				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+					for yit in [0]*2:
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				whichChar=firstorderlogic__xor
+				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+					for yit in [0]*2:
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
+
+				whichChar=firstorderlogic__nand
+				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+					for yit in [0]*2:
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+					ourDoc.vorten[curVort].charen.insert(curChar,whichChar)
+					curChar+=1
 
 				######################### Commandy keys
 
@@ -1017,25 +1261,12 @@ while quit==False:
 								curVort-=1
 								curChar=len(ourDoc.vorten[curVort].charen)
 
-			else: #Else, as in whichscript!='normal'
-
-				if whichScript == 'superscript':
-
-					whichChar=lowercase__a
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						print 'docLEN', len(ourDoc.vorten), 'curVort', curVort, 'vortLEN',len(ourDoc.vorten[curVort].charen),
-						ourDoc.vorten[curVort].charen[curChar-1].superscript.append(whichChar)
-
-
-
-
-
-
 			########################################## Saving DOcuments
 
 				whichChar=save
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						print 'did it here?'
 						saveName = tkFileDialog.asksaveasfilename()
 						saveName = str(saveName)
 						pygame.image.save(screen,"curpag.PNG")
@@ -1090,6 +1321,15 @@ while quit==False:
 						curVort=len(ourDoc.vorten)-1
 						print curVort, len(ourDoc.vorten[curVort].charen)
 						curChar=len(ourDoc.vorten[curVort].charen)
+
+			else: #Else, as in whichscript!='normal'
+
+				if whichScript == 'superscript':
+
+					whichChar=lowercase__a
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						print 'docLEN', len(ourDoc.vorten), 'curVort', curVort, 'vortLEN',len(ourDoc.vorten[curVort].charen),
+						ourDoc.vorten[curVort].charen[curChar-1].superscript.append(whichChar)
 
 
 		###############################This section breaks the list of words, into a list of lines containing the words
