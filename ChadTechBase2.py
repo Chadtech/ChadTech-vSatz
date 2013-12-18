@@ -1324,8 +1324,9 @@ while quit==False:
 					whichChar=lowercase__a
 					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+		############################## Fill the screen with black
 
-
+		screen.fill((0,0,0))
 
 		###############################This section breaks the list of words, into a list of lines containing the words
 
