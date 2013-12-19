@@ -348,6 +348,9 @@ curLin=0
 curVort=0
 curChar=0
 
+shiftCou = 1
+shiftMag = 8
+
 whichScript = 'normal'
 
 def addChar(input):
@@ -659,6 +662,9 @@ while quit==False:
 			howManyChars=0
 			keys.add(event.key)
 			print 'CURVOT', curVort, 'CURCHAR', curChar, whichScript, keys
+
+			if not (letCor['LEFTSHIFT'] in keys) and not (letCor['RIGHTSHIFT'] in keys):
+				shiftCou = 1
 
 			if whichScript == 'normal':
 
@@ -1237,6 +1243,17 @@ while quit==False:
 						ourDoc.vorten[curVort].charen.pop(curChar-1)
 						curChar-=1
 
+				if event.key in backspace.keys and ((letCor['LEFTSHIFT'] in keys) or (letCor['RIGHTSHIFT'] in keys)):
+					for yit in [0]*shiftCou:
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+					shiftCou=shiftCou*shiftMag
+
 				if event.key in leftarrow.keys:
 					if curChar!=0:
 						curChar-=1
@@ -1244,6 +1261,16 @@ while quit==False:
 						if curVort!=0:
 							curVort-=1
 							curChar=len(ourDoc.vorten[curVort].charen)
+
+				if event.key in leftarrow.keys and ((letCor['LEFTSHIFT'] in keys) or (letCor['RIGHTSHIFT'] in keys)):
+					for yit in [0]*shiftCou:
+						if curChar!=0:
+							curChar-=1
+						else:
+							if curVort!=0:
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+					shiftCou=shiftCou*shiftMag
 
 				if event.key in rightarrow.keys:
 					if curChar==len(ourDoc.vorten[curVort].charen):
@@ -1253,7 +1280,26 @@ while quit==False:
 					else:
 						curChar+=1
 
+				if event.key in rightarrow.keys and ((letCor['LEFTSHIFT'] in keys) or (letCor['RIGHTSHIFT'] in keys)):
+					for yit in [0]*shiftCou:
+						if curChar==len(ourDoc.vorten[curVort].charen):
+							if curVort!=(len(ourDoc.vorten)-1):
+								curVort+=1
+								curChar=0
+						else:
+							curChar+=1
+					shiftCou=shiftCou*shiftMag
+
 				if event.key in uparrow.keys:
+					for yit in lineLen*[0]:
+						if curChar!=0:
+							curChar-=1
+						else:
+							if curVort!=0:
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+
+				if event.key in downarrow.keys:
 					for yit in lineLen*[0]:
 						if curChar!=0:
 							curChar-=1
@@ -1278,6 +1324,8 @@ while quit==False:
 							for vapp in range(len(ourDoc.vorten[yit].charen)):
 								if vapp%3==0:
 									vortON,vortTW,vortTH = 0,0,0
+									print 'len of ourDoc', len(ourDoc.vorten), 'yit', yit, 'len of yit Vort', len(ourDoc.vorten[yit].charen)
+									print ourDoc.vorten[yit].charen[vapp][0].keyDig
 									vortON = ourDoc.vorten[yit].charen[vapp][0].keyDig
 									if vapp+1 < len(ourDoc.vorten[yit].charen):
 										vortTW = ourDoc.vorten[yit].charen[vapp+1][0].keyDig
@@ -1380,6 +1428,7 @@ while quit==False:
 		######################################
 		
 		if event.type == pygame.KEYUP:
+			#if event.key == letCor['LEFTSHIFT'] or event.key == letCor['RIGHTSHIFT']:
 			keys.remove(event.key)
 		if event.type == pygame.QUIT:
 			quit = True
