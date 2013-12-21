@@ -106,28 +106,29 @@ os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('Math'))
 
 #Math
-L_mEq = pygame.image.load('char0.PNG').convert()
-L_mGt = pygame.image.load('char1.PNG').convert()
-L_mGe = pygame.image.load('char2.PNG').convert()
-L_mLt = pygame.image.load('char3.PNG').convert()
-L_mLe = pygame.image.load('char4.PNG').convert()
-L_mDi = pygame.image.load('char5.PNG').convert()
-L_mAp = pygame.image.load('char6.PNG').convert()
-L_mPl = pygame.image.load('char7.PNG').convert()
-L_mSb = pygame.image.load('char8.PNG').convert()
-L_mMu = pygame.image.load('char9.PNG').convert()
-L_mFs = pygame.image.load('char10.PNG').convert()
-L_mBs = pygame.image.load('char11.PNG').convert()
-L_mQe = pygame.image.load('char12.PNG').convert()
-L_mSr = pygame.image.load('char13.PNG').convert()
-L_mAs = pygame.image.load('char14.PNG').convert()
-L_mAd = pygame.image.load('char15.PNG').convert()
-L_mNe = pygame.image.load('char16.PNG').convert()
-L_mAn = pygame.image.load('char17.PNG').convert()
-L_mDe = pygame.image.load('char18.PNG').convert()
-L_mGr = pygame.image.load('char19.PNG').convert()
-L_mIn = pygame.image.load('char20.PNG').convert()
-L_mDv = pygame.image.load('char21.PNG').convert()
+L_mEquals = pygame.image.load('char0.PNG').convert()
+L_mGreaterThan = pygame.image.load('char1.PNG').convert()
+L_mGreaterThanOrEqual = pygame.image.load('char2.PNG').convert()
+L_mLessThan = pygame.image.load('char3.PNG').convert()
+L_mLessThanOrEqual = pygame.image.load('char4.PNG').convert()
+L_mDivision = pygame.image.load('char5.PNG').convert()
+L_mApproximately = pygame.image.load('char6.PNG').convert()
+L_mPlus = pygame.image.load('char7.PNG').convert()
+L_mMinus = pygame.image.load('char8.PNG').convert()
+L_mMultiply = pygame.image.load('char9.PNG').convert()
+L_mForwardSlash = pygame.image.load('char10.PNG').convert()
+L_mBackSlash = pygame.image.load('char11.PNG').convert()
+L_mQED = pygame.image.load('char12.PNG').convert()
+L_mSquareRoot = pygame.image.load('char13.PNG').convert()
+L_mPlusMinus = pygame.image.load('char14.PNG').convert()
+L_mIntegral = pygame.image.load('char15.PNG').convert()
+L_mNotEqual = pygame.image.load('char16.PNG').convert()
+L_mAngle = pygame.image.load('char17.PNG').convert()
+L_mTriangle = pygame.image.load('char18.PNG').convert()
+L_mUpsideDownTriangle = pygame.image.load('char19.PNG').convert()
+L_mInfinity = pygame.image.load('char20.PNG').convert()
+L_mDivides = pygame.image.load('char21.PNG').convert()
+L_mDoesntDivide = pygame.image.load('char22.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('FirstOrderLogic'))
@@ -161,14 +162,14 @@ os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('Brackets'))
 
 #Brackets
-L_blp = pygame.image.load('char0.PNG').convert()
-L_brp = pygame.image.load('char1.PNG').convert()
-L_blc = pygame.image.load('char2.PNG').convert()
-L_brc = pygame.image.load('char3.PNG').convert()
-L_blb = pygame.image.load('char4.PNG').convert()
-L_brb = pygame.image.load('char5.PNG').convert()
-L_blh = pygame.image.load('char6.PNG').convert()
-L_brh = pygame.image.load('char7.PNG').convert()
+L_bLeftParenthesis = pygame.image.load('char0.PNG').convert()
+L_bRightParenthesis = pygame.image.load('char1.PNG').convert()
+L_bLeftCurly = pygame.image.load('char2.PNG').convert()
+L_bRightCurly = pygame.image.load('char3.PNG').convert()
+L_bLeftBracket = pygame.image.load('char4.PNG').convert()
+L_bRightBracket = pygame.image.load('char5.PNG').convert()
+L_bLeftChevron = pygame.image.load('char6.PNG').convert()
+L_bRightChevron = pygame.image.load('char7.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('setTheory'))
@@ -318,6 +319,49 @@ l_firstorderXor = pygame.image.load('char6.PNG').convert()
 l_firstorderNand = pygame.image.load('char7.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Brackets'))
+
+#Brackets
+l_bLeftParenthesis = pygame.image.load('char0.PNG').convert()
+l_bRightParenthesis = pygame.image.load('char1.PNG').convert()
+l_bLeftCurly = pygame.image.load('char2.PNG').convert()
+l_bRightCurly = pygame.image.load('char3.PNG').convert()
+l_bLeftBracket = pygame.image.load('char4.PNG').convert()
+l_bRightBracket = pygame.image.load('char5.PNG').convert()
+l_bLeftChevron = pygame.image.load('char6.PNG').convert()
+l_bRightChevron = pygame.image.load('char7.PNG').convert()
+
+
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Math'))
+
+#Math
+l_mEquals = pygame.image.load('char0.PNG').convert()
+l_mGreaterThan = pygame.image.load('char1.PNG').convert()
+l_mGreaterThanOrEqual = pygame.image.load('char2.PNG').convert()
+l_mLessThan = pygame.image.load('char3.PNG').convert()
+l_mLessThanOrEqual = pygame.image.load('char4.PNG').convert()
+l_mDivision = pygame.image.load('char5.PNG').convert()
+l_mApproximately = pygame.image.load('char6.PNG').convert()
+l_mPlus = pygame.image.load('char7.PNG').convert()
+l_mMinus = pygame.image.load('char8.PNG').convert()
+l_mMultiply = pygame.image.load('char9.PNG').convert()
+l_mForwardSlash = pygame.image.load('char10.PNG').convert()
+l_mBackSlash = pygame.image.load('char11.PNG').convert()
+l_mQED = pygame.image.load('char12.PNG').convert()
+l_mSquareRoot = pygame.image.load('char13.PNG').convert()
+l_mPlusMinus = pygame.image.load('char14.PNG').convert()
+l_mIntegral = pygame.image.load('char15.PNG').convert()
+l_mNotEqual = pygame.image.load('char16.PNG').convert()
+l_mAngle = pygame.image.load('char17.PNG').convert()
+l_mTriangle = pygame.image.load('char18.PNG').convert()
+l_mUpsideDownTriangle = pygame.image.load('char19.PNG').convert()
+l_mInfinity = pygame.image.load('char20.PNG').convert()
+l_mDivides = pygame.image.load('char21.PNG').convert()
+l_mDoesntDivide = pygame.image.load('char22.PNG').convert()
+
+
+os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.dirname(os.getcwd()))
 
 pygame.init()
@@ -446,7 +490,7 @@ class Vort:
 #Invisible Chars
 
 empty=Char(l_fS,l_fS,(set([ letCor['l'], letCor['w'] ]) ),255)
-enter=Char(l_fS,l_fS,( set([ letCor['ENTER'] ]) ),255)
+enter=Char(l_fS,l_fS,( set([ letCor['ENTER'] ]) ),113)
 wordwrap=Char(l_fS,l_fS,(set([ letCor['l'], letCor['w'] ]) ),255)
 backspace=Char(l_fS,l_fS,(set ([ letCor['BACKSPACE'] ]) ),255)
 
@@ -537,6 +581,8 @@ punctuation__exclaimation=Char(l_punctuationExclaimation,L_pExclaimation,( set([
 punctuation__singlequote=Char(l_punctuationSinglequote,L_pSinglequote,( set([ letCor['SINGLEQUOTE'] ]) ),60)
 punctuation__doublequote=Char(l_punctuationDoublequote,L_pDoublequote,( set([ letCor['LEFTSHIFT'], letCor['SINGLEQUOTE'] ]),set([ letCor['RIGHTSHIFT'], letCor['SINGLEQUOTE'] ]) ),61)
 
+#Numerals
+
 numeral__ze=Char(l_Nze,L_Nze,( set([ letCor['NUMERAL0'] ]) ),62)
 numeral__on=Char(l_Non,L_Non,( set([ letCor['NUMERAL1'] ]) ),63)
 numeral__tw=Char(l_Ntw,L_Ntw,( set([ letCor['NUMERAL2'] ]) ),64)
@@ -548,8 +594,12 @@ numeral__se=Char(l_Nse,L_Nse,( set([ letCor['NUMERAL7'] ]) ),69)
 numeral__ei=Char(l_Nei,L_Nei,( set([ letCor['NUMERAL8'] ]) ),70)
 numeral__ni=Char(l_Nni,L_Nni,( set([ letCor['NUMERAL9'] ]) ),71)
 
+#Modal Logic
+
 modallogic__possible=Char(l_modalPossible,L_mP,( set([ letCor['NUMERAL2'],letCor['p'] ]) ),72)
 modallogic__necessary=Char(l_modalNecessary,L_mN,( set([ letCor['NUMERAL2'],letCor['n'] ]) ),73)
+
+#First Order Logic
 
 firstorderlogic__existential=Char(l_firstorderExistential,L_firstorderExistential,( set([ letCor['NUMERAL1'],letCor['e'] ]) ),74)
 firstorderlogic__forall=Char(l_firstorderForall,L_firstorderForall,( set([ letCor['NUMERAL1'],letCor['a'] ]) ),75)
@@ -559,6 +609,41 @@ firstorderlogic__iff=Char(l_firstorderIff,L_firstorderIff,( set([ letCor['NUMERA
 firstorderlogic__xor=Char(l_firstorderXor,L_firstorderXor,( set([ letCor['NUMERAL1'],letCor['x'] ]) ),79)
 firstorderlogic__nand=Char(l_firstorderNand,L_firstorderNand,( set([ letCor['NUMERAL1'],letCor['d'] ]) ),80)
 firstorderlogic__and=Char(l_firstorderAnd,L_firstorderAnd, ( set([ letCor['NUMERAL1'],letCor['PERIOD'] ]) ),81)
+
+# Math
+
+math__equals=Char(l_mEquals,L_mEquals,( set([ letCor['EQUALS'] ]) ),82)
+math__greaterthan=Char(l_mGreaterThan,L_mGreaterThan,( set([ letCor['PERIOD'],letCor['RIGHTSHIFT']]),set([ letCor['PERIOD'],letCor['LEFTSHIFT'] ]), ), 83)
+math__greaterthanorequal=Char(l_mGreaterThanOrEqual,L_mGreaterThanOrEqual, ( set([ letCor['EQUALS'],letCor['PERIOD'] ]), ), 84)
+math__lessthan=Char(l_mLessThan,L_mLessThan,( set([ letCor['COMMA'],letCor['RIGHTSHIFT']]),set([ letCor['COMMA'],letCor['LEFTSHIFT'] ]), ), 85)
+math__lessthanorequal=Char(l_mLessThanOrEqual,L_mLessThanOrEqual,( set([ letCor['EQUALS'],letCor['COMMA'] ]), ), 86)
+math__division=Char(l_mDivision,L_mDivision,( set([ letCor['EQUALS'],letCor['d']]), ), 87)
+math__approximately=Char(l_mApproximately,L_mApproximately,( set([ letCor['EQUALS'],letCor['a'],]), ),88)
+math__plus=Char(l_mPlus,L_mPlus,( set([ letCor['EQUALS'],letCor['p'] ]), ),89)
+math__minus=Char(l_mMinus,L_mMinus,( set([ letCor['HYPHEN'] ]), ),90)
+math__multiply=Char(l_mMultiply,L_mMultiply,( set([ letCor['EQUALS'],letCor['m']]), ),91)
+math__forwardslash=Char(l_mForwardSlash,L_mForwardSlash,( set([ letCor['FORWARDSLASH'] ]), ),92)
+math__backslash=Char(l_mBackSlash,L_mBackSlash,( set([ letCor['BACKSLASH'] ]), ),93)
+math__QED=Char(l_mQED,L_mQED,( set([ letCor['EQUALS'],letCor['q'] ]), ),94)
+math__squareroot=Char(l_mSquareRoot,L_mSquareRoot,( set([ letCor['EQUALS'],letCor['s'] ]), ),95)
+math__plusminus=Char(l_mPlusMinus,L_mPlusMinus,( set([ letCor['EQUALS'],letCor['l'] ]), ),96)
+math__integral=Char(l_mIntegral,L_mIntegral,( set([ letCor['EQUALS'],letCor['f']]), ),97)
+math__notequal=Char(l_mNotEqual,L_mNotEqual,( set([ letCor['EQUALS'],letCor['n']]), ),98)
+math__angle=Char(l_mAngle,L_mAngle,( set([ letCor['EQUALS'], letCor['g'] ]), ),99)
+math__triangle=Char(l_mTriangle,L_mTriangle,( set([ letCor['EQUALS'],letCor['t'] ]), ),100)
+math__gradient=Char(l_mUpsideDownTriangle,L_mUpsideDownTriangle,( set([ letCor['EQUALS'], letCor['r'] ]), ),101)
+math__divides=Char(l_mDivides,L_mDivides,(  set([ letCor['LEFTSHIFT'],letCor['BACKSLASH']]),set([ letCor['RIGHTSHIFT'],letCor['BACKSLASH']]) ),102)
+math__doesntdivide=Char(l_mDoesntDivide,L_mDoesntDivide,( set([ letCor['EQUALS'],letCor['c'] ]), ), 103)
+math__infinity=Char(l_mInfinity,L_mInfinity,( set([ letCor['EQUALS'],letCor['i'] ]), ), 104)
+
+brackets__leftparentheses=Char(l_bLeftParenthesis,L_bLeftParenthesis,( set([ letCor['NUMERAL9'], letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL9'],letCor['RIGHTSHIFT'] ]), ), 105)
+brackets__rightparentheses=Char(l_bRightParenthesis,L_bRightParenthesis,( set([ letCor['NUMERAL0'], letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL0'], letCor['RIGHTSHIFT'] ]), ), 106)
+brackets__leftbracket=Char(l_bLeftBracket,L_bLeftBracket,( set([ letCor['LEFTBRACKET'] ]), ), 107)
+brackets__rightbracket=Char(l_bRightBracket,L_bRightBracket,( set([ letCor['RIGHTBRACKET'] ]), ), 108)
+brackets__leftcurly=Char(l_bLeftCurly,L_bLeftCurly,( set([ letCor['LEFTBRACKET'],letCor['LEFTSHIFT'] ]),set([ letCor['LEFTBRACKET'],letCor['RIGHTSHIFT'] ]) ), 109)
+brackets__rightcurly=Char(l_bRightCurly,L_bRightCurly,( set([ letCor['RIGHTBRACKET'],letCor['LEFTSHIFT'] ]),set([ letCor['RIGHTBRACKET'],letCor['RIGHTSHIFT'] ]) ), 110)
+brackets__leftchevron=Char(l_bLeftChevron,L_bLeftChevron,( set([ letCor['c'], letCor['LEFTBRACKET'] ]), ), 111)
+brackets__rightchevron=Char(l_bRightChevron,L_bRightChevron,( set([ letCor['c'], letCor['RIGHTBRACKET'] ]), ), 112)
 
 charLets={
 	
@@ -641,8 +726,39 @@ charLets={
 	78:firstorderlogic__iff,
 	79:firstorderlogic__xor,
 	80:firstorderlogic__nand,
-	81:firstorderlogic__and
-
+	81:firstorderlogic__and,
+	82:math__equals,
+	83:math__greaterthan,
+	84:math__greaterthanorequal,
+	85:math__lessthan,
+	86:math__lessthanorequal,
+	87:math__division,
+	88:math__approximately,
+	89:math__plus,
+	90:math__minus,
+	91:math__multiply,
+	92:math__forwardslash,
+	93:math__backslash,
+	94:math__QED,
+	95:math__squareroot,
+	96:math__plusminus,
+	97:math__integral,
+	98:math__notequal,
+	99:math__angle,
+	100:math__triangle,
+	101:math__gradient,
+	102:math__divides,
+	103:math__doesntdivide,
+	104:math__infinity,
+	105:brackets__leftparentheses,
+	106:brackets__rightparentheses,
+	107:brackets__leftbracket,
+	108:brackets__rightbracket,
+	109:brackets__leftcurly,
+	110:brackets__rightcurly,
+	111:brackets__leftchevron,
+	112:brackets__rightchevron,
+	113:enter
 }
 
 class Doc:
@@ -1218,6 +1334,360 @@ while quit==False:
 					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
+				whichChar=firstorderlogic__nand
+				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+					for yit in [0]*2:
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					curChar+=1
+
+				######################### Math
+
+				whichChar=math__equals
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__greaterthan
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__greaterthanorequal
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__lessthan
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__lessthanorequal
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__division
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__approximately
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__plus
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__minus
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__multiply
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__forwardslash
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__backslash
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__QED
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__squareroot
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__plusminus
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__integral
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__notequal
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__angle
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__triangle
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__gradient
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__divides
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=math__doesntdivide
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				########################### Brackets
+
+				whichChar=brackets__leftparentheses
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=brackets__rightparentheses
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=brackets__leftbracket
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=brackets__rightbracket
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=brackets__leftcurly
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=brackets__rightcurly
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=brackets__leftchevron
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=brackets__rightchevron
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
 				######################### Commandy keys
 
 				if event.key in space.keys:
@@ -1230,7 +1700,7 @@ while quit==False:
 					ourDoc.vorten.insert(curVort+1,Vort())
 					curVort+=1
 					curChar=0
-					ourDoc.vorten[curVort].charen.insert(curChar,enter)
+					ourDoc.vorten[curVort].charen.insert(curChar,addChar(enter))
 					ourDoc.vorten.insert(curVort+1,Vort())
 					curVort+=1
 
@@ -1325,8 +1795,9 @@ while quit==False:
 								if vapp%3==0:
 									vortON,vortTW,vortTH = 0,0,0
 									print 'len of ourDoc', len(ourDoc.vorten), 'yit', yit, 'len of yit Vort', len(ourDoc.vorten[yit].charen)
-									print ourDoc.vorten[yit].charen[vapp][0].keyDig
-									vortON = ourDoc.vorten[yit].charen[vapp][0].keyDig
+									print ourDoc.vorten[yit].charen[vapp][0].keys
+									if vapp < len(ourDoc.vorten[yit].charen):
+										vortON = ourDoc.vorten[yit].charen[vapp][0].keyDig
 									if vapp+1 < len(ourDoc.vorten[yit].charen):
 										vortTW = ourDoc.vorten[yit].charen[vapp+1][0].keyDig
 									if vapp+2 < len(ourDoc.vorten[yit].charen):
@@ -1385,7 +1856,8 @@ while quit==False:
 		cursorVort = 0
 		cursorLine = 0
 		for yit in range(len(ourDoc.vorten)):
-			if ourDoc.vorten[yit].charen==[enter]:
+			if ourDoc.vorten[yit].charen==[addChar(enter)]:
+				print 'DID IT ENTER???'
 				blitScreen.append( [0,[]] )
 				thisLin+=1
 			else:
