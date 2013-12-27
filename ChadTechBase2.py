@@ -458,6 +458,8 @@ curChar=0
 shiftCou = 1
 shiftMag = 8
 
+slantyChek = False
+
 whichScript = 'normal'
 
 maxLineNum = (screenHeight-(2*yMarg))/(charHeight+lineGap)
@@ -537,7 +539,9 @@ letCor = {
 	'RIGHTSHIFT':303,
 	'LEFTSHIFT':304,
 	'RIGHTCONTROL':305,
-	'LEFTCONTROL':306
+	'LEFTCONTROL':306,
+	'RIGHTALT':307,
+	'LEFTALT':308
 
 }
 
@@ -569,6 +573,8 @@ oPen=Char(l_fS,l_fS,(set ([ letCor['LEFTCONTROL'],letCor['o'] ]),set ([ letCor['
 
 superSet=Char(l_fS,l_fS,(set([ letCor['LEFTSHIFT'],letCor['EQUALS'] ]),set([ letCor['RIGHTSHIFT'],letCor['EQUALS'] ])),255)
 subSet=Char(l_fS,l_fS,(set([ letCor['LEFTSHIFT'],letCor['HYPHEN'] ]),set([ letCor['RIGHTSHIFT'],letCor['HYPHEN'] ])),255)
+
+slantySet=Char(l_fS,l_fS,( set([ letCor['LEFTALT'],letCor['s'] ]), set([ letCor['RIGHTALT'],letCor['s'] ]) ), 255)
 
 #Nothing
 nothing=Char(l_fS,l_fS,set([ letCor['a'], letCor['q'], letCor['l'] ]),255)
@@ -861,13 +867,14 @@ keys = set([])
 quit=False
 while quit==False:
 	for event in pygame.event.get():
+
+		if not (letCor['LEFTSHIFT'] in keys) and not (letCor['RIGHTSHIFT'] in keys):
+			shiftCou = 1
+
 		if event.type == pygame.KEYDOWN:
 			howManyChars=0
 			keys.add(event.key)
-			print event.key
-
-			if not (letCor['LEFTSHIFT'] in keys) and not (letCor['RIGHTSHIFT'] in keys):
-				shiftCou = 1
+			print len(ourDoc.vorten)
 
 			if whichScript == 'normal':
 
@@ -880,6 +887,14 @@ while quit==False:
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						whichScript = 'subscript'
+
+				whichChar=slantySet
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						if slantyChek == False:
+							slantyChek=True
+						else:
+							slantyChek=False
 
 			if whichScript == 'superscript':
 
@@ -897,7 +912,7 @@ while quit==False:
 
 			######################## Check if this is a super script or sub script
 
-			if whichScript == 'normal':
+			if whichScript == 'normal' and not slantyChek:
 
 				######################## Lower case letters
 
@@ -1993,7 +2008,6 @@ while quit==False:
 							for vapp in range(len(ourDoc.vorten[yit].charen)):
 								if vapp%3==0:
 									vortON,vortTW,vortTH = 0,0,0
-									print 'len of ourDoc', len(ourDoc.vorten), 'yit', yit, 'len of yit Vort', len(ourDoc.vorten[yit].charen)
 									print ourDoc.vorten[yit].charen[vapp][0].keys
 									if vapp < len(ourDoc.vorten[yit].charen):
 										vortON = ourDoc.vorten[yit].charen[vapp][0].keyDig
@@ -2056,7 +2070,6 @@ while quit==False:
 		cursorLine = 0
 		for yit in range(len(ourDoc.vorten)):
 			if ourDoc.vorten[yit].charen==[addChar(enter)]:
-				print 'DID IT ENTER???'
 				blitScreen.append( [0,[]] )
 				thisLin+=1
 			else:
