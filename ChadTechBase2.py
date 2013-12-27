@@ -77,6 +77,37 @@ L_ly = pygame.image.load('char24.PNG').convert()
 L_lz = pygame.image.load('char25.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('slantyfont'))
+
+#slanty font
+L_sa = pygame.image.load('char0.PNG').convert()
+L_sb = pygame.image.load('char1.PNG').convert()
+L_sc = pygame.image.load('char2.PNG').convert()
+L_sd = pygame.image.load('char3.PNG').convert()
+L_se = pygame.image.load('char4.PNG').convert()
+L_sf = pygame.image.load('char5.PNG').convert()
+L_sg = pygame.image.load('char6.PNG').convert()
+L_sh = pygame.image.load('char7.PNG').convert()
+L_si = pygame.image.load('char8.PNG').convert()
+L_sj = pygame.image.load('char9.PNG').convert()
+L_sk = pygame.image.load('char10.PNG').convert()
+L_sl = pygame.image.load('char11.PNG').convert()
+L_sm = pygame.image.load('char12.PNG').convert()
+L_sn = pygame.image.load('char13.PNG').convert()
+L_so = pygame.image.load('char14.PNG').convert()
+L_sp = pygame.image.load('char15.PNG').convert()
+L_sq = pygame.image.load('char16.PNG').convert()
+L_sr = pygame.image.load('char17.PNG').convert()
+L_ss = pygame.image.load('char18.PNG').convert()
+L_st = pygame.image.load('char19.PNG').convert()
+L_su = pygame.image.load('char20.PNG').convert()
+L_sv = pygame.image.load('char21.PNG').convert()
+L_sw = pygame.image.load('char22.PNG').convert()
+L_sx = pygame.image.load('char23.PNG').convert()
+L_sy = pygame.image.load('char24.PNG').convert()
+L_sz = pygame.image.load('char25.PNG').convert()
+
+os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('Punctuation'))
 
 #Punctuation
@@ -833,7 +864,7 @@ while quit==False:
 		if event.type == pygame.KEYDOWN:
 			howManyChars=0
 			keys.add(event.key)
-			print 'CURVOT', curVort, 'CURCHAR', curChar, whichScript, keys
+			print event.key
 
 			if not (letCor['LEFTSHIFT'] in keys) and not (letCor['RIGHTSHIFT'] in keys):
 				shiftCou = 1
