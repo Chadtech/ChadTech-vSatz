@@ -1911,12 +1911,14 @@ while quit==False:
 					curChar=0
 
 	 			if event.key in enter.keys:
-					ourDoc.vorten.insert(curVort+1,Vort())
-					curVort+=1
+	 				print 'ENTER TRIGGERED'
+	 				if len(ourDoc.vorten[curVort].charen)!=0:
+						curVort+=1
+						ourDoc.vorten.insert(curVort,Vort())
 					curChar=0
 					ourDoc.vorten[curVort].charen.insert(curChar,addChar(enter))
-					ourDoc.vorten.insert(curVort+1,Vort())
 					curVort+=1
+					ourDoc.vorten.insert(curVort,Vort())
 
 				if event.key in backspace.keys:
 					if curChar!=0 or curVort!=0:
@@ -2070,6 +2072,7 @@ while quit==False:
 		cursorLine = 0
 		for yit in range(len(ourDoc.vorten)):
 			if ourDoc.vorten[yit].charen==[addChar(enter)]:
+				print 'enterd', yit
 				blitScreen.append( [0,[]] )
 				thisLin+=1
 			else:
