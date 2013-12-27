@@ -172,6 +172,17 @@ L_bLeftChevron = pygame.image.load('char6.PNG').convert()
 L_bRightChevron = pygame.image.load('char7.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Misc'))
+
+#Misc
+L_miscNumbersign = pygame.image.load('char0.PNG').convert()
+L_miscDollarsign = pygame.image.load('char1.PNG').convert()
+L_miscPercentsign = pygame.image.load('char2.PNG').convert()
+L_miscAmbersand = pygame.image.load('char3.PNG').convert()
+L_miscAtsign = pygame.image.load('char4.PNG').convert()
+L_miscCarrot = pygame.image.load('char5.PNG').convert()
+
+os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('setTheory'))
 
 #set Theory
@@ -189,11 +200,11 @@ os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('ProofTheory'))
 
 #Proof Theory
-L_pSt = pygame.image.load('char0.PNG').convert()
-L_pNs = pygame.image.load('char1.PNG').convert()
-L_pDt = pygame.image.load('char2.PNG').convert()
-L_pNd = pygame.image.load('char3.PNG').convert()
-L_pLc = pygame.image.load('char4.PNG').convert()
+L_pSingleturnstile = pygame.image.load('char0.PNG').convert()
+L_pNotsingleturnstile = pygame.image.load('char1.PNG').convert()
+L_pDoubleturnstile = pygame.image.load('char2.PNG').convert()
+L_pNotdoubleturnstile = pygame.image.load('char3.PNG').convert()
+L_pLogicalconstant = pygame.image.load('char4.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('Cursor'))
@@ -331,6 +342,27 @@ l_bRightBracket = pygame.image.load('char5.PNG').convert()
 l_bLeftChevron = pygame.image.load('char6.PNG').convert()
 l_bRightChevron = pygame.image.load('char7.PNG').convert()
 
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Misc'))
+
+#Misc
+l_miscNumbersign = pygame.image.load('char0.PNG').convert()
+l_miscDollarsign = pygame.image.load('char1.PNG').convert()
+l_miscPercentsign = pygame.image.load('char2.PNG').convert()
+l_miscAmbersand = pygame.image.load('char3.PNG').convert()
+l_miscAtsign = pygame.image.load('char4.PNG').convert()
+l_miscCarrot = pygame.image.load('char5.PNG').convert()
+
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('ProofTheory'))
+
+#Proof Theory
+l_pSingleturnstile = pygame.image.load('char0.PNG').convert()
+l_pNotsingleturnstile = pygame.image.load('char1.PNG').convert()
+l_pDoubleturnstile = pygame.image.load('char2.PNG').convert()
+l_pNotdoubleturnstile = pygame.image.load('char3.PNG').convert()
+l_pLogicalconstant = pygame.image.load('char4.PNG').convert()
+
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('Math'))
@@ -396,6 +428,8 @@ shiftCou = 1
 shiftMag = 8
 
 whichScript = 'normal'
+
+maxLineNum = (screenHeight-(2*yMarg))/(charHeight+lineGap)
 
 def addChar(input):
 	return [input,[],[]]
@@ -645,6 +679,23 @@ brackets__rightcurly=Char(l_bRightCurly,L_bRightCurly,( set([ letCor['RIGHTBRACK
 brackets__leftchevron=Char(l_bLeftChevron,L_bLeftChevron,( set([ letCor['c'], letCor['LEFTBRACKET'] ]), ), 111)
 brackets__rightchevron=Char(l_bRightChevron,L_bRightChevron,( set([ letCor['c'], letCor['RIGHTBRACKET'] ]), ), 112)
 
+#113 is enter
+
+misc__numbersign=Char(l_miscNumbersign,L_miscNumbersign,( set([ letCor['NUMERAL3'], letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL4'],letCor['RIGHTSHIFT'] ]) ),114 )
+misc__dollarsign=Char(l_miscDollarsign,L_miscDollarsign,( set([ letCor['NUMERAL4'], letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL4'],letCor['RIGHTSHIFT'] ]) ),115 )
+misc__percentsign=Char(l_miscPercentsign,L_miscPercentsign,( set([ letCor['NUMERAL5'], letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL5'],letCor['RIGHTSHIFT'] ]) ),116 )
+misc__ambersand=Char(l_miscAmbersand,L_miscAmbersand,( set([ letCor['NUMERAL7'], letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL7'],letCor['RIGHTSHIFT'] ]) ), 117)
+misc__atsign=Char(l_miscAtsign,L_miscAtsign,( set([ letCor['NUMERAL2'],letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL2'],letCor['RIGHTSHIFT'] ]) ), 118)
+misc__carrot=Char(l_miscCarrot,L_miscCarrot,( set([ letCor['NUMERAL6'],letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL6'],letCor['RIGHTSHIFT'] ]) ), 119)
+
+prooftheory__singleturnstile=Char(l_pSingleturnstile,L_pSingleturnstile,( set([ letCor['NUMERAL0'],letCor['s'] ]), ), 120)
+prooftheory__notsingleturnstile=Char(l_pNotsingleturnstile,L_pNotsingleturnstile,( set([ letCor['NUMERAL0'],letCor['x'] ]), ), 121)
+prooftheory__doubleturnstile=Char(l_pDoubleturnstile,L_pDoubleturnstile,( set([ letCor['NUMERAL0'],letCor['d'] ]), ), 122)
+prooftheory__notdoubleturnstile=Char(l_pNotdoubleturnstile,L_pNotdoubleturnstile,( set([ letCor['NUMERAL0'],letCor['c'] ]), ), 123)
+prooftheory__logicalconstant=Char(l_pLogicalconstant,L_pLogicalconstant,( set([ letCor['NUMERAL0'],letCor['l'] ]), ), 124)
+
+
+
 charLets={
 	
 	1:lowercase__a,
@@ -758,7 +809,14 @@ charLets={
 	110:brackets__rightcurly,
 	111:brackets__leftchevron,
 	112:brackets__rightchevron,
-	113:enter
+	113:enter,
+	114:misc__numbersign,
+	115:misc__dollarsign,
+	116:misc__percentsign,
+	117:misc__ambersand,
+	118:misc__atsign,
+	119:misc__carrot,
+
 }
 
 class Doc:
@@ -767,8 +825,6 @@ class Doc:
 
 ourDoc= Doc()
 ourDoc.vorten.append(Vort())
-cursor= Doc()
-cursor.vorten.append(Vort())
 
 keys = set([])
 quit=False
@@ -1675,6 +1731,118 @@ while quit==False:
 						curChar+=1
 
 				whichChar=brackets__rightchevron
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				######################### Misc
+
+				whichChar=misc__atsign
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=misc__numbersign
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=misc__dollarsign
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=misc__percentsign
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=misc__carrot
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=misc__ambersand
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				######################### Proof Theory
+
+				whichChar=prooftheory__singleturnstile
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=prooftheory__notsingleturnstile
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+
+				whichChar=prooftheory__doubleturnstile
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=prooftheory__notdoubleturnstile
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+
+				whichChar=prooftheory__logicalconstant
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
