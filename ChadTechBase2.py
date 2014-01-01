@@ -1858,7 +1858,6 @@ while quit==False:
 						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-
 				whichChar=prooftheory__doubleturnstile
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
@@ -1912,13 +1911,19 @@ while quit==False:
 
 	 			if event.key in enter.keys:
 	 				print 'ENTER TRIGGERED'
-	 				if len(ourDoc.vorten[curVort].charen)!=0:
+	 				if ourDoc.vorten[curVort].charen!=[]:
 						curVort+=1
 						ourDoc.vorten.insert(curVort,Vort())
-					curChar=0
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(enter))
-					curVort+=1
-					ourDoc.vorten.insert(curVort,Vort())
+						curChar=0
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(enter))
+						curVort+=1
+						ourDoc.vorten.insert(curVort,Vort())
+					else:
+						curChar=0
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(enter))
+						curVort+=1
+						ourDoc.vorten.insert(curVort,Vort())
+
 
 				if event.key in backspace.keys:
 					if curChar!=0 or curVort!=0:
@@ -1931,6 +1936,17 @@ while quit==False:
 
 				if event.key in backspace.keys and ((letCor['LEFTSHIFT'] in keys) or (letCor['RIGHTSHIFT'] in keys)):
 					for yit in [0]*shiftCou:
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+					shiftCou=shiftCou*shiftMag
+
+				if event.key in backspace.keys and ((letCor['LEFTCONTROL'] in keys) or (letCor['RIGHTCONTROL'] in keys)):
+					for yit in [0]*6:
 						if curChar!=0 or curVort!=0:
 							while len(ourDoc.vorten[curVort].charen)==0:
 								ourDoc.vorten.pop(curVort)
@@ -2028,16 +2044,21 @@ while quit==False:
 						openName = tkFileDialog.askopenfilename()
 						openName = str(openName)
 						openIm =  Image.open(openName)
+						xSize,ySize = openIm.size
 						ourDoc= Doc()
 						ourDoc.vorten.append(Vort())
 						cursor= Doc()
 						cursor.vorten.append(Vort())
 						xBou,yBou=0,0
 						r,g,b = openIm.getpixel((xBou,yBou))
+						#for vapp in range(ySize):
+							#r,g,b = openIm.getpixel((xBou,vapp))
+							#print vapp, 'R G B:', r,g,b
 						while r!=0:
 							ourDoc.vorten.append(Vort())
 							while r!=0:
-								r,g,b = openIm.getpixel((xBou,yBou))
+								print 'R G B',r,g,b
+								print 'xBou',xBou,'yBou',yBou, 'Vorten Cou',len(ourDoc.vorten)
 								if r!=0:
 									ourDoc.vorten[yBou].charen.append(addChar(charLets[r]))
 								if g!=0:
@@ -2045,8 +2066,9 @@ while quit==False:
 								if b!=0:
 									ourDoc.vorten[yBou].charen.append(addChar(charLets[b]))
 								xBou+=1
-							yBou+=1
+								r,g,b = openIm.getpixel((xBou,yBou))
 							xBou=0
+							yBou+=1
 							r,g,b = openIm.getpixel((xBou,yBou))
 						curVort=len(ourDoc.vorten)-1
 						curChar=len(ourDoc.vorten[curVort].charen)
@@ -2058,9 +2080,17 @@ while quit==False:
 					whichChar=lowercase__a
 					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+
 		############################## Fill the screen with black
 
 		screen.fill((0,0,0))
+
+		################################ Get rid of empty words
+
+		tempoRay=[]
+		for yit in range(len(ourDoc.vorten)):
+			if ourDoc.vorten[yit].charen!=[]:
+				tempoRay.append(ourDoc.vorten[yit])
 
 		###############################This section breaks the list of words, into a list of lines containing the words
 
@@ -2070,9 +2100,17 @@ while quit==False:
 		cursorChar = 0
 		cursorVort = 0
 		cursorLine = 0
+
+#		pre=len(ourDoc.vorten)
+#		ourDoc.vorten=[word for word in ourDoc.vorten if word.charen!=[] ]
+#		post=len(ourDoc.vorten)
+
 		for yit in range(len(ourDoc.vorten)):
+			#for vapp in range(len(ourDoc.vorten[yit].charen)):
+			#	if ourDoc.vorten[yit].charen[vapp]==addChar(enter):
+			#		blitScreen.append( [0,[]] )
+			#		thisLin+=1
 			if ourDoc.vorten[yit].charen==[addChar(enter)]:
-				print 'enterd', yit
 				blitScreen.append( [0,[]] )
 				thisLin+=1
 			else:
