@@ -6,10 +6,18 @@ import Tkinter, tkFileDialog
 brunk = Tkinter.Tk()
 brunk.withdraw()
 
+print 'Enter window width'
+windowWidth=raw_input()
+print 'Enter window height'
+windowHeight=raw_input()
+
+windowWidth=int(windowWidth)
+windowHeight=int(windowHeight)
+
 screenWidth=1366
 screenHeight=724
 
-screen = pygame.display.set_mode((1366,724),pygame.RESIZABLE)
+screen = pygame.display.set_mode((windowWidth,windowHeight),pygame.RESIZABLE)
 
 os.chdir(os.path.abspath('chars12x16'))
 
@@ -462,8 +470,8 @@ lilCharOffsetSubSetY=14
 xMarg = 96-charWidth
 yMarg = 48
 
-lineLen=(screenWidth-(2*xMarg))/charWidth
-lineNum=(screenHeight-(2*yMarg))/(charHeight+lineGap)
+lineLen=(windowWidth-(2*xMarg))/charWidth
+lineNum=(windowHeight-(2*yMarg))/(charHeight+lineGap)
 
 curLin=0
 curVort=0
@@ -751,7 +759,7 @@ prooftheory__doubleturnstile=Char(l_pDoubleturnstile,L_pDoubleturnstile,( set([ 
 prooftheory__notdoubleturnstile=Char(l_pNotdoubleturnstile,L_pNotdoubleturnstile,( set([ letCor['NUMERAL0'],letCor['c'] ]), ), 123)
 prooftheory__logicalconstant=Char(l_pLogicalconstant,L_pLogicalconstant,( set([ letCor['NUMERAL0'],letCor['l'] ]), ), 124)
 
-#st theory
+#set theory
 
 settheory__elementof=Char(l_settheoryElementof,L_settheoryElementof,( set([ letCor['NUMERAL9'],letCor['e'] ]), ), 125)
 settheory__notelementof=Char(l_settheoryNotelementof,L_settheoryNotelementof, ( set([ letCor['NUMERAL9'],letCor['d'] ]), ), 126 )
