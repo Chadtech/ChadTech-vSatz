@@ -596,6 +596,11 @@ oPen=Char(l_fS,l_fS,(set ([ letCor['LEFTCONTROL'],letCor['o'] ]),set ([ letCor['
 superSet=Char(l_fS,l_fS,(set([ letCor['LEFTSHIFT'],letCor['EQUALS'] ]),set([ letCor['RIGHTSHIFT'],letCor['EQUALS'] ])),255)
 subSet=Char(l_fS,l_fS,(set([ letCor['LEFTSHIFT'],letCor['HYPHEN'] ]),set([ letCor['RIGHTSHIFT'],letCor['HYPHEN'] ])),255)
 
+taller=Char(l_fS,l_fS,( set([ letCor['LEFTALT'],letCor['w'] ]) ), 255)
+shorter=Char(l_fS,l_fS,( set([ letCor['LEFTALT'],letCor['s'] ]) ), 255)
+wider=Char(l_fS,l_fS,(set([ letCor['LEFTALT'],letCor['d'] ]) ), 255)
+narrower=Char(l_fS,l_fS,(set([ letCor['LEFTALT'],letCor['a'] ]) ), 255)
+
 slantySet=Char(l_fS,l_fS,( set([ letCor['LEFTALT'],letCor['s'] ]), set([ letCor['RIGHTALT'],letCor['s'] ]) ), 255)
 
 #Nothing
@@ -904,6 +909,9 @@ ourDoc.vorten.append(Vort())
 keys = set([])
 quit=False
 while quit==False:
+	screen = pygame.display.set_mode((windowWidth,windowHeight),pygame.RESIZABLE)
+
+	
 	for event in pygame.event.get():
 
 		if not (letCor['LEFTSHIFT'] in keys) and not (letCor['RIGHTSHIFT'] in keys):
@@ -2090,7 +2098,6 @@ while quit==False:
 						curVort+=1
 						ourDoc.vorten.insert(curVort,Vort())
 
-
 				if event.key in backspace.keys:
 					if curChar!=0 or curVort!=0:
 						while len(ourDoc.vorten[curVort].charen)==0:
@@ -2175,6 +2182,15 @@ while quit==False:
 							if curVort!=0:
 								curVort-=1
 								curChar=len(ourDoc.vorten[curVort].charen)
+
+				whichChar=taller
+				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+					print 'TALLER'
+					windowHeight+=1
+
+				whichChar=shorter
+				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+					windowHeight-=1
 
 			########################################## Saving DOcuments
 
