@@ -484,7 +484,8 @@ slantyChek = False
 
 whichScript = 'normal'
 
-maxLineNum = (screenHeight-(2*yMarg))/(charHeight+lineGap)
+maxLineNum = (windowHeight-(2*yMarg))/(charHeight+lineGap)
+print 'maxLineNum',maxLineNum
 
 def addChar(input):
 	return [input,[],[]]
@@ -909,9 +910,6 @@ ourDoc.vorten.append(Vort())
 keys = set([])
 quit=False
 while quit==False:
-	screen = pygame.display.set_mode((windowWidth,windowHeight),pygame.RESIZABLE)
-
-	
 	for event in pygame.event.get():
 
 		if not (letCor['LEFTSHIFT'] in keys) and not (letCor['RIGHTSHIFT'] in keys):
@@ -2183,15 +2181,6 @@ while quit==False:
 								curVort-=1
 								curChar=len(ourDoc.vorten[curVort].charen)
 
-				whichChar=taller
-				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
-					print 'TALLER'
-					windowHeight+=1
-
-				whichChar=shorter
-				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
-					windowHeight-=1
-
 			########################################## Saving DOcuments
 
 				whichChar=save
@@ -2216,6 +2205,7 @@ while quit==False:
 									if vapp+2 < len(ourDoc.vorten[yit].charen):
 										vortTH = ourDoc.vorten[yit].charen[vapp+2][0].keyDig
 									saveIm.putpixel((vapp/3,yit),(vortON,vortTW,vortTH))
+
 						saveIm.save(saveName,"png")
 
 			########################################### Opening Documents
@@ -2263,16 +2253,41 @@ while quit==False:
 					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
 
+					whichChar=lowercase__b
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__c
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__d
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__e
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__f
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__g
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__h
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__i
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+
 		############################## Fill the screen with black
 
 		screen.fill((0,0,0))
-
-		################################ Get rid of empty words
-
-		tempoRay=[]
-		for yit in range(len(ourDoc.vorten)):
-			if ourDoc.vorten[yit].charen!=[]:
-				tempoRay.append(ourDoc.vorten[yit])
 
 		###############################This section breaks the list of words, into a list of lines containing the words
 
@@ -2283,15 +2298,7 @@ while quit==False:
 		cursorVort = 0
 		cursorLine = 0
 
-#		pre=len(ourDoc.vorten)
-#		ourDoc.vorten=[word for word in ourDoc.vorten if word.charen!=[] ]
-#		post=len(ourDoc.vorten)
-
 		for yit in range(len(ourDoc.vorten)):
-			#for vapp in range(len(ourDoc.vorten[yit].charen)):
-			#	if ourDoc.vorten[yit].charen[vapp]==addChar(enter):
-			#		blitScreen.append( [0,[]] )
-			#		thisLin+=1
 			if ourDoc.vorten[yit].charen==[addChar(enter)]:
 				blitScreen.append( [0,[]] )
 				thisLin+=1
@@ -2311,9 +2318,9 @@ while quit==False:
 					cursorChar+= len(blitScreen[len(blitScreen)-1][1][vapp].charen)
 				cursorChar-=len(ourDoc.vorten[curVort].charen)-curChar
 
-	 	############################This section takes the words in each line, and breaks them down into a list of characters to paste onto the screen
+		############################ 
 
-	 	# blitScreen[Which Line][0 if its the length, 1 if its the Vorten][Which Vort].charen[which Char][0 for the char, 1 for a superscript, 2 for the subscript]
+	 	############################This section takes the words in each line, and breaks them down into a list of characters to paste onto the screen
 
 		blitChars=[]
 		for yit in range(len(blitScreen)):
@@ -2335,7 +2342,6 @@ while quit==False:
 		######################################
 		
 		if event.type == pygame.KEYUP:
-			#if event.key == letCor['LEFTSHIFT'] or event.key == letCor['RIGHTSHIFT']:
 			keys.remove(event.key)
 		if event.type == pygame.QUIT:
 			quit = True
