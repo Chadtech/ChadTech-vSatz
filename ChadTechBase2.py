@@ -217,15 +217,15 @@ os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('setTheory'))
 
 #set Theory
-L_sEo = pygame.image.load('char0.PNG').convert()
-L_sDc = pygame.image.load('char1.PNG').convert()
-L_sNs = pygame.image.load('char2.PNG').convert()
-L_sIn = pygame.image.load('char3.PNG').convert()
-L_sUn = pygame.image.load('char4.PNG').convert()
-L_sBs = pygame.image.load('char5.PNG').convert()
-L_sSs = pygame.image.load('char6.PNG').convert()
-L_sNp = pygame.image.load('char7.PNG').convert()
-L_sNb = pygame.image.load('char8.PNG').convert()
+L_settheoryElementof = pygame.image.load('char0.PNG').convert()
+L_settheoryNotelementof = pygame.image.load('char1.PNG').convert()
+L_settheoryNullset = pygame.image.load('char2.PNG').convert()
+L_settheoryIntersection = pygame.image.load('char3.PNG').convert()
+L_settheoryUnion = pygame.image.load('char4.PNG').convert()
+L_settheorySuperset = pygame.image.load('char5.PNG').convert()
+L_settheorySubset = pygame.image.load('char6.PNG').convert()
+L_settheoryNotsuperset = pygame.image.load('char7.PNG').convert()
+L_settheoryNotsubset = pygame.image.load('char8.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('ProofTheory'))
@@ -383,6 +383,20 @@ l_miscPercentsign = pygame.image.load('char2.PNG').convert()
 l_miscAmbersand = pygame.image.load('char3.PNG').convert()
 l_miscAtsign = pygame.image.load('char4.PNG').convert()
 l_miscCarrot = pygame.image.load('char5.PNG').convert()
+
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('setTheory'))
+
+#set Theory
+l_settheoryElementof = pygame.image.load('char0.PNG').convert()
+l_settheoryNotelementof = pygame.image.load('char1.PNG').convert()
+l_settheoryNullset = pygame.image.load('char2.PNG').convert()
+l_settheoryIntersection = pygame.image.load('char3.PNG').convert()
+l_settheoryUnion = pygame.image.load('char4.PNG').convert()
+l_settheorySuperset = pygame.image.load('char5.PNG').convert()
+l_settheorySubset = pygame.image.load('char6.PNG').convert()
+l_settheoryNotsuperset = pygame.image.load('char7.PNG').convert()
+l_settheoryNotsubset = pygame.image.load('char8.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('ProofTheory'))
@@ -707,6 +721,8 @@ math__divides=Char(l_mDivides,L_mDivides,(  set([ letCor['LEFTSHIFT'],letCor['BA
 math__doesntdivide=Char(l_mDoesntDivide,L_mDoesntDivide,( set([ letCor['EQUALS'],letCor['c'] ]), ), 103)
 math__infinity=Char(l_mInfinity,L_mInfinity,( set([ letCor['EQUALS'],letCor['i'] ]), ), 104)
 
+#Brackets
+
 brackets__leftparentheses=Char(l_bLeftParenthesis,L_bLeftParenthesis,( set([ letCor['NUMERAL9'], letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL9'],letCor['RIGHTSHIFT'] ]), ), 105)
 brackets__rightparentheses=Char(l_bRightParenthesis,L_bRightParenthesis,( set([ letCor['NUMERAL0'], letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL0'], letCor['RIGHTSHIFT'] ]), ), 106)
 brackets__leftbracket=Char(l_bLeftBracket,L_bLeftBracket,( set([ letCor['LEFTBRACKET'] ]), ), 107)
@@ -718,6 +734,8 @@ brackets__rightchevron=Char(l_bRightChevron,L_bRightChevron,( set([ letCor['c'],
 
 #113 is enter
 
+#Misc
+
 misc__numbersign=Char(l_miscNumbersign,L_miscNumbersign,( set([ letCor['NUMERAL3'], letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL4'],letCor['RIGHTSHIFT'] ]) ),114 )
 misc__dollarsign=Char(l_miscDollarsign,L_miscDollarsign,( set([ letCor['NUMERAL4'], letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL4'],letCor['RIGHTSHIFT'] ]) ),115 )
 misc__percentsign=Char(l_miscPercentsign,L_miscPercentsign,( set([ letCor['NUMERAL5'], letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL5'],letCor['RIGHTSHIFT'] ]) ),116 )
@@ -725,13 +743,25 @@ misc__ambersand=Char(l_miscAmbersand,L_miscAmbersand,( set([ letCor['NUMERAL7'],
 misc__atsign=Char(l_miscAtsign,L_miscAtsign,( set([ letCor['NUMERAL2'],letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL2'],letCor['RIGHTSHIFT'] ]) ), 118)
 misc__carrot=Char(l_miscCarrot,L_miscCarrot,( set([ letCor['NUMERAL6'],letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL6'],letCor['RIGHTSHIFT'] ]) ), 119)
 
+#proof theory
+
 prooftheory__singleturnstile=Char(l_pSingleturnstile,L_pSingleturnstile,( set([ letCor['NUMERAL0'],letCor['s'] ]), ), 120)
 prooftheory__notsingleturnstile=Char(l_pNotsingleturnstile,L_pNotsingleturnstile,( set([ letCor['NUMERAL0'],letCor['x'] ]), ), 121)
 prooftheory__doubleturnstile=Char(l_pDoubleturnstile,L_pDoubleturnstile,( set([ letCor['NUMERAL0'],letCor['d'] ]), ), 122)
 prooftheory__notdoubleturnstile=Char(l_pNotdoubleturnstile,L_pNotdoubleturnstile,( set([ letCor['NUMERAL0'],letCor['c'] ]), ), 123)
 prooftheory__logicalconstant=Char(l_pLogicalconstant,L_pLogicalconstant,( set([ letCor['NUMERAL0'],letCor['l'] ]), ), 124)
 
+#st theory
 
+settheory__elementof=Char(l_settheoryElementof,L_settheoryElementof,( set([ letCor['NUMERAL9'],letCor['e'] ]), ), 125)
+settheory__notelementof=Char(l_settheoryNotelementof,L_settheoryNotelementof, ( set([ letCor['NUMERAL9'],letCor['d'] ]), ), 126 )
+settheory__nullset=Char(l_settheoryNullset, L_settheoryNullset, ( set([ letCor['NUMERAL9'],letCor['n'] ]), ), 127)
+settheory__intersection=Char(l_settheoryIntersection, L_settheoryIntersection, ( set([ letCor['NUMERAL9'],letCor['i'] ]), ), 128)
+settheory__union=Char(l_settheoryUnion, L_settheoryUnion, ( set([ letCor['NUMERAL9'],letCor['u'] ]),), 129)
+settheory__superset=Char(l_settheorySuperset, L_settheorySuperset, ( set([ letCor['NUMERAL9'], letCor['a'] ]), ), 130)
+settheory__subset=Char(l_settheorySubset, L_settheorySubset, ( set([ letCor['NUMERAL9'],letCor['s'] ]), ), 131)
+settheory__notsuperset=Char(l_settheoryNotsuperset,L_settheoryNotsuperset, ( set([ letCor['NUMERAL9'],letCor['z'] ]),), 132)
+settheory__notsubset=Char(l_settheoryNotsubset,L_settheoryNotsubset, ( set([ letCor['NUMERAL9'], letCor['x'] ]), ), 133)
 
 charLets={
 	
@@ -1888,6 +1918,134 @@ while quit==False:
 
 
 				whichChar=prooftheory__logicalconstant
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				######################### Set Theory
+
+				whichChar=settheory__elementof
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=settheory__notelementof
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=settheory__nullset
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=settheory__intersection
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=settheory__union
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=settheory__superset
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=settheory__subset
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=settheory__notsuperset
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0 or curVort!=0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=settheory__notsubset
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
