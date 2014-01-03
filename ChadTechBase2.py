@@ -2318,16 +2318,22 @@ while quit==False:
 					cursorChar+= len(blitScreen[len(blitScreen)-1][1][vapp].charen)
 				cursorChar-=len(ourDoc.vorten[curVort].charen)-curChar
 
-		############################ 
+		############################ Turn lines into pages
 
-	 	############################This section takes the words in each line, and breaks them down into a list of characters to paste onto the screen
+		pagenScreen = []
+		for yit in range(len(blitScreen)):
+			if yit%maxLineNum==0:
+				pagenScreen.append([])
+			pagenScreen[len(pagenScreen)-1].append(blitScreen[yit])
+
+		whichPag=cursorLine/maxLineNum
 
 		blitChars=[]
-		for yit in range(len(blitScreen)):
+		for yit in range(len(pagenScreen[whichPag])):
 			blitChars.append([])
-			for vapp in range(len(blitScreen[yit][1])):
-				for gno in range(len(blitScreen[yit][1][vapp].charen)):
-					blitChars[yit].append(blitScreen[yit][1][vapp].charen[gno])
+			for vapp in range(len(pagenScreen[whichPag][yit][1])):
+				for gno in range(len(pagenScreen[whichPag][yit][1][vapp].charen)):
+					blitChars[yit].append(pagenScreen[whichPag][yit][1][vapp].charen[gno])
 			for vapp in range(lineLen):
 				if vapp<len(blitChars[yit]):
 					screen.blit(blitChars[yit][vapp][0].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
@@ -2338,6 +2344,26 @@ while quit==False:
 				else:
 					screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
 		screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine*(charHeight+lineGap))])
+
+
+	 	############################This section takes the words in each line, and breaks them down into a list of characters to paste onto the screen
+
+		#blitChars=[]
+		#for yit in range(len(blitScreen)):
+		#	blitChars.append([])
+		#	for vapp in range(len(blitScreen[yit][1])):
+		#		for gno in range(len(blitScreen[yit][1][vapp].charen)):
+		#			blitChars[yit].append(blitScreen[yit][1][vapp].charen[gno])
+		#	for vapp in range(lineLen):
+		#		if vapp<len(blitChars[yit]):
+		#			screen.blit(blitChars[yit][vapp][0].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
+		#			for dukh in range(len(blitChars[yit][vapp][1])):
+		#				screen.blit(blitChars[yit][vapp][1][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSuperSetY+yMarg])
+		#			for dukh in range(len(blitChars[yit][vapp][2])):
+		#				screen.blit(blitChars[yit][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
+		#		else:
+		#			screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
+		#screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine*(charHeight+lineGap))])
 
 		######################################
 		
