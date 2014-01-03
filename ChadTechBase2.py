@@ -2343,7 +2343,8 @@ while quit==False:
 						screen.blit(blitChars[yit][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
 				else:
 					screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-		screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine*(charHeight+lineGap))])
+		print 'CURSORLINE',cursorLine
+		screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)])
 
 
 	 	############################This section takes the words in each line, and breaks them down into a list of characters to paste onto the screen
