@@ -897,6 +897,20 @@ charLets={
 	117:misc__ambersand,
 	118:misc__atsign,
 	119:misc__carrot,
+	120:prooftheory__singleturnstile,
+	121:prooftheory__notsingleturnstile,
+	122:prooftheory__doubleturnstile,
+	123:prooftheory__notdoubleturnstile,
+	124:prooftheory__logicalconstant,
+	125:settheory__elementof,
+	126:settheory__notelementof,
+	127:settheory__nullset,
+	128:settheory__intersection,
+	129:settheory__union,
+	130:settheory__superset,
+	131:settheory__subset,
+	132:settheory__notsuperset,
+	133:settheory__notsubset
 
 }
 
