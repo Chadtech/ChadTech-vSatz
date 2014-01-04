@@ -2200,13 +2200,45 @@ while quit==False:
 				whichChar=save
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						if curChar!=0 or curVort!=0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
 						saveName = tkFileDialog.asksaveasfilename()
 						saveName = str(saveName)
-						pygame.image.save(screen,"curpag.PNG")
-						saveIm = Image.open('curpag.PNG')
-						saveImSize = saveIm.size
-						Xboun, Yboun = 0,0
-						Xboun, Yboun = saveIm.size
+						for pagenTol in range(len(pagenScreen)):
+							whichPag=pagenTol
+							blitChars=[]
+							for yit in range(len(pagenScreen[whichPag])):
+								blitChars.append([])
+								for vapp in range(len(pagenScreen[whichPag][yit][1])):
+									for gno in range(len(pagenScreen[whichPag][yit][1][vapp].charen)):
+										blitChars[yit].append(pagenScreen[whichPag][yit][1][vapp].charen[gno])
+								for vapp in range(lineLen):
+									if vapp<len(blitChars[yit]):
+										screen.blit(blitChars[yit][vapp][0].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
+										for dukh in range(len(blitChars[yit][vapp][1])):
+											screen.blit(blitChars[yit][vapp][1][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSuperSetY+yMarg])
+										for dukh in range(len(blitChars[yit][vapp][2])):
+											screen.blit(blitChars[yit][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
+									else:
+										screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
+							pygame.image.save(screen,'pag'+str(pagenTol)+'.PNG')
+							screen.fill((0,0,0))
+						stXs,stYs = 0,0
+						for pagenTol in range(len(pagenScreen)):
+							#print 'pagenScreen type',type(pagenScreen),'range of len of pagenScreen type', type(range(len(pagenScreen)))
+							filName="pag"+str(pagenTol)+".PNG"
+							thX, thY=Image.open(filName).size
+							stXs=thX
+							stYs+=thY
+						stImage = Image.new('RGB',(stXs,stYs),'black')
+						for pagenTol in range(len(pagenScreen)):
+							print 'paste image size:', Image.open('pag'+str(pagenTol)+'.PNG').size, ', 4 box:', 0,pagenTol*windowHeight,stXs,stYs,', output image size:', stImage.size
+							stImage.paste(Image.open('pag'+str(pagenTol)+'.PNG'),(0,pagenTol*windowHeight,stXs,windowHeight+(pagenTol*windowHeight)))
 						for yit in range(len(ourDoc.vorten)):
 							for vapp in range(len(ourDoc.vorten[yit].charen)):
 								if vapp%3==0:
@@ -2218,9 +2250,10 @@ while quit==False:
 										vortTW = ourDoc.vorten[yit].charen[vapp+1][0].keyDig
 									if vapp+2 < len(ourDoc.vorten[yit].charen):
 										vortTH = ourDoc.vorten[yit].charen[vapp+2][0].keyDig
-									saveIm.putpixel((vapp/3,yit),(vortON,vortTW,vortTH))
+									stImage.putpixel((vapp/3,yit),(vortON,vortTW,vortTH))
+						stImage.save(saveName,"png")
 
-						saveIm.save(saveName,"png")
+
 
 			########################################### Opening Documents
 
