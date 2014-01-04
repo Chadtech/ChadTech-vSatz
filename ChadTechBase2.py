@@ -2237,9 +2237,6 @@ while quit==False:
 						cursor.vorten.append(Vort())
 						xBou,yBou=0,0
 						r,g,b = openIm.getpixel((xBou,yBou))
-						#for vapp in range(ySize):
-							#r,g,b = openIm.getpixel((xBou,vapp))
-							#print vapp, 'R G B:', r,g,b
 						while r!=0:
 							ourDoc.vorten.append(Vort())
 							while r!=0:
@@ -2342,6 +2339,8 @@ while quit==False:
 
 		whichPag=cursorLine/maxLineNum
 
+		############################ Turn pages into characters
+
 		blitChars=[]
 		for yit in range(len(pagenScreen[whichPag])):
 			blitChars.append([])
@@ -2357,7 +2356,6 @@ while quit==False:
 						screen.blit(blitChars[yit][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
 				else:
 					screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-		print 'CURSORLINE',cursorLine
 		screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)])
 
 
