@@ -105,7 +105,7 @@ MATH SYMBOLS
 	
 	Equals then s		    Square Root
 	
-	Equals then l		    'Plus or Minus'
+	Equals then l		    Plus / Minus
 	
 	Equals then f		    Integral
 	
@@ -113,33 +113,31 @@ MATH SYMBOLS
 	
 	Equals then g		    Angle
 	
-	Equals then t		    A Triangle
+	Equals then t		    Triangle / Delta
 	
 	Equals then r		    Gradient
 	
 	Equals then i		    Infinity
 	
-	Equals then c			Doesnt divide (as in 'divides' signs, not 'division' sign)
-	
 SET THEORY SYMBOLS
 
 	0 then e		    'element of'
 	
-	0 then d		    'not element of'
+	0 then n		    'not element of'
 	
-	0 then n		    Null set
+	0 then z		    Null set
 	
 	0 then u		    Union
 	
 	0 then i		    Intersection
 	
-	0 then s		    'Sub set of'
+	0 then b		    'Sub set of'
 	
-	0 then a		    'Super set of'
+	0 then p		    'Super set of'
 	
-	0 then x		    'not sub set of'
+	0 then v		    'not sub set of'
 	
-	0 then z		    'not super set of'
+	0 then o		    'not super set of'
 	
 PROOF THOERY
 
@@ -153,38 +151,36 @@ PROOF THOERY
 	
 	8 then l		    Logical constant
 
-FIRST ORDER AND PROPOSITIONAL LOGIC SYMBOLS
+FIRST ORDER LOGIC SYMBOLS
 
-	1 then e		Existential Quantifier
+	1 then e          Existential Quantifier
 
-	1 then a		'For all'
+	1 then a          'For all'
 
-	1 then i		Material Conditional, 'implies'
+	1 then i          Material Conditional, 'implies'
 
-	1 then f		If, and only if. Symbol also means 'equivalent' and 'congruent' in other context
+	1 then f          If, and only if. Symbol also means 'equivalent' and 'congruent' in other context
 
-	1 then n 		Negation
-	
-	1 then x		Xor sign
-	
-	1 then d		Nand sign
-	
-	1 then period	And sign (not period)
+	1 then n          Negation
 
 MODAL LOGIC SYMBOLS
 
 	2 then p          Possible
 
 	2 then n          Necessary
-	
-BRACKETS
-	
-	c the  [		Left Chevron
-	
-	c then ]		Right Chevron
 
-ChadTech is currently in v0.2, features to add:
+ChadTech is currently in v0.1, features to add:
 
-1. "barcode"
-4. Superscripts and subscripts
+1. Scrolling, if you go beyond the screen height the text shifts down, and if you save a document it saves one long image file.
+2. 'exponential backspace/arrow keys', if you hold shift and backspace, each additional backspace is expontentially larger. For example you hold shift, press backspace, one character is removed, backspace again, 2, again, 4, again 8 etc.
+3. Better response to 'Dummy Spaces' (spaces that you made not by pressing the space bar, but instead by say, pressing enter)
+4. Better saving/opening of superscripts/subscripts. Right now its very buggy
 5. More characters. Many characters are drawn and ready to implement into code.
+6. Window that grows with your text, so small ChadTech documents are not mostly blackspace.
+7. word wrap
+
+-------------------------------------------------
+DEPENDENCIES
+
+* pygame
+* Pokemon Ruby for the Gameboy Advance SP

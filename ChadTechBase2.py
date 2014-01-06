@@ -6,9 +6,9 @@ import Tkinter, tkFileDialog
 brunk = Tkinter.Tk()
 brunk.withdraw()
 
-print 'Enter window width'
+print 'Enter window width in pixels'
 windowWidth=raw_input()
-print 'Enter window height'
+print 'Enter window height in pixels'
 windowHeight=raw_input()
 
 windowWidth=int(windowWidth)
