@@ -251,6 +251,18 @@ os.chdir(os.path.abspath('Cursor'))
 L_C = pygame.image.load('char0.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Error'))
+
+L_Error = pygame.image.load('char0.PNG').convert()
+L_Frown = pygame.image.load('char1.PNG').convert()
+
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('NZsign'))
+
+L_NZ = pygame.image.load('char0.PNG').convert()
+L_sign = pygame.image.load('char1.PNG').convert()
+
+os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('chars6x8'))
 os.chdir(os.path.abspath('Uppercase'))
@@ -319,7 +331,6 @@ os.chdir(os.path.abspath('Space'))
 
 #space
 l_S = pygame.image.load('char0.PNG').convert()
-l_fS = pygame.image.load('char1.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('Numerals'))
@@ -445,6 +456,17 @@ l_mInfinity = pygame.image.load('char20.PNG').convert()
 l_mDivides = pygame.image.load('char21.PNG').convert()
 l_mDoesntDivide = pygame.image.load('char22.PNG').convert()
 
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('Error'))
+
+l_Error = pygame.image.load('char0.PNG').convert()
+l_Frown = pygame.image.load('char1.PNG').convert()
+
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('NZsign'))
+
+l_NZ = pygame.image.load('char0.PNG').convert()
+l_sign = pygame.image.load('char1.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.dirname(os.getcwd()))
@@ -483,9 +505,7 @@ shiftMag = 8
 slantyChek = False
 
 whichScript = 'normal'
-
 maxLineNum = (windowHeight-(2*yMarg))/(charHeight+lineGap)
-print 'maxLineNum',maxLineNum
 
 def addChar(input):
 	return [input,[],[]]
@@ -564,7 +584,9 @@ letCor = {
 	'RIGHTCONTROL':305,
 	'LEFTCONTROL':306,
 	'RIGHTALT':307,
-	'LEFTALT':308
+	'LEFTALT':308,
+
+	'NOKEYS':14000
 
 }
 
@@ -581,31 +603,29 @@ class Vort:
 
 #Invisible Chars
 
-empty=Char(l_fS,l_fS,(set([ letCor['l'], letCor['w'] ]) ),255)
-enter=Char(l_fS,l_fS,( set([ letCor['ENTER'] ]) ),113)
-wordwrap=Char(l_fS,l_fS,(set([ letCor['l'], letCor['w'] ]) ),255)
-backspace=Char(l_fS,l_fS,(set ([ letCor['BACKSPACE'] ]) ),255)
+enter=Char(l_Frown,l_Frown,( set([ letCor['ENTER'] ]) ),113)
+backspace=Char(l_Frown,l_Frown,(set ([ letCor['BACKSPACE'] ]) ),255)
 
-rightarrow=Char(l_fS,l_fS,(set ([ letCor['RIGHTARROW'] ]) ),255)
-leftarrow=Char(l_fS,l_fS,(set ([ letCor['LEFTARROW'] ]) ),255,)
-uparrow=Char(l_fS,l_fS,(set ([ letCor['UPARROW'] ]) ),255)
-downarrow=Char(l_fS,l_fS,(set ([ letCor['DOWNARROW'] ]) ),255)
+rightarrow=Char(l_Frown,l_Frown,(set ([ letCor['RIGHTARROW'] ]) ),255)
+leftarrow=Char(l_Frown,l_Frown,(set ([ letCor['LEFTARROW'] ]) ),255,)
+uparrow=Char(l_Frown,l_Frown,(set ([ letCor['UPARROW'] ]) ),255)
+downarrow=Char(l_Frown,l_Frown,(set ([ letCor['DOWNARROW'] ]) ),255)
 
-save=Char(l_fS,l_fS,(set ([ letCor['LEFTCONTROL'],letCor['s'] ]),set ([ letCor['RIGHTCONTROL'],letCor['s'] ])),255)
-oPen=Char(l_fS,l_fS,(set ([ letCor['LEFTCONTROL'],letCor['o'] ]),set ([ letCor['RIGHTCONTROL'],letCor['o'] ])),255)
+save=Char(l_Frown,l_Frown,(set ([ letCor['LEFTCONTROL'],letCor['s'] ]),set ([ letCor['RIGHTCONTROL'],letCor['s'] ])),255)
+oPen=Char(l_Frown,l_Frown,(set ([ letCor['LEFTCONTROL'],letCor['o'] ]),set ([ letCor['RIGHTCONTROL'],letCor['o'] ])),255)
 
-superSet=Char(l_fS,l_fS,(set([ letCor['LEFTSHIFT'],letCor['EQUALS'] ]),set([ letCor['RIGHTSHIFT'],letCor['EQUALS'] ])),255)
-subSet=Char(l_fS,l_fS,(set([ letCor['LEFTSHIFT'],letCor['HYPHEN'] ]),set([ letCor['RIGHTSHIFT'],letCor['HYPHEN'] ])),255)
+superSet=Char(l_Frown,l_Frown,(set([ letCor['LEFTSHIFT'],letCor['EQUALS'] ]),set([ letCor['RIGHTSHIFT'],letCor['EQUALS'] ])),255)
+subSet=Char(l_Frown,l_Frown,(set([ letCor['LEFTSHIFT'],letCor['HYPHEN'] ]),set([ letCor['RIGHTSHIFT'],letCor['HYPHEN'] ])),255)
 
-taller=Char(l_fS,l_fS,( set([ letCor['LEFTALT'],letCor['w'] ]) ), 255)
-shorter=Char(l_fS,l_fS,( set([ letCor['LEFTALT'],letCor['s'] ]) ), 255)
-wider=Char(l_fS,l_fS,(set([ letCor['LEFTALT'],letCor['d'] ]) ), 255)
-narrower=Char(l_fS,l_fS,(set([ letCor['LEFTALT'],letCor['a'] ]) ), 255)
-
-slantySet=Char(l_fS,l_fS,( set([ letCor['LEFTALT'],letCor['s'] ]), set([ letCor['RIGHTALT'],letCor['s'] ]) ), 255)
+slantySet=Char(l_Frown,l_Frown,( set([ letCor['LEFTALT'],letCor['s'] ]), set([ letCor['RIGHTALT'],letCor['s'] ]) ), 255)
 
 #Nothing
-nothing=Char(l_fS,l_fS,set([ letCor['a'], letCor['q'], letCor['l'] ]),255)
+nothing=Char(l_Frown,l_Frown,set([ letCor['NOKEYS'] ]),255)
+
+#Error
+error=Char(l_Error,L_Error,set([ letCor['NOKEYS'] ]), 255)
+
+
 
 ############Visible Chars
 
@@ -777,6 +797,8 @@ settheory__subset=Char(l_settheorySubset, L_settheorySubset, ( set([ letCor['NUM
 settheory__notsuperset=Char(l_settheoryNotsuperset,L_settheoryNotsuperset, ( set([ letCor['NUMERAL9'],letCor['z'] ]),), 132)
 settheory__notsubset=Char(l_settheoryNotsubset,L_settheoryNotsubset, ( set([ letCor['NUMERAL9'], letCor['x'] ]), ), 133)
 
+#134 is error
+
 charLets={
 	
 	1:lowercase__a,
@@ -910,7 +932,8 @@ charLets={
 	130:settheory__superset,
 	131:settheory__subset,
 	132:settheory__notsuperset,
-	133:settheory__notsubset
+	133:settheory__notsubset,
+	134:error,
 
 }
 
@@ -932,7 +955,6 @@ while quit==False:
 		if event.type == pygame.KEYDOWN:
 			howManyChars=0
 			keys.add(event.key)
-			print len(ourDoc.vorten)
 
 			if whichScript == 'normal':
 
@@ -2096,7 +2118,6 @@ while quit==False:
 					curChar=0
 
 	 			if event.key in enter.keys:
-	 				print 'ENTER TRIGGERED'
 	 				if ourDoc.vorten[curVort].charen!=[]:
 						curVort+=1
 						ourDoc.vorten.insert(curVort,Vort())
@@ -2147,7 +2168,7 @@ while quit==False:
 					else:
 						if curVort!=0:
 							curVort-=1
-							curChar=len(ourDoc.vorten[curVort].charen)
+							curChar=len(ourDoc.vorten[curVort].charen)-1
 
 				if event.key in leftarrow.keys and ((letCor['LEFTSHIFT'] in keys) or (letCor['RIGHTSHIFT'] in keys)):
 					for yit in [0]*shiftCou:
@@ -2160,22 +2181,48 @@ while quit==False:
 					shiftCou=shiftCou*shiftMag
 
 				if event.key in rightarrow.keys:
-					if curChar==len(ourDoc.vorten[curVort].charen):
-						if curVort!=(len(ourDoc.vorten)-1):
+					#if curChar==len(ourDoc.vorten[curVort].charen):
+					#	if curVort!=(len(ourDoc.vorten)-1):
+					#		curVort+=1
+					#		curChar=0
+					#	else:
+					#		curChar+=1
+					#lastChar = len(ourDoc.vorten[curVort].charen)-1
+					#lastVort = len(ourDoc.vorten)-1
+					#if curChar!=lastChar or curVort!=lastVort:
+					if curVort<(len(ourDoc.vorten)-1):
+						if curChar<len(ourDoc.vorten[curVort].charen):
+							curChar+=1
+						else:
 							curVort+=1
 							curChar=0
 					else:
-						curChar+=1
+						if curChar<(len(ourDoc.vorten[curVort].charen)):
+							curChar+=1
 
 				if event.key in rightarrow.keys and ((letCor['LEFTSHIFT'] in keys) or (letCor['RIGHTSHIFT'] in keys)):
 					for yit in [0]*shiftCou:
-						if curChar==len(ourDoc.vorten[curVort].charen):
-							if curVort!=(len(ourDoc.vorten)-1):
+						if curVort<(len(ourDoc.vorten)-1):
+							if curChar<len(ourDoc.vorten[curVort].charen):
+								curChar+=1
+							else:
 								curVort+=1
 								curChar=0
 						else:
-							curChar+=1
-					shiftCou=shiftCou*shiftMag
+							if curChar<(len(ourDoc.vorten[curVort].charen)):
+								curChar+=1
+
+				if event.key in rightarrow.keys and ((letCor['LEFTCONTROL'] in keys) or (letCor['RIGHTCONTROL'] in keys)):
+					for yit in [0]*6:
+						if curVort<(len(ourDoc.vorten)-1):
+							if curChar<len(ourDoc.vorten[curVort].charen):
+								curChar+=1
+							else:
+								curVort+=1
+								curChar=0
+						else:
+							if curChar<(len(ourDoc.vorten[curVort].charen)):
+								curChar+=1
 
 				if event.key in uparrow.keys:
 					for yit in lineLen*[0]:
@@ -2230,20 +2277,17 @@ while quit==False:
 							screen.fill((0,0,0))
 						stXs,stYs = 0,0
 						for pagenTol in range(len(pagenScreen)):
-							#print 'pagenScreen type',type(pagenScreen),'range of len of pagenScreen type', type(range(len(pagenScreen)))
 							filName="pag"+str(pagenTol)+".PNG"
 							thX, thY=Image.open(filName).size
 							stXs=thX
 							stYs+=thY
 						stImage = Image.new('RGB',(stXs,stYs),'black')
 						for pagenTol in range(len(pagenScreen)):
-							print 'paste image size:', Image.open('pag'+str(pagenTol)+'.PNG').size, ', 4 box:', 0,pagenTol*windowHeight,stXs,stYs,', output image size:', stImage.size
 							stImage.paste(Image.open('pag'+str(pagenTol)+'.PNG'),(0,pagenTol*windowHeight,stXs,windowHeight+(pagenTol*windowHeight)))
 						for yit in range(len(ourDoc.vorten)):
 							for vapp in range(len(ourDoc.vorten[yit].charen)):
 								if vapp%3==0:
 									vortON,vortTW,vortTH = 0,0,0
-									print ourDoc.vorten[yit].charen[vapp][0].keys
 									if vapp < len(ourDoc.vorten[yit].charen):
 										vortON = ourDoc.vorten[yit].charen[vapp][0].keyDig
 									if vapp+1 < len(ourDoc.vorten[yit].charen):
@@ -2252,8 +2296,6 @@ while quit==False:
 										vortTH = ourDoc.vorten[yit].charen[vapp+2][0].keyDig
 									stImage.putpixel((vapp/3,yit),(vortON,vortTW,vortTH))
 						stImage.save(saveName,"png")
-
-
 
 			########################################### Opening Documents
 
@@ -2273,8 +2315,6 @@ while quit==False:
 						while r!=0:
 							ourDoc.vorten.append(Vort())
 							while r!=0:
-								print 'R G B',r,g,b
-								print 'xBou',xBou,'yBou',yBou, 'Vorten Cou',len(ourDoc.vorten)
 								if r!=0:
 									ourDoc.vorten[yBou].charen.append(addChar(charLets[r]))
 								if g!=0:
