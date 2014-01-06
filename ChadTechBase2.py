@@ -489,8 +489,8 @@ lilCharOffsetX = 9
 lilCharOffsetSuperSetY = -8
 lilCharOffsetSubSetY=14
 
-xMarg = 96-charWidth
-yMarg = 48
+xMarg = (8*charWidth)-charWidth
+yMarg = (2*charHeight)
 
 lineLen=(windowWidth-(2*xMarg))/charWidth
 lineNum=(windowHeight-(2*yMarg))/(charHeight+lineGap)
@@ -2177,7 +2177,7 @@ while quit==False:
 						else:
 							if curVort!=0:
 								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
+								curChar=len(ourDoc.vorten[curVort].charen)-1
 					shiftCou=shiftCou*shiftMag
 
 				if event.key in rightarrow.keys:
@@ -2224,8 +2224,68 @@ while quit==False:
 							if curChar<(len(ourDoc.vorten[curVort].charen)):
 								curChar+=1
 
-				if event.key in uparrow.keys:
-					for yit in lineLen*[0]:
+				if event.key in uparrow.keys and cursorLine!=0:
+					savX=curX
+					savY=curY
+					while (curY!=(savY-(charHeight+lineGap)) or curX!=savX):
+						blitScreen = []
+						thisLin = 0
+						blitScreen.append( [0,[]] )
+						cursorChar = 0
+						cursorVort = 0
+						cursorLine = 0
+
+						for yit in range(len(ourDoc.vorten)):
+							if ourDoc.vorten[yit].charen==[addChar(enter)]:
+								blitScreen.append( [0,[]] )
+								thisLin+=1
+							else:
+								if blitScreen[thisLin][0]+len(ourDoc.vorten[yit].charen)<=lineLen:
+									blitScreen[thisLin][1].append(ourDoc.vorten[yit])
+									blitScreen[thisLin][0]+=len(ourDoc.vorten[yit].charen)
+								else:
+									blitScreen.append( [0,[]] )
+									thisLin+=1
+									blitScreen[thisLin][0]=len(ourDoc.vorten[yit].charen)
+									blitScreen[thisLin][1].append(ourDoc.vorten[yit])
+							if yit==curVort:
+								cursorVort=yit
+								cursorLine=thisLin
+								for vapp in range(len(blitScreen[len(blitScreen)-1][1])):
+									cursorChar+= len(blitScreen[len(blitScreen)-1][1][vapp].charen)
+								cursorChar-=len(ourDoc.vorten[curVort].charen)-curChar
+
+						############################ Turn lines into pages
+
+						pagenScreen = []
+						for yit in range(len(blitScreen)):
+							if yit%maxLineNum==0:
+								pagenScreen.append([])
+							pagenScreen[len(pagenScreen)-1].append(blitScreen[yit])
+
+						whichPag=cursorLine/maxLineNum
+
+						############################ Turn pages into characters
+
+						blitChars=[]
+						for yit in range(len(pagenScreen[whichPag])):
+							blitChars.append([])
+							for vapp in range(len(pagenScreen[whichPag][yit][1])):
+								for gno in range(len(pagenScreen[whichPag][yit][1][vapp].charen)):
+									blitChars[yit].append(pagenScreen[whichPag][yit][1][vapp].charen[gno])
+							for vapp in range(lineLen):
+								if vapp<len(blitChars[yit]):
+									screen.blit(blitChars[yit][vapp][0].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
+									for dukh in range(len(blitChars[yit][vapp][1])):
+										screen.blit(blitChars[yit][vapp][1][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSuperSetY+yMarg])
+									for dukh in range(len(blitChars[yit][vapp][2])):
+										screen.blit(blitChars[yit][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
+								else:
+									screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
+						screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)])
+						curX=xMarg+(cursorChar*charWidth)
+						curY=yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)
+
 						if curChar!=0:
 							curChar-=1
 						else:
@@ -2233,14 +2293,84 @@ while quit==False:
 								curVort-=1
 								curChar=len(ourDoc.vorten[curVort].charen)
 
-				if event.key in downarrow.keys:
-					for yit in lineLen*[0]:
-						if curChar!=0:
-							curChar-=1
+				if event.key in downarrow.keys and cursorLine!=(len(blitScreen)-1):
+					#for yit in lineLen*[0]:
+					#	if curChar!=0:
+					#		curChar-=1
+					#	else:
+					#		if curVort!=0:
+					#			curVort-=1
+					#			curChar=len(ourDoc.vorten[curVort].charen)
+					savX=curX
+					savY=curY
+					while (curY!=(savY+(charHeight+lineGap)) or curX!=savX):
+						blitScreen = []
+						thisLin = 0
+						blitScreen.append( [0,[]] )
+						cursorChar = 0
+						cursorVort = 0
+						cursorLine = 0
+
+						for yit in range(len(ourDoc.vorten)):
+							if ourDoc.vorten[yit].charen==[addChar(enter)]:
+								blitScreen.append( [0,[]] )
+								thisLin+=1
+							else:
+								if blitScreen[thisLin][0]+len(ourDoc.vorten[yit].charen)<=lineLen:
+									blitScreen[thisLin][1].append(ourDoc.vorten[yit])
+									blitScreen[thisLin][0]+=len(ourDoc.vorten[yit].charen)
+								else:
+									blitScreen.append( [0,[]] )
+									thisLin+=1
+									blitScreen[thisLin][0]=len(ourDoc.vorten[yit].charen)
+									blitScreen[thisLin][1].append(ourDoc.vorten[yit])
+							if yit==curVort:
+								cursorVort=yit
+								cursorLine=thisLin
+								for vapp in range(len(blitScreen[len(blitScreen)-1][1])):
+									cursorChar+= len(blitScreen[len(blitScreen)-1][1][vapp].charen)
+								cursorChar-=len(ourDoc.vorten[curVort].charen)-curChar
+
+						############################ Turn lines into pages
+
+						pagenScreen = []
+						for yit in range(len(blitScreen)):
+							if yit%maxLineNum==0:
+								pagenScreen.append([])
+							pagenScreen[len(pagenScreen)-1].append(blitScreen[yit])
+
+						whichPag=cursorLine/maxLineNum
+
+						############################ Turn pages into characters
+
+						blitChars=[]
+						for yit in range(len(pagenScreen[whichPag])):
+							blitChars.append([])
+							for vapp in range(len(pagenScreen[whichPag][yit][1])):
+								for gno in range(len(pagenScreen[whichPag][yit][1][vapp].charen)):
+									blitChars[yit].append(pagenScreen[whichPag][yit][1][vapp].charen[gno])
+							for vapp in range(lineLen):
+								if vapp<len(blitChars[yit]):
+									screen.blit(blitChars[yit][vapp][0].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
+									for dukh in range(len(blitChars[yit][vapp][1])):
+										screen.blit(blitChars[yit][vapp][1][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSuperSetY+yMarg])
+									for dukh in range(len(blitChars[yit][vapp][2])):
+										screen.blit(blitChars[yit][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
+								else:
+									screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
+						screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)])
+						curX=xMarg+(cursorChar*charWidth)
+						curY=yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)
+
+						if curVort<(len(ourDoc.vorten)-1):
+							if curChar<len(ourDoc.vorten[curVort].charen):
+								curChar+=1
+							else:
+								curVort+=1
+								curChar=0
 						else:
-							if curVort!=0:
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
+							if curChar<(len(ourDoc.vorten[curVort].charen)):
+								curChar+=1
 
 			########################################## Saving DOcuments
 
@@ -2430,6 +2560,8 @@ while quit==False:
 				else:
 					screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
 		screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)])
+		curX=xMarg+(cursorChar*charWidth)
+		curY=yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)
 
 
 	 	############################This section takes the words in each line, and breaks them down into a list of characters to paste onto the screen
