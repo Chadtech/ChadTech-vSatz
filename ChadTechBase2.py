@@ -603,24 +603,24 @@ class Vort:
 
 #Invisible Chars
 
-enter=Char(l_Frown,l_Frown,( set([ letCor['ENTER'] ]) ),113)
-backspace=Char(l_Frown,l_Frown,(set ([ letCor['BACKSPACE'] ]) ),255)
+enter=Char(l_Frown,L_Frown,( set([ letCor['ENTER'] ]) ),113)
+backspace=Char(l_Frown,L_Frown,(set ([ letCor['BACKSPACE'] ]) ),255)
 
-rightarrow=Char(l_Frown,l_Frown,(set ([ letCor['RIGHTARROW'] ]) ),255)
-leftarrow=Char(l_Frown,l_Frown,(set ([ letCor['LEFTARROW'] ]) ),255,)
-uparrow=Char(l_Frown,l_Frown,(set ([ letCor['UPARROW'] ]) ),255)
-downarrow=Char(l_Frown,l_Frown,(set ([ letCor['DOWNARROW'] ]) ),255)
+rightarrow=Char(l_Frown,L_Frown,(set ([ letCor['RIGHTARROW'] ]) ),255)
+leftarrow=Char(l_Frown,L_Frown,(set ([ letCor['LEFTARROW'] ]) ),255,)
+uparrow=Char(l_Frown,L_Frown,(set ([ letCor['UPARROW'] ]) ),255)
+downarrow=Char(l_Frown,L_Frown,(set ([ letCor['DOWNARROW'] ]) ),255)
 
-save=Char(l_Frown,l_Frown,(set ([ letCor['LEFTCONTROL'],letCor['s'] ]),set ([ letCor['RIGHTCONTROL'],letCor['s'] ])),255)
-oPen=Char(l_Frown,l_Frown,(set ([ letCor['LEFTCONTROL'],letCor['o'] ]),set ([ letCor['RIGHTCONTROL'],letCor['o'] ])),255)
+save=Char(l_Frown,L_Frown,(set ([ letCor['LEFTCONTROL'],letCor['s'] ]),set ([ letCor['RIGHTCONTROL'],letCor['s'] ])),255)
+oPen=Char(l_Frown,L_Frown,(set ([ letCor['LEFTCONTROL'],letCor['o'] ]),set ([ letCor['RIGHTCONTROL'],letCor['o'] ])),255)
 
-superSet=Char(l_Frown,l_Frown,(set([ letCor['LEFTSHIFT'],letCor['EQUALS'] ]),set([ letCor['RIGHTSHIFT'],letCor['EQUALS'] ])),255)
-subSet=Char(l_Frown,l_Frown,(set([ letCor['LEFTSHIFT'],letCor['HYPHEN'] ]),set([ letCor['RIGHTSHIFT'],letCor['HYPHEN'] ])),255)
+superSet=Char(l_Frown,L_Frown,(set([ letCor['LEFTSHIFT'],letCor['EQUALS'] ]),set([ letCor['RIGHTSHIFT'],letCor['EQUALS'] ])),255)
+subSet=Char(l_Frown,L_Frown,(set([ letCor['LEFTSHIFT'],letCor['HYPHEN'] ]),set([ letCor['RIGHTSHIFT'],letCor['HYPHEN'] ])),255)
 
-slantySet=Char(l_Frown,l_Frown,( set([ letCor['LEFTALT'],letCor['s'] ]), set([ letCor['RIGHTALT'],letCor['s'] ]) ), 255)
+slantySet=Char(l_Frown,L_Frown,( set([ letCor['LEFTALT'],letCor['s'] ]), set([ letCor['RIGHTALT'],letCor['s'] ]) ), 255)
 
 #Nothing
-nothing=Char(l_Frown,l_Frown,set([ letCor['NOKEYS'] ]),255)
+nothing=Char(l_Frown,L_Frown,set([ letCor['NOKEYS'] ]),255)
 
 #Error
 error=Char(l_Error,L_Error,set([ letCor['NOKEYS'] ]), 255)
@@ -948,6 +948,13 @@ keys = set([])
 quit=False
 while quit==False:
 	for event in pygame.event.get():
+
+		#if ourDoc.vorten[curVort].charen==[]:
+		#	ourDoc.vorten.pop(curVort)
+		#	curVort-=1
+
+		#if len(ourDoc.vorten)<1:
+		#	ourDoc.vorten.append(Vort())
 
 		if not (letCor['LEFTSHIFT'] in keys) and not (letCor['RIGHTSHIFT'] in keys):
 			shiftCou = 1
@@ -2132,13 +2139,23 @@ while quit==False:
 						ourDoc.vorten.insert(curVort,Vort())
 
 				if event.key in backspace.keys:
-					if curChar!=0 or curVort!=0:
-						while len(ourDoc.vorten[curVort].charen)==0:
-							ourDoc.vorten.pop(curVort)
+					if curVort!=0 or curChar!=0:
+						#Remove prior Char	
+						if curChar==0:
+							#ourDoc.vorten[curVort-1].charen.pop(len(ourDoc.vorten[curVort-1].charen)-1)
 							curVort-=1
 							curChar=len(ourDoc.vorten[curVort].charen)
-						ourDoc.vorten[curVort].charen.pop(curChar-1)
-						curChar-=1
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+						else:
+							ourDoc.vorten[curVort].charen.pop(curChar-1)
+							curChar-=1
+						if curVort>0:
+							while len(ourDoc.vorten[curVort].charen)==0:
+								ourDoc.vorten.pop(curVort)
+								curVort-=1
+								#print curVort, len(ourDoc.vorten),len(ourDoc.vorten[curVort].charen)
+								curChar=len(ourDoc.vorten[curVort].charen)
 
 				if event.key in backspace.keys and ((letCor['LEFTSHIFT'] in keys) or (letCor['RIGHTSHIFT'] in keys)):
 					for yit in [0]*shiftCou:
@@ -2163,35 +2180,26 @@ while quit==False:
 					shiftCou=shiftCou*shiftMag
 
 				if event.key in leftarrow.keys:
-					if curChar!=0:
+					if curChar>0:
 						curChar-=1
 					else:
-						if curVort!=0:
+						if curVort>0:
 							curVort-=1
 							curChar=len(ourDoc.vorten[curVort].charen)-1
 
 				if event.key in leftarrow.keys and ((letCor['LEFTSHIFT'] in keys) or (letCor['RIGHTSHIFT'] in keys)):
 					for yit in [0]*shiftCou:
-						if curChar!=0:
+						if curChar>0:
 							curChar-=1
 						else:
-							if curVort!=0:
+							if curVort>0:
 								curVort-=1
 								curChar=len(ourDoc.vorten[curVort].charen)-1
 					shiftCou=shiftCou*shiftMag
 
 				if event.key in rightarrow.keys:
-					#if curChar==len(ourDoc.vorten[curVort].charen):
-					#	if curVort!=(len(ourDoc.vorten)-1):
-					#		curVort+=1
-					#		curChar=0
-					#	else:
-					#		curChar+=1
-					#lastChar = len(ourDoc.vorten[curVort].charen)-1
-					#lastVort = len(ourDoc.vorten)-1
-					#if curChar!=lastChar or curVort!=lastVort:
 					if curVort<(len(ourDoc.vorten)-1):
-						if curChar<len(ourDoc.vorten[curVort].charen):
+						if curChar<len(ourDoc.vorten[curVort].charen)-1:
 							curChar+=1
 						else:
 							curVort+=1
@@ -2202,32 +2210,34 @@ while quit==False:
 
 				if event.key in rightarrow.keys and ((letCor['LEFTSHIFT'] in keys) or (letCor['RIGHTSHIFT'] in keys)):
 					for yit in [0]*shiftCou:
-						if curVort<(len(ourDoc.vorten)-1):
-							if curChar<len(ourDoc.vorten[curVort].charen):
-								curChar+=1
+						if event.key in rightarrow.keys:
+							if curVort<(len(ourDoc.vorten)-1):
+								if curChar<len(ourDoc.vorten[curVort].charen)-1:
+									curChar+=1
+								else:
+									curVort+=1
+									curChar=0
 							else:
-								curVort+=1
-								curChar=0
-						else:
-							if curChar<(len(ourDoc.vorten[curVort].charen)):
-								curChar+=1
+								if curChar<(len(ourDoc.vorten[curVort].charen)):
+									curChar+=1
 
 				if event.key in rightarrow.keys and ((letCor['LEFTCONTROL'] in keys) or (letCor['RIGHTCONTROL'] in keys)):
 					for yit in [0]*6:
-						if curVort<(len(ourDoc.vorten)-1):
-							if curChar<len(ourDoc.vorten[curVort].charen):
-								curChar+=1
+						if event.key in rightarrow.keys:
+							if curVort<(len(ourDoc.vorten)-1):
+								if curChar<len(ourDoc.vorten[curVort].charen)-1:
+									curChar+=1
+								else:
+									curVort+=1
+									curChar=0
 							else:
-								curVort+=1
-								curChar=0
-						else:
-							if curChar<(len(ourDoc.vorten[curVort].charen)):
-								curChar+=1
+								if curChar<(len(ourDoc.vorten[curVort].charen)):
+									curChar+=1
 
 				if event.key in uparrow.keys and cursorLine!=0:
 					savX=curX
 					savY=curY
-					while (curY!=(savY-(charHeight+lineGap)) or curX!=savX):
+					while (curY!=(savY-(charHeight+lineGap)) or curX>=savX):
 						blitScreen = []
 						thisLin = 0
 						blitScreen.append( [0,[]] )
@@ -2303,7 +2313,7 @@ while quit==False:
 					#			curChar=len(ourDoc.vorten[curVort].charen)
 					savX=curX
 					savY=curY
-					while (curY!=(savY+(charHeight+lineGap)) or curX!=savX):
+					while (curY<=(savY+(charHeight+lineGap)) or curX>savX):
 						blitScreen = []
 						thisLin = 0
 						blitScreen.append( [0,[]] )
@@ -2499,6 +2509,7 @@ while quit==False:
 					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
 
+		print 'len of curVort', len(ourDoc.vorten[curVort].charen), 'curChar', curChar
 		############################## Fill the screen with black
 
 		screen.fill((0,0,0))
@@ -2560,9 +2571,10 @@ while quit==False:
 				else:
 					screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
 		screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)])
+
+		#What are the x,y coordinates of the cursor
 		curX=xMarg+(cursorChar*charWidth)
 		curY=yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)
-
 
 	 	############################This section takes the words in each line, and breaks them down into a list of characters to paste onto the screen
 
