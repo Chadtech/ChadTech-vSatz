@@ -177,6 +177,7 @@ ChadTech is currently in v0.2, features to add:
 "barcode"
 Superscripts and subscripts
 More characters. Many characters are drawn and ready to implement into code
+Brightness gradient-ing
 
 -------------------------------------------------
 DEPENDENCIES
