@@ -870,7 +870,8 @@ charLets={
 	67:numeral__fi,
 	68:numeral__si,
 	69:numeral__se,
-	70:numeral__ni,
+	70:numeral__ei,
+	71:numeral__ni,
 	72:modallogic__possible,
 	73:modallogic__necessary,
 	74:firstorderlogic__existential,
@@ -2526,6 +2527,10 @@ while quit==False:
 						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
 
 					whichChar=lowercase__i
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+
+					whichChar=numeral__tw
 					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
 
