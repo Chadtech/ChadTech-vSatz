@@ -2142,7 +2142,6 @@ while quit==False:
 					if curVort!=0 or curChar!=0:
 						#Remove prior Char	
 						if curChar==0:
-							#ourDoc.vorten[curVort-1].charen.pop(len(ourDoc.vorten[curVort-1].charen)-1)
 							curVort-=1
 							curChar=len(ourDoc.vorten[curVort].charen)
 							ourDoc.vorten[curVort].charen.pop(curChar-1)
@@ -2154,30 +2153,44 @@ while quit==False:
 							while len(ourDoc.vorten[curVort].charen)==0:
 								ourDoc.vorten.pop(curVort)
 								curVort-=1
-								#print curVort, len(ourDoc.vorten),len(ourDoc.vorten[curVort].charen)
 								curChar=len(ourDoc.vorten[curVort].charen)
 
 				if event.key in backspace.keys and ((letCor['LEFTSHIFT'] in keys) or (letCor['RIGHTSHIFT'] in keys)):
 					for yit in [0]*shiftCou:
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
+						if curVort!=0 or curChar!=0:
+							#Remove prior Char	
+							if curChar==0:
 								curVort-=1
 								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+							else:
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+							if curVort>0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
 					shiftCou=shiftCou*shiftMag
 
 				if event.key in backspace.keys and ((letCor['LEFTCONTROL'] in keys) or (letCor['RIGHTCONTROL'] in keys)):
 					for yit in [0]*6:
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
+						if curVort!=0 or curChar!=0:
+							#Remove prior Char	
+							if curChar==0:
 								curVort-=1
 								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-					shiftCou=shiftCou*shiftMag
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+							else:
+								ourDoc.vorten[curVort].charen.pop(curChar-1)
+								curChar-=1
+							if curVort>0:
+								while len(ourDoc.vorten[curVort].charen)==0:
+									ourDoc.vorten.pop(curVort)
+									curVort-=1
+									curChar=len(ourDoc.vorten[curVort].charen)
 
 				if event.key in leftarrow.keys:
 					if curChar>0:
@@ -2189,6 +2202,16 @@ while quit==False:
 
 				if event.key in leftarrow.keys and ((letCor['LEFTSHIFT'] in keys) or (letCor['RIGHTSHIFT'] in keys)):
 					for yit in [0]*shiftCou:
+						if curChar>0:
+							curChar-=1
+						else:
+							if curVort>0:
+								curVort-=1
+								curChar=len(ourDoc.vorten[curVort].charen)-1
+					shiftCou=shiftCou*shiftMag
+
+				if event.key in leftarrow.keys and ((letCor['LEFTCONTROL'] in keys) or (letCor['RIGHTCONTROL'] in keys)):
+					for yit in [0]*6:
 						if curChar>0:
 							curChar-=1
 						else:
