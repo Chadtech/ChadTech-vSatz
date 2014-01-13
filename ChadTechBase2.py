@@ -2319,12 +2319,12 @@ while quit==False:
 						curX=xMarg+(cursorChar*charWidth)
 						curY=yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)
 
-						if curChar!=0:
+						if curChar>0:
 							curChar-=1
 						else:
-							if curVort!=0:
+							if curVort>0:
 								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
+								curChar=len(ourDoc.vorten[curVort].charen)-1
 
 				if event.key in downarrow.keys and cursorLine!=(len(blitScreen)-1):
 					#for yit in lineLen*[0]:
@@ -2396,7 +2396,7 @@ while quit==False:
 						curY=yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)
 
 						if curVort<(len(ourDoc.vorten)-1):
-							if curChar<len(ourDoc.vorten[curVort].charen):
+							if curChar<len(ourDoc.vorten[curVort].charen)-1:
 								curChar+=1
 							else:
 								curVort+=1
