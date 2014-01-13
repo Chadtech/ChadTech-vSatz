@@ -2260,7 +2260,9 @@ while quit==False:
 				if event.key in uparrow.keys and cursorLine!=0:
 					savX=curX
 					savY=curY
-					while (curY!=(savY-(charHeight+lineGap)) or curX>=savX):
+					coucou = 0
+					while (curY!=(savY-(charHeight+lineGap)) or curX>=savX) and coucou<lineLen:
+						coucou+=1
 						blitScreen = []
 						thisLin = 0
 						blitScreen.append( [0,[]] )
@@ -2327,16 +2329,11 @@ while quit==False:
 								curChar=len(ourDoc.vorten[curVort].charen)-1
 
 				if event.key in downarrow.keys and cursorLine!=(len(blitScreen)-1):
-					#for yit in lineLen*[0]:
-					#	if curChar!=0:
-					#		curChar-=1
-					#	else:
-					#		if curVort!=0:
-					#			curVort-=1
-					#			curChar=len(ourDoc.vorten[curVort].charen)
 					savX=curX
 					savY=curY
-					while (curY<=(savY+(charHeight+lineGap)) or curX>savX):
+					coucou = 0
+					while (curY<=(savY+(charHeight+lineGap)) or curX>savX) and coucou<lineLen:
+						coucou+=1
 						blitScreen = []
 						thisLin = 0
 						blitScreen.append( [0,[]] )
