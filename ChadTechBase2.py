@@ -486,7 +486,7 @@ lilcharHeight=8
 
 lilCharOffsetX = 9
 lilCharOffsetSuperSetY = -8
-lilCharOffsetSubSetY=14
+lilCharOffsetSubSetY=16
 
 xMarg = (8*charWidth)-charWidth
 yMarg = (2*charHeight)
@@ -1265,7 +1265,6 @@ while sizeFou == False:
 	#clock.tick(60)
 
 if lineGap==1:
-		print 'WOPS'
 		lineGap = 4
 
 if windX ==0 and windY ==0:
@@ -1285,13 +1284,6 @@ ourDoc.vorten.append(Vort())
 keys = set([])
 while quit==False:
 	for event in pygame.event.get():
-
-		#if ourDoc.vorten[curVort].charen==[]:
-		#	ourDoc.vorten.pop(curVort)
-		#	curVort-=1
-
-		#if len(ourDoc.vorten)<1:
-		#	ourDoc.vorten.append(Vort())
 
 		if not (letCor['LEFTSHIFT'] in keys) and not (letCor['RIGHTSHIFT'] in keys):
 			shiftCou = 1
@@ -2870,7 +2862,48 @@ while quit==False:
 					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
 
-		print 'len of curVort', len(ourDoc.vorten[curVort].charen), 'curChar', curChar
+				if whichScript == 'subscript':
+
+					whichChar=numeral__ze
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__on
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__tw
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__th
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__fo
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__fi
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__si
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__se
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__ei
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__ni
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+
 		############################## Fill the screen with black
 
 		screen.fill((0,0,0))
@@ -2933,28 +2966,8 @@ while quit==False:
 					screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
 		screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)])
 
-		#What are the x,y coordinates of the cursor
 		curX=xMarg+(cursorChar*charWidth)
 		curY=yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)
-
-	 	############################This section takes the words in each line, and breaks them down into a list of characters to paste onto the screen
-
-		#blitChars=[]
-		#for yit in range(len(blitScreen)):
-		#	blitChars.append([])
-		#	for vapp in range(len(blitScreen[yit][1])):
-		#		for gno in range(len(blitScreen[yit][1][vapp].charen)):
-		#			blitChars[yit].append(blitScreen[yit][1][vapp].charen[gno])
-		#	for vapp in range(lineLen):
-		#		if vapp<len(blitChars[yit]):
-		#			screen.blit(blitChars[yit][vapp][0].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-		#			for dukh in range(len(blitChars[yit][vapp][1])):
-		#				screen.blit(blitChars[yit][vapp][1][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSuperSetY+yMarg])
-		#			for dukh in range(len(blitChars[yit][vapp][2])):
-		#				screen.blit(blitChars[yit][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
-		#		else:
-		#			screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-		#screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine*(charHeight+lineGap))])
 
 		######################################
 		
