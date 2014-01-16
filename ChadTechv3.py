@@ -683,6 +683,8 @@ uppercase__X=Char(l_lX,L_lX,( set([ letCor['x'], letCor['LEFTSHIFT'] ]), set([ l
 uppercase__Y=Char(l_lY,L_lY,( set([ letCor['y'], letCor['LEFTSHIFT'] ]), set([ letCor['y'], letCor['RIGHTSHIFT'] ]) ),51)
 uppercase__Z=Char(l_lZ,L_lZ,( set([ letCor['z'], letCor['LEFTSHIFT'] ]), set([ letCor['z'], letCor['RIGHTSHIFT'] ]) ),52)
 
+#Space is 53
+
 #Punctuation
 
 punctuation__period=Char(l_punctuationPeriod,L_pPeriod,( set([ letCor['PERIOD'] ]) ),54)
@@ -963,11 +965,8 @@ charLets={
 
 class Doc:
 	def __init__(self):
-		self.vorten=[]
+		self.charen=[]
 
-#screen.blit(introscreen,[0,0])
-
-#screen.blit(introscreen,[0,0])
 windX=0
 windY=0
 
@@ -1307,8 +1306,7 @@ lineNum=(windY-(2*yMarg))/(charHeight+lineGap)
 
 maxLineNum = (windY-(2*yMarg))/(charHeight+lineGap)
 
-ourDoc= Doc()
-ourDoc.vorten.append(Vort())
+charray = Doc()
 
 keys = set([])
 while quit==False:
@@ -1363,132 +1361,132 @@ while quit==False:
 
 				whichChar=lowercase__a
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__b
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__c
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__d
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__e
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__f
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__g
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__h
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__i
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__j
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__k
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__l
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__m
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__n
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__o
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__p
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__q
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__r
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__s
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__t
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__u
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__v
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__w
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__x
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__y
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=lowercase__z
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				######################### Upper case Letters
@@ -1496,255 +1494,255 @@ while quit==False:
 				whichChar=uppercase__A
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__B
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__C
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__D
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__E
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__F
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__G
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__H
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__I
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__J
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__K
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__L
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__M
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__N
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__O
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__P
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__Q
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__R
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__S
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__T
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__U
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__V
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__W
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__X
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__Y
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=uppercase__Z
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				#########################Punctuation
 
 				whichChar=punctuation__period
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=punctuation__comma
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=punctuation__question
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=punctuation__exclaimation
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=punctuation__semicolon
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=punctuation__colon
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=punctuation__singlequote
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=punctuation__doublequote
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				######################### Numbers
 
 				whichChar=numeral__ze
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=numeral__on
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=numeral__tw
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=numeral__th
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=numeral__fo
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=numeral__fi
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=numeral__si
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=numeral__se
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=numeral__ei
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=numeral__ni
 				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				######################### Modal Logic Characters
@@ -1752,27 +1750,17 @@ while quit==False:
 				whichChar=modallogic__possible
 				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
 					for yit in [0]*2:
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						if curChar!=0:
+							charray.charen.pop(curChar-1)
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=modallogic__necessary
 				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
 					for yit in [0]*2:
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						if curChar!=0:
+							charray.charen.pop(curChar-1)
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				######################## First order logic
@@ -1780,118 +1768,73 @@ while quit==False:
 				whichChar=firstorderlogic__existential
 				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
 					for yit in [0]*2:
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						if curChar!=0:
+							charray.charen.pop(curChar-1)
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=firstorderlogic__forall
 				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
 					for yit in [0]*2:
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						if curChar!=0:
+							charray.charen.pop(curChar-1)
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=firstorderlogic__negation
 				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
 					for yit in [0]*2:
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						if curChar!=0:
+							charray.charen.pop(curChar-1)
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=firstorderlogic__implication
 				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
 					for yit in [0]*2:
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						if curChar!=0:
+							charray.charen.pop(curChar-1)
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=firstorderlogic__iff
 				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
 					for yit in [0]*2:
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						if curChar!=0:
+							charray.charen.pop(curChar-1)
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=firstorderlogic__and
 				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
 					for yit in [0]*2:
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						if curChar!=0:
+							charray.charen.pop(curChar-1)
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=firstorderlogic__xor
 				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
 					for yit in [0]*2:
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						if curChar!=0:
+							charray.charen.pop(curChar-1)
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=firstorderlogic__nand
 				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
 					for yit in [0]*2:
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						if curChar!=0:
+							charray.charen.pop(curChar-1)
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				whichChar=firstorderlogic__nand
 				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
 					for yit in [0]*2:
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						if curChar!=0:
+							charray.charen.pop(curChar-1)
+					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
 				######################### Math
@@ -1899,260 +1842,181 @@ while quit==False:
 				whichChar=math__equals
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys and whichChar.keys.issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__greaterthan
 				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__greaterthanorequal
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__lessthan
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__lessthanorequal
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__division
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__approximately
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__plus
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__minus
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__multiply
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__forwardslash
 				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__backslash
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__QED
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__squareroot
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__plusminus
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__integral
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__notequal
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__angle
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__triangle
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__gradient
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__divides
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						for yit in [0]*2:
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=math__doesntdivide
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				########################### Brackets
@@ -2160,79 +2024,59 @@ while quit==False:
 				whichChar=brackets__leftparentheses
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=brackets__rightparentheses
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=brackets__leftbracket
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=brackets__rightbracket
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=brackets__leftcurly
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						for yit in [0]*2:
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=brackets__rightcurly
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						for yit in [0]*2:
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=brackets__leftchevron
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=brackets__rightchevron
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				######################### Misc
@@ -2240,37 +2084,37 @@ while quit==False:
 				whichChar=misc__atsign
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=misc__numbersign
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=misc__dollarsign
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=misc__percentsign
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=misc__carrot
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=misc__ambersand
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				######################### Proof Theory
@@ -2279,71 +2123,45 @@ while quit==False:
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=prooftheory__notsingleturnstile
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=prooftheory__doubleturnstile
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=prooftheory__notdoubleturnstile
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
-
 
 				whichChar=prooftheory__logicalconstant
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				######################### Set Theory
@@ -2352,268 +2170,141 @@ while quit==False:
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=settheory__notelementof
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=settheory__nullset
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=settheory__intersection
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=settheory__union
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=settheory__superset
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=settheory__subset
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=settheory__notsuperset
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=settheory__notsubset
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						for yit in [0]*2:
-							if curChar!=0 or curVort!=0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(whichChar))
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				######################### Commandy keys
 
 				if event.key in space.keys:
-					ourDoc.vorten[curVort].charen.insert(curChar,addChar(space))
-					curVort+=1
-					ourDoc.vorten.insert(curVort,Vort())
-					curChar=0
+					charray.charen.insert(curChar,addChar(space))
+					curChar+=1
 
 	 			if event.key in enter.keys:
-	 				if ourDoc.vorten[curVort].charen!=[]:
-						curVort+=1
-						ourDoc.vorten.insert(curVort,Vort())
-						curChar=0
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(enter))
-						curVort+=1
-						ourDoc.vorten.insert(curVort,Vort())
-					else:
-						curChar=0
-						ourDoc.vorten[curVort].charen.insert(curChar,addChar(enter))
-						curVort+=1
-						ourDoc.vorten.insert(curVort,Vort())
+					charray.charen.insert(curChar,addChar(enter))
+					curChar+=1
 
 				if event.key in backspace.keys:
-					if curVort!=0 or curChar!=0:
-						#Remove prior Char	
-						if curChar==0:
-							curVort-=1
-							curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-						else:
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-						if curVort>0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
+					if curChar!=0:
+						charray.charen.pop(curChar-1)
+						curChar-=1
 
 				if event.key in backspace.keys and ((letCor['LEFTSHIFT'] in keys) or (letCor['RIGHTSHIFT'] in keys)):
 					for yit in [0]*shiftCou:
-						if curVort!=0 or curChar!=0:
-							#Remove prior Char	
-							if curChar==0:
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-							else:
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-							if curVort>0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
+						if curChar!=0:
+							charray.charen.pop(curChar-1)
+							curChar-=1
 					shiftCou=shiftCou*shiftMag
 
 				if event.key in backspace.keys and ((letCor['LEFTCONTROL'] in keys) or (letCor['RIGHTCONTROL'] in keys)):
 					for yit in [0]*6:
-						if curVort!=0 or curChar!=0:
-							#Remove prior Char	
-							if curChar==0:
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-							else:
-								ourDoc.vorten[curVort].charen.pop(curChar-1)
-								curChar-=1
-							if curVort>0:
-								while len(ourDoc.vorten[curVort].charen)==0:
-									ourDoc.vorten.pop(curVort)
-									curVort-=1
-									curChar=len(ourDoc.vorten[curVort].charen)
+						if curChar!=0:
+							charray.charen.pop(curChar-1)
+							curChar-=1
 
 				if event.key in leftarrow.keys:
 					if curChar>0:
 						curChar-=1
-					else:
-						if curVort>0:
-							curVort-=1
-							curChar=len(ourDoc.vorten[curVort].charen)-1
 
 				if event.key in leftarrow.keys and ((letCor['LEFTSHIFT'] in keys) or (letCor['RIGHTSHIFT'] in keys)):
 					for yit in [0]*shiftCou:
 						if curChar>0:
 							curChar-=1
-						else:
-							if curVort>0:
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)-1
 					shiftCou=shiftCou*shiftMag
 
 				if event.key in leftarrow.keys and ((letCor['LEFTCONTROL'] in keys) or (letCor['RIGHTCONTROL'] in keys)):
 					for yit in [0]*6:
 						if curChar>0:
 							curChar-=1
-						else:
-							if curVort>0:
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)-1
-					shiftCou=shiftCou*shiftMag
 
 				if event.key in rightarrow.keys:
-					if curVort<(len(ourDoc.vorten)-1):
-						if curChar<len(ourDoc.vorten[curVort].charen)-1:
-							curChar+=1
-						else:
-							curVort+=1
-							curChar=0
-					else:
-						if curChar<(len(ourDoc.vorten[curVort].charen)):
-							curChar+=1
+					if curChar<(len(charray.charen)):
+						curChar+=1
 
 				if event.key in rightarrow.keys and ((letCor['LEFTSHIFT'] in keys) or (letCor['RIGHTSHIFT'] in keys)):
 					for yit in [0]*shiftCou:
 						if event.key in rightarrow.keys:
-							if curVort<(len(ourDoc.vorten)-1):
-								if curChar<len(ourDoc.vorten[curVort].charen)-1:
-									curChar+=1
-								else:
-									curVort+=1
-									curChar=0
-							else:
-								if curChar<(len(ourDoc.vorten[curVort].charen)):
-									curChar+=1
+							if curChar<(len(charray.charen)):
+								curChar+=1
 
 				if event.key in rightarrow.keys and ((letCor['LEFTCONTROL'] in keys) or (letCor['RIGHTCONTROL'] in keys)):
 					for yit in [0]*6:
 						if event.key in rightarrow.keys:
-							if curVort<(len(ourDoc.vorten)-1):
-								if curChar<len(ourDoc.vorten[curVort].charen)-1:
-									curChar+=1
-								else:
-									curVort+=1
-									curChar=0
-							else:
-								if curChar<(len(ourDoc.vorten[curVort].charen)):
-									curChar+=1
+							if curChar<(len(charray.charen)):
+								curChar+=1
 
 				if event.key in uparrow.keys and cursorLine!=0:
 					savX=curX
@@ -2762,241 +2453,311 @@ while quit==False:
 
 			########################################## Saving DOcuments
 
-				whichChar=save
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						if curChar!=0 or curVort!=0:
-							while len(ourDoc.vorten[curVort].charen)==0:
-								ourDoc.vorten.pop(curVort)
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)
-							ourDoc.vorten[curVort].charen.pop(curChar-1)
-							curChar-=1
-						saveName = tkFileDialog.asksaveasfilename()
-						saveName = str(saveName)
-						for pagenTol in range(len(pagenScreen)):
-							whichPag=pagenTol
-							blitChars=[]
-							for yit in range(len(pagenScreen[whichPag])):
-								blitChars.append([])
-								for vapp in range(len(pagenScreen[whichPag][yit][1])):
-									for gno in range(len(pagenScreen[whichPag][yit][1][vapp].charen)):
-										blitChars[yit].append(pagenScreen[whichPag][yit][1][vapp].charen[gno])
-								for vapp in range(lineLen):
-									if vapp<len(blitChars[yit]):
-										screen.blit(blitChars[yit][vapp][0].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-										for dukh in range(len(blitChars[yit][vapp][1])):
-											screen.blit(blitChars[yit][vapp][1][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSuperSetY+yMarg])
-										for dukh in range(len(blitChars[yit][vapp][2])):
-											screen.blit(blitChars[yit][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
-									else:
-										screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-							pygame.image.save(screen,'pag'+str(pagenTol)+'.PNG')
-							screen.fill((0,0,0))
-						stXs,stYs = 0,0
-						for pagenTol in range(len(pagenScreen)):
-							filName="pag"+str(pagenTol)+".PNG"
-							thX, thY=Image.open(filName).size
-							stXs=thX
-							stYs+=thY
-						stImage = Image.new('RGB',(stXs,stYs),'black')
-						for pagenTol in range(len(pagenScreen)):
-							stImage.paste(Image.open('pag'+str(pagenTol)+'.PNG'),(0,pagenTol*windY,stXs,windY+(pagenTol*windY)))
-						for yit in range(len(ourDoc.vorten)):
-							for vapp in range(len(ourDoc.vorten[yit].charen)):
-								if vapp%3==0:
-									vortON,vortTW,vortTH = 0,0,0
-									if vapp < len(ourDoc.vorten[yit].charen):
-										vortON = ourDoc.vorten[yit].charen[vapp][0].keyDig
-									if vapp+1 < len(ourDoc.vorten[yit].charen):
-										vortTW = ourDoc.vorten[yit].charen[vapp+1][0].keyDig
-									if vapp+2 < len(ourDoc.vorten[yit].charen):
-										vortTH = ourDoc.vorten[yit].charen[vapp+2][0].keyDig
-									stImage.putpixel((vapp/3,yit),(vortON,vortTW,vortTH))
-						stImage.save(saveName,"png")
+#				whichChar=save
+#				for yit in range(len(whichChar.keys)):
+#					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+#						if curChar!=0 or curVort!=0:
+#							while len(ourDoc.vorten[curVort].charen)==0:
+#								ourDoc.vorten.pop(curVort)
+#								curVort-=1
+#								curChar=len(ourDoc.vorten[curVort].charen)
+#							ourDoc.vorten[curVort].charen.pop(curChar-1)
+#							curChar-=1
+#						saveName = tkFileDialog.asksaveasfilename()
+#						saveName = str(saveName)
+#						for pagenTol in range(len(pagenScreen)):
+#							whichPag=pagenTol
+#							blitChars=[]
+#							for yit in range(len(pagenScreen[whichPag])):
+#								blitChars.append([])
+#								for vapp in range(len(pagenScreen[whichPag][yit][1])):
+#									for gno in range(len(pagenScreen[whichPag][yit][1][vapp].charen)):
+#										blitChars[yit].append(pagenScreen[whichPag][yit][1][vapp].charen[gno])
+#								for vapp in range(lineLen):
+#									if vapp<len(blitChars[yit]):
+#										screen.blit(blitChars[yit][vapp][0].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
+#										for dukh in range(len(blitChars[yit][vapp][1])):
+#											screen.blit(blitChars[yit][vapp][1][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSuperSetY+yMarg])
+#										for dukh in range(len(blitChars[yit][vapp][2])):
+#											screen.blit(blitChars[yit][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
+#									else:
+#										screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
+#							pygame.image.save(screen,'pag'+str(pagenTol)+'.PNG')
+#							screen.fill((0,0,0))
+#						stXs,stYs = 0,0
+#						for pagenTol in range(len(pagenScreen)):
+#							filName="pag"+str(pagenTol)+".PNG"
+#							thX, thY=Image.open(filName).size
+#							stXs=thX
+#							stYs+=thY
+#						stImage = Image.new('RGB',(stXs,stYs),'black')
+#						for pagenTol in range(len(pagenScreen)):
+#							stImage.paste(Image.open('pag'+str(pagenTol)+'.PNG'),(0,pagenTol*windY,stXs,windY+(pagenTol*windY)))
+#						for yit in range(len(ourDoc.vorten)):
+#							for vapp in range(len(ourDoc.vorten[yit].charen)):
+#								if vapp%3==0:
+#									vortON,vortTW,vortTH = 0,0,0
+#									if vapp < len(ourDoc.vorten[yit].charen):
+#										vortON = ourDoc.vorten[yit].charen[vapp][0].keyDig
+#									if vapp+1 < len(ourDoc.vorten[yit].charen):
+#										vortTW = ourDoc.vorten[yit].charen[vapp+1][0].keyDig
+#									if vapp+2 < len(ourDoc.vorten[yit].charen):
+#										vortTH = ourDoc.vorten[yit].charen[vapp+2][0].keyDig
+#									stImage.putpixel((vapp/3,yit),(vortON,vortTW,vortTH))
+#						stImage.save(saveName,"png")
 
 			########################################### Opening Documents
 
-				whichChar=oPen
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						openName = tkFileDialog.askopenfilename()
-						openName = str(openName)
-						openIm =  Image.open(openName)
-						xSize,ySize = openIm.size
-						ourDoc= Doc()
-						ourDoc.vorten.append(Vort())
-						cursor= Doc()
-						cursor.vorten.append(Vort())
-						xBou,yBou=0,0
-						r,g,b = openIm.getpixel((xBou,yBou))
-						while r!=0:
-							ourDoc.vorten.append(Vort())
-							while r!=0:
-								if r!=0:
-									ourDoc.vorten[yBou].charen.append(addChar(charLets[r]))
-								if g!=0:
-									ourDoc.vorten[yBou].charen.append(addChar(charLets[g]))
-								if b!=0:
-									ourDoc.vorten[yBou].charen.append(addChar(charLets[b]))
-								xBou+=1
-								r,g,b = openIm.getpixel((xBou,yBou))
-							xBou=0
-							yBou+=1
-							r,g,b = openIm.getpixel((xBou,yBou))
-						curVort=len(ourDoc.vorten)-1
-						curChar=len(ourDoc.vorten[curVort].charen)
+#				whichChar=oPen
+#				for yit in range(len(whichChar.keys)):
+#					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+#						openName = tkFileDialog.askopenfilename()
+#						openName = str(openName)
+#						openIm =  Image.open(openName)
+#						xSize,ySize = openIm.size
+#						ourDoc= Doc()
+#						ourDoc.vorten.append(Vort())
+#						cursor= Doc()
+#						cursor.vorten.append(Vort())
+#						xBou,yBou=0,0
+#						r,g,b = openIm.getpixel((xBou,yBou))
+#						while r!=0:
+#							ourDoc.vorten.append(Vort())
+#							while r!=0:
+#								if r!=0:
+#									ourDoc.vorten[yBou].charen.append(addChar(charLets[r]))
+#								if g!=0:
+#									ourDoc.vorten[yBou].charen.append(addChar(charLets[g]))
+#								if b!=0:
+#									ourDoc.vorten[yBou].charen.append(addChar(charLets[b]))
+#								xBou+=1
+#								r,g,b = openIm.getpixel((xBou,yBou))
+#							xBou=0
+#							yBou+=1
+#							r,g,b = openIm.getpixel((xBou,yBou))
+#						curVort=len(ourDoc.vorten)-1
+#						curChar=len(ourDoc.vorten[curVort].charen)
 
-			else: #Else, as in whichscript!='normal'
+#			else: #Else, as in whichscript!='normal'
 
-				if whichScript == 'superscript':
+#				if whichScript == 'superscript':
 
-					whichChar=lowercase__a
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#					whichChar=lowercase__a
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#
+#					whichChar=lowercase__b
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#
+#					whichChar=lowercase__c
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#
+#					whichChar=lowercase__d
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#
+#					whichChar=lowercase__e
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#
+#					whichChar=lowercase__f
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#
+#					whichChar=lowercase__g
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#
+#					whichChar=lowercase__h
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#
+#					whichChar=lowercase__i
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#
+#					whichChar=numeral__tw
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#
+#				if whichScript == 'subscript':
+#
+#					whichChar=numeral__ze
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
 
-					whichChar=lowercase__b
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#					whichChar=numeral__on
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
 
-					whichChar=lowercase__c
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#					whichChar=numeral__tw
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
 
-					whichChar=lowercase__d
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#					whichChar=numeral__th
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+#
+#					whichChar=numeral__fo
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
 
-					whichChar=lowercase__e
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#					whichChar=numeral__fi
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
 
-					whichChar=lowercase__f
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#					whichChar=numeral__si
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
 
-					whichChar=lowercase__g
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#					whichChar=numeral__se
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
 
-					whichChar=lowercase__h
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
+#					whichChar=numeral__ei
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
 
-					whichChar=lowercase__i
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
-
-					whichChar=numeral__tw
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
-
-				if whichScript == 'subscript':
-
-					whichChar=numeral__ze
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
-
-					whichChar=numeral__on
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
-
-					whichChar=numeral__tw
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
-
-					whichChar=numeral__th
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
-
-					whichChar=numeral__fo
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
-
-					whichChar=numeral__fi
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
-
-					whichChar=numeral__si
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
-
-					whichChar=numeral__se
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
-
-					whichChar=numeral__ei
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
-
-					whichChar=numeral__ni
-					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+#					whichChar=numeral__ni
+#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
 
 		############################## Fill the screen with black
 
 		screen.fill((0,0,0))
 
-		###############################This section breaks the list of words, into a list of lines containing the words
+		############################ Turn charray into warden
 
-		blitScreen = []
-		thisLin = 0
-		blitScreen.append( [0,[]] )
-		cursorChar = 0
-		cursorVort = 0
-		cursorLine = 0
+		warden=[]
+		forward=0
+		warden.append([])
+		whichChar=0
+		vortChar=0
+		cursorVort=0
 
-		for yit in range(len(ourDoc.vorten)):
-			if ourDoc.vorten[yit].charen==[addChar(enter)]:
-				blitScreen.append( [0,[]] )
+
+		for yit in charray.charen:
+			whichChar+=1
+			#Add this char to warden
+			if yit!=addChar(space) and yit!=addChar(enter):
+				warden[forward].append(yit)
+			if yit==addChar(space):
+				warden[forward].append(yit)
+				warden.append([])
+				forward+=1
+			if yit==addChar(enter):
+				if warden[forward]==[]:
+					warden[forward].append(yit)
+					warden.append([])
+					forward+=1
+				else:
+					warden.append([])
+					forward+=1
+					warden[forward].append(yit)
+					warden.append([])
+					forward+=1
+			#print'curChar',curChar,'forward',forward,'whichChar',whichChar,'len(warden[forward])',len(warden[forward])
+			#Check if its the current char
+			if whichChar==curChar:
+				cursorVort=forward
+				vortChar=len(warden[forward])
+
+		############################### Turn warden in Linen
+
+		linen = []
+		linen.append([0,[]])
+		thisLin=0
+		cursorLine=0
+		whichVort=0
+		vortInLin=0
+
+		for yit in warden:
+			#Check if its the current line
+			if whichVort==cursorVort:
+				cursorLine=thisLin
+				vortInLin=len(linen[thisLin][1])
+			whichVort+=1
+			#Add vort to Linen
+			if yit==[addChar(enter)]:
+				linen.append([0,[]])
 				thisLin+=1
 			else:
-				if blitScreen[thisLin][0]+len(ourDoc.vorten[yit].charen)<=lineLen:
-					blitScreen[thisLin][1].append(ourDoc.vorten[yit])
-					blitScreen[thisLin][0]+=len(ourDoc.vorten[yit].charen)
+				if (linen[thisLin][0]+len(yit))<=lineLen:
+					linen[thisLin][1].append(yit)
+					linen[thisLin][0]+=len(yit)
 				else:
-					blitScreen.append( [0,[]] )
+					linen.append([0,[]])
 					thisLin+=1
-					blitScreen[thisLin][0]=len(ourDoc.vorten[yit].charen)
-					blitScreen[thisLin][1].append(ourDoc.vorten[yit])
-			if yit==curVort:
-				cursorVort=yit
-				cursorLine=thisLin
-				for vapp in range(len(blitScreen[len(blitScreen)-1][1])):
-					cursorChar+= len(blitScreen[len(blitScreen)-1][1][vapp].charen)
-				cursorChar-=len(ourDoc.vorten[curVort].charen)-curChar
+					linen[thisLin][0]=len(yit)
+					linen[thisLin][1].append(yit)
+
+		lineChar=0
+		cursorChar=0
+
+		print 'vortInLin',vortInLin
+		for yit in range(vortInLin):
+			lineChar+=len(warden[yit])
+
+		cursorChar=lineChar+vortChar
 
 		############################ Turn lines into pages
 
-		pagenScreen = []
-		for yit in range(len(blitScreen)):
-			if yit%maxLineNum==0:
-				pagenScreen.append([])
-			pagenScreen[len(pagenScreen)-1].append(blitScreen[yit])
+		pagen=[]
+		linCou=0
+
+		for yit in linen:
+			if linCou%maxLineNum==0:
+				pagen.append([])
+			pagen[len(pagen)-1].append(yit)
+			linCou+=1
 
 		whichPag=cursorLine/maxLineNum
 
-		############################ Turn pages into characters
+		############################ Turn pagen back into charen
 
-		blitChars=[]
-		for yit in range(len(pagenScreen[whichPag])):
-			blitChars.append([])
-			for vapp in range(len(pagenScreen[whichPag][yit][1])):
-				for gno in range(len(pagenScreen[whichPag][yit][1][vapp].charen)):
-					blitChars[yit].append(pagenScreen[whichPag][yit][1][vapp].charen[gno])
+		blitCharen=[]
+		yitCou=0
+
+		#For the linen in pagen
+		for yit in pagen[whichPag]:
+			blitCharen.append([])
+			#for the warden in linen
+			for vapp in yit[1]:
+				#for the charen in warden
+				for gno in vapp:
+					blitCharen[yitCou].append(gno)
+			#Paste every char in line of pag		
 			for vapp in range(lineLen):
-				if vapp<len(blitChars[yit]):
-					screen.blit(blitChars[yit][vapp][0].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-					for dukh in range(len(blitChars[yit][vapp][1])):
-						screen.blit(blitChars[yit][vapp][1][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSuperSetY+yMarg])
-					for dukh in range(len(blitChars[yit][vapp][2])):
-						screen.blit(blitChars[yit][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
+				if vapp<len(blitCharen[yitCou]):
+					#print 'len(yit[1])',len(yit[1]),'vapp',vapp,'yitCou',yitCou,'len(blitCharen[yitCou])',len(blitCharen[yitCou])
+					screen.blit(blitCharen[yitCou][vapp][0].image,[(vapp*charWidth)+xMarg,yitCou*(charHeight+lineGap)+yMarg])
 				else:
-					screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
+					screen.blit(L_S,[(vapp*charWidth)+xMarg,yitCou*(charHeight+lineGap)+yMarg])
+			yitCou+=1
+		#print 'cursorChar',cursorChar,'cursorLine',cursorLine
 		screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)])
 
-		curX=xMarg+(cursorChar*charWidth)
-		curY=yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)
+		#blitChars=[]
+		#for yit in range(len(pagenScreen[whichPag])):
+		#	blitChars.append([])
+		#	for vapp in range(len(pagenScreen[whichPag][yit][1])):
+		#		for gno in range(len(pagenScreen[whichPag][yit][1][vapp].charen)):
+		#			blitChars[yit].append(pagenScreen[whichPag][yit][1][vapp].charen[gno])
+		#	for vapp in range(lineLen):
+		#		if vapp<len(blitChars[yit]):
+		#			screen.blit(blitChars[yit][vapp][0].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
+		#			for dukh in range(len(blitChars[yit][vapp][1])):
+		#				screen.blit(blitChars[yit][vapp][1][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSuperSetY+yMarg])
+		#			for dukh in range(len(blitChars[yit][vapp][2])):
+		#				screen.blit(blitChars[yit][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
+		#		else:
+		#			screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
+		#screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)])
+
+		#curX=xMarg+(cursorChar*charWidth)
+		#curY=yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)
 
 		######################################
 		
