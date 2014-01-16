@@ -2674,11 +2674,8 @@ while quit==False:
 		vortInLin=0
 
 		for yit in warden:
-			#Check if its the current line
-			if whichVort==cursorVort:
-				cursorLine=thisLin
-				vortInLin=len(linen[thisLin][1])
-			whichVort+=1
+
+
 			#Add vort to Linen
 			if yit==[addChar(enter)]:
 				linen.append([0,[]])
@@ -2692,15 +2689,24 @@ while quit==False:
 					thisLin+=1
 					linen[thisLin][0]=len(yit)
 					linen[thisLin][1].append(yit)
+			#Check if its the current line
+			if whichVort==cursorVort:
+				cursorLine=thisLin
+				vortInLin=len(linen[thisLin][1])
+				print 'vortInLin',vortInLin,'whichVort',whichVort,'cursorVort',cursorVort,'thisLin',thisLin
+
+			whichVort+=1
 
 		lineChar=0
 		cursorChar=0
 
-		print 'vortInLin',vortInLin
-		for yit in range(vortInLin):
-			lineChar+=len(warden[yit])
-
+		print 'range(vortInLin-1)',range(vortInLin-1)
+		for yit in range(vortInLin-1):
+			print 'len(warden[yit]',len(warden[yit])
+			lineChar+=len(linen[cursorLine][1][yit])
+		print 'lineChar',lineChar,'vortChar',vortChar
 		cursorChar=lineChar+vortChar
+		print 'cursorChar',cursorChar
 
 		############################ Turn lines into pages
 
