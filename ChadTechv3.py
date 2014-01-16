@@ -1919,7 +1919,7 @@ while quit==False:
 
 				whichChar=math__forwardslash
 				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					if (event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys)) and not (letCor['LEFTSHIFT'] in keys or letCor['RIGHTSHIFT'] in keys):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2674,8 +2674,6 @@ while quit==False:
 		vortInLin=0
 
 		for yit in warden:
-
-
 			#Add vort to Linen
 			if yit==[addChar(enter)]:
 				linen.append([0,[]])
@@ -2693,20 +2691,12 @@ while quit==False:
 			if whichVort==cursorVort:
 				cursorLine=thisLin
 				vortInLin=len(linen[thisLin][1])
-				print 'vortInLin',vortInLin,'whichVort',whichVort,'cursorVort',cursorVort,'thisLin',thisLin
-
 			whichVort+=1
-
 		lineChar=0
 		cursorChar=0
-
-		print 'range(vortInLin-1)',range(vortInLin-1)
 		for yit in range(vortInLin-1):
-			print 'len(warden[yit]',len(warden[yit])
 			lineChar+=len(linen[cursorLine][1][yit])
-		print 'lineChar',lineChar,'vortChar',vortChar
 		cursorChar=lineChar+vortChar
-		print 'cursorChar',cursorChar
 
 		############################ Turn lines into pages
 
