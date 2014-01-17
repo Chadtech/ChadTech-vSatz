@@ -184,6 +184,7 @@ ChadTech is currently in v0.2, features to add:
 0. "barcode"
 1. Superscripts and subscripts
 2. More characters.
+3. Tab
 
 -------------------------------------------------
 DEPENDENCIES
