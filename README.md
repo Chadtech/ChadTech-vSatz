@@ -1,4 +1,5 @@
 ChadTech
+
 The following is a partially fictional conversation I had with a friend about ChadTech. I felt it served as a good introduction to what chadTech is.
 
 Chad:
