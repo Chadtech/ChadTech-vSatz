@@ -190,4 +190,7 @@ ChadTech is currently in v0.2, features to add:
 DEPENDENCIES
 
 * pygame
+* python 2.7.5 (and plausibly other versions
+* PIL
+* tkinter
 * Pokemon Ruby for the Gameboy Advance SP
