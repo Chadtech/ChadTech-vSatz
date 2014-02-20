@@ -20,7 +20,7 @@ If nothing else, size. One character of ascii is one byte. How much does it take
 
 Chad:
 
-One character in ChadTech is saved in doc[] as a number, up to three digits long.
+One character in ChadTech is saved in doc[] as a number, up to four digits long.
 
 George:
 
@@ -28,7 +28,7 @@ But you said it was an image file?
 
 Chad:
 
-Yeah, it produces an image. When you save your document it produces an image of your text, and in the margins of the text, the text data (doc[]) is stored in the pixel color values. When you open an image in ChadTech, it reads the text data from the pixels.
+Yeah, it produces an image. When you save your document it produces an image of your text, and in the margins beside text, the text data (doc[]) is stored in the pixel color values. When you open an image in ChadTech, it reads the text data from the pixels.
 
 George:
 
@@ -54,7 +54,7 @@ Chad:
 
 Then I have to learn Latex. I just want to type stuff and have it appear in front of me in real time.
 
-The complicated features of google docs and word honestly get in the way far more than they help. I also think these programs are stuck in a paper nostalgia. I dont want long white pages with vector based fonts. Thats not how computers work. I want a black page, in the shape of my screen with a terminal-style font.
+I could just keep using google docs, but making my own word processor also gives me the opportunity to make what I consider to be the ideal word processor, that being a black, screen shaped work area, with a raster terminal font. 
 
 Also, do you mind if I abridge the hell out of this conversation and put it in the readme for ChadTech? I’ll make you say stuff like ‘Wow nice text editor Chad’.
 
@@ -182,8 +182,9 @@ BRACKETS
 
 ChadTech is currently in v2, features to add:
 
-1. Functional save/open function (v2 works great, v3 not so much)
-0. More characters (slanty, greek, and carrotted)
+0. Functional save/open function (v2 works great, v3 not so much)
+1. More characters (slanty, greek, and carrotted)
+2. Text to ChadTech version tool
 
 
 -------------------------------------------------
