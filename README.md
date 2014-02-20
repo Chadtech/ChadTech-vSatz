@@ -1,4 +1,5 @@
 ChadTech
+
 The following is a partially fictional conversation I had with a friend about ChadTech. I felt it served as a good introduction to what chadTech is.
 
 Chad:
@@ -71,113 +72,113 @@ For the most part, and unless otherwise stated, if you press a key on your keybo
 
 ChadTech Commands:
 
-  CRTL then s                Save document
+  	CRTL then s                Save document
 
-  CTRL then o                Open document
+  	CTRL then o                Open document
   
-  CTRL then Backspace       Backspace 6 times
+  	CTRL then Backspace       Backspace 6 times
 
-  SHIFT then Backspace       Backspace exponetially
+  	SHIFT then Backspace       Backspace exponetially
 
-  SHIFT then plus/equal key  Add superscript, or return to text if in subscript
+  	SHIFT then plus/equal key  Add superscript, or return to text if in subscript
 
-  SHIFT then minus key       Add subscript, or return to text if in superscript
+  	SHIFT then minus key       Add subscript, or return to text if in superscript
 
 MATH SYMBOLS
 
-  Equals then period      Greater than or equal to
+  	Equals then period      Greater than or equal to
 
-  Equals then comma       Less than or equal to
+  	Equals then comma       Less than or equal to
 
-  Equals then d           Division sign (horizontal bar with a dot above and below)
+  	Equals then d           Division sign (horizontal bar with a dot above and below)
 
-  Equals then a           Approximately equal to
+  	Equals then a           Approximately equal to
 
-  Equals then p           Plus sign
+  	Equals then p           Plus sign
 
-  Equals then m           Multiplication sign (dot)
+  	Equals then m           Multiplication sign (dot)
 
-  Equals then q           QED (filled in square)
+  	Equals then q           QED (filled in square)
 
-  Equals then s           Square Root
+  	Equals then s           Square Root
 
-  Equals then l           'Plus or Minus'
+  	Equals then l           'Plus or Minus'
 
-  Equals then f           Integral
+  	Equals then f           Integral
 
-  Equals then n           Doesnt equal
+  	Equals then n           Doesnt equal
 
-  Equals then g           Angle
+  	Equals then g           Angle
 
-  Equals then t           A Triangle
+  	Equals then t           A Triangle
 
-  Equals then r           Gradient
+  	Equals then r           Gradient
 
-  Equals then i           Infinity
+  	Equals then i           Infinity
 
-  Equals then c           Doesnt divide (as in 'divides' signs, not 'division' sign)
+  	Equals then c           Doesnt divide (as in 'divides' signs, not 'division' sign)
 
 SET THEORY SYMBOLS
 
-  0 then e            'element of'
+  	0 then e            'element of'
 
-  0 then d            'not element of'
+  	0 then d            'not element of'
 
-  0 then n            Null set
+  	0 then n            Null set
 
-  0 then u            Union
+  	0 then u            Union
 
-  0 then i            Intersection
+  	0 then i            Intersection
 
-  0 then s            'Sub set of'
+  	0 then s            'Sub set of'
 
-  0 then a            'Super set of'
+  	0 then a            'Super set of'
 
-  0 then x            'not sub set of'
+  	0 then x            'not sub set of'
 
-  0 then z            'not super set of'
+  	0 then z            'not super set of'
 
 PROOF THOERY
 
-  8 then s            Single Turnstile
+  	8 then s            Single Turnstile
 
-  8 then d            Double Turnstile
+  	8 then d            Double Turnstile
 
-  8 then x            Not single turnstile
+  	8 then x            Not single turnstile
 
-  8 then c            Not double turnstile
+  	8 then c            Not double turnstile
 
-  8 then l            Logical constant
+  	8 then l            Logical constant
 
 FIRST ORDER AND PROPOSITIONAL LOGIC SYMBOLS
 
-  1 then e        Existential Quantifier
+  	1 then e        Existential Quantifier
 
-  1 then a        'For all'
+  	1 then a        'For all'
 
-  1 then i        Material Conditional, 'implies'
+  	1 then i        Material Conditional, 'implies'
 
-  1 then f        If, and only if. Symbol also means 'equivalent' and 'congruent' in other context
+  	1 then f        If, and only if. Symbol also means 'equivalent' and 'congruent' in other context
 
-  1 then n        Negation
+  	1 then n        Negation
 
-  1 then x        Xor sign
+  	1 then x        Xor sign
 
-  1 then d        Nand sign
+  	1 then d        Nand sign
 
-  1 then period   And sign (not period)
+  	1 then period   And sign (not period)
 
 MODAL LOGIC SYMBOLS
 
-  2 then p          Possible
+  	2 then p          Possible
 
-  2 then n          Necessary
+  	2 then n          Necessary
   
 BRACKETS
 
-  c the  [        Left Chevron
+  	c the  [        Left Chevron
 
-  c then ]        Right Chevron
+  	c then ]        Right Chevron
 
 ChadTech is currently in v0.2, features to add:
 
@@ -190,4 +191,7 @@ ChadTech is currently in v0.2, features to add:
 DEPENDENCIES
 
 * pygame
+* python 2.7.5 (and plausibly other versions
+* PIL
+* tkinter
 * Pokemon Ruby for the Gameboy Advance SP
