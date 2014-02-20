@@ -180,12 +180,11 @@ BRACKETS
 
   	c then ]        Right Chevron
 
-ChadTech is currently in v0.2, features to add:
+ChadTech is currently in v2, features to add:
 
-0. "barcode"
-1. Superscripts and subscripts
-2. More characters.
-3. Tab
+1. Functional save/open function (v2 works great, v3 not so much)
+0. More characters (slanty, greek, and carrotted)
+
 
 -------------------------------------------------
 DEPENDENCIES
