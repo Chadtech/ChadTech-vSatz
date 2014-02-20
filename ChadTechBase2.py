@@ -216,7 +216,7 @@ L_miscAtsign = pygame.image.load('char4.PNG',"RBG").convert()
 L_miscCarrot = pygame.image.load('char5.PNG',"RBG").convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
-os.chdir(os.path.abspath('setTheory'))
+os.chdir(os.path.abspath('SetTheory'))
 
 #set Theory
 L_settheoryElementof = pygame.image.load('char0.PNG',"RBG").convert()
@@ -398,7 +398,7 @@ l_miscAtsign = pygame.image.load('char4.PNG',"RBG").convert()
 l_miscCarrot = pygame.image.load('char5.PNG',"RBG").convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
-os.chdir(os.path.abspath('setTheory'))
+os.chdir(os.path.abspath('SetTheory'))
 
 #set Theory
 l_settheoryElementof = pygame.image.load('char0.PNG',"RBG").convert()
@@ -2999,7 +2999,10 @@ while quit==False:
 		######################################
 		
 		if event.type == pygame.KEYUP:
-			keys.remove(event.key)
+			try:
+				keys.remove(event.key)
+			except:
+				print 'DID BONK'
 		if event.type == pygame.QUIT:
 			quit = True
 

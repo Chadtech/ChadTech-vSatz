@@ -11,6 +11,9 @@ screenHeight=724
 
 screen = pygame.display.set_mode((1000,500),pygame.RESIZABLE)
 
+pygame.display.set_caption("ChadTech vSatz",)
+pygame.display.set_icon(pygame.image.load("icon.PNG").convert())
+
 introscreen = pygame.image.load('introscreen.PNG').convert()
 selected = pygame.image.load('selected.PNG').convert()
 
@@ -474,7 +477,8 @@ pygame.init()
 
 #group = pygame.sprite.Group()
 
-pygame.display.set_caption("ChadTech vSatz")
+pygame.display.set_caption("ChadTech vSatz",)
+pygame.display.set_icon(pygame.image.load("icon.PNG").convert())
 quit = False
 clock = pygame.time.Clock()
 
@@ -728,9 +732,12 @@ firstorderlogic__and=Char(l_firstorderAnd,L_firstorderAnd, ( set([ letCor['NUMER
 # Math
 
 math__equals=Char(l_mEquals,L_mEquals,( set([ letCor['EQUALS'] ]) ),82)
-math__greaterthan=Char(l_mGreaterThan,L_mGreaterThan,( set([ letCor['PERIOD'],letCor['RIGHTSHIFT']]),set([ letCor['PERIOD'],letCor['LEFTSHIFT'] ]), ), 83)
+math__greaterthan=Char(l_mGreaterThan,L_mGreaterThan,( set([ letCor['PERIOD'],letCor['RIGHTSHIFT'] ]), set([ letCor['PERIOD'],letCor['LEFTSHIFT'] ]), ), 83)
+
 math__greaterthanorequal=Char(l_mGreaterThanOrEqual,L_mGreaterThanOrEqual, ( set([ letCor['EQUALS'],letCor['PERIOD'] ]), ), 84)
+
 math__lessthan=Char(l_mLessThan,L_mLessThan,( set([ letCor['COMMA'],letCor['RIGHTSHIFT']]),set([ letCor['COMMA'],letCor['LEFTSHIFT'] ]), ), 85)
+
 math__lessthanorequal=Char(l_mLessThanOrEqual,L_mLessThanOrEqual,( set([ letCor['EQUALS'],letCor['COMMA'] ]), ), 86)
 math__division=Char(l_mDivision,L_mDivision,( set([ letCor['EQUALS'],letCor['d']]), ), 87)
 math__approximately=Char(l_mApproximately,L_mApproximately,( set([ letCor['EQUALS'],letCor['a'],]), ),88)
@@ -823,6 +830,9 @@ slanty__w=Char(l_Error,L_sw,( set ([ letCor[ 'w' ] ]), ), 157)
 slanty__x=Char(l_Error,L_sx,( set ([ letCor[ 'x' ] ]), ), 158)
 slanty__y=Char(l_Error,L_sy,( set ([ letCor[ 'y' ] ]), ), 159)
 slanty__z=Char(l_Error,L_sz,( set ([ letCor[ 'z' ] ]), ), 160)
+
+# 161 is a super script code
+# 162 is a sub script code
 
 charLets={
 	
@@ -960,6 +970,32 @@ charLets={
 	132:settheory__notsuperset,
 	133:settheory__notsubset,
 	134:error,
+	135:slanty__a,
+	136:slanty__b,
+	137:slanty__c,
+	138:slanty__d,
+	139:slanty__e,
+	140:slanty__f,
+	141:slanty__g,
+	142:slanty__h,
+	143:slanty__i,
+	144:slanty__j,
+	145:slanty__k,
+	146:slanty__l,
+	147:slanty__m,
+	148:slanty__n,
+	149:slanty__o,
+	150:slanty__p,
+	151:slanty__q,
+	152:slanty__r,
+	153:slanty__s,
+	154:slanty__t,
+	155:slanty__u,
+	156:slanty__v,
+	157:slanty__w,
+	158:slanty__x,
+	159:slanty__y,
+	160:slanty__z
 
 }
 
@@ -1752,6 +1788,7 @@ while quit==False:
 					for yit in [0]*2:
 						if curChar!=0:
 							charray.charen.pop(curChar-1)
+							curChar-=1
 					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
@@ -1760,6 +1797,7 @@ while quit==False:
 					for yit in [0]*2:
 						if curChar!=0:
 							charray.charen.pop(curChar-1)
+							curChar-=1
 					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
@@ -1770,6 +1808,7 @@ while quit==False:
 					for yit in [0]*2:
 						if curChar!=0:
 							charray.charen.pop(curChar-1)
+							curChar-=1
 					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
@@ -1778,6 +1817,7 @@ while quit==False:
 					for yit in [0]*2:
 						if curChar!=0:
 							charray.charen.pop(curChar-1)
+							curChar-=1
 					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
@@ -1786,6 +1826,7 @@ while quit==False:
 					for yit in [0]*2:
 						if curChar!=0:
 							charray.charen.pop(curChar-1)
+							curChar-=1
 					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
@@ -1794,6 +1835,7 @@ while quit==False:
 					for yit in [0]*2:
 						if curChar!=0:
 							charray.charen.pop(curChar-1)
+							curChar-=1
 					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
@@ -1802,6 +1844,7 @@ while quit==False:
 					for yit in [0]*2:
 						if curChar!=0:
 							charray.charen.pop(curChar-1)
+							curChar-=1
 					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
@@ -1810,6 +1853,7 @@ while quit==False:
 					for yit in [0]*2:
 						if curChar!=0:
 							charray.charen.pop(curChar-1)
+							curChar-=1
 					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
@@ -1818,6 +1862,7 @@ while quit==False:
 					for yit in [0]*2:
 						if curChar!=0:
 							charray.charen.pop(curChar-1)
+							curChar-=1
 					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
@@ -1826,14 +1871,7 @@ while quit==False:
 					for yit in [0]*2:
 						if curChar!=0:
 							charray.charen.pop(curChar-1)
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=firstorderlogic__nand
-				if event.key in whichChar.keys and whichChar.keys.issubset(keys):
-					for yit in [0]*2:
-						if curChar!=0:
-							charray.charen.pop(curChar-1)
+							curChar-=1
 					charray.charen.insert(curChar,addChar(whichChar))
 					curChar+=1
 
@@ -1847,7 +1885,7 @@ while quit==False:
 
 				whichChar=math__greaterthan
 				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys and whichChar.keys.issubset(keys):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -1857,6 +1895,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -1872,6 +1911,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -1881,6 +1921,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -1890,6 +1931,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -1899,6 +1941,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -1914,6 +1957,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -1935,6 +1979,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -1944,6 +1989,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -1953,6 +1999,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -1962,6 +2009,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -1971,6 +2019,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -1980,6 +2029,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -1989,6 +2039,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -1998,6 +2049,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2007,6 +2059,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2016,6 +2069,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2033,11 +2087,13 @@ while quit==False:
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
+				whichChar=brackets__leftbracket
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
+				whichChar=brackets__rightbracket
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 						charray.charen.insert(curChar,addChar(whichChar))
@@ -2046,18 +2102,20 @@ while quit==False:
 				whichChar=brackets__leftcurly
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						for yit in [0]*2:
+						for yit in [0]*1:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
 				whichChar=brackets__rightcurly
 				for yit in range(len(whichChar.keys)):
 					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-						for yit in [0]*2:
+						for yit in [0]*1:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2067,6 +2125,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2076,6 +2135,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2125,6 +2185,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2134,6 +2195,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2143,6 +2205,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2152,6 +2215,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2161,6 +2225,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2172,6 +2237,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2181,6 +2247,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2190,6 +2257,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2199,6 +2267,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2208,6 +2277,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2217,6 +2287,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2226,6 +2297,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2235,6 +2307,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2244,6 +2317,7 @@ while quit==False:
 						for yit in [0]*2:
 							if curChar!=0:
 								charray.charen.pop(curChar-1)
+								curChar-=1
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
@@ -2319,64 +2393,6 @@ while quit==False:
 						cursorVort = 0
 						cursorLine = 0
 
-						for yit in range(len(ourDoc.vorten)):
-							if ourDoc.vorten[yit].charen==[addChar(enter)]:
-								blitScreen.append( [0,[]] )
-								thisLin+=1
-							else:
-								if blitScreen[thisLin][0]+len(ourDoc.vorten[yit].charen)<=lineLen:
-									blitScreen[thisLin][1].append(ourDoc.vorten[yit])
-									blitScreen[thisLin][0]+=len(ourDoc.vorten[yit].charen)
-								else:
-									blitScreen.append( [0,[]] )
-									thisLin+=1
-									blitScreen[thisLin][0]=len(ourDoc.vorten[yit].charen)
-									blitScreen[thisLin][1].append(ourDoc.vorten[yit])
-							if yit==curVort:
-								cursorVort=yit
-								cursorLine=thisLin
-								for vapp in range(len(blitScreen[len(blitScreen)-1][1])):
-									cursorChar+= len(blitScreen[len(blitScreen)-1][1][vapp].charen)
-								cursorChar-=len(ourDoc.vorten[curVort].charen)-curChar
-
-						############################ Turn lines into pages
-
-						pagenScreen = []
-						for yit in range(len(blitScreen)):
-							if yit%maxLineNum==0:
-								pagenScreen.append([])
-							pagenScreen[len(pagenScreen)-1].append(blitScreen[yit])
-
-						whichPag=cursorLine/maxLineNum
-
-						############################ Turn pages into characters
-
-						blitChars=[]
-						for yit in range(len(pagenScreen[whichPag])):
-							blitChars.append([])
-							for vapp in range(len(pagenScreen[whichPag][yit][1])):
-								for gno in range(len(pagenScreen[whichPag][yit][1][vapp].charen)):
-									blitChars[yit].append(pagenScreen[whichPag][yit][1][vapp].charen[gno])
-							for vapp in range(lineLen):
-								if vapp<len(blitChars[yit]):
-									screen.blit(blitChars[yit][vapp][0].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-									for dukh in range(len(blitChars[yit][vapp][1])):
-										screen.blit(blitChars[yit][vapp][1][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSuperSetY+yMarg])
-									for dukh in range(len(blitChars[yit][vapp][2])):
-										screen.blit(blitChars[yit][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
-								else:
-									screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-						screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)])
-						curX=xMarg+(cursorChar*charWidth)
-						curY=yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)
-
-						if curChar>0:
-							curChar-=1
-						else:
-							if curVort>0:
-								curVort-=1
-								curChar=len(ourDoc.vorten[curVort].charen)-1
-
 				if event.key in downarrow.keys and cursorLine!=(len(blitScreen)-1):
 					savX=curX
 					savY=curY
@@ -2390,249 +2406,328 @@ while quit==False:
 						cursorVort = 0
 						cursorLine = 0
 
-						for yit in range(len(ourDoc.vorten)):
-							if ourDoc.vorten[yit].charen==[addChar(enter)]:
-								blitScreen.append( [0,[]] )
-								thisLin+=1
-							else:
-								if blitScreen[thisLin][0]+len(ourDoc.vorten[yit].charen)<=lineLen:
-									blitScreen[thisLin][1].append(ourDoc.vorten[yit])
-									blitScreen[thisLin][0]+=len(ourDoc.vorten[yit].charen)
-								else:
-									blitScreen.append( [0,[]] )
-									thisLin+=1
-									blitScreen[thisLin][0]=len(ourDoc.vorten[yit].charen)
-									blitScreen[thisLin][1].append(ourDoc.vorten[yit])
-							if yit==curVort:
-								cursorVort=yit
-								cursorLine=thisLin
-								for vapp in range(len(blitScreen[len(blitScreen)-1][1])):
-									cursorChar+= len(blitScreen[len(blitScreen)-1][1][vapp].charen)
-								cursorChar-=len(ourDoc.vorten[curVort].charen)-curChar
-
-						############################ Turn lines into pages
-
-						pagenScreen = []
-						for yit in range(len(blitScreen)):
-							if yit%maxLineNum==0:
-								pagenScreen.append([])
-							pagenScreen[len(pagenScreen)-1].append(blitScreen[yit])
-
-						whichPag=cursorLine/maxLineNum
-
-						############################ Turn pages into characters
-
-						blitChars=[]
-						for yit in range(len(pagenScreen[whichPag])):
-							blitChars.append([])
-							for vapp in range(len(pagenScreen[whichPag][yit][1])):
-								for gno in range(len(pagenScreen[whichPag][yit][1][vapp].charen)):
-									blitChars[yit].append(pagenScreen[whichPag][yit][1][vapp].charen[gno])
-							for vapp in range(lineLen):
-								if vapp<len(blitChars[yit]):
-									screen.blit(blitChars[yit][vapp][0].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-									for dukh in range(len(blitChars[yit][vapp][1])):
-										screen.blit(blitChars[yit][vapp][1][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSuperSetY+yMarg])
-									for dukh in range(len(blitChars[yit][vapp][2])):
-										screen.blit(blitChars[yit][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
-								else:
-									screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-						screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)])
-						curX=xMarg+(cursorChar*charWidth)
-						curY=yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)
-
-						if curVort<(len(ourDoc.vorten)-1):
-							if curChar<len(ourDoc.vorten[curVort].charen)-1:
-								curChar+=1
-							else:
-								curVort+=1
-								curChar=0
-						else:
-							if curChar<(len(ourDoc.vorten[curVort].charen)):
-								curChar+=1
-
 			########################################## Saving DOcuments
 
-#				whichChar=save
-#				for yit in range(len(whichChar.keys)):
-#					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-#						if curChar!=0 or curVort!=0:
-#							while len(ourDoc.vorten[curVort].charen)==0:
-#								ourDoc.vorten.pop(curVort)
-#								curVort-=1
-#								curChar=len(ourDoc.vorten[curVort].charen)
-#							ourDoc.vorten[curVort].charen.pop(curChar-1)
-#							curChar-=1
-#						saveName = tkFileDialog.asksaveasfilename()
-#						saveName = str(saveName)
-#						for pagenTol in range(len(pagenScreen)):
-#							whichPag=pagenTol
-#							blitChars=[]
-#							for yit in range(len(pagenScreen[whichPag])):
-#								blitChars.append([])
-#								for vapp in range(len(pagenScreen[whichPag][yit][1])):
-#									for gno in range(len(pagenScreen[whichPag][yit][1][vapp].charen)):
-#										blitChars[yit].append(pagenScreen[whichPag][yit][1][vapp].charen[gno])
-#								for vapp in range(lineLen):
-#									if vapp<len(blitChars[yit]):
-#										screen.blit(blitChars[yit][vapp][0].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-#										for dukh in range(len(blitChars[yit][vapp][1])):
-#											screen.blit(blitChars[yit][vapp][1][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSuperSetY+yMarg])
-#										for dukh in range(len(blitChars[yit][vapp][2])):
-#											screen.blit(blitChars[yit][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
-#									else:
-#										screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-#							pygame.image.save(screen,'pag'+str(pagenTol)+'.PNG')
-#							screen.fill((0,0,0))
-#						stXs,stYs = 0,0
-#						for pagenTol in range(len(pagenScreen)):
-#							filName="pag"+str(pagenTol)+".PNG"
-#							thX, thY=Image.open(filName).size
-#							stXs=thX
-#							stYs+=thY
-#						stImage = Image.new('RGB',(stXs,stYs),'black')
-#						for pagenTol in range(len(pagenScreen)):
-#							stImage.paste(Image.open('pag'+str(pagenTol)+'.PNG'),(0,pagenTol*windY,stXs,windY+(pagenTol*windY)))
-#						for yit in range(len(ourDoc.vorten)):
-#							for vapp in range(len(ourDoc.vorten[yit].charen)):
-#								if vapp%3==0:
-#									vortON,vortTW,vortTH = 0,0,0
-#									if vapp < len(ourDoc.vorten[yit].charen):
-#										vortON = ourDoc.vorten[yit].charen[vapp][0].keyDig
-#									if vapp+1 < len(ourDoc.vorten[yit].charen):
-#										vortTW = ourDoc.vorten[yit].charen[vapp+1][0].keyDig
-#									if vapp+2 < len(ourDoc.vorten[yit].charen):
-#										vortTH = ourDoc.vorten[yit].charen[vapp+2][0].keyDig
-#									stImage.putpixel((vapp/3,yit),(vortON,vortTW,vortTH))
-#						stImage.save(saveName,"png")
+				whichChar=save
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 
-			########################################### Opening Documents
+						##### Backspace the 's' we just added to the document
+						charray.charen.pop(curChar-1)
+						curChar-=1
 
-#				whichChar=oPen
-#				for yit in range(len(whichChar.keys)):
-#					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-#						openName = tkFileDialog.askopenfilename()
-#						openName = str(openName)
-#						openIm =  Image.open(openName)
-#						xSize,ySize = openIm.size
-#						ourDoc= Doc()
-#						ourDoc.vorten.append(Vort())
-#						cursor= Doc()
-#						cursor.vorten.append(Vort())
-#						xBou,yBou=0,0
-#						r,g,b = openIm.getpixel((xBou,yBou))
-#						while r!=0:
-#							ourDoc.vorten.append(Vort())
-#							while r!=0:
-#								if r!=0:
-#									ourDoc.vorten[yBou].charen.append(addChar(charLets[r]))
-#								if g!=0:
-#									ourDoc.vorten[yBou].charen.append(addChar(charLets[g]))
-#								if b!=0:
-#									ourDoc.vorten[yBou].charen.append(addChar(charLets[b]))
-#								xBou+=1
-#								r,g,b = openIm.getpixel((xBou,yBou))
-#							xBou=0
-#							yBou+=1
-#							r,g,b = openIm.getpixel((xBou,yBou))
-#						curVort=len(ourDoc.vorten)-1
-#						curChar=len(ourDoc.vorten[curVort].charen)
+						##### Get the name of the file
+						saveName=tkFileDialog.asksaveasfilename()
+						saveName=str(saveName)
 
-#			else: #Else, as in whichscript!='normal'
+						###### Make sure the file gets a name. If the Users hits cancel the name is '', therefore we shouldnt save anything
+						if saveName!='':
+							
+							##### Paste Each page onto the screen and take a picture of it naming it 'pag'+page Number+'.PNG'
+							hsyCou=0
 
-#				if whichScript == 'superscript':
+							screen.fill((0,0,0))
+							#Pag (hsy) in pagen
+							for hsy in pagen:
+								blitCharen=[]
+								yitCou=0
+								#For the linen in pag (hsy)
+								for yit in hsy:
+									blitCharen.append([])
+									#for the vorten in linen
+									for vapp in yit[1]:
+										#for the charen in vorten
+										for gno in vapp:
+											blitCharen[yitCou].append(gno)
+									#Paste every char in line of pag		
+									for vapp in range(lineLen):
+										if vapp<len(blitCharen[yitCou]):
+											screen.blit(blitCharen[yitCou][vapp][0].image,[(vapp*charWidth)+xMarg,yitCou*(charHeight+lineGap)+yMarg])
+											for dukh in range(len(blitCharen[yitCou][vapp][1])):
+												screen.blit(blitCharen[yitCou][vapp][1][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yitCou*(charHeight+lineGap))+lilCharOffsetSuperSetY+yMarg])
+											for dukh in range(len(blitCharen[yitCou][vapp][2])):
+												screen.blit(blitCharen[yitCou][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yitCou*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
+										else:
+											screen.blit(L_S,[(vapp*charWidth)+xMarg,yitCou*(charHeight+lineGap)+yMarg])
+									yitCou+=1
+								pygame.image.save(screen,'pag'+str(hsyCou)+'.PNG')
+								screen.fill((0,0,0))
+								hsyCou+=1
 
-#					whichChar=lowercase__a
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
-#
-#					whichChar=lowercase__b
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
-#
-#					whichChar=lowercase__c
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
-#
-#					whichChar=lowercase__d
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
-#
-#					whichChar=lowercase__e
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
-#
-#					whichChar=lowercase__f
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
-#
-#					whichChar=lowercase__g
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
-#
-#					whichChar=lowercase__h
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
-#
-#					whichChar=lowercase__i
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
-#
-#					whichChar=numeral__tw
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][1].append(whichChar)
-#
-#				if whichScript == 'subscript':
-#
-#					whichChar=numeral__ze
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+							###### Stitch pages together
+							stXs,stYs = 0,0
+							for hsy in range(len(pagen)):
+								filName="pag"+str(hsy)+".PNG"
+								thX, thY=Image.open(filName).size
+								stXs=thX
+								stYs+=thY
+							stImage = Image.new('RGB',(stXs,stYs),'black')
+							for hsy in range(len(pagen)):
+								stImage.paste(Image.open('pag'+str(hsy)+'.PNG'),(0,hsy*windY,stXs,windY+(hsy*windY)))
 
-#					whichChar=numeral__on
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+							############## Put the character in the pixel
+							#############################################
 
-#					whichChar=numeral__tw
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+							####### Make an array of all the character digits
+							charCodes=[]
+							for yit in charray.charen:
+								charCodes.append(yit[0].keyDig)
+							pixelCharCodes=[]
 
-#					whichChar=numeral__th
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
-#
-#					whichChar=numeral__fo
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+							##### Make an array of all the superScript digits, where the even indexed elements are the character they belong to, and the odd indexed elements are the character digits
+							superRay =[]
+							for yit in range(len(charray.charen)):
+								for vapp in range(len(charray.charen[yit][1])):
+									superRay.append(yit)
+									superRay.append(charray.charen[yit][1][vapp].keyDig)
+							###### Add '161' to the CharCodes array so that we can end it with the signal that there are superscripts
+							#if len(superRay):
+							charCodes.append(161) 
 
-#					whichChar=numeral__fi
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+							###### Store the charCodes as pixel values
+							pixelCharCodes=[]
+							# Make sure there is an event amount of CharCodes, 0s wont be read
+							if len(charCodes)%2==1:
+								charCodes.append(0)
+							for yit in range(len(charCodes)/2):
+								red, green, blue = 0,0,0
 
-#					whichChar=numeral__si
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+								# ((_,_),(_,_),(=,=)) -v
+								blue=(charCodes[yit*2])%256 
+								# ((_,_),(_,+),(_,_)) -v
+								green+=((charCodes[yit*2])/256)%16 # This value should not exceed 16. Problems will occur if it does, the modulus is present to store the value incorrectly, where it would otherwise crash the whole program
 
-#					whichChar=numeral__se
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+								# ((=,=),(_,_),(_,_)) -v
+								red=((charCodes[(yit*2)+1])/16)%256 # This value should not exceed 256. The justification is similar to the one given in the comment above
+								# ((_,_),(+,_),(_,_)) -v
+								green+=((charCodes[(yit*2)+1])%16)*16 
 
-#					whichChar=numeral__ei
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+								#### What is going on here?
+								#### I need to store the character digits in the pixels
+								#### If I store the digit in a color value, I am constrained to 256 possible characters, which I consider too low
+								#### If I store the digit in all three color values I have 16,777,216 possible characters, which is excessive
+								#### Thus, I am left with the more difficult task of storing two character digits in 3 pixel values, leading me to a cozy 4096 possible characters
+								#### The way I am doing this is re-allocating the three 16^2 color values, into two 16^3 chacacter digit values //// (16*16)*(16*16)*(16*16) = (16*16*16)*(16*16*16) .  Character Digit<(16*16*16)
 
-#					whichChar=numeral__ni
-#					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-#						ourDoc.vorten[curVort].charen[curChar-1][2].append(whichChar)
+								pixelCharCodes.append((red,green,blue))
+
+							##### Make an array of all the subcript digits, where the even indexed elements are the character they belong to, and the odd indexed elements are the character digits
+							subRay =[]
+							for yit in range(len(charray.charen)):
+								for vapp in range(len(charray.charen[yit][2])):
+									subRay.append(yit)
+									subRay.append(charray.charen[yit][2][vapp].keyDig)
+							###### Add '162' to the superRay array so that we can end it with the signal that there are subScripts
+							#if len(subRay):
+							#	print 'Yep, subRay'
+							
+
+							##### Store the superScripts as pixel values
+							for yit in range(len(superRay)/2):
+								red, green, blue = 0,0,0
+
+								##### The location of the superscript needs to be stored one higher than its actual value. 
+								##### This is to avoid the unlikely circumstance that the superscript corresponds to the
+								##### First letter (the zeroth letter).
+								#####
+								##### The first letter, stored as a zero, would be transparent to the open function
+
+								blue = (superRay[yit*2]+1)%256
+								green = ((superRay[yit*2]+1)/256)%256
+								red = (superRay[yit*2]+1)/65536
+								pixelCharCodes.append((red,green,blue))
+
+								blue = superRay[(yit*2)+1]%256
+								green = (superRay[(yit*2)+1]/256)%256
+								red = superRay[(yit*2)+1]/65536
+								pixelCharCodes.append((red,green,blue))
+
+							pixelCharCodes.append((0,0,162))
+
+							##### Store the subScripts as pixel values
+							for yit in range(len(subRay)/2):
+								red, green, blue = 0,0,0
+
+								blue = (subRay[yit*2]+1)%256
+								green = ((subRay[yit*2]+1)/256)%256
+								red = (subRay[yit*2]+1)/65536
+								pixelCharCodes.append((red,green,blue))
+
+								blue = subRay[(yit*2)+1]%256
+								green = (subRay[(yit*2)+1]/256)%256
+								red = subRay[(yit*2)+1]/65536
+								pixelCharCodes.append((red,green,blue))
+
+							##### Put the pixels on the image
+							for yit in range(len(pixelCharCodes)):
+								print pixelCharCodes[yit]
+								stImage.putpixel( (yit/stYs,yit%stYs), pixelCharCodes[yit] )
+
+							##### Then save the image
+							try:
+								if '.PNG' in saveName:
+									stImage.save(saveName,"png")
+								else:
+									stImage.save(saveName+'.PNG',"png")
+							except:
+								pass
+
+				######################################## Opening Documents
+
+				whichChar=oPen
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						openName=tkFileDialog.askopenfilename()
+						openName = str(openName)
+						openIm = Image.open(openName)
+						xSize,ySize = openIm.size
+						charray = Doc()
+						red,green,blue = openIm.getpixel((0,0))
+
+						whatsGoinOn='addingChars'
+						for yit in range(ySize*xMarg):
+							if whatsGoinOn=='addingChars':
+								red,green,blue = openIm.getpixel((yit/(ySize),yit%(ySize)))
+
+								onNum=0
+								twNum=0
+
+								onNum+=blue
+								twNum+=red
+
+								onNum+=green%16
+								twNum+=green/16
+
+								if onNum!=161 and onNum!=0:
+									charray.charen.append(addChar(charLets[onNum]))
+								if twNum!=161 and twNum!=0:
+									charray.charen.append(addChar(charLets[twNum]))
+
+								if onNum==161 or twNum==161:
+									whatsGoinOn='addingSuperscripts'
+									even=True
+
+							elif whatsGoinOn=='addingSuperscripts':
+								red,green,blue = openIm.getpixel((yit/(ySize),yit%(ySize)))
+								if even==True:
+									charSpot=0
+									charSpot+=blue
+									charSpot+=green*256
+									charSpot+=red*65536
+									even=False
+								elif even!=True:
+									partSuper=0
+									partSuper+=blue
+									partSuper+=green*256
+									partSuper+=red*65536
+									charray.charen[charSpot][1].append(partSuper)
+
+
+
+							#if red!=0 or green!=0 or blue!=0:
+							#	charray.charen.append(addChar(charLets[(red*65526)+(green*256)+(blue)]))
+
+						curChar=len(charray.charen)-1
+
+			else: #Else, as in whichscript!='normal'
+
+				if whichScript == 'superscript':
+
+					whichChar=lowercase__a
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__b
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__c
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__d
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__e
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__f
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__g
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__h
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__i
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=numeral__tw
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+				if whichScript == 'subscript':
+
+					whichChar=lowercase__a
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__ze
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__on
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__tw
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__th
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__fo
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__fi
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__si
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__se
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__ei
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=numeral__ni
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
 
 		############################## Fill the screen with black
 
 		screen.fill((0,0,0))
 
-		############################ Turn charray into warden
+		############################ Turn charray into vorten
 
-		warden=[]
+		vorten=[]
 		forward=0
-		warden.append([])
+		vorten.append([])
 		whichChar=0
 		vortChar=0
 		cursorVort=0
@@ -2640,31 +2735,30 @@ while quit==False:
 
 		for yit in charray.charen:
 			whichChar+=1
-			#Add this char to warden
+			#Add this char to vorten
 			if yit!=addChar(space) and yit!=addChar(enter):
-				warden[forward].append(yit)
+				vorten[forward].append(yit)
 			if yit==addChar(space):
-				warden[forward].append(yit)
-				warden.append([])
+				vorten[forward].append(yit)
+				vorten.append([])
 				forward+=1
 			if yit==addChar(enter):
-				if warden[forward]==[]:
-					warden[forward].append(yit)
-					warden.append([])
+				if vorten[forward]==[]:
+					vorten[forward].append(yit)
+					vorten.append([])
 					forward+=1
 				else:
-					warden.append([])
+					vorten.append([])
 					forward+=1
-					warden[forward].append(yit)
-					warden.append([])
+					vorten[forward].append(yit)
+					vorten.append([])
 					forward+=1
-			#print'curChar',curChar,'forward',forward,'whichChar',whichChar,'len(warden[forward])',len(warden[forward])
 			#Check if its the current char
 			if whichChar==curChar:
 				cursorVort=forward
-				vortChar=len(warden[forward])
+				vortChar=len(vorten[forward])
 
-		############################### Turn warden in Linen
+		############################### Turn vorten in Linen
 
 		linen = []
 		linen.append([0,[]])
@@ -2673,7 +2767,7 @@ while quit==False:
 		whichVort=0
 		vortInLin=0
 
-		for yit in warden:
+		for yit in vorten:
 			#Add vort to Linen
 			if yit==[addChar(enter)]:
 				linen.append([0,[]])
@@ -2698,7 +2792,7 @@ while quit==False:
 			lineChar+=len(linen[cursorLine][1][yit])
 		cursorChar=lineChar+vortChar
 
-		############################ Turn lines into pages
+		############################ Turn lines into pagen
 
 		pagen=[]
 		linCou=0
@@ -2711,7 +2805,7 @@ while quit==False:
 
 		whichPag=cursorLine/maxLineNum
 
-		############################ Turn pagen back into charen
+		############################ Turn pagen back into charen, and blit
 
 		blitCharen=[]
 		yitCou=0
@@ -2719,41 +2813,23 @@ while quit==False:
 		#For the linen in pagen
 		for yit in pagen[whichPag]:
 			blitCharen.append([])
-			#for the warden in linen
+			#for the vorten in linen
 			for vapp in yit[1]:
-				#for the charen in warden
+				#for the charen in vorten
 				for gno in vapp:
 					blitCharen[yitCou].append(gno)
 			#Paste every char in line of pag		
 			for vapp in range(lineLen):
 				if vapp<len(blitCharen[yitCou]):
-					#print 'len(yit[1])',len(yit[1]),'vapp',vapp,'yitCou',yitCou,'len(blitCharen[yitCou])',len(blitCharen[yitCou])
 					screen.blit(blitCharen[yitCou][vapp][0].image,[(vapp*charWidth)+xMarg,yitCou*(charHeight+lineGap)+yMarg])
+					for dukh in range(len(blitCharen[yitCou][vapp][1])):
+						screen.blit(blitCharen[yitCou][vapp][1][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yitCou*(charHeight+lineGap))+lilCharOffsetSuperSetY+yMarg])
+					for dukh in range(len(blitCharen[yitCou][vapp][2])):
+						screen.blit(blitCharen[yitCou][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yitCou*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
 				else:
 					screen.blit(L_S,[(vapp*charWidth)+xMarg,yitCou*(charHeight+lineGap)+yMarg])
 			yitCou+=1
-		#print 'cursorChar',cursorChar,'cursorLine',cursorLine
 		screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)])
-
-		#blitChars=[]
-		#for yit in range(len(pagenScreen[whichPag])):
-		#	blitChars.append([])
-		#	for vapp in range(len(pagenScreen[whichPag][yit][1])):
-		#		for gno in range(len(pagenScreen[whichPag][yit][1][vapp].charen)):
-		#			blitChars[yit].append(pagenScreen[whichPag][yit][1][vapp].charen[gno])
-		#	for vapp in range(lineLen):
-		#		if vapp<len(blitChars[yit]):
-		#			screen.blit(blitChars[yit][vapp][0].image,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-		#			for dukh in range(len(blitChars[yit][vapp][1])):
-		#				screen.blit(blitChars[yit][vapp][1][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSuperSetY+yMarg])
-		#			for dukh in range(len(blitChars[yit][vapp][2])):
-		#				screen.blit(blitChars[yit][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yit*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
-		#		else:
-		#			screen.blit(L_S,[(vapp*charWidth)+xMarg,(yit*(charHeight+lineGap))+yMarg])
-		#screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)])
-
-		#curX=xMarg+(cursorChar*charWidth)
-		#curY=yMarg+(cursorLine%maxLineNum)*(charHeight+lineGap)
 
 		######################################
 		
