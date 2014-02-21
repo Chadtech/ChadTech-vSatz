@@ -181,6 +181,7 @@ L_firstorderIff = pygame.image.load('char4.PNG').convert()
 L_firstorderAnd = pygame.image.load('char5.PNG').convert()
 L_firstorderXor = pygame.image.load('char6.PNG').convert()
 L_firstorderNand = pygame.image.load('char7.PNG').convert()
+L_firstorderAltnegation = pygame.image.load('char8.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('Numerals'))
@@ -246,6 +247,62 @@ L_pNotdoubleturnstile = pygame.image.load('char3.PNG').convert()
 L_pLogicalconstant = pygame.image.load('char4.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('LowercaseGreek'))
+
+L_lAlpha=pygame.image.load('char0.PNG').convert()
+L_lBeta=pygame.image.load('char1.PNG').convert()
+L_lGamma=pygame.image.load('char2.PNG').convert()
+L_lDelta=pygame.image.load('char3.PNG').convert()
+L_lEpsilon=pygame.image.load('char4.PNG').convert()
+L_lZeta=pygame.image.load('char5.PNG').convert()
+L_lEta=pygame.image.load('char6.PNG').convert()
+L_lTheta=pygame.image.load('char7.PNG').convert()
+L_lIota=pygame.image.load('char8.PNG').convert()
+L_lKappa=pygame.image.load('char9.PNG').convert()
+L_lLambda=pygame.image.load('char10.PNG').convert()
+L_lMu=pygame.image.load('char11.PNG').convert()
+L_lNu=pygame.image.load('char12.PNG').convert()
+L_lXi=pygame.image.load('char13.PNG').convert()
+L_lOmicron=pygame.image.load('char14.PNG').convert()
+L_lPi=pygame.image.load('char15.PNG').convert()
+L_lRho=pygame.image.load('char16.PNG').convert()
+L_lSigma=pygame.image.load('char17.PNG').convert()
+L_lTau=pygame.image.load('char18.PNG').convert()
+L_lUpsilon=pygame.image.load('char19.PNG').convert()
+L_lPhi=pygame.image.load('char20.PNG').convert()
+L_lChi=pygame.image.load('char21.PNG').convert()
+L_lPsi=pygame.image.load('char22.PNG').convert()
+L_lOmega=pygame.image.load('char23.PNG').convert()
+
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('UppercaseGreek'))
+
+L_LAlpha=pygame.image.load('char0.PNG').convert()
+L_LBeta=pygame.image.load('char1.PNG').convert()
+L_LGamma=pygame.image.load('char2.PNG').convert()
+L_LDelta=pygame.image.load('char3.PNG').convert()
+L_LEpsilon=pygame.image.load('char4.PNG').convert()
+L_LZeta=pygame.image.load('char5.PNG').convert()
+L_LEta=pygame.image.load('char6.PNG').convert()
+L_LTheta=pygame.image.load('char7.PNG').convert()
+L_LIota=pygame.image.load('char8.PNG').convert()
+L_LKappa=pygame.image.load('char9.PNG').convert()
+L_LLambda=pygame.image.load('char10.PNG').convert()
+L_LMu=pygame.image.load('char11.PNG').convert()
+L_LNu=pygame.image.load('char12.PNG').convert()
+L_LXi=pygame.image.load('char13.PNG').convert()
+L_LOmicron=pygame.image.load('char14.PNG').convert()
+L_LPi=pygame.image.load('char15.PNG').convert()
+L_LRho=pygame.image.load('char16.PNG').convert()
+L_LSigma=pygame.image.load('char17.PNG').convert()
+L_LTau=pygame.image.load('char18.PNG').convert()
+L_LUpsilon=pygame.image.load('char19.PNG').convert()
+L_LPhi=pygame.image.load('char20.PNG').convert()
+L_LChi=pygame.image.load('char21.PNG').convert()
+L_LPsi=pygame.image.load('char22.PNG').convert()
+L_LOmega=pygame.image.load('char23.PNG').convert()
+
+os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('Cursor'))
 
 L_C = pygame.image.load('char0.PNG').convert()
@@ -257,10 +314,12 @@ L_Error = pygame.image.load('char0.PNG').convert()
 L_Frown = pygame.image.load('char1.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
-os.chdir(os.path.abspath('NZsign'))
+os.chdir(os.path.abspath('smallPortraitOfAlexanderHamilton'))
 
-L_NZ = pygame.image.load('char0.PNG').convert()
-L_sign = pygame.image.load('char1.PNG').convert()
+L_hOn = pygame.image.load('char0.PNG').convert()
+L_hTw = pygame.image.load('char1.PNG').convert()
+L_hTh = pygame.image.load('char2.PNG').convert()
+L_hFo = pygame.image.load('char3.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.dirname(os.getcwd()))
@@ -378,6 +437,7 @@ l_firstorderIff = pygame.image.load('char4.PNG').convert()
 l_firstorderAnd = pygame.image.load('char5.PNG').convert()
 l_firstorderXor = pygame.image.load('char6.PNG').convert()
 l_firstorderNand = pygame.image.load('char7.PNG').convert()
+l_firstorderAltnegation = pygame.image.load('char8.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('Brackets'))
@@ -463,10 +523,60 @@ l_Error = pygame.image.load('char0.PNG').convert()
 l_Frown = pygame.image.load('char1.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
-os.chdir(os.path.abspath('NZsign'))
+os.chdir(os.path.abspath('LowercaseGreek'))
 
-l_NZ = pygame.image.load('char0.PNG').convert()
-l_sign = pygame.image.load('char1.PNG').convert()
+l_lAlpha=pygame.image.load('char0.PNG').convert()
+l_lBeta=pygame.image.load('char1.PNG').convert()
+l_lGamma=pygame.image.load('char2.PNG').convert()
+l_lDelta=pygame.image.load('char3.PNG').convert()
+l_lEpsilon=pygame.image.load('char4.PNG').convert()
+l_lZeta=pygame.image.load('char5.PNG').convert()
+l_lEta=pygame.image.load('char6.PNG').convert()
+l_lTheta=pygame.image.load('char7.PNG').convert()
+l_lIota=pygame.image.load('char8.PNG').convert()
+l_lKappa=pygame.image.load('char9.PNG').convert()
+l_lLambda=pygame.image.load('char10.PNG').convert()
+l_lMu=pygame.image.load('char11.PNG').convert()
+l_lNu=pygame.image.load('char12.PNG').convert()
+l_lXi=pygame.image.load('char13.PNG').convert()
+l_lOmicron=pygame.image.load('char14.PNG').convert()
+l_lPi=pygame.image.load('char15.PNG').convert()
+l_lRho=pygame.image.load('char16.PNG').convert()
+l_lSigma=pygame.image.load('char17.PNG').convert()
+l_lTau=pygame.image.load('char18.PNG').convert()
+l_lUpsilon=pygame.image.load('char19.PNG').convert()
+l_lPhi=pygame.image.load('char20.PNG').convert()
+l_lChi=pygame.image.load('char21.PNG').convert()
+l_lPsi=pygame.image.load('char22.PNG').convert()
+l_lOmega=pygame.image.load('char23.PNG').convert()
+
+os.chdir(os.path.dirname(os.getcwd()))
+os.chdir(os.path.abspath('UppercaseGreek'))
+
+l_LAlpha=pygame.image.load('char0.PNG').convert()
+l_LBeta=pygame.image.load('char1.PNG').convert()
+l_LGamma=pygame.image.load('char2.PNG').convert()
+l_LDelta=pygame.image.load('char3.PNG').convert()
+l_LEpsilon=pygame.image.load('char4.PNG').convert()
+l_LZeta=pygame.image.load('char5.PNG').convert()
+l_LEta=pygame.image.load('char6.PNG').convert()
+l_LTheta=pygame.image.load('char7.PNG').convert()
+l_LIota=pygame.image.load('char8.PNG').convert()
+l_LKappa=pygame.image.load('char9.PNG').convert()
+l_LLambda=pygame.image.load('char10.PNG').convert()
+l_LMu=pygame.image.load('char11.PNG').convert()
+l_LNu=pygame.image.load('char12.PNG').convert()
+l_LXi=pygame.image.load('char13.PNG').convert()
+l_LOmicron=pygame.image.load('char14.PNG').convert()
+l_LPi=pygame.image.load('char15.PNG').convert()
+l_LRho=pygame.image.load('char16.PNG').convert()
+l_LSigma=pygame.image.load('char17.PNG').convert()
+l_LTau=pygame.image.load('char18.PNG').convert()
+l_LUpsilon=pygame.image.load('char19.PNG').convert()
+l_LPhi=pygame.image.load('char20.PNG').convert()
+l_LChi=pygame.image.load('char21.PNG').convert()
+l_LPsi=pygame.image.load('char22.PNG').convert()
+l_LOmega=pygame.image.load('char23.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.dirname(os.getcwd()))
@@ -505,6 +615,7 @@ shiftMag = 8
 slantyChek = False
 
 whichScript = 'normal'
+greekOn = 'Yes'
 
 
 def addChar(input):
@@ -617,6 +728,8 @@ oPen=Char(l_Frown,L_Frown,(set ([ letCor['LEFTCONTROL'],letCor['o'] ]),set ([ le
 superSet=Char(l_Frown,L_Frown,(set([ letCor['LEFTSHIFT'],letCor['EQUALS'] ]),set([ letCor['RIGHTSHIFT'],letCor['EQUALS'] ])),255)
 subSet=Char(l_Frown,L_Frown,(set([ letCor['LEFTSHIFT'],letCor['HYPHEN'] ]),set([ letCor['RIGHTSHIFT'],letCor['HYPHEN'] ])),255)
 
+greekSet = Char(l_Frown,L_Frown,(set([ letCor['TAB'], letCor['g'], ]), ), 255)
+
 slantySet=Char(l_Frown,L_Frown,( set([ letCor['LEFTALT'],letCor['s'] ]), set([ letCor['RIGHTALT'],letCor['s'] ]) ), 255)
 
 #Nothing
@@ -707,8 +820,8 @@ numeral__on=Char(l_Non,L_Non,( set([ letCor['NUMERAL1'] ]) ),63)
 numeral__tw=Char(l_Ntw,L_Ntw,( set([ letCor['NUMERAL2'] ]) ),64)
 numeral__th=Char(l_Nth,L_Nth,( set([ letCor['NUMERAL3'] ]) ),65)
 numeral__fo=Char(l_Nfo,L_Nfo,( set([ letCor['NUMERAL4'] ]) ),66)
-numeral__fi=Char(l_Ntw,L_Nfi,( set([ letCor['NUMERAL5'] ]) ),67)
-numeral__si=Char(l_Ntw,L_Nsi,( set([ letCor['NUMERAL6'] ]) ),68)
+numeral__fi=Char(l_Nfi,L_Nfi,( set([ letCor['NUMERAL5'] ]) ),67)
+numeral__si=Char(l_Nsi,L_Nsi,( set([ letCor['NUMERAL6'] ]) ),68)
 numeral__se=Char(l_Nse,L_Nse,( set([ letCor['NUMERAL7'] ]) ),69)
 numeral__ei=Char(l_Nei,L_Nei,( set([ letCor['NUMERAL8'] ]) ),70)
 numeral__ni=Char(l_Nni,L_Nni,( set([ letCor['NUMERAL9'] ]) ),71)
@@ -833,6 +946,67 @@ slanty__z=Char(l_Error,L_sz,( set ([ letCor[ 'z' ] ]), ), 160)
 
 # 161 is a super script code
 # 162 is a sub script code
+
+#### Forgot this symbol
+firstorderLogic__altnegation = (l_firstorderAltnegation,L_firstorderAltnegation,( set([ letCor['NUMERAL1'],letCor['b'] ]), ), 163)
+
+hamilton__On = Char(l_Error, L_hOn, ( set([ letCor['NUMERAL4'],letCor['a'] ]), ), 164)
+hamilton__Tw = Char(l_Error, L_hTw, ( set([ letCor['NUMERAL4'],letCor['l'] ]), ), 165)
+hamilton__Th = Char(l_Error, L_hTh, ( set([ letCor['NUMERAL4'],letCor['e'] ]), ), 166)
+hamilton__Fo = Char(l_Error, L_hFo, ( set([ letCor['NUMERAL4'],letCor['x'] ]), ), 167)
+
+
+#### Greek Symbols
+
+greek_lowercasealpha = Char(l_lAlpha,L_lAlpha, ( set([ letCor['a'] ]), ), 168)
+greek_lowercasebeta = Char(l_lBeta,L_lBeta, ( set([ letCor['b'] ]), ), 169 )
+greek_lowercasegamma = Char(l_lGamma,L_lGamma, ( set([  letCor['g'] ]), ), 170)
+greek_lowercasedelta = Char(l_lDelta,L_lDelta, ( set([ letCor['d'] ]), ), 171)
+greek_lowercaseepsilon = Char(l_lEpsilon, L_lEpsilon, ( set([ letCor['e'] ]), ), 172)
+greek_lowercasezeta = Char(l_lZeta, L_lZeta, (set([letCor['z'] ]), ), 173)
+greek_lowercaseeta = Char(l_lEta, L_lEta, (set([ letCor['i'] ]), ), 174)
+greek_lowercasetheta = Char(l_lTheta, L_lTheta, (set([ letCor['h'] ]), ), 175)
+greek_lowercaseiota = Char(l_lIota, L_lIota, (set([letCor['j'] ]), ), 176)
+greek_lowercasekappa = Char(l_lKappa, L_lKappa, (set([  letCor['k'] ]), ), 177)
+greek_lowercaselambda = Char(l_lLambda, L_lLambda, (set([ letCor['l'] ]), ), 178)
+greek_lowercasemu = Char(l_lMu, L_lMu, (set([letCor['m']]), ), 179)
+greek_lowercasenu = Char(l_lMu, L_lMu, (set([letCor['n']]), ), 180)
+greek_lowercasexi = Char(l_lXi, L_lXi, (set([letCor['x'] ]), ), 181)
+greek_lowercaseomicron = Char(l_lOmicron, L_lOmicron, (set([letCor['o'] ]), ), 182)
+greek_lowercasepi = Char(l_lPi, L_lPi, (set([letCor['p'] ]), ), 183)
+greek_lowercaserho = Char(l_lRho, L_lRho, (set([letCor['r'], ]), ), 184)
+greek_lowercasesigma = Char(l_lSigma, L_lSigma, (set([letCor['s'] ]), ), 185)
+greek_lowercasetau = Char(l_lTau, L_lTau, (set([ letCor['t'] ]), ), 186)
+greek_lowercaseupsilon = Char(l_lUpsilon, L_lUpsilon, (set([ letCor['y'] ]), ), 187)
+greek_lowercasephi = Char(l_lPhi, L_lPhi, (set([ letCor['f'] ]), ), 188)
+greek_lowercasechi = Char(l_lChi, L_lChi, (set([ letCor['c'] ]), ), 189)
+greek_lowercasepsi = Char(l_lPsi, L_lPsi, (set([ letCor['q'] ]), ), 190)
+greek_lowercaseomega = Char(l_lOmega, L_lOmega, (set([ letCor['w'] ]), ), 191)
+
+greek_uppercasealpha = Char(l_LAlpha,L_LAlpha, ( set([ letCor['a'], letCor['LEFTSHIFT'] ]), set([ letCor['a'], letCor['RIGHTSHIFT'] ]) ), 192)
+greek_uppercasebeta = Char(l_LBeta,L_LBeta, ( set([ letCor['b'], letCor['LEFTSHIFT'] ]), set([ letCor['b'], letCor['RIGHTSHIFT'] ])), 193 )
+greek_uppercasegamma = Char(l_LGamma,L_LGamma, ( set([  letCor['g'], letCor['LEFTSHIFT'] ]),set([  letCor['g'], letCor['RIGHTSHIFT'] ]) ), 194)
+greek_uppercasedelta = Char(l_LDelta,L_LDelta, ( set([ letCor['d'], letCor['LEFTSHIFT'] ]),set([ letCor['d'], letCor['RIGHTSHIFT'] ]) ), 195)
+greek_uppercaseepsilon = Char(l_LEpsilon, L_LEpsilon, ( set([ letCor['e'], letCor['LEFTSHIFT'] ]) ,set([ letCor['e'], letCor['RIGHTSHIFT'] ]) ), 196)
+greek_uppercasezeta = Char(l_LZeta, L_LZeta, (set([letCor['z'], letCor['LEFTSHIFT'] ]), set([letCor['z'], letCor['RIGHTSHIFT'] ])), 197)
+greek_uppercaseeta = Char(l_LEta, L_LEta, (set([ letCor['i'], letCor['LEFTSHIFT'] ]), set([letCor['i'], letCor['RIGHTSHIFT'] ]) ), 198)
+greek_uppercasetheta = Char(l_LTheta, L_LTheta, (set([ letCor['h'], letCor['LEFTSHIFT'] ]),set([letCor['h'], letCor['RIGHTSHIFT'] ]) ), 199)
+greek_uppercaseiota = Char(l_LIota, L_LIota, (set([letCor['j'], letCor['LEFTSHIFT'] ]), set([letCor['j'], letCor['RIGHTSHIFT'] ])), 200)
+greek_uppercasekappa = Char(l_LKappa, L_LKappa, (set([  letCor['k'], letCor['LEFTSHIFT'] ]), set([letCor['k'], letCor['RIGHTSHIFT'] ])), 201)
+greek_uppercaselambda = Char(l_LLambda, L_LLambda, (set([ letCor['l'], letCor['LEFTSHIFT'] ]), set([letCor['l'], letCor['RIGHTSHIFT'] ])), 202)
+greek_uppercasemu = Char(l_LMu, L_LMu, (set([letCor['m'], letCor['LEFTSHIFT'] ]),set([letCor['m'], letCor['RIGHTSHIFT'] ])), 203)
+greek_uppercasenu = Char(l_LNu, L_LNu, (set([letCor['n'], letCor['LEFTSHIFT'] ]),set([letCor['n'], letCor['RIGHTSHIFT'] ]) ), 204)
+greek_uppercasexi = Char(l_LXi, L_LXi, (set([letCor['x'] , letCor['LEFTSHIFT'] ]), set([letCor['x'], letCor['RIGHTSHIFT'] ])), 205)
+greek_uppercaseomicron = Char(l_LOmicron, L_LOmicron, (set([letCor['o'] , letCor['LEFTSHIFT'] ]), set([letCor['o'], letCor['RIGHTSHIFT'] ])), 206)
+greek_uppercasepi = Char(l_LPi, L_LPi, (set([letCor['p'] , letCor['LEFTSHIFT'] ]),set([letCor['p'], letCor['RIGHTSHIFT'] ]) ), 207)
+greek_uppercaserho = Char(l_LRho, L_LRho, (set([letCor['r'], letCor['LEFTSHIFT'] ]), set([letCor['r'], letCor['RIGHTSHIFT'] ]) ), 208)
+greek_uppercasesigma = Char(l_LSigma, L_LSigma, (set([letCor['s'], letCor['LEFTSHIFT'] ]), set([letCor['s'], letCor['RIGHTSHIFT'] ])), 209)
+greek_uppercasetau = Char(l_LTau, L_LTau, (set([ letCor['t'], letCor['LEFTSHIFT'] ]), set([letCor['t'], letCor['RIGHTSHIFT'] ])), 210)
+greek_uppercaseupsilon = Char(l_LUpsilon, L_LUpsilon, (set([ letCor['y'], letCor['LEFTSHIFT'] ]),set([letCor['y'], letCor['RIGHTSHIFT'] ])), 211)
+greek_uppercasephi = Char(l_LPhi, L_LPhi, (set([ letCor['f'], letCor['LEFTSHIFT'] ]),set([letCor['f'], letCor['RIGHTSHIFT'] ])), 212)
+greek_uppercasechi = Char(l_LChi, L_LChi, (set([ letCor['c'], letCor['LEFTSHIFT'] ]), set([letCor['c'], letCor['RIGHTSHIFT'] ])), 213)
+greek_uppercasepsi = Char(l_LPsi, L_LPsi, (set([ letCor['q'], letCor['LEFTSHIFT'] ]), set([letCor['q'], letCor['RIGHTSHIFT'] ]) ), 214)
+greek_uppercaseomega = Char(l_LOmega, L_LOmega, (set([ letCor['w'], letCor['LEFTSHIFT'] ]), set([letCor['w'], letCor['RIGHTSHIFT'] ])  ), 215)
 
 charLets={
 	
@@ -995,7 +1169,17 @@ charLets={
 	157:slanty__w,
 	158:slanty__x,
 	159:slanty__y,
-	160:slanty__z
+	160:slanty__z,
+	### 161 and 162 are codes for the super and sub scripts.
+	161:error,
+	162:error,
+	163:firstorderLogic__altnegation,
+	164:hamilton__On,
+	165:hamilton__Tw,
+	166:hamilton__Th,
+	167:hamilton__Fo,
+
+
 
 }
 
@@ -1375,6 +1559,20 @@ while quit==False:
 						else:
 							slantyChek=False
 
+				whichChar=greekSet
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						whichScript ='greek'
+						greekKeyActivate=True
+
+			if whichScript=='greek' and greekKeyActivate==False:
+				whichChar=greekSet
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						whichScript ='normal'
+
+
+
 			if whichScript == 'superscript':
 
 				whichChar=subSet
@@ -1391,297 +1589,570 @@ while quit==False:
 
 			######################## Check if this is a super script or sub script
 
-			if whichScript == 'normal':
+			if whichScript == 'normal' or whichScript=='greek':
 
-				######################## Lower case letters
+				################Check if greek
 
-				whichChar=lowercase__a
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
+				if whichScript=='normal':
 
-				whichChar=lowercase__b
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
+					######################## Lower case letters
 
-				whichChar=lowercase__c
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__d
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__e
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__f
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__g
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__h
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__i
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__j
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__k
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__l
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__m
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__n
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__o
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__p
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__q
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__r
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__s
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__t
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__u
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__v
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__w
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__x
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__y
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				whichChar=lowercase__z
-				if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
-					charray.charen.insert(curChar,addChar(whichChar))
-					curChar+=1
-
-				######################### Upper case Letters
-
-				whichChar=uppercase__A
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__a
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__B
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__b
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__C
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__c
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__D
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__d
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__E
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__e
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__F
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__f
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__G
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__g
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__H
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__h
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__I
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__i
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__J
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__j
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__K
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__k
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__L
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__l
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__M
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__m
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__N
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__n
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__O
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__o
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__P
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__p
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__Q
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__q
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__R
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__r
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__S
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__s
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__T
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__t
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__U
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__u
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__V
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__v
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__W
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__w
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__X
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__x
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__Y
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__y
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
-				whichChar=uppercase__Z
-				for yit in range(len(whichChar.keys)):
-					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+					whichChar=lowercase__z
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
+
+					######################### Upper case Letters
+
+					whichChar=uppercase__A
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__B
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__C
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__D
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__E
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__F
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__G
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__H
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__I
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__J
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__K
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__L
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__M
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__N
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__O
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__P
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__Q
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__R
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__S
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__T
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__U
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__V
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__W
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__X
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__Y
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=uppercase__Z
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+				elif whichScript=='greek':
+
+
+					whichChar=greekSet
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							whichScript=='normal'
+
+					whichChar=greek_lowercasealpha
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercasebeta
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercasegamma
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercasedelta
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercasezeta
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercaseeta
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercasetheta
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercaseiota
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercasekappa
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercaselambda
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercasemu
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercasenu
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercasexi
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercaseomicron
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercasepi
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercaserho
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercasesigma
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercasetau
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercaseupsilon
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercasephi
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercasechi
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercasepsi
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercaseomega
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					###### Upper case Greek
+
+					whichChar=greek_uppercasealpha
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercasebeta
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercasegamma
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercasedelta
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercaseepsilon
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercasezeta
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercaseeta
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercasetheta
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercaseiota
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercasekappa
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercaselambda
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercasemu
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercasenu
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercasexi
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercaseomicron
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercasepi
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercaserho
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercasesigma
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercasetau
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercaseupsilon
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercasephi
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercasechi
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercasepsi
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
+					whichChar=greek_uppercaseomega
+					for yit in range(len(whichChar.keys)):
+						if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+							charray.charen.insert(curChar,addChar(whichChar))
+							curChar+=1
+
 
 				#########################Punctuation
 
@@ -2321,6 +2792,48 @@ while quit==False:
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
 
+				######################### Alexander Hamilton
+
+				whichChar=hamilton__On
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+								curChar-=1
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=hamilton__Tw
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+								curChar-=1
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=hamilton__Th
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+								curChar-=1
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+				whichChar=hamilton__Fo
+				for yit in range(len(whichChar.keys)):
+					if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+						for yit in [0]*2:
+							if curChar!=0:
+								charray.charen.pop(curChar-1)
+								curChar-=1
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
 				######################### Commandy keys
 
 				if event.key in space.keys:
@@ -2593,10 +3106,10 @@ while quit==False:
 								twNum=0
 
 								onNum+=blue
-								twNum+=red
+								twNum+=(red*16)
 
-								onNum+=green%16
-								twNum+=green/16
+								onNum+=(green%16)*16
+								twNum+=(green/16)
 
 								if onNum!=161 and onNum!=0:
 									charray.charen.append(addChar(charLets[onNum]))
@@ -2609,23 +3122,45 @@ while quit==False:
 
 							elif whatsGoinOn=='addingSuperscripts':
 								red,green,blue = openIm.getpixel((yit/(ySize),yit%(ySize)))
-								if even==True:
-									charSpot=0
-									charSpot+=blue
-									charSpot+=green*256
-									charSpot+=red*65536
-									even=False
-								elif even!=True:
-									partSuper=0
-									partSuper+=blue
-									partSuper+=green*256
-									partSuper+=red*65536
-									charray.charen[charSpot][1].append(partSuper)
+								if (red,green,blue)!=(0,0,162):
+									if (red,green,blue)!=(0,0,0):
+										if even==True:
+											charSpot=0
+											charSpot+=blue
+											charSpot+=green*256
+											charSpot+=red*65536
+											charSpot-=1
+											even=False
+										elif even!=True:
+											partSuper=0
+											partSuper+=blue
+											partSuper+=green*256
+											partSuper+=red*65536
+											print 'PARTSUPER',partSuper,'CHARSPOT',charSpot,'RGB',(red,green,blue)
+											charray.charen[charSpot][1].append(charLets[partSuper])
+											even=True
+								else:
+									whatsGoinOn='addingSubscripts'
+									even=True
 
-
-
-							#if red!=0 or green!=0 or blue!=0:
-							#	charray.charen.append(addChar(charLets[(red*65526)+(green*256)+(blue)]))
+							elif whatsGoinOn=='addingSubscripts':
+								red,green,blue = openIm.getpixel((yit/(ySize),yit%(ySize)))
+								if (red,green,blue)!=(0,0,0):
+									if even==True:
+										charSpot=0
+										charSpot+=blue
+										charSpot+=green*256
+										charSpot+=red*65536
+										charSpot-=1
+										even=False
+									elif even!=True:
+										partSub=0
+										partSub+=blue
+										partSub+=green*256
+										partSub+=red*65536
+										print 'PART SUB',partSub,'CHARSPOT',charSpot,'RGB',(red,green,blue)
+										charray.charen[charSpot][2].append(charLets[partSub])
+										even=True
 
 						curChar=len(charray.charen)-1
 
@@ -2669,13 +3204,217 @@ while quit==False:
 					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen[curChar-1][1].append(whichChar)
 
+					whichChar=lowercase__j
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__k
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__l
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)	
+
+					whichChar=lowercase__m
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__n
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__o
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__p
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__q
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__r
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__s
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__t
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__u
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__v
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__w
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__x
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__y
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=lowercase__z
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=numeral__on
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
 					whichChar=numeral__tw
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=numeral__th
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=numeral__fo
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=numeral__fi
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=numeral__si
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=numeral__se
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=numeral__ei
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=numeral__ni
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][1].append(whichChar)
+
+					whichChar=numeral__ze
 					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen[curChar-1][1].append(whichChar)
 
 				if whichScript == 'subscript':
 
 					whichChar=lowercase__a
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__b
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__c
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__d
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__e
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__f
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__g
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__h
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__i
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__j
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__k
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__l
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)	
+
+					whichChar=lowercase__m
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__n
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__o
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__p
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__q
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__r
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__s
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__t
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__u
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__v
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__w
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__x
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__y
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen[curChar-1][2].append(whichChar)
+
+					whichChar=lowercase__z
 					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen[curChar-1][2].append(whichChar)
 
@@ -2835,6 +3574,7 @@ while quit==False:
 		
 		if event.type == pygame.KEYUP:
 			keys.remove(event.key)
+			greekKeyActivate=False
 		if event.type == pygame.QUIT:
 			quit = True
 
