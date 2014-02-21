@@ -958,30 +958,30 @@ hamilton__Fo = Char(l_Error, L_hFo, ( set([ letCor['NUMERAL4'],letCor['x'] ]), )
 
 #### Greek Symbols
 
-greek_lowercasealpha = Char(l_lAlpha,L_lAlpha, ( set([ letCor['a'] ]), ), 168)
-greek_lowercasebeta = Char(l_lBeta,L_lBeta, ( set([ letCor['b'] ]), ), 169 )
-greek_lowercasegamma = Char(l_lGamma,L_lGamma, ( set([  letCor['g'] ]), ), 170)
-greek_lowercasedelta = Char(l_lDelta,L_lDelta, ( set([ letCor['d'] ]), ), 171)
-greek_lowercaseepsilon = Char(l_lEpsilon, L_lEpsilon, ( set([ letCor['e'] ]), ), 172)
-greek_lowercasezeta = Char(l_lZeta, L_lZeta, (set([letCor['z'] ]), ), 173)
-greek_lowercaseeta = Char(l_lEta, L_lEta, (set([ letCor['i'] ]), ), 174)
-greek_lowercasetheta = Char(l_lTheta, L_lTheta, (set([ letCor['h'] ]), ), 175)
-greek_lowercaseiota = Char(l_lIota, L_lIota, (set([letCor['j'] ]), ), 176)
-greek_lowercasekappa = Char(l_lKappa, L_lKappa, (set([  letCor['k'] ]), ), 177)
-greek_lowercaselambda = Char(l_lLambda, L_lLambda, (set([ letCor['l'] ]), ), 178)
-greek_lowercasemu = Char(l_lMu, L_lMu, (set([letCor['m']]), ), 179)
-greek_lowercasenu = Char(l_lMu, L_lMu, (set([letCor['n']]), ), 180)
-greek_lowercasexi = Char(l_lXi, L_lXi, (set([letCor['x'] ]), ), 181)
-greek_lowercaseomicron = Char(l_lOmicron, L_lOmicron, (set([letCor['o'] ]), ), 182)
-greek_lowercasepi = Char(l_lPi, L_lPi, (set([letCor['p'] ]), ), 183)
-greek_lowercaserho = Char(l_lRho, L_lRho, (set([letCor['r'], ]), ), 184)
-greek_lowercasesigma = Char(l_lSigma, L_lSigma, (set([letCor['s'] ]), ), 185)
-greek_lowercasetau = Char(l_lTau, L_lTau, (set([ letCor['t'] ]), ), 186)
-greek_lowercaseupsilon = Char(l_lUpsilon, L_lUpsilon, (set([ letCor['y'] ]), ), 187)
-greek_lowercasephi = Char(l_lPhi, L_lPhi, (set([ letCor['f'] ]), ), 188)
-greek_lowercasechi = Char(l_lChi, L_lChi, (set([ letCor['c'] ]), ), 189)
-greek_lowercasepsi = Char(l_lPsi, L_lPsi, (set([ letCor['q'] ]), ), 190)
-greek_lowercaseomega = Char(l_lOmega, L_lOmega, (set([ letCor['w'] ]), ), 191)
+greek_lowercasealpha = Char(l_lAlpha,L_lAlpha, ( set([ letCor['a'] ]) ), 168)
+greek_lowercasebeta = Char(l_lBeta,L_lBeta, ( set([ letCor['b'] ]) ), 169 )
+greek_lowercasegamma = Char(l_lGamma,L_lGamma, ( set([  letCor['g'] ]) ), 170)
+greek_lowercasedelta = Char(l_lDelta,L_lDelta, ( set([ letCor['d'] ]) ), 171)
+greek_lowercaseepsilon = Char(l_lEpsilon, L_lEpsilon, ( set([ letCor['e'] ]) ), 172)
+greek_lowercasezeta = Char(l_lZeta, L_lZeta, (set([letCor['z'] ]) ), 173)
+greek_lowercaseeta = Char(l_lEta, L_lEta, (set([ letCor['i'] ]) ), 174)
+greek_lowercasetheta = Char(l_lTheta, L_lTheta, (set([ letCor['h'] ]) ), 175)
+greek_lowercaseiota = Char(l_lIota, L_lIota, (set([letCor['j'] ]) ), 176)
+greek_lowercasekappa = Char(l_lKappa, L_lKappa, (set([  letCor['k'] ]) ), 177)
+greek_lowercaselambda = Char(l_lLambda, L_lLambda, (set([ letCor['l'] ]) ), 178)
+greek_lowercasemu = Char(l_lMu, L_lMu, (set([letCor['m']]) ), 179)
+greek_lowercasenu = Char(l_lNu, L_lNu, (set([letCor['n']]) ), 180)
+greek_lowercasexi = Char(l_lXi, L_lXi, (set([letCor['x'] ]) ), 181)
+greek_lowercaseomicron = Char(l_lOmicron, L_lOmicron, (set([letCor['o'] ]) ), 182)
+greek_lowercasepi = Char(l_lPi, L_lPi, (set([letCor['p'] ]) ), 183)
+greek_lowercaserho = Char(l_lRho, L_lRho, (set([letCor['r'], ]) ), 184)
+greek_lowercasesigma = Char(l_lSigma, L_lSigma, (set([letCor['s'] ]) ), 185)
+greek_lowercasetau = Char(l_lTau, L_lTau, (set([ letCor['t'] ])), 186)
+greek_lowercaseupsilon = Char(l_lUpsilon, L_lUpsilon, (set([ letCor['y'] ]) ), 187)
+greek_lowercasephi = Char(l_lPhi, L_lPhi, (set([ letCor['f'] ]) ), 188)
+greek_lowercasechi = Char(l_lChi, L_lChi, (set([ letCor['c'] ]) ), 189)
+greek_lowercasepsi = Char(l_lPsi, L_lPsi, (set([ letCor['q'] ]) ), 190)
+greek_lowercaseomega = Char(l_lOmega, L_lOmega, (set([ letCor['w'] ]) ), 191)
 
 greek_uppercasealpha = Char(l_LAlpha,L_LAlpha, ( set([ letCor['a'], letCor['LEFTSHIFT'] ]), set([ letCor['a'], letCor['RIGHTSHIFT'] ]) ), 192)
 greek_uppercasebeta = Char(l_LBeta,L_LBeta, ( set([ letCor['b'], letCor['LEFTSHIFT'] ]), set([ letCor['b'], letCor['RIGHTSHIFT'] ])), 193 )
@@ -1178,9 +1178,55 @@ charLets={
 	165:hamilton__Tw,
 	166:hamilton__Th,
 	167:hamilton__Fo,
-
-
-
+	168:greek_lowercasealpha,
+	169:greek_lowercasebeta,
+	170:greek_lowercasegamma,
+	171:greek_lowercasedelta,
+	172:greek_lowercaseepsilon,
+	173:greek_lowercasezeta,
+	174:greek_lowercaseeta,
+	175:greek_lowercasetheta,
+	176:greek_lowercaseiota,
+	177:greek_lowercasekappa,
+	178:greek_lowercaselambda,
+	179:greek_lowercasemu,
+	180:greek_lowercasenu,
+	181:greek_lowercasexi,
+	182:greek_lowercaseomicron,
+	183:greek_lowercasepi,
+	184:greek_lowercaserho,
+	185:greek_lowercasesigma,
+	186:greek_lowercasetau,
+	187:greek_lowercaseupsilon,
+	188:greek_lowercasephi,
+	189:greek_lowercasechi,
+	190:greek_lowercasepsi,
+	191:greek_lowercaseomega,
+	192:greek_uppercasealpha,
+	193:greek_uppercasebeta,
+	194:greek_uppercasegamma,
+	195:greek_uppercasedelta,
+	196:greek_uppercaseepsilon,
+	197:greek_uppercasezeta,
+	198:greek_uppercaseeta,
+	199:greek_uppercasetheta,
+	200:greek_uppercaseiota,
+	201:greek_uppercasekappa,
+	202:greek_uppercaselambda,
+	203:greek_uppercasemu,
+	204:greek_uppercasenu,
+	205:greek_uppercasexi,
+	206:greek_uppercaseomicron,
+	207:greek_uppercasepi,
+	208:greek_uppercaserho,
+	209:greek_uppercasesigma,
+	210:greek_uppercasetau,
+	211:greek_uppercaseupsilon,
+	212:greek_uppercasephi,
+	213:greek_uppercasechi,
+	214:greek_uppercasepsi,
+	215:greek_uppercaseomega,
+	
 }
 
 class Doc:
@@ -1886,6 +1932,7 @@ while quit==False:
 							curChar+=1
 				elif whichScript=='greek':
 
+					print 'GOT HERE lowercase Greek'
 
 					whichChar=greekSet
 					for yit in range(len(whichChar.keys)):
@@ -1893,6 +1940,7 @@ while quit==False:
 							whichScript=='normal'
 
 					whichChar=greek_lowercasealpha
+					print 'EVENT KEY', event.key, whichChar.keys, (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys))
 					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
@@ -1908,6 +1956,11 @@ while quit==False:
 						curChar+=1
 
 					whichChar=greek_lowercasedelta
+					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+						charray.charen.insert(curChar,addChar(whichChar))
+						curChar+=1
+
+					whichChar=greek_lowercaseepsilon
 					if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 						charray.charen.insert(curChar,addChar(whichChar))
 						curChar+=1
