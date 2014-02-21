@@ -76,13 +76,15 @@ ChadTech Commands:
 
   	CTRL then o                Open document
   
-  	CTRL then Backspace       Backspace 6 times
+  	CTRL then Backspace        Backspace 6 times
 
   	SHIFT then Backspace       Backspace exponetially
 
   	SHIFT then plus/equal key  Add superscript, or return to text if in subscript
 
   	SHIFT then minus key       Add subscript, or return to text if in superscript
+  	
+  	TAB then g                 Change from latin to greek letters
 
 MATH SYMBOLS
 
@@ -179,6 +181,10 @@ BRACKETS
   	c the  [        Left Chevron
 
   	c then ]        Right Chevron
+  	
+ALEXANDER HAMILTON
+
+
 
 ChadTech is currently in v2, features to add:
 
