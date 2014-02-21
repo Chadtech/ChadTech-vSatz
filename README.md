@@ -184,6 +184,13 @@ BRACKETS
   	
 ALEXANDER HAMILTON
 
+	4 then a		Second quadrant of Alexander Hamilton's portrait
+	
+	4 then l 		First quadrant of Alexander Hamilton's portrait
+	
+	4 then e 		Third quadrant of Alexander Hamilton's portrait
+	
+	4 then x 		fourth quadrant of Alexander Hamilton's portrait
 
 
 ChadTech is currently in v2, features to add:
@@ -197,7 +204,7 @@ ChadTech is currently in v2, features to add:
 DEPENDENCIES
 
 * pygame
-* python 2.7.5 (and plausibly other versions
+* python 2.7.5 (and plausibly other versions)
 * PIL
 * tkinter
 * Pokemon Ruby for the Gameboy Advance SP
