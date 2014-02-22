@@ -76,13 +76,15 @@ ChadTech Commands:
 
   	CTRL then o                Open document
   
-  	CTRL then Backspace       Backspace 6 times
+  	CTRL then Backspace        Backspace 6 times
 
   	SHIFT then Backspace       Backspace exponetially
 
   	SHIFT then plus/equal key  Add superscript, or return to text if in subscript
 
   	SHIFT then minus key       Add subscript, or return to text if in superscript
+  	
+  	TAB then g                 Change from latin to greek letters
 
 MATH SYMBOLS
 
@@ -179,19 +181,29 @@ BRACKETS
   	c the  [        Left Chevron
 
   	c then ]        Right Chevron
+  	
+ALEXANDER HAMILTON
 
-ChadTech is currently in v2, features to add:
+	4 then a		Second quadrant of Alexander Hamilton's portrait
+	
+	4 then l 		First quadrant of Alexander Hamilton's portrait
+	
+	4 then e 		Third quadrant of Alexander Hamilton's portrait
+	
+	4 then x 		fourth quadrant of Alexander Hamilton's portrait
 
-0. Functional save/open function (v2 works great, v3 not so much)
-1. More characters (slanty, greek, and carrotted)
-2. Text to ChadTech version tool
 
+ChadTech is currently beta in v2, features to add to v3:
+
+0. More characters (slanty, greek, and carrotted)
+1. Text to ChadTech version tool
+2. undo
 
 -------------------------------------------------
 DEPENDENCIES
 
 * pygame
-* python 2.7.5 (and plausibly other versions
+* python 2.7.5 (and plausibly other versions)
 * PIL
 * tkinter
 * Pokemon Ruby for the Gameboy Advance SP
