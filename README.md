@@ -169,6 +169,8 @@ FIRST ORDER AND PROPOSITIONAL LOGIC SYMBOLS
   	1 then d        Nand sign
 
   	1 then period   And sign (not period)
+  	
+  	1 then b	Alternative negation sign (flat with lip, rather than wavy)
 
 MODAL LOGIC SYMBOLS
 
