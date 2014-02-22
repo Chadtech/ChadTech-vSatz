@@ -288,7 +288,7 @@ slanty__z=Char(l_Error,L_sz,( set ([ letCor[ 'z' ] ]), ), 160)
 #### This is a first order character, categoried above. 
 #### placed here to preserve the keyDig order
 
-firstorderlogic__altnegation = Char(l_firstorderAltnegation,L_firstorderAltnegation,( set([ letCor['NUMERAL1'],letCor['b'] ]), ), 163)
+firstorderlogic__altnegation = Char(l_firstorderAltnegation,L_firstorderAltnegation,( set([ letCor['NUMERAL1'],letCor['b'] ]) ), 163)
 
 #Alexander Hamilton
 hamilton__On = Char(l_Error, L_hOn, ( set([ letCor['NUMERAL4'],letCor['a'] ]), ), 164)
