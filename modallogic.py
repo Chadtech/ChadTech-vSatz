@@ -6,6 +6,7 @@ if event.key in whichChar.keys and whichChar.keys.issubset(keys):
 			curChar-=1
 	charray.charen.insert(curChar,addChar(whichChar))
 	curChar+=1
+	
 whichChar=modallogic__necessary
 if event.key in whichChar.keys and whichChar.keys.issubset(keys):
 	for yit in [0]*2:

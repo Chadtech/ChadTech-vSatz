@@ -4,6 +4,7 @@ if whichScript == 'normal':
 	for yit in range(len(whichChar.keys)):
 		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 			whichScript = 'superscript'
+			charray.charen[curChar-1][1]=[]
 
 	whichChar=subSet
 	for yit in range(len(whichChar.keys)):
@@ -29,14 +30,13 @@ if greekKeyActivate==False:
 	for yit in range(len(whichChar.keys)):
 		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 			whichScript ='normal'
-			execfile('backspace.py')
+			#execfile('backspace.py')
 
 if whichScript == 'superscript':
 	whichChar=subSet
 	for yit in range(len(whichChar.keys)):
 		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 			whichScript = 'normal'
-			execfile('backspace.py')
 
 if whichScript == 'subscript':
 	whichChar=superSet

@@ -110,6 +110,94 @@ else:
 	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 		charray.charen[curChar-1][1].append(whichChar)
 
+	whichChar=greek_lowercasebeta
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercasegamma
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercaseepsilon
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercasezeta
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercaseeta
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercasetheta
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercaseiota
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercasekappa
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercaselambda
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercasemu
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercasenu
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercasexi
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercaseomicron
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercasepi
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercaserho
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercasesigma
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercasetau
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercaseupsilon
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercasephi
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercasechi
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercasepsi
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
+	whichChar=greek_lowercaseomega
+	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
+		charray.charen[curChar-1][1].append(whichChar)
+
 whichChar=numeral__on
 if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
 	charray.charen[curChar-1][1].append(whichChar)

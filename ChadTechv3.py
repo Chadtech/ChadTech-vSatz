@@ -238,9 +238,20 @@ while quit==False:
 
 				if whichScript == 'superscript':
 
+					###### Letters, as well as numerals
 					execfile('superlatinandgreek.py')
 
+					###### Modal logic
 					execfile('supermodallogic.py')
+
+					###### Punctuation
+					execfile('superpunctuation.py')
+
+					##### first order logic
+					execfile('superfirstorderlogic.py')
+
+					##### Math
+					execfile('supermath.py')
 
 				if whichScript == 'subscript':
 
