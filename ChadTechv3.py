@@ -100,6 +100,7 @@ shiftMag = 8
 
 whichScript = 'normal'
 greekOn = False
+slantyOn = False
 
 windX=0
 windY=0
@@ -160,6 +161,7 @@ keys = set([])
 ##### key and keys set meet the triggering criteria
 
 greekKeyActivate=False
+slantyKeyActivate=False
 
 while quit==False:
 	for event in pygame.event.get():
@@ -308,7 +310,14 @@ while quit==False:
 		
 		if event.type == pygame.KEYUP:
 			keys.remove(event.key)
+
+			##### Greek and slanty modes need to be checked if pushed, and checked if pulled. 
+			##### If not, the mode will be activated, and then immediately deactivated by the
+			##### suceeding lines of code
+
 			greekKeyActivate=False
+			slantyKeyActivate=False
+
 		if event.type == pygame.QUIT:
 			quit = True
 

@@ -1,8 +1,13 @@
-if  greekOn==False:
+if  greekOn==False and slantyOn==False:
 	whichChar=greekSet
 	for yit in range(len(whichChar.keys)):
 		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 			greekOn=True
+
+	whichChar=slantySet
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			slantyOn=True
 	######################## Lower case letters
 	whichChar=lowercase__a
 	if event.key in whichChar.keys and (not (letCor['LEFTSHIFT'] in keys)) and  (not (letCor['RIGHTSHIFT'] in keys)):
@@ -239,7 +244,7 @@ if  greekOn==False:
 		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 			charray.charen.insert(curChar,addChar(whichChar))
 			curChar+=1
-else:
+elif greekOn==True:
 	whichChar=greekSet
 	for yit in range(len(whichChar.keys)):
 		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
@@ -457,6 +462,144 @@ else:
 			charray.charen.insert(curChar,addChar(whichChar))
 			curChar+=1
 	whichChar=greek_uppercaseomega
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+
+elif slantyOn==True:
+
+	whichChar=slantySet
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			slantyOn=False
+
+	whichChar=slanty__a
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__b
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__c
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__d
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__e
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__f
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__g
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__h
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__i
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__j
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__k
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__l
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__m
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__n
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__o
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__p
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__q
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__r
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__s
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__t
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__u
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__v
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__w
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__x
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__y
+	for yit in range(len(whichChar.keys)):
+		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+			charray.charen.insert(curChar,addChar(whichChar))
+			curChar+=1
+	whichChar=slanty__z
 	for yit in range(len(whichChar.keys)):
 		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 			charray.charen.insert(curChar,addChar(whichChar))
