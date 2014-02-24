@@ -197,7 +197,7 @@ ALEXANDER HAMILTON
 
 ChadTech is currently beta in v2, features to add to v3:
 
-0. More characters (slanty, greek, and carrotted)
+0. More characters (slanty, asterisk)
 1. Text to ChadTech version tool
 2. undo
 
