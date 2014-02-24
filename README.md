@@ -70,7 +70,7 @@ How to use ChadTech:
 
 For the most part, and unless otherwise stated, if you press a key on your keyboard, the letter will show up in ChadTech, like any text editor. The features of ChadTech are controlled by hotkeys, which are listed below. All hotkeys should be pressed by holding down the first key, and then pressing the second, in that order and no other order.
 
-ChadTech Commands:
+COMMANDY KEYS
 
   	CRTL then s                Save document
 
