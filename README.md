@@ -140,7 +140,7 @@ SET THEORY SYMBOLS
 
   	0 then z            'not super set of'
 
-PROOF THOERY
+TURNSTILES
 
   	8 then s            Single Turnstile
 
