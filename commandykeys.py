@@ -54,13 +54,13 @@ if event.key in rightarrow.keys and ((letCor['LEFTCONTROL'] in keys) or (letCor[
 			if curChar<(len(charray.charen)):
 				curChar+=1
 
-if event.key in uparrow.keys and cursorLine!=0:
+if event.key in uparrow.keys:
 	for yit in [0]*lineLen:
 		if curChar>0:
 			curChar-=1
 
 
-if event.key in downarrow.keys and cursorLine!=(len(blitCharen)-1):
+if event.key in downarrow.keys:
 	for yit in [0]*lineLen:
 		if curChar<(len(charray.charen)):
-			curChar-=1
+			curChar+=1

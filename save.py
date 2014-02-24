@@ -47,7 +47,7 @@ for yit in range(len(whichChar.keys)):
 				if hsyCou>99:
 					screen.blit(numbersToNumerals[hsyCou/100],[windX-36,0])
 				if hsyCou>999:
-					screen.blit(numbersToNumerals[hsyCou/100],[windX-48,0])
+					screen.blit(numbersToNumerals[hsyCou/1000],[windX-48,0])
 				pygame.image.save(screen,'pag'+str(hsyCou)+'.PNG')
 				screen.fill((0,0,0))
 				hsyCou+=1

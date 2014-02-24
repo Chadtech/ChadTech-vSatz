@@ -25,8 +25,8 @@ for yit in range(len(whichChar.keys)):
 	if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 		charray.charen.insert(curChar,addChar(whichChar))
 		curChar+=1
-whichChar=math__lessthanorequal
 
+whichChar=math__lessthanorequal
 for yit in range(len(whichChar.keys)):
 	if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 		for yit in [0]*2:
@@ -177,7 +177,7 @@ for yit in range(len(whichChar.keys)):
 whichChar=math__divides
 for yit in range(len(whichChar.keys)):
 	if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
-		for yit in [0]*2:
+		for yit in [0]*1:
 			if curChar!=0:
 				charray.charen.pop(curChar-1)
 				curChar-=1

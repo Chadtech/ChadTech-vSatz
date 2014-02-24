@@ -10,6 +10,7 @@ if whichScript == 'normal':
 	for yit in range(len(whichChar.keys)):
 		if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
 			whichScript = 'subscript'
+			charray.charen[curChar-1][2]=[]
 
 	whichChar=slantySet
 	for yit in range(len(whichChar.keys)):

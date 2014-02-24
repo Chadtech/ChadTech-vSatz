@@ -103,8 +103,8 @@ for yit in pagen[whichPag]:
 	if whichPag>99:
 		screen.blit(numbersToNumerals[whichPag/100],[windX-36,0])
 	if whichPag>999:
-		screen.blit(numbersToNumerals[whichPag/100],[windX-48,0])
-		
+		screen.blit(numbersToNumerals[whichPag/1000],[windX-48,0])
+
 	yitCou+=1
 
 screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine%lineNum)*(charHeight+lineGap)])
