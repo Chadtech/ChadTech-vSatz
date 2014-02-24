@@ -195,7 +195,7 @@ ALEXANDER HAMILTON
 	4 then x 		fourth quadrant of Alexander Hamilton's portrait
 
 
-ChadTech is currently beta in v2, features to add to v3:
+ChadTech is currently released as v0.30, future feature ideas to add to v0.31:
 
 0. Text to ChadTech version tool
 1. undo
