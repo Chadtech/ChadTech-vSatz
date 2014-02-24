@@ -253,9 +253,33 @@ while quit==False:
 					##### Math
 					execfile('supermath.py')
 
+					##### Brackets
+					execfile('superbrackets.py')
+
+					##### Misc
+					execfile('supermisc.py')
+
+					##### Proof theory
+					execfile('superprooftheory.py')
+
+					##### set theory
+					execfile('supersettheory.py')
+
 				if whichScript == 'subscript':
 
+					###### Letters, as well as numerals
 					execfile('sublatinandgreek.py')
+
+					###### Modal logic
+					execfile('submodallogic.py')
+
+					###### Punctuation
+					execfile('subpunctuation.py')
+
+					##### first order logic
+					execfile('subfirstorderlogic.py')
+
+
 
 		############################## Fill the screen with black
 
