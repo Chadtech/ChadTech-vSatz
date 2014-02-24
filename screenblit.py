@@ -90,5 +90,21 @@ for yit in pagen[whichPag]:
 				screen.blit(blitCharen[yitCou][vapp][2][dukh].lilimage,[(vapp*charWidth)+(dukh*lilcharWidth)+xMarg+lilCharOffsetX,(yitCou*(charHeight+lineGap))+lilCharOffsetSubSetY+yMarg])
 		else:
 			screen.blit(L_S,[(vapp*charWidth)+xMarg,yitCou*(charHeight+lineGap)+yMarg])
+
+	##### Print 'Pag' on the screen
+	screen.blit(L_lP,[windX-84,0])	
+	screen.blit(L_la,[windX-72,0])
+	screen.blit(L_lg,[windX-60,0])	
+
+	##### Print the Pag number
+	screen.blit(numbersToNumerals[whichPag%10],[windX-12,0])
+	if whichPag>9:
+		screen.blit(numbersToNumerals[whichPag/10],[windX-24,0])
+	if whichPag>99:
+		screen.blit(numbersToNumerals[whichPag/100],[windX-36,0])
+	if whichPag>999:
+		screen.blit(numbersToNumerals[whichPag/100],[windX-48,0])
+		
 	yitCou+=1
+
 screen.blit(L_C,[xMarg+(cursorChar*charWidth),yMarg+(cursorLine%lineNum)*(charHeight+lineGap)])

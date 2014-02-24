@@ -58,6 +58,7 @@ greekSet = Char(l_Frown,L_Frown,(set([ letCor['LEFTALT'], letCor['g'], ]),set([ 
 slantySet=Char(l_Frown,L_Frown,( set([ letCor['LEFTALT'],letCor['s'] ]), set([ letCor['RIGHTALT'],letCor['s'] ]) ), 255)
 nothing=Char(l_Frown,L_Frown,set([ letCor['NOKEYS'] ]),255)
 error=Char(l_Error,L_Error,set([ letCor['NOKEYS'] ]), 255)
+undo=Char(l_Error,L_Error,(set([ letCor['LEFTCONTROL'], letCor['z']]), set([ letCor['RIGHTCONTROL'], letCor['z']]) ), 255)
 
 ############Visible Chars
 #### These are the visible Chars in the text
@@ -349,3 +350,10 @@ greek_uppercasephi = Char(l_LPhi, L_LPhi, (set([ letCor['f'], letCor['LEFTSHIFT'
 greek_uppercasechi = Char(l_LChi, L_LChi, (set([ letCor['c'], letCor['LEFTSHIFT'] ]), set([letCor['c'], letCor['RIGHTSHIFT'] ])), 213)
 greek_uppercasepsi = Char(l_LPsi, L_LPsi, (set([ letCor['q'], letCor['LEFTSHIFT'] ]), set([letCor['q'], letCor['RIGHTSHIFT'] ]) ), 214)
 greek_uppercaseomega = Char(l_LOmega, L_LOmega, (set([ letCor['w'], letCor['LEFTSHIFT'] ]), set([letCor['w'], letCor['RIGHTSHIFT'] ])  ), 215)
+
+##### New additions the math section
+math__arrowon = Char(l_mArrowON,L_mArrowON, ( set([ letCor['EQUALS' ], letCor['h'] ]), ), 216 )
+math__arrowtw = Char(l_mArrowTW,L_mArrowTW, ( set([ letCor['EQUALS' ], letCor['j'] ]), ), 217 )
+
+#### New addition to misc section
+misc__asterisk=Char(l_miscAsterisk,L_miscAsterisk, ( set([ letCor['NUMERAL8'],letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL8'],letCor['RIGHTSHIFT'] ]) ), 218 )

@@ -146,3 +146,17 @@ for yit in range(len(whichChar.keys)):
 		charray.charen[curChar-1][2].pop(len(charray.charen[curChar-1][2])-1)
 		charray.charen[curChar-1][2].pop(len(charray.charen[curChar-1][2])-1)
 		charray.charen[curChar-1][2].append(whichChar)
+
+whichChar=math__arrowon
+for yit in range(len(whichChar.keys)):
+	if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+		charray.charen[curChar-1][2].pop(len(charray.charen[curChar-1][2])-1)
+		charray.charen[curChar-1][2].pop(len(charray.charen[curChar-1][2])-1)
+		charray.charen[curChar-1][2].append(whichChar)
+
+whichChar=math__arrowtw
+for yit in range(len(whichChar.keys)):
+	if event.key in whichChar.keys[yit] and whichChar.keys[yit].issubset(keys):
+		charray.charen[curChar-1][2].pop(len(charray.charen[curChar-1][2])-1)
+		charray.charen[curChar-1][2].pop(len(charray.charen[curChar-1][2])-1)
+		charray.charen[curChar-1][2].append(whichChar)

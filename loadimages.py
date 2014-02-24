@@ -164,6 +164,8 @@ L_mUpsideDownTriangle = pygame.image.load('char19.PNG').convert()
 L_mInfinity = pygame.image.load('char20.PNG').convert()
 L_mDivides = pygame.image.load('char21.PNG').convert()
 L_mDoesntDivide = pygame.image.load('char22.PNG').convert()
+L_mArrowON = pygame.image.load('char23.PNG').convert()
+L_mArrowTW = pygame.image.load('char24.PNG').convert()
 
 os.chdir(os.path.dirname(os.getcwd()))
 os.chdir(os.path.abspath('FirstOrderLogic'))
@@ -226,6 +228,7 @@ L_miscPercentsign = pygame.image.load('char2.PNG').convert()
 L_miscAmbersand = pygame.image.load('char3.PNG').convert()
 L_miscAtsign = pygame.image.load('char4.PNG').convert()
 L_miscCarrot = pygame.image.load('char5.PNG').convert()
+L_miscAsterisk = pygame.image.load('char6.PNG').convert()
 
 #Set Theory
 #####################
@@ -505,6 +508,7 @@ l_miscPercentsign = pygame.image.load('char2.PNG').convert()
 l_miscAmbersand = pygame.image.load('char3.PNG').convert()
 l_miscAtsign = pygame.image.load('char4.PNG').convert()
 l_miscCarrot = pygame.image.load('char5.PNG').convert()
+l_miscAsterisk = pygame.image.load('char6.PNG').convert()
 
 #Set Theory
 #####################
@@ -563,6 +567,8 @@ l_mUpsideDownTriangle = pygame.image.load('char19.PNG').convert()
 l_mInfinity = pygame.image.load('char20.PNG').convert()
 l_mDivides = pygame.image.load('char21.PNG').convert()
 l_mDoesntDivide = pygame.image.load('char22.PNG').convert()
+l_mArrowON = pygame.image.load('char23.PNG').convert()
+l_mArrowTW = pygame.image.load('char24.PNG').convert()
 
 #Error
 #####################

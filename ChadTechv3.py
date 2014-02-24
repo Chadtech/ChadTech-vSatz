@@ -173,6 +173,9 @@ while quit==False:
 			##### Add the newly pressed key to kes
 			keys.add(event.key)
 
+			if curChar>len(charray.charen):
+				curChar=len(charray.charen)-1
+
 			execfile('checkscripttype.py')
 
 			######################## Check if this is a super script or sub script
@@ -197,7 +200,6 @@ while quit==False:
 				######################## First order logic
 
 				execfile('firstorderlogic.py')
-
 				######################### Math
 
 				execfile('math.py')
@@ -309,7 +311,10 @@ while quit==False:
 		######################################
 		
 		if event.type == pygame.KEYUP:
-			keys.remove(event.key)
+			try:	
+				keys.remove(event.key)
+			except:
+				pass
 
 			##### Greek and slanty modes need to be checked if pushed, and checked if pulled. 
 			##### If not, the mode will be activated, and then immediately deactivated by the

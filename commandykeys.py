@@ -45,9 +45,8 @@ if event.key in rightarrow.keys:
 
 if event.key in rightarrow.keys and ((letCor['LEFTSHIFT'] in keys) or (letCor['RIGHTSHIFT'] in keys)):
 	for yit in [0]*shiftCou:
-		if event.key in rightarrow.keys:
-			if curChar<(len(charray.charen)):
-				curChar+=1
+		if curChar<(len(charray.charen)):
+			curChar+=1
 
 if event.key in rightarrow.keys and ((letCor['LEFTCONTROL'] in keys) or (letCor['RIGHTCONTROL'] in keys)):
 	for yit in [0]*6:
@@ -56,27 +55,12 @@ if event.key in rightarrow.keys and ((letCor['LEFTCONTROL'] in keys) or (letCor[
 				curChar+=1
 
 if event.key in uparrow.keys and cursorLine!=0:
-	savX=curX
-	savY=curY
-	coucou = 0
-	while (curY!=(savY-(charHeight+lineGap)) or curX>=savX) and coucou<lineLen:
-		coucou+=1
-		blitScreen = []
-		thisLin = 0
-		blitScreen.append( [0,[]] )
-		cursorChar = 0
-		cursorVort = 0
-		cursorLine = 0
+	for yit in [0]*lineLen:
+		if curChar>0:
+			curChar-=1
 
-if event.key in downarrow.keys and cursorLine!=(len(blitScreen)-1):
-	savX=curX
-	savY=curY
-	coucou = 0
-	while (curY<=(savY+(charHeight+lineGap)) or curX>savX) and coucou<lineLen:
-		coucou+=1
-		blitScreen = []
-		thisLin = 0
-		blitScreen.append( [0,[]] )
-		cursorChar = 0
-		cursorVort = 0
-		cursorLine = 0
+
+if event.key in downarrow.keys and cursorLine!=(len(blitCharen)-1):
+	for yit in [0]*lineLen:
+		if curChar<(len(charray.charen)):
+			curChar-=1

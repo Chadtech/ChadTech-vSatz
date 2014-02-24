@@ -92,6 +92,20 @@ letCor = {
 
 }
 
+numbersToNumerals = {
+	
+	0:L_Nze,
+	1:L_Non,
+	2:L_Ntw,
+	3:L_Nth,
+	4:L_Nfo,
+	5:L_Nfi,
+	6:L_Nsi,
+	7:L_Nse,
+	8:L_Nei,
+	9:L_Nni
+}
+
 #### Each possible characer is a unique character object. 
 #### My terminology through out this program is poor
 #### a Char object is a KIND of character object

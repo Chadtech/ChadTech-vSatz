@@ -222,5 +222,8 @@ charLet={
 	213:greek_uppercasechi,
 	214:greek_uppercasepsi,
 	215:greek_uppercaseomega,
+	216:math__arrowon,
+	217:math__arrowtw,
+	218:misc__asterisk
 
 }

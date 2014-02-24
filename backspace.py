@@ -1,3 +1,6 @@
 if curChar!=0:
-	charray.charen.pop(curChar-1)
-	curChar-=1
+	try:
+		charray.charen.pop(curChar-1)
+		curChar-=1
+	except:
+		pass

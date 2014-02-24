@@ -35,6 +35,19 @@ for yit in range(len(whichChar.keys)):
 						else:
 							screen.blit(L_S,[(vapp*charWidth)+xMarg,yitCou*(charHeight+lineGap)+yMarg])
 					yitCou+=1
+				##### Print 'Pag' on the screen
+				screen.blit(L_lP,[windX-84,0])	
+				screen.blit(L_la,[windX-72,0])
+				screen.blit(L_lg,[windX-60,0])	
+
+				##### Print the Pag number
+				screen.blit(numbersToNumerals[(hsyCou)%10],[windX-12,0])
+				if hsyCou>9:
+					screen.blit(numbersToNumerals[hsyCou/10],[windX-24,0])
+				if hsyCou>99:
+					screen.blit(numbersToNumerals[hsyCou/100],[windX-36,0])
+				if hsyCou>999:
+					screen.blit(numbersToNumerals[hsyCou/100],[windX-48,0])
 				pygame.image.save(screen,'pag'+str(hsyCou)+'.PNG')
 				screen.fill((0,0,0))
 				hsyCou+=1
@@ -92,10 +105,7 @@ for yit in range(len(whichChar.keys)):
 				for vapp in range(len(charray.charen[yit][2])):
 					subRay.append(yit)
 					subRay.append(charray.charen[yit][2][vapp].keyDig)
-			###### Add '162' to the superRay array so that we can end it with the signal that there are subScripts
-			#if len(subRay):
-			#	print 'Yep, subRay'
-										##### Store the superScripts as pixel values
+			##### Store the superScripts as pixel values
 			for yit in range(len(superRay)/2):
 				red, green, blue = 0,0,0
 				##### The location of the superscript needs to be stored one higher than its actual value. 
@@ -125,7 +135,6 @@ for yit in range(len(whichChar.keys)):
 				pixelCharCodes.append((red,green,blue))
 			##### Put the pixels on the image
 			for yit in range(len(pixelCharCodes)):
-				print pixelCharCodes[yit]
 				stImage.putpixel( (yit/stYs,yit%stYs), pixelCharCodes[yit] )
 			##### Then save the image
 			try:
