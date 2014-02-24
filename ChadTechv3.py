@@ -279,6 +279,21 @@ while quit==False:
 					##### first order logic
 					execfile('subfirstorderlogic.py')
 
+					##### math
+					execfile('submath.py')
+
+					##### Brackets
+					execfile('subbrackets.py')
+
+					##### Misc
+					execfile('submisc.py')
+
+					##### Proof theory
+					execfile('subprooftheory.py')
+
+					##### Set Theory
+					execfile('subsettheory.py')
+
 
 
 		############################## Fill the screen with black

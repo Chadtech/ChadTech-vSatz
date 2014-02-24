@@ -220,7 +220,7 @@ brackets__rightchevron=Char(l_bRightChevron,L_bRightChevron,( set([ letCor['c'],
 
 #Misc
 
-misc__numbersign=Char(l_miscNumbersign,L_miscNumbersign,( set([ letCor['NUMERAL3'], letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL4'],letCor['RIGHTSHIFT'] ]) ),114 )
+misc__numbersign=Char(l_miscNumbersign,L_miscNumbersign,( set([ letCor['NUMERAL3'], letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL3'],letCor['RIGHTSHIFT'] ]) ),114 )
 misc__dollarsign=Char(l_miscDollarsign,L_miscDollarsign,( set([ letCor['NUMERAL4'], letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL4'],letCor['RIGHTSHIFT'] ]) ),115 )
 misc__percentsign=Char(l_miscPercentsign,L_miscPercentsign,( set([ letCor['NUMERAL5'], letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL5'],letCor['RIGHTSHIFT'] ]) ),116 )
 misc__ambersand=Char(l_miscAmbersand,L_miscAmbersand,( set([ letCor['NUMERAL7'], letCor['LEFTSHIFT'] ]), set([ letCor['NUMERAL7'],letCor['RIGHTSHIFT'] ]) ), 117)
