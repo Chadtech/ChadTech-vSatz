@@ -70,7 +70,7 @@ How to use ChadTech:
 
 For the most part, and unless otherwise stated, if you press a key on your keyboard, the letter will show up in ChadTech, like any text editor. The features of ChadTech are controlled by hotkeys, which are listed below. All hotkeys should be pressed by holding down the first key, and then pressing the second, in that order and no other order.
 
-ChadTech Commands:
+COMMANDY KEYS
 
   	CRTL then s                Save document
 
@@ -140,7 +140,7 @@ SET THEORY SYMBOLS
 
   	0 then z            'not super set of'
 
-PROOF THOERY
+TURNSTILES
 
   	8 then s            Single Turnstile
 
@@ -195,11 +195,10 @@ ALEXANDER HAMILTON
 	4 then x 		fourth quadrant of Alexander Hamilton's portrait
 
 
-ChadTech is currently beta in v2, features to add to v3:
+ChadTech is currently released as v0.30, future feature ideas to add to v0.31:
 
-0. More characters (slanty, asterisk,arrow)
-1. Text to ChadTech version tool
-2. undo
+0. Text to ChadTech version tool
+1. undo
 
 -------------------------------------------------
 DEPENDENCIES
